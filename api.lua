@@ -8,7 +8,7 @@ local S = sys4_achievements.intllib
 -- New Waste Node
 minetest.register_node("sys4_achievements:waste",
 {
-   description = "Déchet",
+   description = S("Déchet"),
    tiles = {"waste.png"},
    is_ground_content = false,
    groups = {crumbly=2, flammable=2},
@@ -18,7 +18,7 @@ function sys4_achievements.write_book(items, prizes)
    local text = ""
    
    if prizes and prizes ~= nil then
-      text = text.."Félicitations ! Vous gagnez :\n"
+      text = text..S("Félicitations ! Vous gagnez :\n")
       
       local tt = ""
       for i=1, #prizes do
@@ -29,7 +29,7 @@ function sys4_achievements.write_book(items, prizes)
    end
    
    if items and items ~= nil then
-      text = text.."Vous débloquez les crafts de ces objets :\n"
+      text = text..S("Vous débloquez les crafts de ces objets :\n")
       
       local tt = ""
       for i=1, #items do
@@ -222,7 +222,7 @@ awards.give_achievement = function (name, award)
 				   "label[0.3,0.1;"..custom_announce.."]")
       elseif awards.show_mode == "chat" then
 	 -- use the chat console to send it
-	 minetest.chat_send_player(name, "Achievement Unlocked: "..title)
+	 minetest.chat_send_player(name, S("Achievement Unlocked: ")..title)
 	 if desc~="" then
 	    minetest.chat_send_player(name, desc)
 	 end
@@ -242,7 +242,7 @@ awards.give_achievement = function (name, award)
 				       name = "award_au",
 				       number = 0xFFFFFF,
 				       scale = {x = 100, y = 20},
-				       text = "Achievement Unlocked!",
+				       text = S("Achievement Unlocked!"),
 				       position = {x = 0.5, y = 0},
 				       offset = {x = 0, y = 40},
 				       alignment = {x = 0, y = -1}

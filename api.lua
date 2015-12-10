@@ -1,9 +1,9 @@
 -- SYS4 Achievements
 -- by Sys4
 
--- api
+local S = sys4_achievements.intllib
 
-sys4_achievements = {}
+-- api
 
 -- New Waste Node
 minetest.register_node("sys4_achievements:waste",

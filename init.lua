@@ -560,7 +560,7 @@ local a = {
    },
 }
 
-if farming then
+if minetest.get_modpath("farming") then
    table.insert(a,
 		{ name = 'agro_begins',
 		  title = "Découverte de l'agriculture",

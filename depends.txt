@@ -1,3 +1,16 @@
 default
 awards
+beds
+boats
+bucket
+doors
+dye
+farming
+flowers
+screwdriver
+stairs
+tnt
+vessels
+wool
+xpanes
 intllib?

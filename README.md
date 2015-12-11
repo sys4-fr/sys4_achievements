@@ -8,22 +8,20 @@ It adds various achievements to minetest and introduce a different gameplay.
 
 When entering in a new world, all the crafts are disabled by default. You have to trigger achievements that allows you to use blocked crafts.
 
-When achievement is triggered, you won a written book shows you unblocked crafts.
+When achievement is triggered, you won a written book that shows you unblocked crafts.
 
-If you intend to craft a blocked item, you obtain a waste node which will not usable.
+If you intent to craft a blocked item, you obtain a waste node which will not be usable.
+
+Developed and tested with minetest stable 0.4.13.
 
 WHAT IS READY :
 ---------------
 
-- Achievements that unblock crafts of this mods :
-  - default
-  - boats
-  - bucket
-  - doors
-  - farming (partially)
+- Achievements that unblock crafts of these mods :
+  - All the mods included in the game minetest_game, but not stairs mod yet...
 
 TODO :
 ------
 
-- Make more achievements to unblock crafts of anothers mods from minetest_game.
+- Arrange achievements to unblock crafts of stairs mod.
 - Make more achievements to unblock crafts of anothers minetest mods around the world :-)

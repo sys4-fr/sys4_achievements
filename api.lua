@@ -281,3 +281,11 @@ awards.give_achievement = function (name, award)
       awards.save()
    end
 end
+
+minetest.register_chatcommand("gawd", {
+	params = "award name",
+	description = "gawd: give award to self",
+	func = function(name, param)
+		awards.give_achievement(name,param)
+	end
+})

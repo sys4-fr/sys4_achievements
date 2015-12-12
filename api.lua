@@ -282,6 +282,120 @@ awards.give_achievement = function (name, award)
    end
 end
 
+awards.showto = function(name, to, sid, text)
+	if name == "" or name == nil then
+		name = to
+	end
+	if text then
+		if not awards.players[name] or not awards.players[name].unlocked  then
+			minetest.chat_send_player(to, "You have not unlocked any awards")
+			return
+		end
+		minetest.chat_send_player(to, name.."'s awards:")
+
+		for _, str in pairs(awards.players[name].unlocked) do
+			local def = awards.def[str]
+			if def then
+				if def.title then
+					if def.description then				
+						minetest.chat_send_player(to, def.title..": "..def.description)
+					else
+						minetest.chat_send_player(to, def.title)
+					end
+				else
+					minetest.chat_send_player(to, str)
+				end
+			end
+		end
+	else
+		if sid == nil or sid < 1 then
+			sid = 1
+		end
+		local formspec = "size[15,8]"			
+		local listofawards = awards._order_awards(name)
+		
+		-- Sidebar
+		if sid then
+			local item = listofawards[sid+0]
+			local def = awards.def[item.name]
+			if def and def.secret and not item.got then
+				formspec = formspec .. "label[9,2.75;Secret Award]"..
+									"image[9,0;3,3;unknown.png]"
+				if def and def.description then
+					formspec = formspec	.. "label[9,3.25;Unlock this award to find out what it is]"				
+				end
+			else
+				local title = item.name
+				if def and def.title then
+					title = def.title
+				end
+				local status = ""
+				if item.got then
+					status = " (got)"
+				end
+				local icon = ""
+				if def and def.icon then
+					icon = def.icon
+				end
+				formspec = formspec .. "label[9,3.25;"..title..status.."]".."label[9,0;"..item.name.."]"..
+									"image[9.75,0.5;3,3;"..icon.."]"
+				if def and def.description then
+					formspec = formspec	.. "label[8,4.25;"..def.description.."]"				
+				end
+				if def and def.items then
+				   local items = def.items
+				   local y = 5 -- Position y de départ du label
+				   formspec = formspec	.. "label[8,"..y..";Unlock crafts :]"
+				   
+				   local name = ""
+				   for i=1, #items do
+				      
+				      local itemstack = ItemStack(items[i])
+				      if itemstack and itemstack ~= nil and itemstack:is_known() then
+					 name = itemstack:get_name()
+				      else
+					 name = "Unknown Item"
+				      end
+				      y = y + 0.35
+				      formspec = formspec .. "label[8,"..y..";- "..name.."]"
+				   end
+				end
+			end
+		end
+		
+		-- Create list box
+		formspec = formspec .. "textlist[0,0;6.75,8;awards;"		
+		local first = true
+		for _,award in pairs(listofawards) do
+			local def = awards.def[award.name]
+			if def then
+				if not first then
+					formspec = formspec .. ","
+				end
+				first = false
+				
+				if def.secret and not award.got then
+					formspec = formspec .. "#ACACACSecret Award"
+				else
+					local title = award.name			
+					if def and def.title then
+						title = def.title
+					end			
+					if award.got then
+						formspec = formspec .. minetest.formspec_escape(title)
+					else
+						formspec = formspec .. "#ACACAC".. minetest.formspec_escape(title)
+					end
+				end
+			end
+		end		
+		formspec = formspec .. ";"..sid.."]"
+
+		-- Show formspec to user
+		minetest.show_formspec(to,"awards:awards",formspec)
+	end
+end
+
 minetest.register_chatcommand("gawd", {
 	params = "award name",
 	description = "gawd: give award to self",

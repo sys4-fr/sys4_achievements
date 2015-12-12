@@ -18,10 +18,12 @@ WHAT IS READY :
 ---------------
 
 - Achievements that unblock crafts of these mods :
-  - All the mods included in the game minetest_game, but not stairs mod yet...
+  - All the mods included in the game minetest_game.
+  
+- German translations - Thanks to Xanthin
 
 TODO :
 ------
 
-- Arrange achievements to unblock crafts of stairs mod.
+- English translations
 - Make more achievements to unblock crafts of anothers minetest mods around the world :-)

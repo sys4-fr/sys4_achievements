@@ -4,6 +4,7 @@
 local S = sys4_achievements.intllib
 
 -- api
+local craftmode = true
 
 -- New Waste Node
 minetest.register_node("sys4_achievements:waste",
@@ -135,12 +136,14 @@ minetest.register_on_craft(
 	 end
       end
       
-      return wasteItem
-      
+      if craftmode then
+	 return wasteItem
+      else
+	 return nil
+      end
       
    end)
 
-local awards_give_achievement = awards.give_achievement
 awards.give_achievement = function (name, award)
    -- Access Player Data
    local data = awards.players[name]
@@ -175,7 +178,7 @@ awards.give_achievement = function (name, award)
       end
       
       -- Give book
-      if awards.def[award] and awards.def[award].book then
+      if awards.def[award] and awards.def[award].book and craftmode then
 	 
 	 local itemstack = ItemStack('default:book_written')
 	 local book_data = {}
@@ -402,4 +405,19 @@ minetest.register_chatcommand("gawd", {
 	func = function(name, param)
 		awards.give_achievement(name,param)
 	end
+})
+
+minetest.register_chatcommand("craftmode",
+{
+   params = "on or off",
+   description = "craftmode : enable or not sys4_achievements blocked crafts.",
+   func = function(name, param)
+      if param == "on" then	 
+	 craftmode = true
+	 minetest.chat_send_player(name, "Sys4 craft mode enabled")
+      else
+	 craftmode = false
+	 minetest.chat_send_player(name, "Sys4 craft mode disabled")
+      end
+   end
 })

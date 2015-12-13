@@ -21,9 +21,12 @@ WHAT IS READY :
   - All the mods included in the game minetest_game.
   
 - German translations - Thanks to Xanthin
+- English translations.
+- Command for (un)lock crafts.
 
 TODO :
 ------
 
-- English translations
+- Extensive test for balance gameplay
+- Make several levels of difficulty.
 - Make more achievements to unblock crafts of anothers minetest mods around the world :-)

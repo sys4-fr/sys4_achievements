@@ -20,6 +20,244 @@ dofile(minetest.get_modpath("sys4_achievements").."/api.lua")
 
 -- Achievements table définition
 local a = {
+   
+   -- Builder achievements (place) --
+   
+   -- Trees
+   { name = 'tree_builder_begins',
+     title = S("My first hut"),
+     node = 'default:tree',
+     desc = S("Place 50 tree blocks."),
+     icon = "default_wood.png",
+     type = "place",
+     target = 50,
+     titems = {'default:wood'},
+     tprizes = {'default:torch'},
+   },
+
+   -- Wood
+   { name = 'wood_builder_begins',
+     title = S("Specialized Wood builder"),
+     node = 'default:wood',
+     desc = S("Place 50 wooden planks."),
+     icon = "default_wood.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_wood', 'stairs:stair_wood'},
+     tprizes = nil,
+   },
+
+   -- Papyrus
+   { name = 'papyrus_builder_begins',
+     title = S("Your papers please"),
+     node = 'default:papyrus',
+     desc = S("Place 10 papyrus."),
+     icon = "default_paper.png",
+     type = "place",
+     target = 10,
+     titems = {'default:paper'},
+     tprizes = nil,
+   },
+
+   -- Bookshelf
+   { name = 'bookshelf_builder_begins',
+     title = S("Get the knowledge"),
+     node = 'default:bookshelf',
+     desc = S("Place 5 bookshelfs."),
+     icon = "farming_tool_woodhoe.png",
+     type = "place",
+     target = 5,
+     titems = {'farming:hoe_wood'},
+     tprizes = nil,
+   },
+
+   -- Sandstone
+   { name = 'sandstone_builder_begins',
+     title = S("Sandstone builder lover"),
+     node = 'default:sandstone',
+     desc = S("Place 50 sandstones."),
+     icon = "default_sandstone.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_sandstone', 'stairs:stair_sandstone'},
+     tprizes = nil,
+   },
+
+   -- Sandstone bricks
+   { name = 'sandstonebrick_builder_begins',
+     title = S("Specialized sandstone builder"),
+     node = 'default:sandstonebrick',
+     desc = S("Place 50 sandstone bricks."),
+     icon = "default_sandstone_brick.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_sandstonebrick', 'stairs:stair_sandstonebrick'},
+     tprizes = nil,
+   },
+
+   -- Miner achievements (dig) --
+
+   -- Leaves
+   { name = 'leave_digger_begins',
+     title = S("Sticks into the trees"),
+     node = 'default:leaves',
+     desc = S("Dig 50 leaves."),
+     icon = "default_stick.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:stick'},
+     tprizes = nil,
+   },
+
+   -- Trees
+   { name = 'tree_digger_begins',
+     title = S("First steps of a Lumberjack"),
+     node = 'default:tree',
+     desc = S("Dig 50 trees."),
+     icon = "default_tools_woodaxe.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:axe_wood', 'default:sword_wood'},
+     tprizes = nil,
+   },
+
+   -- Papyrus
+   { name = 'papyrus_digger_begins',
+     title = S("You know write ?"),
+     node = 'default:papyrus',
+     desc = S("Dig 50 papyrus."),
+     icon = "default_book.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:book', 'default:sign_wall'},
+     tprizes = nil,
+   },
+
+   -- Cotton
+   { name = 'cotton_digger_begins',
+     title = S("Spinner's first steps"),
+     node = 'farming:cotton_8',
+     desc = S("Dig 50 mature cottons."),
+     icon = "wool_white.png",
+     type = "dig",
+     target = 50,
+     titems = {'wool:white'},
+     tprizes = nil,
+   },
+
+   -- Rose flower
+   { name = 'rose_digger_begins',
+     title = S("I like the Red color"),
+     node = 'flowers:rose',
+     desc = S("Dig 10 Roses."),
+     icon = "dye_red.png",
+     type = "dig",
+     target = 10,
+     titems = {'dye:red', 'wool:red'},
+     tprizes = nil,
+   },
+
+   -- Sand
+   { name = 'sand_digger_begins',
+     title = S("The sand castle part. 1"),
+     node = 'default:sand',
+     desc = S("Dig 100 Sand blocks."),
+     icon = "default_sandstone.png",
+     type = "dig",
+     target = 100,
+     titems = {'default:sandstone'},
+     tprizes = nil,
+   },
+
+
+   -- Craft achievements (craft) --
+
+   -- Wood
+   { name = 'wood_crafter_begins',
+     title = S("First steps of a Crafter"),
+     node = 'default:wood',
+     desc = S("Craft 50 Wooden Planks."),
+     icon = "doors_wood.png",
+     type = "craft",
+     target = 50,
+     titems = {'doors:door_wood', 'doors:trapdoor', 'boats:boat', 'default:chest', 'default:bookshelf', 'vessels:shelf'},
+     tprizes = {'default:torch 4'},
+   },
+
+   -- Stick
+   { name = 'stick_crafter_begins',
+     title = S("Stick specialist"),
+     node = 'default:stick',
+     desc = S("Craft 50 sticks."),
+     icon = "default_ladder.png",
+     type = "craft",
+     target = 50,
+     titems = {'default:ladder', 'default:fence_wood'},
+     tprizes = nil,
+   },
+
+   -- Wool - Red
+   { name = 'redwool_crafter_begins',
+     title = S("A bit of rest"),
+     node = 'wool:red',
+     desc = S("Craft 20 Red wool."),
+     icon = "beds_bed.png",
+     type = "craft",
+     target = 20,
+     titems = {'beds:bed_bottom', 'beds:fancy_bed_bottom'},
+     tprizes = nil,
+   },
+
+   -- Hoe Wood
+   { name = 'hoe_crafter_begins',
+     title = S("What a shovel !"),
+     node = 'farming:hoe_wood',
+     desc = S("Craft 10 Wooden hoes."),
+     icon = "default_tool_woodshovel.png",
+     type = "craft",
+     target = 10,
+     titems = {'default:shovel_wood'},
+     tprizes = nil,
+   },
+
+   -- Sandstone
+   { name = 'sandstone_crafter_begins',
+     title = S("The sand castle part. 2"),
+     node = 'default:sandstone',
+     desc = S("Craft 100 sandstones."),
+     icon = "default_sandstone_brick.png",
+     type = "craft",
+     target = 100,
+     titems = {'default:sandstonebrick'},
+     tprizes = nil,
+   },
+
+   -- Shovel wood
+   { name = 'shovelwood_crafter_begins',
+     title = S("Unlock the Pick Wood"),
+     node = 'default:shovel_wood',
+     desc = S("Craft 10 Shovel wood."),
+     icon = "default_tool_woodpick.png",
+     type = "craft",
+     target = 10,
+     titems = {'default:pick_wood'},
+     tprizes = nil,
+   },
+
+   -- Pick wood
+   { name = 'pickwood_crafter_begins',
+     title = S("End of Darkness"),
+     node = 'default:pick_wood',
+     desc = S("Craft 1 Pick wood."),
+     icon = "default_torch_on_floor.png",
+     type = "craft",
+     target = 1,
+     titems = {'default:torch', 'default:furnace'},
+     tprizes = nil,
+   },
+
+}
+--[[local a = {
 
    -- Lumberjacks achievements --
 
@@ -962,7 +1200,7 @@ local a = {
    },
 
 }  
-
+--]]
 -- Secrets achievements table
 local sa = {
    { name = 'secret_stuf',

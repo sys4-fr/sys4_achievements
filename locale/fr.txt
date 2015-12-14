@@ -2,7 +2,7 @@
 
 #init.lua
 My first hut = Ma première cabane
-Place 50 tree blocks. = Place 50 buches de bois.
+Place 50 tree blocks. = Place 50 troncs d'arbres.
 Specialized Wood builder = Batisseur du Bois spécialisé
 Place 50 wooden planks. = Place 50 planches de bois.
 Your papers please = Vos papiers svp
@@ -13,19 +13,19 @@ Sandstone builder lover = Batisseur du gré amateur
 Place 50 sandstones. = Place 50 blocs de gré.
 Specialized sandstone builder = Batisseur du gré spécialisé
 Place 50 sandstone bricks. = Place 50 blocs de gré ciselé.
-Sticks into the trees = Dens batons dans les arbres
-Dig 50 leaves. = Récolte 50 feuilles d'arbre.
-First steps of a Lumberjack = Premier pas de Bucheron
-Dig 50 trees. = Coupe 50 buches de bois.
+Sticks into the trees = Des feuilles et des batons
+Dig 50 leaves. = Récolte 50 feuilles d'arbres.
+First steps of a Lumberjack = Premiers pas de Bucheron
+Dig 50 trees. = Coupe 50 troncs d'arbres.
 You know write ? = Savez-vous écrire ?
 Dig 50 papyrus. = Récolte 50 papyrus.
 Spinner's first steps = Premiers pas du Fileur de Laine
-Dig 50 mature cottons. = Récolte 50 plants de cotons matures.
+Dig 50 mature cottons. = Récolte 50 plants de cottons matures.
 I like the Red color = J'aime la couleur rouge
 Dig 10 Roses. = Cueille 10 roses.
 The sand castle part. 1 = Le chateau de sable part. 1
 Dig 100 Sand blocks. = Récolte 100 blocs de sable.
-First steps of a Crafter = Premier pas d'artisan.
+First steps of a Crafter = Premiers pas d'artisan
 Craft 50 Wooden Planks. = Fabrique 50 planches de bois.
 Stick specialist = Spécialiste des batons
 Craft 50 sticks. = Fabrique 50 batons.
@@ -39,10 +39,13 @@ Unlock the Pick Wood = Débloque la pioche en bois
 Craft 10 Shovel wood. = Fabrique 10 pelles en bois.
 End of Darkness = Fin des ténèbres
 Craft 1 Pick wood. = Fabrique 1 pioche en bois.
+Not only Waste = Pas que des Déchets
+Dig 10 Waste blocks. = Récolte 10 blocs de déchets.
 
 #api.lua
-Déchet = 
-Félicitations ! Vous gagnez :\n = 
-Vous débloquez les crafts de ces objets :\n = 
-Achievement Unlocked:\ \ = 
-Achievement Unlocked! = 
+Waste = Déchet
+Amazing ! You win :\n = Félicitations ! Vous gagnez :\n
+You unlock these crafts :\n = Vous débloquez les crafts de ces objets :\n
+Achievement Unlocked:\ \ = Épreuve Débloquée :\ \
+Achievement Unlocked! = Épreuve Débloquée !
+Unlock crafts  = Débloque les crafts

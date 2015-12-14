@@ -114,7 +114,7 @@ local a = {
      title = S("First steps of a Lumberjack"),
      node = 'default:tree',
      desc = S("Dig 50 trees."),
-     icon = "default_tools_woodaxe.png",
+     icon = "default_tool_woodaxe.png",
      type = "dig",
      target = 50,
      titems = {'default:axe_wood', 'default:sword_wood'},
@@ -1203,10 +1203,10 @@ local a = {
 --]]
 -- Secrets achievements table
 local sa = {
-   { name = 'secret_stuf',
-     title = S("Pas que des déchets"),
+   { name = 'secret_stuff',
+     title = S("Not only Waste"),
      node = 'sys4_achievements:waste',
-     desc = S("Récolte 10 blocs de déchets."),
+     desc = S("Dig 10 Waste blocks."),
      icon ="waste.png",
      type = "dig",
      target = 10,
@@ -1242,7 +1242,7 @@ for i=1, #sa do
 	 trigger = { type = sa[i].type, node = sa[i].node, target = sa[i].target},
 	 items = sa[i].titems,
 	 prizes = sa[i].tprizes,
-	 book = { title = "SYS4 AWARDS : "..sa[i].title,
+	 book = { title = "SYS4 SECRET : "..sa[i].title,
 		  text = sys4_achievements.write_book(sa[i].titems, sa[i].tprizes)
 	 },
 	 secret = 1

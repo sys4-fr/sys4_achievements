@@ -9,7 +9,7 @@ local craftmode = true
 -- New Waste Node
 minetest.register_node("sys4_achievements:waste",
 {
-   description = S("Déchet"),
+   description = S("Waste"),
    tiles = {"waste.png"},
    is_ground_content = false,
    groups = {crumbly=2, flammable=2},
@@ -19,24 +19,24 @@ function sys4_achievements.write_book(items, prizes)
    local text = ""
    
    if prizes and prizes ~= nil then
-      text = text..S("Félicitations ! Vous gagnez :\n")
+      text = text..S("Amazing ! You win :\n")
       
       local tt = ""
       for i=1, #prizes do
 	 local itemstack = ItemStack(prizes[i])
 	 tt = tt..itemstack:get_count().." "..itemstack:get_name().."\n"
       end
-      text = text..tt.."\n\n"
+      text = text..tt.."\n"
    end
    
    if items and items ~= nil then
-      text = text..S("Vous débloquez les crafts de ces objets :\n")
+      text = text..S("You unlock these crafts :\n")
       
       local tt = ""
       for i=1, #items do
 	 tt = tt..items[i].."\n"
       end
-      text = text..tt.."\n\n"
+      text = text..tt.."\n"
    end
 
    return text
@@ -61,89 +61,7 @@ awards._additional_triggers = function(name, data_table)
    end
 end
 
-minetest.register_on_craft(
-   function(itemstack, player, old_craft_grid, craft_inv)
-      -- Par défaut tout craft qui doit donner quelque chose retournera des déchets inutilisables.
-      local wasteItem = "sys4_achievements:waste"
-      
-      local nodeName = itemstack:get_name()
-      local nodeCrafted = string.split(nodeName, ":")
-      if #nodeCrafted ~= 2 then
-	 --minetest.log("error","Awards mod: "..oldnode.name.." is in wrong format!")
-	 return
-      end
-      
-      local mod = nodeCrafted[1]
-      local item = nodeCrafted[2]
-      local playern = player:get_player_name()
-      
-      if (not playern or not nodeCrafted or not mod or not item) then
-	 return
-      end
-      awards.assertPlayer(playern)
-      awards.tbv(awards.players[playern].count, mod)
-      awards.tbv(awards.players[playern].count[mod], item, 0)
-      
-      
-      -- Si des awards ont été débloqués, ont les parcours pour en extraire les items qu'ils débloquent
-      if awards.player(playern) ~= nil then
-	 local data = awards.players[playern]
-	 for _, str in pairs(data.unlocked) do
-	    local def = awards.def[str]
-	    if def and def.items then
-	       local items = def.items
-	       for i=1, #items do
-		  -- Si un item débloqué correspond à l'item demandé par l'utilisateur alors on le prend en compte et on retournera l'item (en retournant nil)
-		  if items[i] == nodeName then
-		     -- Increment counter
-		     awards.players[playern].count[mod][item] = awards.players[playern].count[mod][item] + itemstack:get_count()
-		     
-		     -- Run callbacks and triggers
-		     local crafter = player
-		     
-		     for i=1, #awards.onCraft do
-			local res = nil
-			if type(awards.onCraft[i]) == "function" then
-			   -- Run trigger callback
-			   res = awards.onCraft[i](crafter, data)
-			elseif type(awards.onCraft[i]) == "table" then
-			   -- Handle table trigger
-			   if not awards.onCraft[i].node or not awards.onCraft[i].target or not awards.onCraft[i].award then
-			      -- table running failed !
-			      print("[ERROR] awards - onCraft trigger "..i.." is invalid !")
-			   else
-			      -- run the table
-			      local tnodeCrafted = string.split(awards.onCraft[i].node, ":")
-			      local tmod = tnodeCrafted[1]
-			      local titem = tnodeCrafted[2]
-			      if tmod == nil or titem == nil or not data.count[tmod] or not data.count[tmod][titem] then
-				 -- table running failed
-			      elseif data.count[tmod][titem] > awards.onCraft[i].target - 1 then
-				 res = awards.onCraft[i].award
-			      end
-			   end
-			end
-			
-			if res then
-			   awards.give_achievement(playern,res)
-			end
-		     end
-		     
-		     return nil
-		  end
-	       end
-	    end
-	 end
-      end
-      
-      if craftmode then
-	 return wasteItem
-      else
-	 return nil
-      end
-      
-   end)
-
+-- Redefinition of awards.give_achievement for add given book
 awards.give_achievement = function (name, award)
    -- Access Player Data
    local data = awards.players[name]
@@ -177,6 +95,7 @@ awards.give_achievement = function (name, award)
 	 end
       end
       
+      -- Sys4
       -- Give book
       if awards.def[award] and awards.def[award].book and craftmode then
 	 
@@ -285,6 +204,7 @@ awards.give_achievement = function (name, award)
    end
 end
 
+-- Redefenition of awards.showto for showing crafts to unlock and arrange display
 awards.showto = function(name, to, sid, text)
 	if name == "" or name == nil then
 		name = to
@@ -323,7 +243,7 @@ awards.showto = function(name, to, sid, text)
 			local def = awards.def[item.name]
 			if def and def.secret and not item.got then
 				formspec = formspec .. "label[9,2.75;Secret Award]"..
-									"image[9,0;3,3;unknown.png]"
+									"image[9.75,0;3,3;unknown.png]"
 				if def and def.description then
 					formspec = formspec	.. "label[9,3.25;Unlock this award to find out what it is]"				
 				end
@@ -345,10 +265,13 @@ awards.showto = function(name, to, sid, text)
 				if def and def.description then
 					formspec = formspec	.. "label[8,4.25;"..def.description.."]"				
 				end
+
+				-- Sys4
+				-- Crafts to unlock
 				if def and def.items then
 				   local items = def.items
 				   local y = 5 -- Position y de départ du label
-				   formspec = formspec	.. "label[8,"..y..";Unlock crafts :]"
+				   formspec = formspec	.. "label[8,"..y..";"..S("Unlock crafts").." :]"
 				   
 				   local name = ""
 				   for i=1, #items do
@@ -399,6 +322,91 @@ awards.showto = function(name, to, sid, text)
 	end
 end
 
+-- Register new trigger on "craft"
+minetest.register_on_craft(
+   function(itemstack, player, old_craft_grid, craft_inv)
+      -- Par défaut tout craft qui doit donner quelque chose retournera des déchets inutilisables.
+      local wasteItem = "sys4_achievements:waste"
+      
+      local nodeName = itemstack:get_name()
+      local nodeCrafted = string.split(nodeName, ":")
+      if #nodeCrafted ~= 2 then
+	 --minetest.log("error","Awards mod: "..oldnode.name.." is in wrong format!")
+	 return
+      end
+      
+      local mod = nodeCrafted[1]
+      local item = nodeCrafted[2]
+      local playern = player:get_player_name()
+      
+      if (not playern or not nodeCrafted or not mod or not item) then
+	 return
+      end
+      awards.assertPlayer(playern)
+      awards.tbv(awards.players[playern].count, mod)
+      awards.tbv(awards.players[playern].count[mod], item, 0)
+      
+      
+      -- Si des awards ont été débloqués, ont les parcours pour en extraire les items qu'ils débloquent
+      if awards.player(playern) ~= nil then
+	 local data = awards.players[playern]
+	 for _, str in pairs(data.unlocked) do
+	    local def = awards.def[str]
+	    if def and def.items then
+	       local items = def.items
+	       for i=1, #items do
+		  -- Si un item débloqué correspond à l'item demandé par l'utilisateur alors on le prend en compte et on retournera l'item (en retournant nil)
+		  if items[i] == nodeName then
+		     -- Increment counter
+		     awards.players[playern].count[mod][item] = awards.players[playern].count[mod][item] + itemstack:get_count()
+		     
+		     -- Run callbacks and triggers
+		     local crafter = player
+		     
+		     for i=1, #awards.onCraft do
+			local res = nil
+			if type(awards.onCraft[i]) == "function" then
+			   -- Run trigger callback
+			   res = awards.onCraft[i](crafter, data)
+			elseif type(awards.onCraft[i]) == "table" then
+			   -- Handle table trigger
+			   if not awards.onCraft[i].node or not awards.onCraft[i].target or not awards.onCraft[i].award then
+			      -- table running failed !
+			      print("[ERROR] awards - onCraft trigger "..i.." is invalid !")
+			   else
+			      -- run the table
+			      local tnodeCrafted = string.split(awards.onCraft[i].node, ":")
+			      local tmod = tnodeCrafted[1]
+			      local titem = tnodeCrafted[2]
+			      if tmod == nil or titem == nil or not data.count[tmod] or not data.count[tmod][titem] then
+				 -- table running failed
+			      elseif data.count[tmod][titem] > awards.onCraft[i].target - 1 then
+				 res = awards.onCraft[i].award
+			      end
+			   end
+			end
+			
+			if res then
+			   awards.give_achievement(playern,res)
+			end
+		     end
+		     
+		     return nil
+		  end
+	       end
+	    end
+	 end
+      end
+      
+      if craftmode then
+	 return wasteItem
+      else
+	 return nil
+      end
+      
+   end)
+
+
 minetest.register_chatcommand("gawd", {
 	params = "award name",
 	description = "gawd: give award to self",
@@ -410,7 +418,7 @@ minetest.register_chatcommand("gawd", {
 minetest.register_chatcommand("craftmode",
 {
    params = "on or off",
-   description = "craftmode : enable or not sys4_achievements blocked crafts.",
+   description = "craftmode : enable or not sys4_achievements locked crafts.",
    func = function(name, param)
       if param == "on" then	 
 	 craftmode = true
@@ -421,3 +429,83 @@ minetest.register_chatcommand("craftmode",
       end
    end
 })
+
+
+-- Fonction qui se déclenche quand le joueur place un objet dans son environnement.
+-- Cette fonction est normalement déjà définie dans 'awards' : minetest.register_on_place = func(...)
+-- Mais elle ne se déclenche pas pour certains objets comme les troncs d'arbres.
+-- Ces types d'objets possèdent une propriété on_place = minetest.rotate_node 
+-- qu'il faut redéfinir par cette fonction pour nos besoins.
+function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
+   if not placer or not pointed_thing or not itemstack or not placer:get_player_name() or placer:get_player_name()=="" then
+      return
+   end
+
+   -- Meme portion de code que dans la fonction core.rotate_node
+   core.rotate_and_place(itemstack, placer, pointed_thing,
+			 core.setting_getbool("creative_mode"),
+			 {invert_wall = placer:get_player_control().sneak})
+   ----
+   
+   -- Code pour le systeme awards
+   local nodedug = string.split(itemstack:get_name(), ":")
+   if #nodedug ~= 2 then
+      --minetest.log("error","Awards mod: "..node.name.." is in wrong format!")
+      return
+   end
+   local mod=nodedug[1]
+   local item=nodedug[2]
+   local playern = placer:get_player_name()
+   
+   -- Run checks
+   if (not playern or not nodedug or not mod or not item) then
+      return
+   end
+
+
+
+   awards.assertPlayer(playern)
+   awards.tbv(awards.players[playern].place, mod)
+   awards.tbv(awards.players[playern].place[mod], item, 0)
+   
+   -- Increment counter
+   awards.players[playern].place[mod][item] = awards.players[playern].place[mod][item] + 1
+   
+   -- Run callbacks and triggers
+   local player = placer
+   local data = awards.players[playern]
+   for i=1,# awards.onPlace do
+      local res = nil
+      if type(awards.onPlace[i]) == "function" then
+	 -- Run trigger callback
+	 res = awards.onPlace[i](player,data)
+      elseif type(awards.onPlace[i]) == "table" then
+	 -- Handle table trigger
+	 if not awards.onPlace[i].node or not awards.onPlace[i].target or not awards.onPlace[i].award then
+	    print("[ERROR] awards - onPlace trigger "..i.." is invalid!")
+	 else
+	    -- run the table
+	    local tnodedug = string.split(awards.onPlace[i].node, ":")
+	    local tmod = tnodedug[1]
+	    local titem = tnodedug[2]
+	    if tmod==nil or titem==nil or not data.place[tmod] or not data.place[tmod][titem] then
+	       -- table running failed!
+	    elseif data.place[tmod][titem] > awards.onPlace[i].target-1 then
+	       res = awards.onPlace[i].award
+	    end
+	 end
+      end
+      
+      if res then
+	 awards.give_achievement(playern,res)
+      end
+   end
+   -- Obligatoire pour la propriété on_place du node à placer.
+   return itemstack
+end
+
+
+-- Redéfinition de la propriété on_place de ces nodes
+
+local treeNode = minetest.registered_nodes["default:tree"]
+treeNode.on_place = sys4_achievements.register_onPlace

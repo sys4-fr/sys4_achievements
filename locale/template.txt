@@ -38,11 +38,14 @@ Craft 100 sandstones. =
 Unlock the Pick Wood = 
 Craft 10 Shovel wood. = 
 End of Darkness = 
-Craft 1 Pick wood. = 
+Craft 1 Pick wood. =
+Not only Waste = 
+Dig 10 Waste blocks. = 
 
 #api.lua
-Déchet = 
-Félicitations ! Vous gagnez :\n = 
-Vous débloquez les crafts de ces objets :\n = 
+Waste = 
+Amazing ! You win :\n = Félicitations ! Vous gagnez :\n
+You unlock these crafts :\n = Vous débloquez les crafts de ces objets :\n
 Achievement Unlocked:\ \ = 
 Achievement Unlocked! = 
+Unlock crafts = 

@@ -1,0 +1,30 @@
+Darkness Era		
+
+Desc :
+Only your hands serve you as tools at the beginning.
+The end of this era is marked by the craft of the first pick wood.
+
+Steps for reach next era :
+      - Place 50 tree blocks : unlock wooden plancks. Won 1 torch.
+      - Dig 50 leaves : unlock sticks.
+      - Dig 50 tree blocks : Axe wood, sword wood.
+      - Craft 50 wooden plancks : unlock doors wood, traps, boats, chests, bookshelf, vesselshelf. Won 4 torches.
+      - Craft 50 sticks : unlock Ladder, fences.
+      - Place 50 wooden plancks : unlock stairs wood, slab wood.
+      - Place 10 papyrus : unlock paper.
+      - Dig 50 papyrus : unlock book, sign_wall.
+      - Place 5 bookshelfs : unlock hoe wood.
+      - Dig 50 Cotton : wool white.
+      - Dig 10 roses : Red dye, red wool.
+      - Craft 20 red wool : unlock bed, fancy bed.
+      - Craft 10 hoe : unlock shovel wood.
+      - Dig 100 sand : unlock sandstone.
+      - Place 50 sandstone : unlock stairs sandstone, slab sandstone.
+      - Craft 100 sandstone : unlock sandstone bricks.
+      - Place 50 sandstone bricks : unlock stairs and slab sandstone bricks.
+      - Craft 10 shovel wood : unlock pick wood.
+      - Craft 1 pick wood : unlock furnace, torches. (End of Darkness)
+
+Stone and fire era
+
+Desc

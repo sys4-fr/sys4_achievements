@@ -42,6 +42,55 @@ function sys4_achievements.write_book(items, prizes)
    return text
 end
 
+function sys4_achievements.getAchievement(onType, name)
+   local registeredAchievements
+
+   if onType == "dig" then
+      registeredAchievements = awards.onDig
+   end
+
+   if onType == "place" then
+      registeredAchievements = awards.onPlace
+   end
+
+   if onType == "craft" then
+      registeredAchievements = awards.onCraft
+   end
+   
+   for i=1, #registeredAchievements do
+      if type(registeredAchievements[i]) == "table" and 
+      registeredAchievements[i].award == name then
+	 return registeredAchievements[i]
+      end
+   end
+end
+
+function sys4_achievements.has_achievement(name, award)
+   local data = awards.players[name]
+   
+   if not data then
+      return
+   end
+   
+   if not awards.def[award] then
+      return
+   end
+   
+   awards.tbv(data, "unlocked")
+   
+   if data.unlocked[award] and data.unlocked[award] == award then
+      return true
+   else
+      return false
+   end
+end
+
+-- run a function when a node is crafted
+function sys4_achievements.register_onCraft(func)
+	table.insert(awards.onCraft,func)
+end
+
+
 -- AWARDS redefinitions
 
 -- add new trigger 'craft'
@@ -363,25 +412,25 @@ minetest.register_on_craft(
 		     -- Run callbacks and triggers
 		     local crafter = player
 		     
-		     for i=1, #awards.onCraft do
+		     for j=1, #awards.onCraft do
 			local res = nil
-			if type(awards.onCraft[i]) == "function" then
+			if type(awards.onCraft[j]) == "function" then
 			   -- Run trigger callback
-			   res = awards.onCraft[i](crafter, data)
-			elseif type(awards.onCraft[i]) == "table" then
+			   res = awards.onCraft[j](crafter, data)
+			elseif type(awards.onCraft[j]) == "table" then
 			   -- Handle table trigger
-			   if not awards.onCraft[i].node or not awards.onCraft[i].target or not awards.onCraft[i].award then
+			   if not awards.onCraft[j].node or not awards.onCraft[j].target or not awards.onCraft[j].award then
 			      -- table running failed !
-			      print("[ERROR] awards - onCraft trigger "..i.." is invalid !")
+			      print("[ERROR] awards - onCraft trigger "..j.." is invalid !")
 			   else
 			      -- run the table
-			      local tnodeCrafted = string.split(awards.onCraft[i].node, ":")
+			      local tnodeCrafted = string.split(awards.onCraft[j].node, ":")
 			      local tmod = tnodeCrafted[1]
 			      local titem = tnodeCrafted[2]
 			      if tmod == nil or titem == nil or not data.count[tmod] or not data.count[tmod][titem] then
 				 -- table running failed
-			      elseif data.count[tmod][titem] > awards.onCraft[i].target - 1 then
-				 res = awards.onCraft[i].award
+			      elseif data.count[tmod][titem] > awards.onCraft[j].target - 1 then
+				 res = awards.onCraft[j].award
 			      end
 			   end
 			end
@@ -461,9 +510,6 @@ function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
    if (not playern or not nodedug or not mod or not item) then
       return
    end
-
-
-
    awards.assertPlayer(playern)
    awards.tbv(awards.players[playern].place, mod)
    awards.tbv(awards.players[playern].place[mod], item, 0)
@@ -507,5 +553,14 @@ end
 
 -- Redéfinition de la propriété on_place de ces nodes
 
-local treeNode = minetest.registered_nodes["default:tree"]
-treeNode.on_place = sys4_achievements.register_onPlace
+local nodes = {
+   minetest.registered_nodes["default:tree"],
+   minetest.registered_nodes["default:jungletree"],
+   minetest.registered_nodes["default:acacia_tree"],
+   minetest.registered_nodes["default:pine_tree"],
+}
+
+for i=1, #nodes do
+   nodes[i].on_place = sys4_achievements.register_onPlace
+end
+

@@ -31,7 +31,7 @@ local a = {
      icon = "default_wood.png",
      type = "place",
      target = 50,
-     titems = {'default:wood'},
+     titems = {'default:wood', 'default:acacia_wood', 'default:junglewood', 'default:pine_wood'},
      tprizes = {'default:torch'},
    },
 
@@ -43,7 +43,10 @@ local a = {
      icon = "default_wood.png",
      type = "place",
      target = 50,
-     titems = {'stairs:slab_wood', 'stairs:stair_wood'},
+     titems = {'stairs:slab_wood', 'stairs:stair_wood',
+               'stairs:slab_acacia_wood', 'stairs:stair_acacia_wood',
+               'stairs:slab_pine_wood', 'stairs:stair_pine_wood',
+               'stairs:slab_junglewood', 'stairs:stair_junglewood'},
      tprizes = nil,
    },
 
@@ -1249,3 +1252,166 @@ for i=1, #sa do
       })
 end
    
+
+-- Experimental
+awards.register_onDig(
+   function(player, data)
+      local achievements = {
+	 sys4_achievements.getAchievement("dig", "tree_digger_begins"),
+	 sys4_achievements.getAchievement("dig", "leave_digger_begins"),
+	 sys4_achievements.getAchievement("dig", "sand_digger_begins"),
+      }
+
+      for i=1, #achievements do
+	 local achievement = achievements[i]
+	 local name = achievement.award
+
+	 if not sys4_achievements.has_achievement(player:get_player_name(), name) then
+	    local node = achievement.node
+	    local target = achievement.target
+	    
+	    local dataCounts = {}
+	    if node == 'default:tree' then
+	       table.insert(dataCounts, data.count['default']['tree'])
+	       table.insert(dataCounts, data.count['default']['jungletree'])
+	       table.insert(dataCounts, data.count['default']['pine_tree'])
+	       table.insert(dataCounts, data.count['default']['acacia_tree'])
+	    end
+	    if node == 'default:leaves' then
+	       table.insert(dataCounts, data.count['default']['leaves'])
+	       table.insert(dataCounts, data.count['default']['jungleleaves'])
+	       table.insert(dataCounts, data.count['default']['acacia_leaves'])
+	       table.insert(dataCounts, data.count['default']['pine_needles'])
+	    end
+	    if node == 'default:sand' then
+	       table.insert(dataCounts, data.count['default']['sand'])
+	       table.insert(dataCounts, data.count['default']['desert_sand'])
+	    end
+	    
+	    local count = 0
+	    for i=1, #dataCounts do
+	       if dataCounts[i] and dataCounts[i] ~= nil then
+		  count = count + dataCounts[i]
+	       end
+	    end
+	    
+	    if count > target - 1 then
+	       return name
+	    end
+	 end
+      end
+   end)
+
+awards.register_onPlace(
+   function(player, data)
+      local achievements = {
+	 sys4_achievements.getAchievement("place", "tree_builder_begins"),
+	 sys4_achievements.getAchievement("place", "wood_builder_begins"),
+      }
+
+      for i=1, #achievements do
+	 local achievement = achievements[i]
+	 local name = achievement.award
+
+	 if not sys4_achievements.has_achievement(player:get_player_name(), name) then
+	    local node = achievement.node
+	    local target = achievement.target
+	    
+	    local dataCounts = {}
+	    if node == 'default:tree' then
+	       table.insert(dataCounts, data.count['default']['tree'])
+	       table.insert(dataCounts, data.count['default']['jungletree'])
+	       table.insert(dataCounts, data.count['default']['pine_tree'])
+	       table.insert(dataCounts, data.count['default']['acacia_tree'])
+	    end
+	    if node == 'default:wood' then
+	       table.insert(dataCounts, data.count['default']['wood'])
+	       table.insert(dataCounts, data.count['default']['junglewood'])
+	       table.insert(dataCounts, data.count['default']['pine_wood'])
+	       table.insert(dataCounts, data.count['default']['acacia_wood'])
+	    end
+	    
+	    local count = 0
+	    for i=1, #dataCounts do
+	       if dataCounts[i] and dataCounts[i] ~= nil then
+		  count = count + dataCounts[i]
+	       end
+	    end
+	    
+	    if count > target - 1 then
+	       return name
+	    end
+	 end
+      end
+   end)
+
+sys4_achievements.register_onCraft(
+   function(player, data)
+      local achievements = {
+	 sys4_achievements.getAchievement("craft", "wood_crafter_begins"),
+      }
+
+      for i=1, #achievements do
+	 local achievement = achievements[i]
+	 local name = achievement.award
+
+	 if not sys4_achievements.has_achievement(player:get_player_name(), name) then
+	    local node = achievement.node
+	    local target = achievement.target
+	    
+	    local dataCounts = {}
+	    if node == 'default:wood' then
+	       table.insert(dataCounts, data.count['default']['wood'])
+	       table.insert(dataCounts, data.count['default']['junglewood'])
+	       table.insert(dataCounts, data.count['default']['pine_wood'])
+	       table.insert(dataCounts, data.count['default']['acacia_wood'])
+	    end
+	    
+	    local count = 0
+	    for i=1, #dataCounts do
+	       if dataCounts[i] and dataCounts[i] ~= nil then
+		  count = count + dataCounts[i]
+	       end
+	    end
+	    
+	    if count > target - 1 then
+	       return name
+	    end
+	 end
+      end
+   end)
+
+--[[awards.register_onDig(
+   function (player, data)
+      
+      -- Group Trees traitement
+      print("Group Trees traitement")
+      local achievement = sys4_achievements.getAchievement("dig", "tree_digger_begins")
+      local tmod = 'default'
+      local target = achievement.target - 1
+      
+      print("Achievement name : "..achievement.award)
+      print("Achievement target : "..achievement.target)
+
+      if data and data.count and data.count[tmod] then
+	 local dataCounts = { 
+	    data.count[tmod]['tree'],
+	    data.count[tmod]['jungletree'],
+	    data.count[tmod]['pine_tree'],
+	    data.count[tmod]['acacia_tree'],
+	 }
+	 
+	 local count = 0
+	 for i=1, #dataCounts do
+	    if dataCounts[i] and dataCounts[i] ~= nil then
+	       count = count + dataCounts[i]
+	    end
+	 end
+	 
+	 print("Count : "..count)
+	 if count > target then
+	    return achievement.award
+	 end
+      end
+   end)
+--]]

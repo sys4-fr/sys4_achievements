@@ -110,6 +110,18 @@ awards._additional_triggers = function(name, data_table)
    end
 end
 
+awards.assertPlayer = function(playern)
+	awards.tbv(awards.players, playern)
+	awards.tbv(awards.players[playern], "name", playern)
+	awards.tbv(awards.players[playern], "unlocked")
+	awards.tbv(awards.players[playern], "place")
+	awards.tbv(awards.players[playern], "craft")
+	awards.tbv(awards.players[playern], "count")
+	awards.tbv(awards.players[playern], "deaths", 0)
+	awards.tbv(awards.players[playern], "joins", 0)
+	awards.tbv(awards.players[playern], "chats", 0)
+end
+
 -- Redefinition of awards.give_achievement for add given book
 awards.give_achievement = function (name, award)
    -- Access Player Data
@@ -392,8 +404,8 @@ minetest.register_on_craft(
 	 return
       end
       awards.assertPlayer(playern)
-      awards.tbv(awards.players[playern].count, mod)
-      awards.tbv(awards.players[playern].count[mod], item, 0)
+      awards.tbv(awards.players[playern].craft, mod)
+      awards.tbv(awards.players[playern].craft[mod], item, 0)
       
       
       -- Si des awards ont été débloqués, ont les parcours pour en extraire les items qu'ils débloquent
@@ -407,7 +419,7 @@ minetest.register_on_craft(
 		  -- Si un item débloqué correspond à l'item demandé par l'utilisateur alors on le prend en compte et on retournera l'item (en retournant nil)
 		  if items[i] == nodeName then
 		     -- Increment counter
-		     awards.players[playern].count[mod][item] = awards.players[playern].count[mod][item] + itemstack:get_count()
+		     awards.players[playern].craft[mod][item] = awards.players[playern].craft[mod][item] + itemstack:get_count()
 		     
 		     -- Run callbacks and triggers
 		     local crafter = player
@@ -427,9 +439,9 @@ minetest.register_on_craft(
 			      local tnodeCrafted = string.split(awards.onCraft[j].node, ":")
 			      local tmod = tnodeCrafted[1]
 			      local titem = tnodeCrafted[2]
-			      if tmod == nil or titem == nil or not data.count[tmod] or not data.count[tmod][titem] then
+			      if tmod == nil or titem == nil or not data.craft[tmod] or not data.craft[tmod][titem] then
 				 -- table running failed
-			      elseif data.count[tmod][titem] > awards.onCraft[j].target - 1 then
+			      elseif data.craft[tmod][titem] > awards.onCraft[j].target - 1 then
 				 res = awards.onCraft[j].award
 			      end
 			   end
@@ -486,15 +498,11 @@ minetest.register_chatcommand("craftmode",
 -- Ces types d'objets possèdent une propriété on_place = minetest.rotate_node 
 -- qu'il faut redéfinir par cette fonction pour nos besoins.
 function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
+
    if not placer or not pointed_thing or not itemstack or not placer:get_player_name() or placer:get_player_name()=="" then
       return
    end
 
-   -- Meme portion de code que dans la fonction core.rotate_node
-   core.rotate_and_place(itemstack, placer, pointed_thing,
-			 core.setting_getbool("creative_mode"),
-			 {invert_wall = placer:get_player_control().sneak})
-   ----
    
    -- Code pour le systeme awards
    local nodedug = string.split(itemstack:get_name(), ":")
@@ -546,8 +554,12 @@ function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
 	 awards.give_achievement(playern,res)
       end
    end
-   -- Obligatoire pour la propriété on_place du node à placer.
-   return itemstack
+  
+   -- Meme portion de code que dans la fonction core.rotate_node
+   core.rotate_and_place(itemstack, placer, pointed_thing,
+			 core.setting_getbool("creative_mode"),
+			 {invert_wall = placer:get_player_control().sneak})
+   return itemstack   
 end
 
 

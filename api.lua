@@ -91,6 +91,35 @@ function sys4_achievements.register_onCraft(func)
 end
 
 
+function sys4_achievements.getItemCount(action_type, mod, items, playern, data)
+   local count = 0
+   if action_type == "craft" then
+      awards.tbv(awards.players[playern].craft, mod)
+      for i=1, #items do
+	 awards.tbv(awards.players[playern].craft[mod], items[i], 0)
+	 count = count + data.craft[mod][items[i]]
+      end
+   else if action_type == "dig" then
+	 awards.tbv(awards.players[playern].count, mod)
+	 for i=1, #items do
+	    awards.tbv(awards.players[playern].count[mod], items[i], 0)
+	    count = count + data.count[mod][items[i]]
+	 end
+	else if action_type == "place" then
+	      awards.tbv(awards.players[playern].place, mod)
+	      for i=1, #items do
+		 awards.tbv(awards.players[playern].place[mod], items[i], 0)
+		 count = count + data.place[mod][items[i]]
+	      end
+	     else
+		return
+	     end
+	end
+   end
+
+   return count
+end
+
 -- AWARDS redefinitions
 
 -- add new trigger 'craft'

@@ -98,6 +98,18 @@ local a = {
      tprizes = nil,
    },
 
+   --+ Place 10 Straws : unlock stairs and slab straws
+   { name = 'straw_builder_begins',
+     title = S("The Straw House"),
+     node = 'farming:straw',
+     desc = S("Place 10 Straws."),
+     icon = "farming_straw.png",
+     type = "place",
+     target = 10,
+     titems = {'stairs:slab_straw', 'stairs:stair_straw'},
+     tprizes = nil,
+   },
+
    -- Miner achievements (dig) --
 
    -- Leaves
@@ -160,6 +172,67 @@ local a = {
      tprizes = nil,
    },
 
+   -- Geranium flower
+   { name = 'geranium_digger_begins',
+     title = S("I like the Blue color"),
+     node = 'flowers:geranium',
+     desc = S("Dig 10 Geraniums."),
+     icon = "dye_blue.png",
+     type = "dig",
+     target = 10,
+     titems = {'dye:blue', 'wool:blue'},
+     tprizes = nil,
+   },
+
+   -- Yellow Dandelion
+   { name = 'dandelionYellow_digger_begins',
+     title = S("I like the Yellow color"),
+     node = 'flowers:dandelion_yellow',
+     desc = S("Dig 10 Yellow Dandelions."),
+     icon = "dye_yellow.png",
+     type = "dig",
+     target = 10,
+     titems = {'dye:yellow', 'wool:yellow'},
+     tprizes = nil,
+   },
+
+   -- Yellow Dandelion
+   { name = 'dandelionWhite_digger_begins',
+     title = S("I like the White color"),
+     node = 'flowers:dandelion_white',
+     desc = S("Dig 10 White Dandelions."),
+     icon = "dye_white.png",
+     type = "dig",
+     target = 10,
+     titems = {'dye:white'},
+     tprizes = nil,
+   },
+
+   -- Violas
+   { name = 'viola_digger_begins',
+     title = S("I like the Violet color"),
+     node = 'flowers:viola',
+     desc = S("Dig 10 Violas."),
+     icon = "dye_violet.png",
+     type = "dig",
+     target = 10,
+     titems = {'dye:violet', 'wool:violet'},
+     tprizes = nil,
+   },
+
+   -- Tulip
+   { name = 'tulip_digger_begins',
+     title = S("I like the Orange color"),
+     node = 'flowers:tulip',
+     desc = S("Dig 10 Tulips."),
+     icon = "dye_orange.png",
+     type = "dig",
+     target = 10,
+     titems = {'dye:orange', 'wool:orange'},
+     tprizes = nil,
+   },
+
+
    -- Sand
    { name = 'sand_digger_begins',
      title = S("The sand castle part. 1"),
@@ -172,6 +245,78 @@ local a = {
      tprizes = nil,
    },
 
+   -- Snow
+   --+ Dig 50 snowblock : unlock snow, snowblock.
+   { name = 'snow_digger_begins',
+     title = S("The Snow Men"),
+     node = 'default:snow',
+     desc = S("Dig 50 Snow Powder."),
+     icon = "default_snow.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:snow', 'default:snowblock'},
+     tprizes = nil,
+   },
+
+   --+ Dig 8 wheat_8 : unlock flour
+   { name = 'wheat_digger_begins',
+     title = S("Hands in the Flour"),
+     node = 'farming:wheat_8',
+     desc = S("Dig 8 Mature Wheats."),
+     icon = "farming_flour.png",
+     type = "dig",
+     target = 8,
+     titems = {'farming:flour'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 wheat_8 : unlock Straws
+   { name = 'wheat_digger_lover',
+     title = S("Farmer First Steps"),
+     node = 'farming:wheat',
+     desc = S("Dig 50 Mature Wheats."),
+     icon = "farming_straw.png",
+     type = "dig",
+     target = 50,
+     titems = {'farming:straw', 'farming:wheat'},
+     tprizes = nil,
+   },
+
+   --+ Dig 10 coal stones : Unlock Dark dye, dark wool.
+   { name = 'coal_digger_begins',
+     title = S("I like the Black color"),
+     node = 'default:stone_with_coal',
+     desc = S("Dig 10 Coal Stones."),
+     icon = "dye_black.png",
+     type = "dig",
+     target = 10,
+     titems = {'dye:black', 'wool:black'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 coal stones : Unlock torches (End of Darkness).
+   { name = 'coal_digger_lover',
+     title = S("End of Darkness"),
+     node = 'default:stone_with_coal',
+     desc = S("Dig 50 Coal Stones."),
+     icon = "default_torch_on_floor.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:torch'},
+     tprizes = nil,
+   },
+
+   --+ Dig 100 coal stones : Unlock coalblocks.
+   { name = 'coal_digger',
+     title = S("Coal Miner"),
+     node = 'default:stone_with_coal',
+     desc = S("Dig 100 Coal Stones."),
+     icon = "default_coal_block.png",
+     type = "dig",
+     target = 100,
+     titems = {'default:coalblock'},
+     tprizes = nil,
+   },
 
    -- Craft achievements (craft) --
 
@@ -247,15 +392,51 @@ local a = {
      tprizes = nil,
    },
 
-   -- Pick wood
-   { name = 'pickwood_crafter_begins',
-     title = S("End of Darkness"),
-     node = 'default:pick_wood',
-     desc = S("Craft 1 Pick wood."),
-     icon = "default_torch_on_floor.png",
+   --+ Craft 10 Straws : unlock stone hoe
+   { name = 'straw_crafter_begins',
+     title = S("Unlock the Stone hoe"),
+     node = 'farming:straw',
+     desc = S("Craft 10 Straws."),
+     icon = "farming_tool_stonehoe.png",
      type = "craft",
-     target = 1,
-     titems = {'default:torch', 'default:furnace'},
+     target = 10,
+     titems = {'farming:hoe_stone'},
+     tprizes = nil,
+   },
+
+   --+ Craft 30 dyes : Unlock All the others dyes.
+   { name = 'dye_crafter_begins',
+     title = S("More Color"),
+     node = 'dye:red',
+     desc = S("Craft 30 Coloured Dyes."),
+     icon = "dye_brown.png",
+     type = "craft",
+     target = 30,
+     titems = {'dye:brown','dye:cyan', 'dye:dark_green', 'dye:dark_grey', 'dye:green', 'dye:grey', 'dye:magenta', 'dye:pink'},
+     tprizes = nil,
+   },
+
+   --+ Craft 30 colored wools : Unlock All the others colored wools.
+   { name = 'wool_crafter_begins',
+     title = S("The Rainbow Wools"),
+     node = 'wool:red',
+     desc = S("Craft 30 Coloured Wools."),
+     icon = "wool_brown.png",
+     type = "craft",
+     target = 30,
+     titems = {'wool:brown','wool:cyan', 'wool:dark_green', 'wool:dark_grey', 'wool:green', 'wool:grey', 'wool:magenta', 'wool:pink'},
+     tprizes = nil,
+   },
+
+   --+ Craft 50 torches : unlock furnace.
+   { name = 'torch_crafter_begins',
+     title = S("Look at the Furnace"),
+     node = 'default:torch',
+     desc = S("Craft 50 torches."),
+     icon = "default_furnace_front.png",
+     type = "craft",
+     target = 50,
+     titems = {'default:furnace'},
      tprizes = nil,
    },
 
@@ -1256,44 +1437,46 @@ end
 -- Experimental
 awards.register_onDig(
    function(player, data)
+      local playern = player:get_player_name()
+
       local achievements = {
 	 sys4_achievements.getAchievement("dig", "tree_digger_begins"),
 	 sys4_achievements.getAchievement("dig", "leave_digger_begins"),
 	 sys4_achievements.getAchievement("dig", "sand_digger_begins"),
+	 sys4_achievements.getAchievement("dig", "snow_digger_begins"),
       }
 
       for i=1, #achievements do
 	 local achievement = achievements[i]
 	 local name = achievement.award
 
-	 if not sys4_achievements.has_achievement(player:get_player_name(), name) then
+	 if not sys4_achievements.has_achievement(playern, name) then
 	    local node = achievement.node
 	    local target = achievement.target
-	    
-	    local dataCounts = {}
+	    local mod = ""
+	    local items = {}
+
 	    if node == 'default:tree' then
-	       table.insert(dataCounts, data.count['default']['tree'])
-	       table.insert(dataCounts, data.count['default']['jungletree'])
-	       table.insert(dataCounts, data.count['default']['pine_tree'])
-	       table.insert(dataCounts, data.count['default']['acacia_tree'])
+	       mod = 'default'
+	       items = {'tree', 'jungletree', 'pine_tree', 'acacia_tree'}
 	    end
+
 	    if node == 'default:leaves' then
-	       table.insert(dataCounts, data.count['default']['leaves'])
-	       table.insert(dataCounts, data.count['default']['jungleleaves'])
-	       table.insert(dataCounts, data.count['default']['acacia_leaves'])
-	       table.insert(dataCounts, data.count['default']['pine_needles'])
+	       mod = 'default'
+	       items = {'leaves', 'jungleleaves', 'pine_needles', 'acacia_leaves'}
 	    end
+
 	    if node == 'default:sand' then
-	       table.insert(dataCounts, data.count['default']['sand'])
-	       table.insert(dataCounts, data.count['default']['desert_sand'])
+	       mod = 'default'
+	       items = {'sand', 'desert_sand'}
+	    end
+
+	    if node == 'default:snow' then
+	       mod = 'default'
+	       items = {'snow', 'snowblock'}
 	    end
 	    
-	    local count = 0
-	    for i=1, #dataCounts do
-	       if dataCounts[i] and dataCounts[i] ~= nil then
-		  count = count + dataCounts[i]
-	       end
-	    end
+	    local count = sys4_achievements.getItemCount("dig", mod, items, playern, data)
 	    
 	    if count > target - 1 then
 	       return name
@@ -1304,6 +1487,7 @@ awards.register_onDig(
 
 awards.register_onPlace(
    function(player, data)
+      local playern = player:get_player_name()
       local achievements = {
 	 sys4_achievements.getAchievement("place", "tree_builder_begins"),
 	 sys4_achievements.getAchievement("place", "wood_builder_begins"),
@@ -1313,30 +1497,23 @@ awards.register_onPlace(
 	 local achievement = achievements[i]
 	 local name = achievement.award
 
-	 if not sys4_achievements.has_achievement(player:get_player_name(), name) then
+	 if not sys4_achievements.has_achievement(playern, name) then
 	    local node = achievement.node
 	    local target = achievement.target
-	    
-	    local dataCounts = {}
+	    local mod = ""
+	    local items = {}
+
 	    if node == 'default:tree' then
-	       table.insert(dataCounts, data.place['default']['tree'])
-	       table.insert(dataCounts, data.place['default']['jungletree'])
-	       table.insert(dataCounts, data.place['default']['pine_tree'])
-	       table.insert(dataCounts, data.place['default']['acacia_tree'])
+	       mod = 'default'
+	       items = {'tree', 'jungletree', 'pine_tree', 'acacia_tree'}
 	    end
+
 	    if node == 'default:wood' then
-	       table.insert(dataCounts, data.place['default']['wood'])
-	       table.insert(dataCounts, data.place['default']['junglewood'])
-	       table.insert(dataCounts, data.place['default']['pine_wood'])
-	       table.insert(dataCounts, data.place['default']['acacia_wood'])
+	       mod = 'default'
+	       items = {'wood', 'junglewood', 'pine_wood', 'acacia_wood'}
 	    end
 	    
-	    local count = 0
-	    for i=1, #dataCounts do
-	       if dataCounts[i] and dataCounts[i] ~= nil then
-		  count = count + dataCounts[i]
-	       end
-	    end
+	    local count = sys4_achievements.getItemCount("place", mod, items, playern, data)
 	    
 	    if count > target - 1 then
 	       return name
@@ -1347,32 +1524,40 @@ awards.register_onPlace(
 
 sys4_achievements.register_onCraft(
    function(player, data)
+      local playern = player:get_player_name()
+
       local achievements = {
 	 sys4_achievements.getAchievement("craft", "wood_crafter_begins"),
+	 sys4_achievements.getAchievement("craft", "dye_crafter_begins"),
+	 sys4_achievements.getAchievement("craft", "wool_crafter_begins"),
       }
 
       for i=1, #achievements do
 	 local achievement = achievements[i]
 	 local name = achievement.award
 
-	 if not sys4_achievements.has_achievement(player:get_player_name(), name) then
+	 if not sys4_achievements.has_achievement(playern, name) then
 	    local node = achievement.node
 	    local target = achievement.target
-	    
-	    local dataCounts = {}
+	    local mod = ""
+	    local items = {}
+
 	    if node == 'default:wood' then
-	       table.insert(dataCounts, data.craft['default']['wood'])
-	       table.insert(dataCounts, data.craft['default']['junglewood'])
-	       table.insert(dataCounts, data.craft['default']['pine_wood'])
-	       table.insert(dataCounts, data.craft['default']['acacia_wood'])
+	       mod = "default"
+	       items = {'wood', 'junglewood', 'pine_wood', 'acacia_wood'}
 	    end
-	    
-	    local count = 0
-	    for i=1, #dataCounts do
-	       if dataCounts[i] and dataCounts[i] ~= nil then
-		  count = count + dataCounts[i]
-	       end
+
+	    if node == 'dye:red' then
+	       mod = "dye"
+	       items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'dark'}
 	    end
+
+	    if node == 'wool:red' then
+	       mod = 'wool'
+	       items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'dark'}
+	    end
+
+	    local count = sys4_achievements.getItemCount("craft", mod, items, playern, data)
 	    
 	    if count > target - 1 then
 	       return name

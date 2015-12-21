@@ -37,10 +37,18 @@ The sand castle part. 2 =
 Craft 100 sandstones. = 
 Unlock the Pick Wood = 
 Craft 10 Shovel wood. = 
-End of Darkness = 
-Craft 1 Pick wood. =
 Not only Waste = 
 Dig 10 Waste blocks. = 
+I like the Blue color =
+Dig 10 Geraniums. = 
+I like the Yellow color = 
+Dig 10 Yellow Dandelions. = 
+I like the White color = 
+Dig 10 White Dandelions. = 
+I like the Violet color = 
+Dig 10 Violas. = 
+I like the Orange color = 
+Dig 10 Tulips. = 
 
 #api.lua
 Waste = 

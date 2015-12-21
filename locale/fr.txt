@@ -37,10 +37,18 @@ The sand castle part. 2 = Le Chateau de Sable part. 2
 Craft 100 sandstones. = Fabrique 100 blocs de gré.
 Unlock the Pick Wood = Débloque la Pioche en Bois
 Craft 10 Shovel wood. = Fabrique 10 pelles en bois.
-End of Darkness = Fin des Ténèbres
-Craft 1 Pick wood. = Fabrique 1 pioche en bois.
 Not only Waste = Pas que des Déchets
 Dig 10 Waste blocks. = Récolte 10 blocs de déchets.
+I like the Blue color = J'aime la Couleur Bleue
+Dig 10 Geraniums. = Cueille 10 Géraniums.
+I like the Yellow color = J'aime la Couleur Jaune
+Dig 10 Yellow Dandelions. = Cueille 10 Pissenlits.
+I like the White color = J'aime la Couleur Blanche
+Dig 10 White Dandelions. = Cueille 10 Paquerettes.
+I like the Violet color = J'aime le Violet
+Dig 10 Violas. = Cueille 10 Violettes.
+I like the Orange color = J'aime le Orange
+Dig 10 Tulips. = Cueille 10 Tulipes.
 
 #api.lua
 Waste = Déchet

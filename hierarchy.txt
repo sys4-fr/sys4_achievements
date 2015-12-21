@@ -39,7 +39,7 @@ Steps for reach next era :
       - Dig 100 coal stones : Unlock coalblocks.
       - Craft 50 torches : unlock furnace.
 
-      + Dig 100 stones : unlock stone axe,sword.
+      + Dig 50 stones : unlock stone axe,sword.
       + Place 50 Cobblestones : Unlock stairs and slab cobblestones.
       + Place 50 stones : Unlock stairs and slab stones.
       + Place 10 glasses : Unlock glass pane

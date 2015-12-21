@@ -110,6 +110,174 @@ local a = {
      tprizes = nil,
    },
 
+   --+ Place 50 Cobblestones : Unlock stairs and slab cobblestones.
+   { name = 'stone_builder_begins',
+     title = S("Stone builder First Steps"),
+     node = 'default:cobble',
+     desc = S("Place 50 Cobblestones."),
+     icon = "default_cobble.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_cobble', 'stairs:stair_cobble', 'stairs:slab_desert_cobble', 'stairs:stair_desert_cobble'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 stones : Unlock stairs and slab stones.
+   { name = 'stone_builder_lover',
+     title = S("Stone builder Lover"),
+     node = 'default:stone',
+     desc = S("Place 50 Stones."),
+     icon = "default_stone.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_stone', 'stairs:stair_stone', 'stairs:slab_desert_stone', 'stairs:stair_desert_stone'},
+     tprizes = nil,
+   },
+
+   --+ Place 10 glasses : Unlock glass pane
+   { name = 'glass_builder_begins',
+     title = S("Glazier"),
+     node = 'default:glass',
+     desc = S("Place 10 Glasses."),
+     icon = "default_glass.png",
+     type = "place",
+     target = 10,
+     titems = {'xpanes:pane'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 gravel : unlock gunpowder, tnt
+   { name = 'gravel_builder_begins',
+     title = S("Boom !"),
+     node = 'default:gravel',
+     desc = S("Place 50 Gravel blocks."),
+     icon = "tnt_side.png",
+     type = "place",
+     target = 10,
+     titems = {'tnt:tnt'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 Clay : unlock bricks, clay brick
+   { name = 'clay_builder_begins',
+     title = S("Bricklayer First Steps"),
+     node = 'default:clay',
+     desc = S("Place 50 Clay blocks."),
+     icon = "default_brick.png",
+     type = "place",
+     target = 50,
+     titems = {'default:brick', 'default:clay_brick'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 stonebricks : Unlock stairs and slab stonebricks.
+   { name = 'stonebrick_builder_begins',
+     title = S("Stonemason First Steps"),
+     node = 'default:stonebrick',
+     desc = S("Place 50 Stone Bricks."),
+     icon = "default_stone_brick.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_stonebrick', 'stairs:stair_stonebrick', 'stairs:slab_desert_stonebrick', 'stairs:stair_desert_stonebrick'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 bricks : unlock stairs and slab bricks
+   { name = 'brick_builder_begins',
+     title = S("Bricklayer Lover"),
+     node = 'default:brick',
+     desc = S("Place 50 Bricks."),
+     icon = "default_brick.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_brick', 'stairs:stair_brick'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 steel block : unlock stairs and slab steel block.
+   { name = 'steel_builder_begins',
+     title = S("Steel Builder"),
+     node = 'default:steelblock',
+     desc = S("Place 50 Steel Blocks."),
+     icon = "default_steel_block.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_steelblock', 'stairs:stair_steelblock'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 copper blocks : unlock stairs and slab copper blocks.
+   { name = 'copper_builder_begins',
+     title = S("Copper Builder"),
+     node = 'default:copperblock',
+     desc = S("Place 50 Copper Blocks."),
+     icon = "default_copper_block.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_copperblock', 'stairs:stair_copperblock'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 Bronze block : unlock stairs and slab bronze blocks.
+   { name = 'bronze_builder_begins',
+     title = S("Bronze Builder"),
+     node = 'default:bronzeblock',
+     desc = S("Place 50 Bronze Blocks."),
+     icon = "default_bronze_block.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_bronzeblock', 'stairs:stair_bronzeblock'},
+     tprizes = nil,
+   },
+
+   --+ Place 100 torches : unlock mese lamp.
+   { name = 'torch_placer',
+     title = S("I'm Illuminated"),
+     node = 'default:torch',
+     desc = S("Place 100 Torches."),
+     icon = "default_meselamp.png",
+     type = "place",
+     target = 100,
+     titems = {'default:meselamp'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 gold blocks : unlock stairs and slab gold blocks.
+   { name = 'gold_builder',
+     title = S("Gold Builder"),
+     node = 'default:goldblock',
+     desc = S("Place 50 Gold Blocks."),
+     icon = "default_gold_block.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_goldblock', 'stairs:stair_goldblock'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 obs. block : unlock obsidian bricks, stairs and slab obs. blocks.
+   { name = 'obsidian_builder_begins',
+     title = S("Obsidian Builder First Steps"),
+     node = 'default:obsidian',
+     desc = S("Place 50 Obsidian Blocks."),
+     icon = "default_obsidian_brick.png",
+     type = "place",
+     target = 50,
+     titems = {'default:obsidianbrick', 'stairs:slab_obsidian', 'stairs:stair_obsidian'},
+     tprizes = nil,
+   },
+
+   --+ Place 50 obs. bricks : unlock stairs and slab obs. bricks.
+   { name = 'obsidian_builder_lover',
+     title = S("Obsidian Builder Lover"),
+     node = 'default:obsidianbrick',
+     desc = S("Place 50 Obsidian Bricks."),
+     icon = "default_obsidian_brick.png",
+     type = "place",
+     target = 50,
+     titems = {'stairs:slab_obsidianbrick', 'stairs:stair_obsidianbrick'},
+     tprizes = nil,
+   },
+
    -- Miner achievements (dig) --
 
    -- Leaves
@@ -318,6 +486,150 @@ local a = {
      tprizes = nil,
    },
 
+   --+ Dig 50 stones : unlock stone axe,sword.
+   { name = 'stone_digger_begins',
+     title = S("Micro Miner"),
+     node = 'default:stone',
+     desc = S("Dig 50 Stone blocks."),
+     icon = "default_tool_stoneaxe.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:axe_stone', 'default:sword_stone'},
+     tprizes = nil,
+   },
+
+   --+ Dig 100 gravel : unlock stone shovel
+   { name = 'gravel_digger_begins',
+     title = S("Get the Stone Shovel"),
+     node = 'default:gravel',
+     desc = S("Dig 100 Gravel blocks."),
+     icon = "default_tool_stoneshovel.png",
+     type = "dig",
+     target = 100,
+     titems = {'default:shovel_stone'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 Clay : unlock clay, clay lump
+   { name = 'clay_digger_begins',
+     title = S("Clay Discover"),
+     node = 'default:clay',
+     desc = S("Dig 50 Clay blocks."),
+     icon = "default_clay.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:clay', 'default:clay_lump'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 iron stones : unlock bucket, bars, steel door, steel bottle.
+   { name = 'iron_digger_begins',
+     title = S("The Iron Age"),
+     node = 'default:stone_with_iron',
+     desc = S("Dig 50 Iron Stones."),
+     icon = "bucket_water.png",
+     type = "dig",
+     target = 50,
+     titems = {'bucket:bucket_empty', 'xpanes:bar', 'doors:door_steel', 'vessels:steel_bottle'},
+     tprizes = nil,
+   },
+
+   --+ Dig 100 iron stones : unlock Steel block, iron ingot.
+   { name = 'iron_digger_lover',
+     title = S("The Iron Peak"),
+     node = 'default:stone_with_iron',
+     desc = S("Dig 100 Iron Stones."),
+     icon = "default_steel_block.png",
+     type = "dig",
+     target = 100,
+     titems = {'default:steelblock', 'default:steel_ingot'},
+     tprizes = nil,
+   },
+
+   --+ Dig 10 steel block : unlock screwdriver.
+   { name = 'steelblock_digger',
+     title = S("Unlock the Screwdriver"),
+     node = 'default:steelblock',
+     desc = S("Dig 10 Steel Blocks."),
+     icon = "screwdriver.png",
+     type = "dig",
+     target = 10,
+     titems = {'screwdriver:screwdriver'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 copper stone : unlock copper block, copper ingot.
+   { name = 'copper_digger_begins',
+     title = S("The Copper Age"),
+     node = 'default:stone_with_copper',
+     desc = S("Dig 50 Copper Stones."),
+     icon = "default_copper_block.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:copperblock', 'default:copper_ingot'},
+     tprizes = nil,
+   },
+
+   --+ Dig 100 copper stone : unlock bronze ingot.
+   { name = 'copper_digger',
+     title = S("The Bronze Age"),
+     node = 'default:stone_with_copper',
+     desc = S("Dig 100 Copper Stones."),
+     icon = "default_bronze_ingot.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:bronze_ingot'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 mese stone : unlock mese crystal, mese blocks, mese fragments.
+   { name = 'Mese_digger',
+     title = S("The Mese Manipulator"),
+     node = 'default:stone_with_mese',
+     desc = S("Dig 50 Mese Stones."),
+     icon = "default_mese_block.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:mese', 'default:mese_crystal', 'default:mese_crystal_fragment'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 Gold stone : unlock goldblock, gold ingot.
+   { name = 'gold_digger_begins',
+     title = S("The Gold Digger"),
+     node = 'default:stone_with_gold',
+     desc = S("Dig 50 Gold Stones."),
+     icon = "default_gold_block.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:goldblock', 'default:gold_ingot'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 diamond stones : unlock diamond block, diamond.
+   { name = 'diamond_digger_begins',
+     title = S("The Diamond Digger"),
+     node = 'default:stone_with_diamond',
+     desc = S("Dig 50 Diamond Stones."),
+     icon = "default_diamond_block.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:diamondblock', 'default:diamond'},
+     tprizes = nil,
+   },
+
+   --+ Dig 50 obsidian block : unlock obs. shard, obsidian door, obs. block.
+   { name = 'obsidian_digger_begins',
+     title = S("The Obsidian Digger"),
+     node = 'default:obsidian',
+     desc = S("Dig 50 Obsidian Blocks."),
+     icon = "default_obsidian.png",
+     type = "dig",
+     target = 50,
+     titems = {'default:obsidian', 'default:obsidian_shard', 'doors:door_obsidian_glass'},
+     tprizes = nil,
+   },
+
    -- Craft achievements (craft) --
 
    -- Wood
@@ -440,63 +752,84 @@ local a = {
      tprizes = nil,
    },
 
-}
---[[local a = {
-
-   -- Lumberjacks achievements --
-
-   { name = 'lumberjack_begins_default',
-     title = S("Un bucheron en herbe"),
-     node = 'default:tree',
-     desc = S("Récolte 50 blocs de bois."),
-     icon ="default_tree.png",
-     type = "dig",
+   --+ Craft 50 glass pane : unlock drinking glasses, and bottles and glass fragments
+   { name = 'pane_crafter_begins',
+     title = S("Glass Blower"),
+     node = 'xpanes:pane',
+     desc = S("Craft 50 Glass Panes."),
+     icon = "vessels_glass_bottle.png",
+     type = "craft",
      target = 50,
-     titems = {'default:wood', 'default:pine_wood', 'default:junglewood', 'default:acacia_wood'},
-     tprizes = {'default:pick_wood','default:torch 4'},
+     titems = {'vessels:drinking_glass', 'vessels:glass_bottle', 'vessels:glass_fragments'},
+     tprizes = nil,
    },
 
-   { name = 'lumberjack_begins_jungle',
-     title = S("Un bucheron dans la Jungle"),
-     node = 'default:jungletree',
-     desc = S("Récolte 50 blocs de bois de jungle."),
-     icon ="default_jungletree.png",
-     type = "dig",
+   --+ Craft 10 glass vessel (bottle, drinking glass, glass fragments : Unlock glass door.
+   { name = 'vessel_crafter_begins',
+     title = S("Glass Blower Lover"),
+     node = 'vessels:glass_bottle',
+     desc = S("Craft 50 Glass Recipients."),
+     icon = "doors_glass.png",
+     type = "craft",
      target = 50,
-     titems = {'default:wood', 'default:pine_wood', 'default:junglewood', 'default:acacia_wood'},
-     tprizes = {'default:pick_wood', 'default:torch 4'},
+     titems = {'doors:door_glass'},
+     tprizes = nil,
    },
 
-   { name = 'lumberjack_begins_pinetree',
-     title = S("Bucheron des montagnes"),
-     node = 'default:pine_tree',
-     desc = S("Récolte 50 blocs de bois de résineux."),
-     icon ="default_pine_tree.png",
-     type = "dig",
+   --+ Craft 50 bricks : unlock stone bricks.
+   { name = 'brick_crafter_begins',
+     title = S("Stone Bricks Crafter"),
+     node = 'default:brick',
+     desc = S("Craft 50 Brick blocks."),
+     icon = "default_stone_brick.png",
+     type = "craft",
      target = 50,
-     titems = {'default:wood', 'default:pine_wood', 'default:junglewood', 'default:acacia_wood'},
-     tprizes = {'default:pick_wood', 'default:torch 4'},
+     titems = {'default:stonebrick', 'default:desert_stonebrick'},
+     tprizes = nil,
    },
 
-   { name = 'lumberjack_begins_acacia',
-     title = S("Bucheron du désert"),
-     node = 'default:acacia_tree',
-     desc = S("Récolte 50 blocs de bois d'acacia."),
-     icon ="default_acacia_tree.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:wood', 'default:pine_wood', 'default:junglewood', 'default:acacia_wood'},
-     tprizes = {'default:pick_wood', 'default:torch 4'},
+   --+ Craft 100 stonebricks : Unlock stone pick.
+   { name = 'stonebrick_crafter_begins',
+     title = S("Get the Stone Pick"),
+     node = 'default:stonebrick',
+     desc = S("Craft 100 Stone Bricks."),
+     icon = "default_tool_stonepick.png",
+     type = "craft",
+     target = 100,
+     titems = {'default:pick_stone'},
+     tprizes = nil,
    },
 
-   -- Crafts achievements --
+   --+ Craft 50 steel block : unlock locked chests, rails.
+   { name = 'steel_crafter_begins',
+     title = S("Unlock Crafts with Steel"),
+     node = 'default:steelblock',
+     desc = S("Craft 50 Steel Blocks."),
+     icon = "default_rail.png",
+     type = "craft",
+     target = 50,
+     titems = {'default:rail', 'default:locked_chest'},
+     tprizes = nil,
+   },
 
-   -- Tools crafts achievements --
+   --+ Craft 50 bronze ingot : unlock Bronze block.
+   { name = 'bronze_crafter_begins',
+     title = S("Bronze Crafter First Steps"),
+     node = 'default:bronze_ingot',
+     desc = S("Craft 50 Bronze ingots."),
+     icon = "default_bronze_block.png",
+     type = "craft",
+     target = 50,
+     titems = {'default:bronzeblock'},
+     tprizes = nil,
+   },
+
+   --+ Tools crafts achievements --
 
    { name = 'pick_crafter_begins',
-     title = S("Artisanat des pioches - Découverte -"),
+     title = S("Pick Crafter : Newbee"),
      node = 'default:pick_stone',
-     desc = S("Fabrique 10 pioches en pierres."),
+     desc = S("Craft 10 Stone Picks."),
      icon ="default_tool_steelpick.png",
      type = "craft",
      target = 10,
@@ -505,9 +838,9 @@ local a = {
    },
 
    { name = 'shovel_crafter_begins',
-     title = S("Artisanat des pelles - Découverte -"),
+     title = S("Shovel Crafter : Newbee"),
      node = 'default:shovel_stone',
-     desc = S("Fabrique 10 pelles en pierres."),
+     desc = S("Craft 10 Stone Shovels."),
      icon ="default_tool_steelshovel.png",
      type = "craft",
      target = 10,
@@ -516,9 +849,9 @@ local a = {
    },
 
    { name = 'axe_crafter_begins',
-     title = S("Artisanat des haches - Découverte -"),
+     title = S("Axe Crafter : Newbee"),
      node = 'default:axe_stone',
-     desc = S("Fabrique 10 haches en pierres."),
+     desc = S("Craft 10 Stone Axes."),
      icon ="default_tool_steelaxe.png",
      type = "craft",
      target = 10,
@@ -527,9 +860,9 @@ local a = {
    },
 
    { name = 'sword_crafter_begins',
-     title = S("Artisanat des épées - Découverte -"),
+     title = S("Sword Crafter : Newbee"),
      node = 'default:sword_stone',
-     desc = S("Fabrique 10 épées en pierres."),
+     desc = S("Craft 10 Stone Swords."),
      icon ="default_tool_steelsword.png",
      type = "craft",
      target = 10,
@@ -538,9 +871,9 @@ local a = {
    },
 
    { name = 'pick_crafter_newbee',
-     title = S("Artisanat des pioches - Débutant -"),
+     title = S("Pick Crafter : Lover"),
      node = 'default:pick_steel',
-     desc = S("Fabrique 10 pioches en fer."),
+     desc = S("Craft 10 Steel Picks."),
      icon ="default_tool_bronzepick.png",
      type = "craft",
      target = 10,
@@ -549,9 +882,9 @@ local a = {
    },
 
    { name = 'shovel_crafter_newbee',
-     title = S("Artisanat des pelles - Débutant -"),
+     title = S("Shovel Crafter : Lover"),
      node = 'default:shovel_steel',
-     desc = S("Fabrique 10 pelles en fer."),
+     desc = S("Craft 10 Steel Shovels."),
      icon ="default_tool_bronzeshovel.png",
      type = "craft",
      target = 10,
@@ -560,9 +893,9 @@ local a = {
    },
 
    { name = 'axe_crafter_newbee',
-     title = S("Artisanat des haches - Débutant -"),
+     title = S("Axe Crafter : Lover"),
      node = 'default:axe_steel',
-     desc = S("Fabrique 10 haches en fer."),
+     desc = S("Craft 10 Steel Axes."),
      icon ="default_tool_bronzeaxe.png",
      type = "craft",
      target = 10,
@@ -571,9 +904,9 @@ local a = {
    },
 
    { name = 'sword_crafter_newbee',
-     title = S("Artisanat des épées - Débutant -"),
+     title = S("Sword Crafter : Lover"),
      node = 'default:sword_steel',
-     desc = S("Fabrique 10 épées en fer."),
+     desc = S("Craft 10 Steel Swords."),
      icon ="default_tool_bronzesword.png",
      type = "craft",
      target = 10,
@@ -582,9 +915,9 @@ local a = {
    },
 
    { name = 'pick_crafter_lover',
-     title = S("Artisanat des pioches - Amateur -"),
+     title = S("Pick Crafter : Professional"),
      node = 'default:pick_bronze',
-     desc = S("Fabrique 10 pioches en bronze."),
+     desc = S("Craft 10 Bronze Picks."),
      icon ="default_tool_mesepick.png",
      type = "craft",
      target = 10,
@@ -593,9 +926,9 @@ local a = {
    },
 
    { name = 'shovel_crafter_lover',
-     title = S("Artisanat des pelles - Amateur -"),
+     title = S("Shovel Crafter : Professional"),
      node = 'default:shovel_bronze',
-     desc = S("Fabrique 10 pelles en bronze."),
+     desc = S("Craft 10 Bronze Shovels."),
      icon ="default_tool_meseshovel.png",
      type = "craft",
      target = 10,
@@ -604,9 +937,9 @@ local a = {
    },
 
    { name = 'axe_crafter_lover',
-     title = S("Artisanat des haches - Amateur -"),
+     title = S("Axe Crafter : Professional"),
      node = 'default:axe_bronze',
-     desc = S("Fabrique 10 haches en bronze."),
+     desc = S("Craft 10 Bronze Axes."),
      icon ="default_tool_meseaxe.png",
      type = "craft",
      target = 10,
@@ -615,9 +948,9 @@ local a = {
    },
 
    { name = 'sword_crafter_lover',
-     title = S("Artisanat des épées - Amateur -"),
+     title = S("Sword Crafter : Professional"),
      node = 'default:sword_bronze',
-     desc = S("Fabrique 10 épées en bronze."),
+     desc = S("Craft 10 Bronze Swords."),
      icon ="default_tool_mesesword.png",
      type = "craft",
      target = 10,
@@ -626,9 +959,9 @@ local a = {
    },
 
    { name = 'pick_crafter_pro',
-     title = S("Artisanat des pioches - Professionnel -"),
+     title = S("Pick Crafter : Specialized"),
      node = 'default:pick_mese',
-     desc = S("Fabrique 10 pioches en mese."),
+     desc = S("Craft 10 Mese Picks."),
      icon ="default_tool_diamondpick.png",
      type = "craft",
      target = 10,
@@ -637,9 +970,9 @@ local a = {
    },
 
    { name = 'shovel_crafter_pro',
-     title = S("Artisanat des pelles - Professionnel -"),
+     title = S("Shovel Crafter : Specialized"),
      node = 'default:shovel_mese',
-     desc = S("Fabrique 10 pelles en mese."),
+     desc = S("Craft 10 Mese Shovels."),
      icon ="default_tool_diamondshovel.png",
      type = "craft",
      target = 10,
@@ -648,9 +981,9 @@ local a = {
    },
 
    { name = 'axe_crafter_pro',
-     title = S("Artisanat des haches - Professionnel -"),
+     title = S("Axe Crafter : Specialized"),
      node = 'default:axe_mese',
-     desc = S("Fabrique 10 haches en mese."),
+     desc = S("Craft 10 Mese Axes."),
      icon ="default_tool_diamondaxe.png",
      type = "craft",
      target = 10,
@@ -659,9 +992,9 @@ local a = {
    },
 
    { name = 'sword_crafter_pro',
-     title = S("Artisanat des épées - Professionnel -"),
+     title = S("Sword Crafter : Specialized"),
      node = 'default:sword_mese',
-     desc = S("Fabrique 10 épées en mese."),
+     desc = S("Craft 10 Mese Swords."),
      icon ="default_tool_diamondsword.png",
      type = "craft",
      target = 10,
@@ -670,22 +1003,10 @@ local a = {
    },
 
    -- Hoes
-   
-   { name = 'hoe_crafter_newbee',
-     title = S("Agriculteur Débutant"),
-     node = 'farming:hoe_wood',
-     desc = S("Fabrique 10 houx en bois."),
-     icon = "farming_tool_stonehoe.png",
-     type = "craft",
-     target = 10,
-     titems = {'farming:hoe_stone'},
-     tprizes = nil
-   },
-   
    { name = 'hoe_crafter_lover',
-     title = S("Agriculteur amateur"),
+     title = S("Hoe Crafter : Newbee"),
      node = 'farming:hoe_stone',
-     desc = S("Fabrique 10 houx en pierre."),
+     desc = S("Craft 10 Stone Hoes."),
      icon = "farming_tool_steelhoe.png",
      type = "craft",
      target = 10,
@@ -694,9 +1015,9 @@ local a = {
    },
    
    { name = 'hoe_crafter_good',
-     title = S("Agriculteur confirmé"),
+     title = S("Hoe Crafter : Lover"),
      node = 'farming:hoe_steel',
-     desc = S("Fabrique 10 houx en fer."),
+     desc = S("Craft 10 Steel Hoes."),
      icon = "farming_tool_bronzehoe.png",
      type = "craft",
      target = 10,
@@ -705,9 +1026,9 @@ local a = {
    },
    
    { name = 'hoe_crafter_pro',
-     title = S("Agriculteur professionnel"),
+     title = S("Hoe Crafter : Professional"),
      node = 'farming:hoe_bronze',
-     desc = S("Fabrique 10 houx en bronze."),
+     desc = S("Craft 10 Bronze Hoes."),
      icon = "farming_tool_mesehoe.png",
      type = "craft",
      target = 10,
@@ -716,9 +1037,9 @@ local a = {
    },
    
    { name = 'hoe_crafter_master',
-     title = S("Maitre Agriculteur"),
+     title = S("Hoe Crafter : Specialized"),
      node = 'farming:hoe_mese',
-     desc = S("Fabrique 10 houx en mese."),
+     desc = S("Craft 10 Mese Hoes."),
      icon = "farming_tool_diamondhoe.png",
      type = "craft",
      target = 10,
@@ -726,665 +1047,9 @@ local a = {
      tprizes = nil
    },
    
-   -- Wood crafts
 
-   { name = 'crafter_begins',
-     title = S("Découverte de l'artisanat"),
-     node = 'default:wood',
-     desc = S("Fabrique 50 planches."),
-     icon ="default_wood.png",
-     type = "craft",
-     target = 50,
-     titems = {'default:stick', 'default:chest', 'boats:boat', 'doors:door_wood', 'doors:trapdoor'},
-     tprizes = nil,
-   },
+}
 
-   { name = 'crafter_newbee',
-     title = S("Artisan débutant"),
-     node = 'default:stick',
-     desc = S("Fabrique 50 sticks."),
-     icon ="default_stick.png",
-     type = "craft",
-     target = 50,
-     titems = {'default:fence_wood', 'default:ladder'},
-     tprizes = nil,
-   },
-
-   { name = 'crafter_lover',
-     title = S("Artisan amateur"),
-     node = 'default:wood',
-     desc = S("Fabrique 100 planches de bois."),
-     icon ="default_wood.png",
-     type = "craft",
-     target = 100,
-     titems = {'default:sign_wall', 'default:pick_wood', 'default:shovel_wood', 'default:axe_wood', 'default:sword_wood'},
-     tprizes = nil,
-   },
-
-   { name = 'crafter_good',
-     title = S("Artisan confirmé"),
-     node = 'default:wood',
-     desc = S("Fabrique 500 planches de bois."),
-     icon ="default_wood.png",
-     type = "craft",
-     target = 500,
-     titems = {'default:chest_locked'},
-     tprizes = nil,
-   },
-
-   -- Bronze crafts
-
-   { name = 'bronze_crafter_begins',
-     title = S("L'apogée du bronze"),
-     node = 'default:bronze_ingot',
-     desc = S("Fabrique 50 lingots de bronze."),
-     icon ="default_bronze_ingot.png",
-     type = "craft",
-     target = 50,
-     titems = {'default:bronzeblock'},
-     tprizes = nil,
-   },
-
-   -- Mese crafts
-
-   { name = 'mese_crafter_begins',
-     title = S("Mese bien sur ?"),
-     node = 'default:mese',
-     desc = S("Fabrique 50 blocs de mese."),
-     icon ="default_mese_block.png",
-     type = "craft",
-     target = 50,
-     titems = {'default:meselamp'},
-     tprizes = nil,
-   },
-
-   -- Sandstone crafts
-
-   { name = 'sand_crafter_begins',
-     title = S("Maitre du gré"),
-     node = 'default:sandstone',
-     desc = S("Fabrique 50 blocs gré."),
-     icon ="default_sandstone.png",
-     type = "craft",
-     target = 50,
-     titems = {'default:sandstonebrick'},
-     tprizes = nil,
-   },
-
-   -- Glass crafts
-
-   { name = 'glass_crafter_newbee',
-     title = S("Soufleur de verre"),
-     node = 'xpanes:glass',
-     desc = S("Fabrique 40 plaques de verre."),
-     icon ="vessels_glass_bottle.png",
-     type = "craft",
-     target = 40,
-     titems = {'vessels:glass_bottle', 'vessels:drinking_glass','vessels:glass_fragments'},
-     tprizes = nil,
-   },
-
-   { name = 'glass_crafter_good',
-     title = S("Soufleur de verre confirmé"),
-     node = 'vessels:bottle',
-     desc = S("Fabrique 50 bouteilles de verre."),
-     icon ="vessels_glass_bottle.png",
-     type = "craft",
-     target = 40,
-     titems = {'vessels:shelf'},
-     tprizes = nil,
-   },
-   
-   -- Paper crafts
-
-   { name = 'book_crafter_begins',
-     title = S("Vous savez écrire"),
-     node = 'default:paper',
-     desc = S("Fabrique 50 feuilles de papier."),
-     icon ="default_book.png",
-     type = "craft",
-     target = 50,
-     titems = {'default:book'},
-     tprizes = nil,
-   },
-
-   -- Book crafts
-
-   { name = 'book_crafter_newbee',
-     title = S("La passion du livre"),
-     node = 'default:book',
-     desc = S("Fabrique 10 livres."),
-     icon ="default_book.png",
-     type = "craft",
-     target = 10,
-     titems = {'default:bookshelf'},
-     tprizes = nil,
-   },
-
-   -- Dyes crafts
-
-   { name = 'like_dye_nyan',
-     title = S("Toutes les couleurs"),
-     node = 'dye:red',
-     desc = S("Fabrique 10 colorants rouges."),
-     icon = "dye_brown.png",
-     type = "craft",
-     target = 10,
-     titems = {'dye:brown','dye:cyan', 'dye:dark_green', 'dye:dark_grey', 'dye:green', 'dye:grey', 'dye:magenta', 'dye:pink'},
-     tprizes = nil
-   },
-   
-   -- Wool crafts
-
-   { name = 'deco_wool_newbee',
-     title = S("Laine dans tous ces états"),
-     node = 'wool:white',
-     desc = S("Fabrique 10 pelotes de laines."),
-     icon = "wool_brown.png",
-     type = "craft",
-     target = 10,
-     titems = {'wool:white', 'wool:grey', 'wool:black', 'wool:red', 'wool:yellow', 'wool:green','wool:cyan', 'wool:blue', 'wool:magenta', 'wool:orange', 'wool:violet','wool:brown', 'wool:pink', 'wool:dark_grey', 'wool:dark_green'},
-     tprizes = nil
-   },
-   
-   -- Beds crafts
-
-   { name = 'bed_crafter_begins',
-     title = S("Un peu de repos"),
-     node = 'wool:red',
-     desc = S("Fabrique 10 pelotes rouges."),
-     icon = "beds_bed.png",
-     type = "craft",
-     target = 10,
-     titems = {'beds:bed_bottom'},
-     tprizes = nil
-   },
-
-   { name = 'bed_crafter_newbee',
-     title = S("Beaucoup de repos"),
-     node = 'beds:bed',
-     desc = S("Fabrique 10 lits simples."),
-     icon = "beds_bed_fancy.png",
-     type = "craft",
-     target = 10,
-     titems = {'beds:fancy_bed_bottom'},
-     tprizes = nil
-   },
-
-   -- TNT crafts
-
-   { name = 'tnt_man',
-     title = S("Boum !"),
-     node = 'tnt:gunpowder',
-     desc = S("Fabrique 10 barils de poudre."),
-     icon = "tnt_side.png",
-     type = "craft",
-     target = 10,
-     titems = {'tnt:tnt'},
-     tprizes = nil
-   },
-
-   -- Miners achievements --
-
-   -- Stone with coal
-   
-   { name = 'like_dye_black',
-     title = S("J'aime le noir"),
-     node = 'default:stone_with_coal',
-     desc = S("Récolte 10 minerais de charbon."),
-     icon = "dye_black.png",
-     type = "dig",
-     target = 10,
-     titems = {'dye:black'},
-     tprizes = nil
-   },
-   
-   { name = 'coal_miner_begins',
-     title = S("Découverte du charbon"),
-     node = 'default:stone_with_coal',
-     desc = S("Récolte 50 blocs de minerai de charbon."),
-     icon ="default_coal_block.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:coalblock', 'default:coal_lump'},
-     tprizes = nil,
-   },
-
-   { name = 'coal_miner_newbee',
-     title = S("Fin des ténèbres"),
-     node = 'default:stone_with_coal',
-     desc = S("Récolte 100 blocs de minerai de charbon."),
-     icon ="default_coal_block.png",
-     type = "dig",
-     target = 100,
-     titems = {'default:torch'},
-     tprizes = nil,
-   },
-
-   -- Default Stone
-
-   { name = 'miner_begins',
-     title = S("L'age du feu"),
-     node = 'default:stone',
-     desc = S("Récolte 100 blocs de pierre."),
-     icon ="default_stone.png",
-     type = "dig",
-     target = 100,
-     titems = {'default:furnace'},
-     tprizes = nil,
-   },
-
-   { name = 'miner_newbee',
-     title = S("L'age de pierre"),
-     node = 'default:stone',
-     desc = S("Récolte 200 blocs de pierre."),
-     icon ="default_stone.png",
-     type = "dig",
-     target = 200,
-     titems = {'default:pick_stone', 'default:shovel_stone', 'default:axe_stone', 'default:sword_stone'},
-     tprizes = nil,
-   },
-
-   -- Default Stone with Iron
-
-   { name = 'iron_miner_begins',
-     title = S("L'age du fer"),
-     node = 'default:stone_with_iron',
-     desc = S("Récolte 50 blocs de minerai de fer."),
-     icon ="default_mineral_iron.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:steelblock', 'default:steel_ingot', 'bucket:bucket_empty', 'doors:door_steel', 'xpanes:bar','vessels:steel_bottle'},
-     tprizes = nil,
-   },
-
-   { name = 'iron_miner_newbee',
-     title = S("Toujours plus de fer"),
-     node = 'default:stone_with_iron',
-     desc = S("Récolte 100 blocs de minerai de fer."),
-     icon ="default_mineral_iron.png",
-     type = "dig",
-     target = 100,
-     titems = {'default:rail'},
-     tprizes = nil,
-   },
-
-   -- Default Stone with Copper
-
-   { name = 'copper_miner_begins',
-     title = S("L'age du cuivre"),
-     node = 'default:stone_with_copper',
-     desc = S("Récolte 50 minerai de cuivre."),
-     icon ="default_mineral_copper.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:copperblock', 'default:copper_ingot'},
-     tprizes = nil,
-   },
-
-   { name = "copper_miner_newbee",
-     title = S("L'age du bronze"),
-     node = 'default:stone_with_copper',
-     desc = S("Récolte 100 minerai de cuivre."),
-     icon ="default_mineral_copper.png",
-     type = "dig",
-     target = 100,
-     titems = {'default:bronze_ingot'},
-     tprizes = nil,
-   },
-   
-   -- Default Stone with Gold
-
-   { name = 'gold_miner_begins',
-     title = S("Chercheur d'or"),
-     node = 'default:stone_with_gold',
-     desc = S("Récolte 50 blocs de pierres avec minerai d'or."),
-     icon ="default_mineral_gold.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:goldblock', 'default:gold_ingot'},
-     tprizes = nil,
-   },
-
-   -- Default Stone with Diamond
-
-   { name = 'diamond_miner_begins',
-     title = S("Mineur des bas fonds"),
-     node = 'default:stone_with_diamond',
-     desc = S("Récolte 50 blocs de pierres avec des diamants."),
-     icon ="default_mineral_diamond.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:diamondblock', 'default:diamond'},
-     tprizes = nil,
-   },
-
-   -- Default Stone with Mese
-
-   { name = 'mese_miner_begins',
-     title = S("Chercheur de mese"),
-     node = 'default:stone_with_mese',
-     desc = S("Récolte 50 blocs de pierres avec du mese."),
-     icon ="default_mineral_mese.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:mese_crystal_fragment', 'default:mese_crystal'},
-     tprizes = nil,
-   },
-
-   -- Default Obsidian
-
-   { name = 'obsidian_miner_begins',
-     title = S("C'est dur l'obsidienne"),
-     node = 'default:obsidian',
-     desc = S("Récolte 50 blocs d'obsidienne."),
-     icon ="default_obsidian.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:obsidian_shard', 'default:obsidian', 'doors:door_obsidian_glass'},
-     tprizes = nil,
-   },
-
-   -- Default:sand
-
-   { name = 'sand_miner_begins',
-     title = S("Au gré des sables"),
-     node = 'default:sand',
-     desc = S("Récolte 100 blocs de sable."),
-     icon ="default_sand.png",
-     type = "dig",
-     target = 100,
-     titems = {'default:sandstone', 'default:sand'},
-     tprizes = nil,
-   },
-
-   -- Default clay
-
-   { name = 'clay_miner_begins',
-     title = S("Découverte de l'argile"),
-     node = 'default:clay',
-     desc = S("Récolte 50 blocs d'argile."),
-     icon ="default_clay.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:clay', 'default:clay_lump'},
-     tprizes = nil,
-   },
-
-   -- Default Snow
-
-   { name = 'snow_miner_begins',
-     title = S("Découverte de la neige"),
-     node = 'default:snow',
-     desc = S("Récolte 50 blocs de neige."),
-     icon ="default_snow.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:snow', 'default:snowblock'},
-     tprizes = nil,
-   },
-
-   -- Default Papyrus
-
-   { name = 'papyrus_miner_begins',
-     title = S("Vos papiers !"),
-     node = 'default:papyrus',
-     desc = S("Récolte 50 papyrus."),
-     icon ="default_papyrus.png",
-     type = "dig",
-     target = 50,
-     titems = {'default:paper'},
-     tprizes = nil,
-   },
-
-   -- Default grass_5
-
-   { name = 'agro_straw_begins',
-     title = S("Découverte du blé"),
-     node = 'default:grass_5',
-     desc = S("Récolte 50 touffes d'herbe mature."),
-     icon = "farming_wheat.png",
-     type = "dig",
-     target = 50,
-     titems = {'farming:hoe_wood'},
-     tprizes = nil
-   },
-
-   -- Farming Wheat_8
-
-   { name = 'agro_straw_newbee',
-     title = S("Céréalier débutant"),
-     node = 'farming:wheat_8',
-     desc = S("Récolte 50 plants de blé bien murs."),
-     icon = "farming_wheat.png",
-     type = "dig",
-     target = 50,
-     titems = {'farming:flour'},
-     tprizes = nil
-   },
-   { name = 'agro_straw_lover',
-     title = S("Céréalier amateur"),
-     node = 'farming:wheat_8',
-     desc = S("Récolte 100 plants de blé bien murs."),
-     icon = "farming_straw.png",
-     type = "dig",
-     target = 100,
-     titems = {'farming:straw'},
-     tprizes = nil
-   },
-
-   -- Default Junglegrass
-   
-   { name = 'agro_cotton_begins',
-     title = S("Découverte du cotton"),
-     node = 'default:junglegrass',
-     desc = S("Récolte 50 touffes d'herbe de jungle."),
-     icon = "farming_cotton.png",
-     type = "dig",
-     target = 50,
-     titems = {'farming:hoe_wood'},
-     tprizes = nil
-   },
-   
-   -- Default Cotton_8
-
-   { name = 'agro_cotton_newbee',
-     title = S("La route du cotton"),
-     node = 'default:cotton_8',
-     desc = S("Récolte 50 plants de cottons bien murs."),
-     icon = "farming_cotton.png",
-     type = "dig",
-     target = 50,
-     titems = {'wool:white'},
-     tprizes = nil
-   },
-
-   -- Flowers Rose
-
-   { name = 'like_dye_red',
-     title = S("J'aime le rouge"),
-     node = 'flowers:rose',
-     desc = S("Récolte 10 roses rouges."),
-     icon = "dye_red.png",
-     type = "dig",
-     target = 10,
-     titems = {'dye:red'},
-     tprizes = nil
-   },
-
-   -- Floyers Tulip
-
-   { name = 'like_dye_orange',
-     title = S("J'aime le orange"),
-     node = 'flowers:tulip',
-     desc = S("Récolte 10 tulipes."),
-     icon = "dye_orange.png",
-     type = "dig",
-     target = 10,
-     titems = {'dye:orange'},
-     tprizes = nil
-   },
-
-   -- Flowers Dandelion_yellow
-
-   { name = 'like_dye_yellow',
-     title = S("J'aime le jaune"),
-     node = 'flowers:dandelion_yellow',
-     desc = S("Récolte 10 dandelions jaunes."),
-     icon = "dye_yellow.png",
-     type = "dig",
-     target = 10,
-     titems = {'dye:yellow'},
-     tprizes = nil
-   },
-
-   -- Flowers Geranium
-
-   { name = 'like_dye_blue',
-     title = S("J'aime le bleue"),
-     node = 'flowers:geranium',
-     desc = S("Récolte 10 géraniums bleues."),
-     icon = "dye_blue.png",
-     type = "dig",
-     target = 10,
-     titems = {'dye:blue'},
-     tprizes = nil
-   },
-
-   -- Flowers Viola
-
-   { name = 'like_dye_violet',
-     title = S("J'aime le violet"),
-     node = 'flowers:viola',
-     desc = S("Récolte 10 violettes."),
-     icon = "dye_violet.png",
-     type = "dig",
-     target = 10,
-     titems = {'dye:violet'},
-     tprizes = nil
-   },
-
-   -- Flowers Dandelion_white
-
-   { name = 'like_dye_white',
-     title = S("J'aime le blanc"),
-     node = 'flowers:dandelion_white',
-     desc = S("Récolte 10 dandelions blancs."),
-     icon = "dye_white.png",
-     type = "dig",
-     target = 10,
-     titems = {'dye:white'},
-     tprizes = nil
-   },
-   
-   -- Default Gravel
-
-   { name = 'gravel_digger_begins',
-     title = S("Poudre noire"),
-     node = 'default:gravel',
-     desc = S("Récolte 100 blocs de graviers."),
-     icon = "tnt_gunpowder_inventory.png",
-     type = "dig",
-     target = 100,
-     titems = {'tnt:gunpowder'},
-     tprizes = nil
-   },
-
-   -- Builders achievements --
-
-   -- Default Wood
-
-   { name = 'wood_builder_begins',
-     title = S("Architecture - Découverte"),
-     node = 'default:wood',
-     desc = S("Place 50 Planches de Bois."),
-     icon = "default_wood.png",
-     type = "place",
-     target = 50,
-     titems = {'stairs:slab_wood','stairs:stair_wood'},
-     tprizes = nil
-   },
-
-   -- Default cobblestone
-
-   { name = 'stone_builder_begins',
-     title = S("Batisseur en herbe"),
-     node = 'default:cobblestone',
-     desc = S("Place 50 blocs de cailloux."),
-     icon ="default_cobble.png",
-     type = "place",
-     target = 50,
-     titems = {'default:stonebrick', 'stairs:slab_cobble', 'stairs:stair_cobble'},
-     tprizes = nil,
-   },
-
-   -- Default stonebrick
-
-   { name = 'stone_builder_newbee',
-     title = S("Batisseur Débutant"),
-     node = 'default:stonebrick',
-     desc = S("Place 50 briques de pierres."),
-     icon ="default_stone_brick.png",
-     type = "place",
-     target = 50,
-     titems = {'screwdriver:screwdriver', 'stairs:slab_stonebrick', 'stairs:stair_stonebrick', 'stairs:slab_acacia_wood','stairs:slab_brick', 'stairs:slab_bronzeblock', 'stairs:slab_copperblock',  'stairs:slab_desert_stone', 'stairs:slab_desert_stonebrick', 'stairs:slab_:goldblock', 'stairs:slab_junglewood', 'stairs:slab_pine_wood', 'stairs:slab_sandstone', 'stairs:slab_sandstonebrick', 'stairs:slab_steelblock', 'stairs:slab_stone', 'stairs:slab_straw', 'stairs:stair_acacia_wood','stairs:stair_brick', 'stairs:stair_bronzeblock', 'stairs:stair_copperblock', 'stairs:stair_desert_stone', 'stairs:stair_desert_stonebrick', 'stairs:stair_goldblock', 'stairs:stair_junglewood', 'stairs:stair_pine_wood', 'stairs:stair_sandstone', 'stairs:stair_sandstonebrick', 'stairs:stair_steelblock', 'stairs:stair_stone', 'stairs:stair_straw'},
-     tprizes = nil,
-   },
-
-   -- Default desert stone
-
-   { name = 'desertstone_builder_begins',
-     title = S("Batisseur du désert en herbe"),
-     node = 'default:desert_stone',
-     desc = S("Place 50 blocs de pierre du désert."),
-     icon ="default_desert_stone.png",
-     type = "place",
-     target = 50,
-     titems = {'default:desert_stonebrick', 'stairs:slab_desert_cobble', 'stairs:stair_desert_cobble'},
-     tprizes = nil,
-   },
-
-   -- Default Obsidian
-
-   { name = 'obsidian_builder_begins',
-     title = S("Batisseur d'obsidienne"),
-     node = 'default:obsidian',
-     desc = S("Place 50 blocs d'obsidienne."),
-     icon ="default_obsidian.png",
-     type = "place",
-     target = 50,
-     titems = {'default:obsidianbrick', 'stairs:stair_obsidian', 'stairs:slab_obsidian', 'stairs:slab_obsidianbrick', 'stairs:stair_obsidianbrick' },
-     tprizes = nil,
-   },
-
-   -- Default Glass
-
-   { name = 'glass_builder_begins',
-     title = S("Apprendre le verre"),
-     node = 'default:glass',
-     desc = S("Place 20 blocs de verre."),
-     icon ="default_glass.png",
-     type = "place",
-     target = 20,
-     titems = {'doors:door_glass', 'xpanes:pane'},
-     tprizes = nil,
-   },
-
-   -- Default Clay
-
-   { name = 'clay_builder_begins',
-     title = S("Terre cuite - Découverte -"),
-     node = 'default:clay',
-     desc = S("Place 50 blocs d'argile."),
-     icon ="default_clay.png",
-     type = "place",
-     target = 50,
-     titems = {'default:brick', 'default:clay_brick'},
-     tprizes = nil,
-   },
-
-}  
---]]
 -- Secrets achievements table
 local sa = {
    { name = 'secret_stuff',
@@ -1434,7 +1099,7 @@ for i=1, #sa do
 end
    
 
--- Experimental
+-- Register Specialized steps with some achievements
 awards.register_onDig(
    function(player, data)
       local playern = player:get_player_name()
@@ -1444,6 +1109,7 @@ awards.register_onDig(
 	 sys4_achievements.getAchievement("dig", "leave_digger_begins"),
 	 sys4_achievements.getAchievement("dig", "sand_digger_begins"),
 	 sys4_achievements.getAchievement("dig", "snow_digger_begins"),
+	 sys4_achievements.getAchievement("dig", "stone_digger_begins"),
       }
 
       for i=1, #achievements do
@@ -1475,6 +1141,11 @@ awards.register_onDig(
 	       mod = 'default'
 	       items = {'snow', 'snowblock'}
 	    end
+
+	    if node == 'default:stone' then
+	       mod = 'default'
+	       items = {'stone', 'desert_stone', 'cobble', 'desert_cobble', 'mossycobble'}
+	    end
 	    
 	    local count = sys4_achievements.getItemCount("dig", mod, items, playern, data)
 	    
@@ -1491,6 +1162,8 @@ awards.register_onPlace(
       local achievements = {
 	 sys4_achievements.getAchievement("place", "tree_builder_begins"),
 	 sys4_achievements.getAchievement("place", "wood_builder_begins"),
+	 sys4_achievements.getAchievement("place", "stone_builder_begins"),
+	 sys4_achievements.getAchievement("place", "stonebrick_builder_begins"),
       }
 
       for i=1, #achievements do
@@ -1513,6 +1186,21 @@ awards.register_onPlace(
 	       items = {'wood', 'junglewood', 'pine_wood', 'acacia_wood'}
 	    end
 	    
+	    if node == 'default:cobble' then
+	       mod = 'default'
+	       items = {'cobble', 'desert_cobble'}
+	    end
+	    
+	    if node == 'default:stone' then
+	       mod = 'default'
+	       items = {'stone', 'desert_stone'}
+	    end
+	    
+	    if node == 'default:stonebrick' then
+	       mod = 'default'
+	       items = {'stonebrick', 'desert_stonebrick'}
+	    end
+	    
 	    local count = sys4_achievements.getItemCount("place", mod, items, playern, data)
 	    
 	    if count > target - 1 then
@@ -1530,6 +1218,7 @@ sys4_achievements.register_onCraft(
 	 sys4_achievements.getAchievement("craft", "wood_crafter_begins"),
 	 sys4_achievements.getAchievement("craft", "dye_crafter_begins"),
 	 sys4_achievements.getAchievement("craft", "wool_crafter_begins"),
+	 sys4_achievements.getAchievement("craft", "vessel_crafter_begins"),
       }
 
       for i=1, #achievements do
@@ -1555,6 +1244,11 @@ sys4_achievements.register_onCraft(
 	    if node == 'wool:red' then
 	       mod = 'wool'
 	       items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'dark'}
+	    end
+
+	    if node == 'vessels:glass_bottle' then
+	       mod = 'vessels'
+	       items = {'vessels:glass_bottle', 'vessels:drinking_glass', 'vessels:glass_fragments'}
 	    end
 
 	    local count = sys4_achievements.getItemCount("craft", mod, items, playern, data)

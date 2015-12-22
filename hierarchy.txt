@@ -39,55 +39,55 @@ Steps for reach next era :
       - Dig 100 coal stones : Unlock coalblocks.
       - Craft 50 torches : unlock furnace.
 
-      + Dig 50 stones : unlock stone axe,sword.
-      + Place 50 Cobblestones : Unlock stairs and slab cobblestones.
-      + Place 50 stones : Unlock stairs and slab stones.
-      + Place 10 glasses : Unlock glass pane
-      + Craft 50 glass pane : unlock drinking glasses, and bottles and glass fragments
-      + Craft 10 glass vessel (bottle, drinking glass, glass fragments : Unlock glass door.
-      + Dig 100 gravel : unlock stone shovel
-      + Place 50 gravel : unlock gunpowder, tnt
-      + Dig 50 Clay : unlock clay, clay lump
-      + Place 50 Clay : unlock bricks, clay brick
-      + Craft 50 bricks : unlock stone bricks.
-      + Craft 100 stonebricks : Unlock stone pick.
-      + Place 50 stonebricks : Unlock stairs and slab stonebricks.
-      + Place 50 bricks : unlock stairs and slab bricks
-      + Dig 50 iron stones : unlock bucket, bars, steel door, steel bottle.
-      + Dig 100 iron stones : unlock Steel block, iron ingot.
-      + Craft 50 steel block : unlock locked chests, rails.
-      + Place 50 steel block : unlock stairs and slab steel block.
-      + Dig 10 steel block : unlock screwdriver.
-      + Dig 50 copper stone : unlock copper block, copper ingot.
-      + Place 50 copper blocks : unlock stairs and slab copper blocks.
-      + Dig 100 copper stone : unlock bronze ingot.
-      + Craft 50 bronze ingot : unlock Bronze block.
-      + Place 50 Bronze block : unlock stairs and slab bronze blocks.
-      + Dig 50 mese stone : unlock mese crystal, mese blocks, mese fragments.
-      + Place 100 torches : unlock mese lamp.
-      + Dig 50 Gold stone : unlock goldblock, gold ingot.
-      + Place 50 gold blocks : unlock stairs and slab gold blocks.
-      + Dig 50 diamond stones : unlock diamond block, diamond.
-      + Dig 50 obsidian block : unlock obs. shard, obsidian door, obs. block.
-      + Place 50 obs. block : unlock obsidian bricks, stairs and slab obs. blocks.
-      + Place 50 obs. bricks : unlock stairs and slab obs. bricks.
-      + Craft 10 stone axe : unlock steel axe.
-      + Craft 10 stone sword : unlock steel sword.
-      + Craft 10 stone pick : unlock steel pick.
-      + Craft 10 stone shovel : unlock steel shovel.
-      + Craft 10 stone hoe : unlock steel hoe.
-      + Craft 10 steel axe : unlock bronze axe.
-      + Craft 10 steel sword : unlock bronze sword.
-      + Craft 10 steel pick : unlock bronze pick.
-      + Craft 10 steel shovel : unlock bronze shovel.
-      + Craft 10 steel hoe : unlock bronze hoe.
-      + Craft 10 bronze axe : unlock mese axe.
-      + Craft 10 bronze sword : unlock mese sword.
-      + Craft 10 bronze pick : unlock mese pick.
-      + Craft 10 bronze shovel : unlock mese shovel.
-      + Craft 10 bronze hoe : unlock mese hoe.
-      + Craft 10 mese axe : unlock diamond axe.
-      + Craft 10 mese sword : unlock diamond sword.
-      + Craft 10 mese pick : unlock diamond pick.
-      + Craft 10 mese shovel : unlock diamond shovel.
-      + Craft 10 mese hoe : unlock diamond hoe.
+      - Dig 50 stones : unlock stone axe,sword.
+      - Place 50 Cobblestones : Unlock stairs and slab cobblestones.
+      - Place 50 stones : Unlock stairs and slab stones.
+      - Place 10 glasses : Unlock glass pane
+      - Craft 50 glass pane : unlock drinking glasses, and bottles and glass fragments
+      - Craft 10 glass vessel (bottle, drinking glass, glass fragments : Unlock glass door.
+      - Dig 100 gravel : unlock stone shovel
+      - Place 50 gravel : unlock gunpowder, tnt
+      - Dig 50 Clay : unlock clay, clay lump
+      - Place 50 Clay : unlock bricks, clay brick
+      - Craft 50 bricks : unlock stone bricks.
+      - Craft 100 stonebricks : Unlock stone pick.
+      - Place 50 stonebricks : Unlock stairs and slab stonebricks.
+      - Place 50 bricks : unlock stairs and slab bricks
+      - Dig 50 iron stones : unlock bucket, bars, steel door, steel bottle.
+      - Dig 100 iron stones : unlock Steel block, iron ingot.
+      - Craft 50 steel block : unlock locked chests, rails.
+      - Place 50 steel block : unlock stairs and slab steel block.
+      - Dig 10 steel block : unlock screwdriver.
+      - Dig 50 copper stone : unlock copper block, copper ingot.
+      - Place 50 copper blocks : unlock stairs and slab copper blocks.
+      - Dig 100 copper stone : unlock bronze ingot.
+      - Craft 50 bronze ingot : unlock Bronze block.
+      - Place 50 Bronze block : unlock stairs and slab bronze blocks.
+      - Dig 50 mese stone : unlock mese crystal, mese blocks, mese fragments.
+      - Place 100 torches : unlock mese lamp.
+      - Dig 50 Gold stone : unlock goldblock, gold ingot.
+      - Place 50 gold blocks : unlock stairs and slab gold blocks.
+      - Dig 50 diamond stones : unlock diamond block, diamond.
+      - Dig 50 obsidian block : unlock obs. shard, obsidian door, obs. block.
+      - Place 50 obs. block : unlock obsidian bricks, stairs and slab obs. blocks.
+      - Place 50 obs. bricks : unlock stairs and slab obs. bricks.
+      - Craft 10 stone axe : unlock steel axe.
+      - Craft 10 stone sword : unlock steel sword.
+      - Craft 10 stone pick : unlock steel pick.
+      - Craft 10 stone shovel : unlock steel shovel.
+      - Craft 10 stone hoe : unlock steel hoe.
+      - Craft 10 steel axe : unlock bronze axe.
+      - Craft 10 steel sword : unlock bronze sword.
+      - Craft 10 steel pick : unlock bronze pick.
+      - Craft 10 steel shovel : unlock bronze shovel.
+      - Craft 10 steel hoe : unlock bronze hoe.
+      - Craft 10 bronze axe : unlock mese axe.
+      - Craft 10 bronze sword : unlock mese sword.
+      - Craft 10 bronze pick : unlock mese pick.
+      - Craft 10 bronze shovel : unlock mese shovel.
+      - Craft 10 bronze hoe : unlock mese hoe.
+      - Craft 10 mese axe : unlock diamond axe.
+      - Craft 10 mese sword : unlock diamond sword.
+      - Craft 10 mese pick : unlock diamond pick.
+      - Craft 10 mese shovel : unlock diamond shovel.
+      - Craft 10 mese hoe : unlock diamond hoe.

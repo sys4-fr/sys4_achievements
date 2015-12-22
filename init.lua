@@ -98,7 +98,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 10 Straws : unlock stairs and slab straws
+   -- Place 10 Straws : unlock stairs and slab straws
    { name = 'straw_builder_begins',
      title = S("The Straw House"),
      node = 'farming:straw',
@@ -110,7 +110,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 Cobblestones : Unlock stairs and slab cobblestones.
+   -- Place 50 Cobblestones : Unlock stairs and slab cobblestones.
    { name = 'stone_builder_begins',
      title = S("Stone builder First Steps"),
      node = 'default:cobble',
@@ -122,7 +122,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 stones : Unlock stairs and slab stones.
+   -- Place 50 stones : Unlock stairs and slab stones.
    { name = 'stone_builder_lover',
      title = S("Stone builder Lover"),
      node = 'default:stone',
@@ -134,7 +134,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 10 glasses : Unlock glass pane
+   -- Place 10 glasses : Unlock glass pane
    { name = 'glass_builder_begins',
      title = S("Glazier"),
      node = 'default:glass',
@@ -146,7 +146,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 gravel : unlock gunpowder, tnt
+   -- Place 50 gravel : unlock gunpowder, tnt
    { name = 'gravel_builder_begins',
      title = S("Boom !"),
      node = 'default:gravel',
@@ -154,11 +154,11 @@ local a = {
      icon = "tnt_side.png",
      type = "place",
      target = 10,
-     titems = {'tnt:tnt'},
+     titems = {'tnt:gunpowder', 'tnt:tnt'},
      tprizes = nil,
    },
 
-   --+ Place 50 Clay : unlock bricks, clay brick
+   -- Place 50 Clay : unlock bricks, clay brick
    { name = 'clay_builder_begins',
      title = S("Bricklayer First Steps"),
      node = 'default:clay',
@@ -170,7 +170,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 stonebricks : Unlock stairs and slab stonebricks.
+   -- Place 50 stonebricks : Unlock stairs and slab stonebricks.
    { name = 'stonebrick_builder_begins',
      title = S("Stonemason First Steps"),
      node = 'default:stonebrick',
@@ -182,7 +182,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 bricks : unlock stairs and slab bricks
+   -- Place 50 bricks : unlock stairs and slab bricks
    { name = 'brick_builder_begins',
      title = S("Bricklayer Lover"),
      node = 'default:brick',
@@ -194,7 +194,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 steel block : unlock stairs and slab steel block.
+   -- Place 50 steel block : unlock stairs and slab steel block.
    { name = 'steel_builder_begins',
      title = S("Steel Builder"),
      node = 'default:steelblock',
@@ -206,7 +206,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 copper blocks : unlock stairs and slab copper blocks.
+   -- Place 50 copper blocks : unlock stairs and slab copper blocks.
    { name = 'copper_builder_begins',
      title = S("Copper Builder"),
      node = 'default:copperblock',
@@ -218,7 +218,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 Bronze block : unlock stairs and slab bronze blocks.
+   -- Place 50 Bronze block : unlock stairs and slab bronze blocks.
    { name = 'bronze_builder_begins',
      title = S("Bronze Builder"),
      node = 'default:bronzeblock',
@@ -230,7 +230,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 100 torches : unlock mese lamp.
+   -- Place 100 torches : unlock mese lamp.
    { name = 'torch_placer',
      title = S("I'm Illuminated"),
      node = 'default:torch',
@@ -242,7 +242,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 gold blocks : unlock stairs and slab gold blocks.
+   -- Place 50 gold blocks : unlock stairs and slab gold blocks.
    { name = 'gold_builder',
      title = S("Gold Builder"),
      node = 'default:goldblock',
@@ -254,7 +254,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 obs. block : unlock obsidian bricks, stairs and slab obs. blocks.
+   -- Place 50 obs. block : unlock obsidian bricks, stairs and slab obs. blocks.
    { name = 'obsidian_builder_begins',
      title = S("Obsidian Builder First Steps"),
      node = 'default:obsidian',
@@ -266,7 +266,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Place 50 obs. bricks : unlock stairs and slab obs. bricks.
+   -- Place 50 obs. bricks : unlock stairs and slab obs. bricks.
    { name = 'obsidian_builder_lover',
      title = S("Obsidian Builder Lover"),
      node = 'default:obsidianbrick',
@@ -414,9 +414,9 @@ local a = {
    },
 
    -- Snow
-   --+ Dig 50 snowblock : unlock snow, snowblock.
+   -- Dig 50 snowblock : unlock snow, snowblock.
    { name = 'snow_digger_begins',
-     title = S("The Snow Men"),
+     title = S("The Snow Man"),
      node = 'default:snow',
      desc = S("Dig 50 Snow Powder."),
      icon = "default_snow.png",
@@ -426,7 +426,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 8 wheat_8 : unlock flour
+   -- Dig 8 wheat_8 : unlock flour
    { name = 'wheat_digger_begins',
      title = S("Hands in the Flour"),
      node = 'farming:wheat_8',
@@ -438,7 +438,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 wheat_8 : unlock Straws
+   -- Dig 50 wheat_8 : unlock Straws
    { name = 'wheat_digger_lover',
      title = S("Farmer First Steps"),
      node = 'farming:wheat',
@@ -450,7 +450,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 10 coal stones : Unlock Dark dye, dark wool.
+   -- Dig 10 coal stones : Unlock Dark dye, dark wool.
    { name = 'coal_digger_begins',
      title = S("I like the Black color"),
      node = 'default:stone_with_coal',
@@ -462,7 +462,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 coal stones : Unlock torches (End of Darkness).
+   -- Dig 50 coal stones : Unlock torches (End of Darkness).
    { name = 'coal_digger_lover',
      title = S("End of Darkness"),
      node = 'default:stone_with_coal',
@@ -474,7 +474,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 100 coal stones : Unlock coalblocks.
+   -- Dig 100 coal stones : Unlock coalblocks.
    { name = 'coal_digger',
      title = S("Coal Miner"),
      node = 'default:stone_with_coal',
@@ -486,7 +486,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 stones : unlock stone axe,sword.
+   -- Dig 50 stones : unlock stone axe,sword.
    { name = 'stone_digger_begins',
      title = S("Micro Miner"),
      node = 'default:stone',
@@ -498,7 +498,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 100 gravel : unlock stone shovel
+   -- Dig 100 gravel : unlock stone shovel
    { name = 'gravel_digger_begins',
      title = S("Get the Stone Shovel"),
      node = 'default:gravel',
@@ -510,7 +510,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 Clay : unlock clay, clay lump
+   -- Dig 50 Clay : unlock clay, clay lump
    { name = 'clay_digger_begins',
      title = S("Clay Discover"),
      node = 'default:clay',
@@ -522,7 +522,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 iron stones : unlock bucket, bars, steel door, steel bottle.
+   -- Dig 50 iron stones : unlock bucket, bars, steel door, steel bottle.
    { name = 'iron_digger_begins',
      title = S("The Iron Age"),
      node = 'default:stone_with_iron',
@@ -534,7 +534,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 100 iron stones : unlock Steel block, iron ingot.
+   -- Dig 100 iron stones : unlock Steel block, iron ingot.
    { name = 'iron_digger_lover',
      title = S("The Iron Peak"),
      node = 'default:stone_with_iron',
@@ -558,7 +558,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 copper stone : unlock copper block, copper ingot.
+   -- Dig 50 copper stone : unlock copper block, copper ingot.
    { name = 'copper_digger_begins',
      title = S("The Copper Age"),
      node = 'default:stone_with_copper',
@@ -570,7 +570,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 100 copper stone : unlock bronze ingot.
+   -- Dig 100 copper stone : unlock bronze ingot.
    { name = 'copper_digger',
      title = S("The Bronze Age"),
      node = 'default:stone_with_copper',
@@ -582,7 +582,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 mese stone : unlock mese crystal, mese blocks, mese fragments.
+   -- Dig 50 mese stone : unlock mese crystal, mese blocks, mese fragments.
    { name = 'Mese_digger',
      title = S("The Mese Manipulator"),
      node = 'default:stone_with_mese',
@@ -594,7 +594,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 Gold stone : unlock goldblock, gold ingot.
+   -- Dig 50 Gold stone : unlock goldblock, gold ingot.
    { name = 'gold_digger_begins',
      title = S("The Gold Digger"),
      node = 'default:stone_with_gold',
@@ -606,7 +606,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 diamond stones : unlock diamond block, diamond.
+   -- Dig 50 diamond stones : unlock diamond block, diamond.
    { name = 'diamond_digger_begins',
      title = S("The Diamond Digger"),
      node = 'default:stone_with_diamond',
@@ -618,7 +618,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Dig 50 obsidian block : unlock obs. shard, obsidian door, obs. block.
+   -- Dig 50 obsidian block : unlock obs. shard, obsidian door, obs. block.
    { name = 'obsidian_digger_begins',
      title = S("The Obsidian Digger"),
      node = 'default:obsidian',
@@ -704,7 +704,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 10 Straws : unlock stone hoe
+   -- Craft 10 Straws : unlock stone hoe
    { name = 'straw_crafter_begins',
      title = S("Unlock the Stone hoe"),
      node = 'farming:straw',
@@ -716,7 +716,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 30 dyes : Unlock All the others dyes.
+   -- Craft 30 dyes : Unlock All the others dyes.
    { name = 'dye_crafter_begins',
      title = S("More Color"),
      node = 'dye:red',
@@ -728,7 +728,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 30 colored wools : Unlock All the others colored wools.
+   -- Craft 30 colored wools : Unlock All the others colored wools.
    { name = 'wool_crafter_begins',
      title = S("The Rainbow Wools"),
      node = 'wool:red',
@@ -740,7 +740,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 50 torches : unlock furnace.
+   -- Craft 50 torches : unlock furnace.
    { name = 'torch_crafter_begins',
      title = S("Look at the Furnace"),
      node = 'default:torch',
@@ -752,7 +752,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 50 glass pane : unlock drinking glasses, and bottles and glass fragments
+   -- Craft 50 glass pane : unlock drinking glasses, and bottles and glass fragments
    { name = 'pane_crafter_begins',
      title = S("Glass Blower"),
      node = 'xpanes:pane',
@@ -764,7 +764,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 10 glass vessel (bottle, drinking glass, glass fragments : Unlock glass door.
+   -- Craft 10 glass vessel (bottle, drinking glass, glass fragments : Unlock glass door.
    { name = 'vessel_crafter_begins',
      title = S("Glass Blower Lover"),
      node = 'vessels:glass_bottle',
@@ -776,7 +776,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 50 bricks : unlock stone bricks.
+   -- Craft 50 bricks : unlock stone bricks.
    { name = 'brick_crafter_begins',
      title = S("Stone Bricks Crafter"),
      node = 'default:brick',
@@ -788,7 +788,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 100 stonebricks : Unlock stone pick.
+   -- Craft 100 stonebricks : Unlock stone pick.
    { name = 'stonebrick_crafter_begins',
      title = S("Get the Stone Pick"),
      node = 'default:stonebrick',
@@ -800,7 +800,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Craft 50 steel block : unlock locked chests, rails.
+   -- Craft 50 steel block : unlock locked chests, rails.
    { name = 'steel_crafter_begins',
      title = S("Unlock Crafts with Steel"),
      node = 'default:steelblock',
@@ -808,11 +808,11 @@ local a = {
      icon = "default_rail.png",
      type = "craft",
      target = 50,
-     titems = {'default:rail', 'default:locked_chest'},
+     titems = {'default:rail', 'default:chest_locked'},
      tprizes = nil,
    },
 
-   --+ Craft 50 bronze ingot : unlock Bronze block.
+   -- Craft 50 bronze ingot : unlock Bronze block.
    { name = 'bronze_crafter_begins',
      title = S("Bronze Crafter First Steps"),
      node = 'default:bronze_ingot',
@@ -824,7 +824,7 @@ local a = {
      tprizes = nil,
    },
 
-   --+ Tools crafts achievements --
+   -- Tools crafts achievements --
 
    { name = 'pick_crafter_begins',
      title = S("Pick Crafter : Newbee"),

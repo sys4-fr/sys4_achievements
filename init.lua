@@ -1238,12 +1238,12 @@ sys4_achievements.register_onCraft(
 
 	    if node == 'dye:red' then
 	       mod = "dye"
-	       items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'dark'}
+	       items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'black'}
 	    end
 
 	    if node == 'wool:red' then
 	       mod = 'wool'
-	       items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'dark'}
+	       items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'black'}
 	    end
 
 	    if node == 'vessels:glass_bottle' then

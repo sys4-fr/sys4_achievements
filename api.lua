@@ -35,11 +35,32 @@ function sys4_achievements.write_book(items, prizes)
       local tt = ""
       for i=1, #items do
 	 tt = tt..items[i].."\n"
+	 tt = tt..sys4_achievements.getCraftRecipes(items[i])
       end
       text = text..tt.."\n"
    end
 
    return text
+end
+
+function sys4_achievements.getCraftRecipes(itemName)
+   local str = ""
+   if itemName ~= nil and itemName ~= "" then
+      local recipes = minetest.registered_items[itemName].recipe
+      print("Recipe dump : "..dump(recipes))
+      if recipes ~= nil then
+	 for i=1, #recipes do
+	    for j=1, #recipes[i] do
+	       str = str.."'"..recipes[i][j].."' "
+	    end
+	    str = str.."\n"
+	 end
+      else
+	 str = S("No recipes for this item")
+      end
+   end
+
+   return str
 end
 
 function sys4_achievements.getAchievement(onType, name)

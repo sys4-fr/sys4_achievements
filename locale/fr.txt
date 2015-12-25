@@ -178,8 +178,12 @@ Craft 10 Mese Hoes. = Fabrique 10 Houes en Mese.
 
 #api.lua
 Waste = Déchet
-Amazing ! You win :\n = Félicitations ! Vous gagnez :\n
-You unlock these crafts :\n = Vous débloquez les crafts de ces objets :\n
+Amazing ! You win = Félicitations ! Vous gagnez
+You unlock these crafts = Vous débloquez les crafts de ces objets
 Achievement Unlocked:\ \ = Épreuve Débloquée :\ \
 Achievement Unlocked! = Épreuve Débloquée !
 Unlock crafts  = Crafts débloqués
+Craft table = Table de Craft
+OR = OU
+empty = vide
+No craft for this item = Pas de craft pour cet objet

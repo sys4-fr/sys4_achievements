@@ -178,8 +178,12 @@ Craft 10 Mese Hoes. =
 
 #api.lua
 Waste = 
-Amazing ! You win :\n = 
-You unlock these crafts :\n = 
+Amazing ! You win = 
+You unlock these crafts = 
 Achievement Unlocked:\ \ = 
 Achievement Unlocked! = 
 Unlock crafts = 
+Craft table = 
+OR = 
+empty = 
+No craft for this item = 

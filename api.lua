@@ -19,7 +19,7 @@ function sys4_achievements.write_book(items, prizes)
    local text = ""
    
    if prizes and prizes ~= nil then
-      text = text..S("Amazing ! You win :\n")
+      text = text..S("Amazing ! You win").." :\n"
       
       local tt = ""
       for i=1, #prizes do
@@ -30,16 +30,69 @@ function sys4_achievements.write_book(items, prizes)
    end
    
    if items and items ~= nil then
-      text = text..S("You unlock these crafts :\n")
+      text = text..S("You unlock these crafts").." :"
       
-      local tt = ""
+      local tt = "\n"
       for i=1, #items do
-	 tt = tt..items[i].."\n"
+	 tt = tt.."\n"..items[i].." - "..S("Craft table").." :\n\n"
+	 tt = tt..sys4_achievements.getCraftRecipes(items[i])
+	 tt = tt.."------------]]][[[------------\n"
       end
       text = text..tt.."\n"
    end
 
    return text
+end
+
+function sys4_achievements.getCraftRecipes(itemName)
+   local str = ""
+   if itemName ~= nil and itemName ~= "" then
+      local craftRecipes = minetest.get_all_craft_recipes(itemName)
+
+      if craftRecipes ~= nil then
+	 local first = true
+	 for i=1, #craftRecipes do
+	    if craftRecipes[i].type == "normal" then
+	       if not first then
+		  str = str.."\n---]] "..S("OR").." [[---\n\n"
+	       end
+	       
+	       first = false
+	       local width = craftRecipes[i].width
+	       local items = craftRecipes[i].items
+	       local maxn = table.maxn(items)
+	       local h = 0
+	       local g
+	       if width == 0 then
+		  g = 1
+		  while g*g < maxn do g = g + 1 end
+		  width = maxn
+	       else
+		  h = math.ceil(maxn / width)
+		  g = width < h and h or width
+	       end
+	       
+	       for y=1, g do
+		  str = str..y..": "
+		  for x=1, width do
+		     local item = items[(y-1) * width + x]
+		     if item ~= nil then
+			str = str.."'"..item.."' "
+		     else
+			str = str.."'"..S("empty").."' "
+		     end
+		     if x == width then
+			str = str.."\n"
+		     end
+		  end
+	       end
+	    end
+	 end
+      end
+   else
+      str = S("No craft for this item").."\n"
+   end
+   return str
 end
 
 function sys4_achievements.getAchievement(onType, name)

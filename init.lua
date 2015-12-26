@@ -441,7 +441,7 @@ local a = {
    -- Dig 50 wheat_8 : unlock Straws
    { name = 'wheat_digger_lover',
      title = S("Farmer First Steps"),
-     node = 'farming:wheat',
+     node = 'farming:wheat_8',
      desc = S("Dig 50 Mature Wheats."),
      icon = "farming_straw.png",
      type = "dig",

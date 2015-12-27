@@ -1,0 +1,160 @@
+- Tree t=Dig
+  - Wood t=craft
+    - Door t=craft
+    - Boat t=craft
+    - Chest t=craft
+    - Stick t=craft
+      - Axe Wood t=craft
+      - Sword Wood t=craft
+      - Pick Wood t=craft
+      	- Stone t=dig
+	  - Stairs & slab Cobblestone t=craft
+	  - Furnace t=craft
+	    - Steel ingot t=cook
+	      - Steel Block t=craft
+	      	- Stairs & slab Steel Block t=craft
+	      - Pick Steel t=craft
+	      	- MeseStone t=dig
+		- DiamondStone t=dig
+		- Obsidian t=Dig
+	    - Copper ingot t=cook
+	      - Bronze ingot t=craft
+	      	- Bronze Block t=craft
+		  - Stairs & slabBronze Block t=craft
+		- Pick Bronze t=craft
+	  - Pick Stone t=craft
+	    - IronStone t=dig
+	    - CopperStone t=dig
+	    - GoldStone t=dig
+	  - Axe Stone t=craft
+	  - Shovel Stone t=craft
+	  - Sword Stone t=craft
+	  - Hoe Stone t=craft
+	- Coal Stone t=dig
+	  - Torch t=craft
+	  - CoalBlock t=craft
+      - Shovel Wood t=craft
+      - Hoe Wood t=craft
+      	- Wheat t=dig
+	  - Flour t=craft
+	  - Straw t=craft
+	    - Stairs & slab Straws t=craft
+	- Cotton t=dig
+	  - Wool White t=craft
+      - Ladder t=craft
+      - Fences t=craft
+
+Livre 1 :
+
+Bonjour et Bienvenue dans Minetest.
+
+Introduction :
+Le début de partie peut se faire comme un tutoriel.
+Vous serez guidés pour atteindre les premiers objectifs.
+Cela vous permettra de vous familiariser avec le système de craft de Minetest et de vous mettre sur les rails afin de bien aborder la survie dans le jeux.
+
+Histoire :
+Vous débarquez dans ce monde avec vos seul mains comme outils et la nuit arrive à grands pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.
+
+Objectif :
+Récolte 20 troncs d'arbres.
+
+Livre 2 (dig 10 tree blocks) :
+En coupant du bois, vous vous apercevez qu'à ce rythme la nuit vas arriver bien plus vite que prévue. Cela vous décide à faire une hache en Bois pour essayer d'accélerer les choses. En outre, voici une torche au cas ou.
+
+Prix :
+1 torche
+
+Vous débloquez les crafts suivants :
+
+1: 'Tronc d'arbre'
+Sortie : Planche de Bois
+
+------------]]][[[------------
+
+1: 'Planchede Bois'
+Sortie : Baton
+
+------------]]][[[------------
+
+1: 'Planche de Bois' 'Planche de Bois'
+2: 'Baton' 'Planche de Bois'
+3: 'Baton' 'Vide'
+
+------------]] OU [[------------
+
+1: 'Planche de Bois' 'Planche de Bois'
+2: 'Planche de Bois' 'Baton'
+3: 'Vide' 'Baton'
+Sortie : Hache en Bois
+
+------------]]][[[------------
+
+Livre 3 (dig 20 tree blocks) :
+Vous disposez d'assez de Bois pour construire votre premier abris. Cela vous a permis de réfléchir à l'élaboration de nouveaux objets qui pourraient vous etres utiles. Dépéchez-vous, la nuit est proche.
+
+Vous débloquez les crafts suivants :
+
+Pioche en Bois
+Épée en Bois
+Pelle en Bois
+Houe en Bois
+Porte en Bois
+Trappe en Bois
+Echelle en Bois
+Barrières en Bois
+Bateaux en Bois
+Coffre en Bois
+
+
+Livre 4 (craft 1 pick Wood) :
+La roche et le minerai de charbon sont accessibles pour votre pioche en Bois. Essayez d'en récolter un peu pour voir ?
+
+Livre 5 (dig 1 coalStone) :
+Ce minerai de charbon va vous permettre de vous éclairer.
+
+Craft débloqué :
+
+Torche
+
+Livre 6 (dig 10 coalStone) :
+Voici une façon de faire un combustible durable comme carburant dans votre Four.
+
+Crafts débloqué :
+
+Coal Block
+
+Livre 7 (dig 3 stone blocks) :
+Les propriétés de ce mineral vous permettent d'élaborer de nouveaux outils :
+
+Crafts débloqués :
+
+Pick stone
+Axe stone
+Sword stone
+Shovel stone
+Hoe stone
+
+Livre 8 (dig 8 stone blocks) :
+Vous savez désormais faire un four à base de Pierres.
+
+Craft débloqués :
+Furnace
+
+Livre 9 (place 50 nodes) :
+A Force de placer des blocs, vous avez appris à en faire des dalles et des escaliers.
+Vous débloquez tous les crafts de dalles et escaliers de la pluspart des matériauxselon ce modèle :
+
+Dalle :
+1: 'matériau' 'matériau' 'matériau'
+
+Escalier :
+1: 'Vide' 'Vide' 'Materiau'
+2: 'Vide' 'Matériau' 'Materiau'
+3: 'Materiau' 'Materiau' 'Materiau'
+
+OU
+
+1: 'Materiau' 'Vide' 'Vide'
+2: 'Materiau' 'Materiau' 'Vide'
+3: 'Materiau' 'Materiau' 'Materiau'

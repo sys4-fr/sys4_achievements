@@ -1,0 +1,18 @@
+# Template for translations of SYS4 Achievements
+
+#init.lua
+My first Tool = 
+Dig 10 tree blocks. = 
+En coupant du bois, vous vous apercevez qu'à ce rythme la nuit va arriver bien plus vite que prévue. Cela vous décide à faire une hache en bois pour essayer d'accelérer les choses. En oûtre, voici une torche au cas où. = When cutting trees, you despite that at this speed, the night will coming soon. This decide you to make a wooden axe to try to speed up the things. Anyway, take this torch.
+
+#api.lua
+Waste = 
+Amazing ! You win = 
+You unlock these crafts = 
+Achievement Unlocked:\ \ = 
+Achievement Unlocked! = 
+Unlock crafts = 
+Craft table = 
+OR = 
+empty = 
+No craft for this item = 

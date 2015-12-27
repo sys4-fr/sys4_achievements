@@ -6,6 +6,24 @@ local S = sys4_achievements.intllib
 -- api
 local craftmode = true
 
+-- Give initial Stuff
+minetest.register_on_newplayer(
+   function(player)
+      minetest.log("action", "Giving initial stuff to player "..player:get_player_name())
+      local book = ItemStack("default:book_written")
+      local data = {}
+      data.title = "SYS4 AWARDS : Introduction"
+      data.text = "Bonjour "..player:get_player_name().." et bienvenue dans Minetest.\n\n"
+      .."Vous débarquez dans ce monde avec vos seules mains comme outils et la nuit arrive à grand pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.\n\n"
+	 .."Comme premier objectif, allez récolter 20 troncs d'arbres."
+      data.owner = player:get_player_name()
+      local data_str = minetest.serialize(data)
+      book:set_metadata(data_str)
+      
+      local inv = minetest.get_inventory({type="player", name=player:get_player_name()})
+      inv:add_item("main", book)
+   end)
+
 -- New Waste Node
 minetest.register_node("sys4_achievements:waste",
 {
@@ -15,8 +33,12 @@ minetest.register_node("sys4_achievements:waste",
    groups = {crumbly=2, flammable=2},
 })
 
-function sys4_achievements.write_book(items, prizes)
+function sys4_achievements.write_book(book_content, items, prizes)
    local text = ""
+   
+   if book_content and book_content ~= nil then
+      text = text..book_content.."\n\n"
+   end
    
    if prizes and prizes ~= nil then
       text = text..S("Amazing ! You win").." :\n"
@@ -24,7 +46,7 @@ function sys4_achievements.write_book(items, prizes)
       local tt = ""
       for i=1, #prizes do
 	 local itemstack = ItemStack(prizes[i])
-	 tt = tt..itemstack:get_count().." "..itemstack:get_name().."\n"
+	 tt = tt..itemstack:get_count().." "..S(itemstack:get_name()).."\n"
       end
       text = text..tt.."\n"
    end
@@ -34,7 +56,7 @@ function sys4_achievements.write_book(items, prizes)
       
       local tt = "\n"
       for i=1, #items do
-	 tt = tt.."\n"..items[i].." - "..S("Craft table").." :\n\n"
+	 tt = tt.."\n"..S(items[i]).." - "..S("Craft table").." :\n\n"
 	 tt = tt..sys4_achievements.getCraftRecipes(items[i])
 	 tt = tt.."------------]]][[[------------\n"
       end
@@ -77,7 +99,7 @@ function sys4_achievements.getCraftRecipes(itemName)
 		  for x=1, width do
 		     local item = items[(y-1) * width + x]
 		     if item ~= nil then
-			str = str.."'"..item.."' "
+			str = str.."'"..S(item).."' "
 		     else
 			str = str.."'"..S("empty").."' "
 		     end

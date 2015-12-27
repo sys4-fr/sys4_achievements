@@ -57,7 +57,7 @@ Histoire :
 Vous débarquez dans ce monde avec vos seul mains comme outils et la nuit arrive à grands pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.
 
 Objectif :
-Récolte 20 troncs d'arbres.
+Pour commencer récolte 20 troncs d'arbres.
 
 Livre 2 (dig 10 tree blocks) :
 En coupant du bois, vous vous apercevez qu'à ce rythme la nuit vas arriver bien plus vite que prévue. Cela vous décide à faire une hache en Bois pour essayer d'accélerer les choses. En outre, voici une torche au cas ou.
@@ -72,7 +72,7 @@ Sortie : Planche de Bois
 
 ------------]]][[[------------
 
-1: 'Planchede Bois'
+1: 'Planche de Bois'
 Sortie : Baton
 
 ------------]]][[[------------
@@ -108,7 +108,7 @@ Coffre en Bois
 
 
 Livre 4 (craft 1 pick Wood) :
-La roche et le minerai de charbon sont accessibles pour votre pioche en Bois. Essayez d'en récolter un peu pour voir ?
+La roche et le minerai de charbon sont accessibles pour votre pioche en Bois. Essayez d'en récolter un peu pour voir.
 
 Livre 5 (dig 1 coalStone) :
 Ce minerai de charbon va vous permettre de vous éclairer.
@@ -118,7 +118,7 @@ Craft débloqué :
 Torche
 
 Livre 6 (dig 10 coalStone) :
-Voici une façon de faire un combustible durable comme carburant dans votre Four.
+Voici une façon de faire du carburant durable pour votre Four.
 
 Crafts débloqué :
 
@@ -143,7 +143,7 @@ Furnace
 
 Livre 9 (place 50 nodes) :
 A Force de placer des blocs, vous avez appris à en faire des dalles et des escaliers.
-Vous débloquez tous les crafts de dalles et escaliers de la pluspart des matériauxselon ce modèle :
+Vous débloquez tous les crafts de dalles et escaliers de la pluspart des matériaux selon ce modèle :
 
 Dalle :
 1: 'matériau' 'matériau' 'matériau'
@@ -158,3 +158,5 @@ OU
 1: 'Materiau' 'Vide' 'Vide'
 2: 'Materiau' 'Materiau' 'Vide'
 3: 'Materiau' 'Materiau' 'Materiau'
+
+Livre 10 (

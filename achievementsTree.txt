@@ -17,11 +17,20 @@
 	      	- MeseStone t=dig
 		- DiamondStone t=dig
 		- Obsidian t=Dig
+	      - Axe Steel
+	      - Shovel steel
+	      - Sword steel
+	      - Hoe steel
+	      - Bucket t=craft
 	    - Copper ingot t=cook
 	      - Bronze ingot t=craft
 	      	- Bronze Block t=craft
-		  - Stairs & slabBronze Block t=craft
+		  - Stairs & slab Bronze t=craft
 		- Pick Bronze t=craft
+	    - Gold Ingot t=cooking
+	      - Gold Block t=craft
+	      	- Stairs & slab Gold t=craft
+	    - 
 	  - Pick Stone t=craft
 	    - IronStone t=dig
 	    - CopperStone t=dig
@@ -31,6 +40,7 @@
 	  - Sword Stone t=craft
 	  - Hoe Stone t=craft
 	- Coal Stone t=dig
+	  - dye black t=craft
 	  - Torch t=craft
 	  - CoalBlock t=craft
       - Shovel Wood t=craft
@@ -43,6 +53,16 @@
 	  - Wool White t=craft
       - Ladder t=craft
       - Fences t=craft
+- Papyrus t=dig
+  - Paper t=craft
+    - Book t=craft
+      - Bookshelf t=craft
+
+- Flower t=dig
+  - Dye t=craft
+    - Wool teinted t=craft
+      - Bed
+      - Fancy Bed
 
 Livre 1 :
 

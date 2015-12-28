@@ -56,8 +56,8 @@ function sys4_achievements.write_book(book_content, items, prizes)
       
       local tt = "\n"
       for i=1, #items do
-	 tt = tt.."\n"..S(items[i]).." - "..S("Craft table").." :\n\n"
-	 tt = tt..sys4_achievements.getCraftRecipes(items[i])
+	 tt = tt.."\n"..sys4_achievements.getCraftRecipes(items[i])
+	 tt = tt..S("Output").." --> "..S(items[i]).."\n\n"
 	 tt = tt.."------------]]][[[------------\n"
       end
       text = text..tt.."\n"
@@ -193,6 +193,15 @@ function sys4_achievements.getItemCount(action_type, mod, items, playern, data)
    end
 
    return count
+end
+
+function sys4_achievements.isAwardGot(awardName, listofawards)
+   for _,award in pairs(listofawards) do
+      if awardName == award.name and award.got then
+	 return true
+      end
+   end
+   return false
 end
 
 -- AWARDS redefinitions
@@ -425,6 +434,17 @@ awards.showto = function(name, to, sid, text)
 				if def and def.icon then
 					icon = def.icon
 				end
+				local award_req = ""
+				if def and def.award_req then
+				   award_req = def.award_req
+				   local reqTitle = awards.def[award_req].title
+				   if sys4_achievements.isAwardGot(award_req, listofawards) then
+				      award_req = S("Requiered").." : "..reqTitle.." (got)"
+				   else
+				      award_req = S("Requiered").." : "..reqTitle
+				   end
+				   formspec = formspec .. "label[9,3.75;"..award_req.."]"
+				end
 				formspec = formspec .. "label[9,3.25;"..title..status.."]".."label[9,0;"..item.name.."]"..
 									"image[9.75,0.5;3,3;"..icon.."]"
 				if def and def.description then
@@ -473,9 +493,19 @@ awards.showto = function(name, to, sid, text)
 						title = def.title
 					end			
 					if award.got then
-						formspec = formspec .. minetest.formspec_escape(title)
+					   formspec = formspec .. minetest.formspec_escape(title)
 					else
-						formspec = formspec .. "#ACACAC".. minetest.formspec_escape(title)
+					   if def.award_req then
+					      local requieredAward = def.award_req
+					      
+					      if sys4_achievements.isAwardGot(requieredAward, listofawards) then
+						 formspec = formspec .. "#ACAC00".. minetest.formspec_escape(title)
+					      else
+						 formspec = formspec .. "#AC0000".. minetest.formspec_escape(title)
+					      end
+					   else
+					      formspec = formspec .. "#ACACAC".. minetest.formspec_escape(title)
+					   end
 					end
 				end
 			end

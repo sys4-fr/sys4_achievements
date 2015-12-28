@@ -33,7 +33,7 @@ local a = {
      target = 10,
      titems = {'default:wood', 'default:acacia_wood', 'default:junglewood', 'default:pine_wood', 'default:stick', 'default:axe_wood'},
      tprizes = {'default:torch'},
-     tbook = S("En coupant du bois, vous vous apercevez qu'à ce rythme la nuit va arriver bien plus vite que prévue. Cela vous décide à faire une hache en bois pour essayer d'accelérer les choses. En outre, voici une torche au cas où.")
+     tbook = S("En coupant du bois, vous vous apercevez qu'à ce rythme la nuit va arriver bien plus vite que prévue. Cela vous décide à faire une hache en bois pour essayer d'accelérer les choses. En outre, voici une torche au cas où."),
    },   
 
    { name = 'tree_digger_newbee',
@@ -43,9 +43,10 @@ local a = {
      icon = "default_tool_woodpick.png",
      type = "dig",
      target = 20,
-     titems = {'default:pick_wood', 'default:sword_wood', 'default:shovel_wood', 'farming:hoe_wood', 'doors:door_wood', 'doors:trap_door', 'default:ladder', 'default:fence_wood', 'boats:boat', 'default:chest'},
+     titems = {'default:pick_wood', 'default:sword_wood', 'default:shovel_wood', 'farming:hoe_wood', 'doors:door_wood', 'doors:trapdoor', 'default:ladder', 'default:fence_wood', 'boats:boat', 'default:chest'},
      tprizes = nil,
-     tbook = S("Vous disposez d'assez de bois pour construire votre premier abris. Cela vous a permis de réfléchir à l'élaboration de nouveaux objets qui pourraient vous etres utiles. Dépêchez-vous, la nuit est proche.")
+     tbook = S("Vous disposez d'assez de bois pour construire votre premier abris. Cela vous a permis de réfléchir à l'élaboration de nouveaux objets qui pourraient vous etres utiles. Dépêchez-vous, la nuit est proche."),
+     award_req = 'tree_digger_begins'
    },   
 
 }
@@ -83,6 +84,7 @@ for i=1, #a do
 	 items = a[i].titems,
 	 prizes = a[i].tprizes,
 	 book = tbook,
+	 award_req = a[i].award_req
       })
 end
 

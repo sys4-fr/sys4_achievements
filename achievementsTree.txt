@@ -1,8 +1,5 @@
-- Tree t=Dig
-  - Wood t=craft
-    - Door t=craft
-    - Boat t=craft
-    - Chest t=craft
+- Tree t=Dig name='tree_digger_begins'
+  - Wood t=craft name='wood_crafter_begins'
     - Stick t=craft
       - Axe Wood t=craft
       - Sword Wood t=craft

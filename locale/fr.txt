@@ -1,10 +1,8 @@
 # Template for translations of SYS4 Achievements
 
 #init.lua
-My first Tool = Mon premier outil
-Dig 10 tree blocks. = Coupe 10 troncs d'arbres.
-Wooden Tools and Items = Outils et Objets en Bois
-Dig 20 tree blocks. = Coupe 20 troncs d'arbres.
+Dig\ \ = Récolte\ \ 
+Craft\ \ = Fabrique\ \ 
 
 #api.lua
 Waste = Déchet
@@ -13,7 +11,7 @@ You unlock these crafts = Vous débloquez les crafts de ces objets
 Achievement Unlocked:\ \ = Épreuve Débloquée :\ \
 Achievement Unlocked! = Épreuve Débloquée !
 Unlock crafts  = Crafts débloqués
-Craft table = Table de Craft
+Requiered = Requiert
 OR = OU
 empty = vide
 No craft for this item = Pas de craft pour cet objet

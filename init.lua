@@ -116,6 +116,19 @@ local a = {
      award_req = 'pick_crafter_begins'
    },   
 
+   { name = 'wheat_digger_begins',
+     title = S("La saison des récoltes"),
+     node = 'farming:wheat_8',
+     desc = S("Dig ")..(3* lvl).." "..S("farming:wheat")..".",
+     icon = "farming_wheat.png",
+     type = "dig",
+     target = 3 * lvl,
+     titems = {'farming:flour'},
+     tprizes = nil,
+     tbook = S("Récolte du Blé. Vous pourrez en faire de la farine."),
+     award_req = 'hoe_crafter_begins'
+   },   
+
 }
 
 -- Secrets achievements table

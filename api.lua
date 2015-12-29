@@ -4,24 +4,26 @@
 local S = sys4_achievements.intllib
 
 -- api
-local craftmode = true
+local craftmode = false
 
 -- Give initial Stuff
 minetest.register_on_newplayer(
    function(player)
-      minetest.log("action", "Giving initial stuff to player "..player:get_player_name())
-      local book = ItemStack("default:book_written")
-      local data = {}
-      data.title = "SYS4 AWARDS : Introduction"
-      data.text = "Bonjour "..player:get_player_name().." et bienvenue dans Minetest.\n\n"
-      .."Vous débarquez dans ce monde avec vos seules mains comme outils et la nuit arrive à grand pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.\n\n"
-	 .."Comme premier objectif, allez récolter 20 troncs d'arbres."
-      data.owner = player:get_player_name()
-      local data_str = minetest.serialize(data)
-      book:set_metadata(data_str)
-      
-      local inv = minetest.get_inventory({type="player", name=player:get_player_name()})
-      inv:add_item("main", book)
+      if craftmode then
+	 minetest.log("action", "Giving initial stuff to player "..player:get_player_name())
+	 local book = ItemStack("default:book_written")
+	 local data = {}
+	 data.title = "SYS4 AWARDS : Introduction"
+	 data.text = "Bonjour "..player:get_player_name().." et bienvenue dans Minetest.\n\n"
+	    .."Vous débarquez dans ce monde avec vos seules mains comme outils et la nuit arrive à grand pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.\n\n"
+	    .."Comme premier objectif, allez récolter 20 troncs d'arbres."
+	 data.owner = player:get_player_name()
+	 local data_str = minetest.serialize(data)
+	 book:set_metadata(data_str)
+	 
+	 local inv = minetest.get_inventory({type="player", name=player:get_player_name()})
+	 inv:add_item("main", book)
+      end
    end)
 
 -- New Waste Node
@@ -443,7 +445,7 @@ awards.showto = function(name, to, sid, text)
 				   else
 				      award_req = S("Requiered").." : "..reqTitle
 				   end
-				   formspec = formspec .. "label[9,3.75;"..award_req.."]"
+				   formspec = formspec .. "label[9,3.75;- "..award_req.." -]"
 				end
 				formspec = formspec .. "label[9,3.25;"..title..status.."]".."label[9,0;"..item.name.."]"..
 									"image[9.75,0.5;3,3;"..icon.."]"
@@ -458,9 +460,8 @@ awards.showto = function(name, to, sid, text)
 				   local y = 5 -- Position y de départ du label
 				   formspec = formspec	.. "label[8,"..y..";"..S("Unlock crafts").." :]"
 				   
-				   local name = ""
 				   for i=1, #items do
-				      
+				      local name = ""				      
 				      local itemstack = ItemStack(items[i])
 				      if itemstack and itemstack ~= nil and itemstack:is_known() then
 					 name = itemstack:get_name()
@@ -468,7 +469,7 @@ awards.showto = function(name, to, sid, text)
 					 name = "Unknown Item"
 				      end
 				      y = y + 0.35
-				      formspec = formspec .. "label[8,"..y..";- "..name.."]"
+				      formspec = formspec .. "label[8,"..y..";- "..S(name).."]"
 				   end
 				end
 			end
@@ -493,7 +494,7 @@ awards.showto = function(name, to, sid, text)
 						title = def.title
 					end			
 					if award.got then
-					   formspec = formspec .. minetest.formspec_escape(title)
+					   formspec = formspec .. "#00AC00".. minetest.formspec_escape(title)
 					else
 					   if def.award_req then
 					      local requieredAward = def.award_req

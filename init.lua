@@ -18,6 +18,8 @@ end
 
 dofile(minetest.get_modpath("sys4_achievements").."/api.lua")
 
+local lvl = 1 -- Level Of difficulty
+
 -- Achievements table définition
 local a = {
    
@@ -25,28 +27,93 @@ local a = {
    
    -- Trees
    { name = 'tree_digger_begins',
-     title = S("My first Tool"),
+     title = S("Wood Cutting"),
      node = 'default:tree',
-     desc = S("Dig 10 tree blocks."),
-     icon = "default_tool_woodaxe.png",
+     desc = S("Dig ")..(1*lvl) .." "..S("default:tree")..".",
+     icon = "default_tree.png",
      type = "dig",
-     target = 10,
-     titems = {'default:wood', 'default:acacia_wood', 'default:junglewood', 'default:pine_wood', 'default:stick', 'default:axe_wood'},
-     tprizes = {'default:torch'},
-     tbook = S("En coupant du bois, vous vous apercevez qu'à ce rythme la nuit va arriver bien plus vite que prévue. Cela vous décide à faire une hache en bois pour essayer d'accelérer les choses. En outre, voici une torche au cas où."),
+     target = 1 * lvl,
+     titems = {'default:wood', 'default:acacia_wood', 'default:junglewood', 'default:pine_wood'},
+     tprizes = nil,
+     tbook = S("Frappez du bois jusqu'à obtenir un tronc d'arbre. Vous pourrez alors fabriquer vos premières planches."),
    },   
 
-   { name = 'tree_digger_newbee',
+   { name = 'wood_crafter_begins',
      title = S("Wooden Tools and Items"),
-     node = 'default:tree',
-     desc = S("Dig 20 tree blocks."),
-     icon = "default_tool_woodpick.png",
-     type = "dig",
-     target = 20,
-     titems = {'default:pick_wood', 'default:sword_wood', 'default:shovel_wood', 'farming:hoe_wood', 'doors:door_wood', 'doors:trapdoor', 'default:ladder', 'default:fence_wood', 'boats:boat', 'default:chest'},
+     node = 'default:wood',
+     desc = S("Craft ")..(4 * lvl).." "..S("default:wood")..".",
+     icon = "default_wood.png",
+     type = "craft",
+     target = 4 * lvl,
+     titems = {'default:stick', 'default:pick_wood', 'default:sword_wood', 'default:shovel_wood', 'farming:hoe_wood', 'doors:door_wood', 'doors:trapdoor', 'default:ladder', 'default:fence_wood', 'boats:boat', 'default:chest'},
      tprizes = nil,
-     tbook = S("Vous disposez d'assez de bois pour construire votre premier abris. Cela vous a permis de réfléchir à l'élaboration de nouveaux objets qui pourraient vous etres utiles. Dépêchez-vous, la nuit est proche."),
+     tbook = S("Fabriquez des planches pour obtenir du matériel et vos premiers outils."),
      award_req = 'tree_digger_begins'
+   },   
+
+   { name = 'pick_crafter_begins',
+     title = S("Belle Pioche !"),
+     node = 'default:pick_wood',
+     desc = S("Craft ")..(1 * lvl).." "..S("default:pick_wood")..".",
+     icon = "default_tool_woodpick.png",
+     type = "craft",
+     target = 1 * lvl,
+     titems = nil,
+     tprizes = nil,
+     tbook = S("Fabriquez une pioche en Bois. Vous pourrez miner de la roche et du minerai de charbon."),
+     award_req = 'wood_crafter_begins'
+   },   
+
+   { name = 'hoe_crafter_begins',
+     title = S("À la Ferme"),
+     node = 'farming:hoe_wood',
+     desc = S("Craft ")..(1 * lvl).." "..S("farming:hoe_wood")..".",
+     icon = "farming_tool_woodhoe.png",
+     type = "craft",
+     target = 1 * lvl,
+     titems = nil,
+     tprizes = nil,
+     tbook = S("Fabriquez une Houe en Bois. Vous pourrez travailler la terre et planter du coton et du blé."),
+     award_req = 'wood_crafter_begins'
+   },   
+
+   { name = 'stone_crafter_begins',
+     title = S("Au Four !"),
+     node = 'default:furnace',
+     desc = S("Craft ")..(1 * lvl).." "..S("default:furnace")..".",
+     icon = "default_furnace_front.png",
+     type = "craft",
+     target = 1 * lvl,
+     titems = nil,
+     tprizes = nil,
+     tbook = S("Fabriquez un four. Vous pourrez fondre du minerai en lingots et faire de la cuisine."),
+     award_req = 'stone_miner_begins'
+   },   
+
+   { name = 'stone_miner_begins',
+     title = S("Soyez Stone"),
+     node = 'default:stone',
+     desc = S("Dig ")..(1 * lvl).." "..S("default:stone")..".",
+     icon = "default_cobble.png",
+     type = "dig",
+     target = 1 * lvl,
+     titems = {'default:furnace', 'default:pick_stone', 'default:sword_stone', 'default:axe_stone', 'default:shovel_stone', 'farming:hoe_stone'},
+     tprizes = nil,
+     tbook = S("Minez de la roche. Un nouveau matériau plus durable que le bois."),
+     award_req = 'pick_crafter_begins'
+   },   
+
+   { name = 'coal_miner_begins',
+     title = S("Au charbon !"),
+     node = 'default:stone_with_coal',
+     desc = S("Dig ")..(1 * lvl).." "..S("default:stone_with_coal")..".",
+     icon = "default_coal.png",
+     type = "dig",
+     target = 1 * lvl,
+     titems = {'default:torch', 'dye:black'},
+     tprizes = nil,
+     tbook = S("Minez du minerai de charbon. Vous pourrez l'utiliser pour faire des torches, servir de carburant pour le four ou bien faire de la teinture noire."),
+     award_req = 'pick_crafter_begins'
    },   
 
 }
@@ -117,7 +184,7 @@ awards.register_onDig(
 
       local achievements = {
 	 sys4_achievements.getAchievement("dig", "tree_digger_begins"),
-	 sys4_achievements.getAchievement("dig", "tree_digger_newbee"),
+	 sys4_achievements.getAchievement("dig", "stone_miner_begins"),
       }
 
       for i=1, #achievements do
@@ -133,6 +200,11 @@ awards.register_onDig(
 	    if node == 'default:tree' then
 	       mod = 'default'
 	       items = {'tree', 'jungletree', 'pine_tree', 'acacia_tree'}
+	    end
+
+	    if node == 'default:stone' then
+	       mod = 'default'
+	       items = {'stone', 'desert_stone', 'cobble', 'desert_cobble', 'mossycobble'}
 	    end
 
 	    local count = sys4_achievements.getItemCount("dig", mod, items, playern, data)
@@ -174,6 +246,7 @@ sys4_achievements.register_onCraft(
       local playern = player:get_player_name()
 
       local achievements = {
+	 sys4_achievements.getAchievement("dig", "wood_crafter_begins")
       }
 
       for i=1, #achievements do
@@ -185,6 +258,11 @@ sys4_achievements.register_onCraft(
 	    local target = achievement.target
 	    local mod = ""
 	    local items = {}
+	    
+	    if node == 'default:wood' then
+	       mod = 'default'
+	       items = {'wood', 'junglewood', 'pine_wood', 'acacia_wood'}
+	    end
 
 	    local count = sys4_achievements.getItemCount("craft", mod, items, playern, data)
 	    

@@ -418,10 +418,21 @@ awards.showto = function(name, to, sid, text)
 			local item = listofawards[sid+0]
 			local def = awards.def[item.name]
 			if def and def.secret and not item.got then
-				formspec = formspec .. "label[9,2.75;Secret Award]"..
+			        local award_req = ""
+			        if def.award_req then
+				   award_req = def.award_req
+				   local reqTitle = awards.def[award_req].title
+				   if sys4_achievements.isAwardGot(award_req, listofawards) then
+				      award_req = S("Requiered").." : "..reqTitle.." ("..S("got")..")"
+				   else
+				      award_req = S("Requiered").." : "..reqTitle
+				   end
+				   formspec = formspec .. "label[9,3.75;- "..award_req.." -]"
+				end
+				formspec = formspec .. "label[9,2.75;"..S("Secret Award").."]"..
 									"image[9.75,0;3,3;unknown.png]"
 				if def and def.description then
-					formspec = formspec	.. "label[9,3.25;Unlock this award to find out what it is]"				
+				   formspec = formspec	.. "label[9,3.25;"..S("Unlock this award to find out what it is").."]"				
 				end
 			else
 				local title = item.name
@@ -430,7 +441,7 @@ awards.showto = function(name, to, sid, text)
 				end
 				local status = ""
 				if item.got then
-					status = " (got)"
+				   status = " ("..S("got")..")"
 				end
 				local icon = ""
 				if def and def.icon then
@@ -441,7 +452,7 @@ awards.showto = function(name, to, sid, text)
 				   award_req = def.award_req
 				   local reqTitle = awards.def[award_req].title
 				   if sys4_achievements.isAwardGot(award_req, listofawards) then
-				      award_req = S("Requiered").." : "..reqTitle.." (got)"
+				      award_req = S("Requiered").." : "..reqTitle.." ("..S("got")..")"
 				   else
 				      award_req = S("Requiered").." : "..reqTitle
 				   end
@@ -487,7 +498,16 @@ awards.showto = function(name, to, sid, text)
 				first = false
 				
 				if def.secret and not award.got then
-					formspec = formspec .. "#ACACACSecret Award"
+				   if def.award_req then
+				      local requieredAward = def.award_req
+				      if not sys4_achievements.isAwardGot(requieredAward, listofawards) then
+					 formspec = formspec .. "#AC0000"..S("Secret Award")
+				      else
+					 formspec = formspec .. "#ACAC00"..S("Secret Award")
+				      end
+				   else
+				      formspec = formspec .. "#ACAC00"..S("Secret Award")
+				   end
 				else
 					local title = award.name			
 					if def and def.title then
@@ -499,13 +519,13 @@ awards.showto = function(name, to, sid, text)
 					   if def.award_req then
 					      local requieredAward = def.award_req
 					      
-					      if sys4_achievements.isAwardGot(requieredAward, listofawards) then
-						 formspec = formspec .. "#ACAC00".. minetest.formspec_escape(title)
-					      else
+					      if not sys4_achievements.isAwardGot(requieredAward, listofawards) then
 						 formspec = formspec .. "#AC0000".. minetest.formspec_escape(title)
+					      else
+						 formspec = formspec .. "#ACAC00".. minetest.formspec_escape(title)
 					      end
 					   else
-					      formspec = formspec .. "#ACACAC".. minetest.formspec_escape(title)
+					      formspec = formspec .. "#ACAC00".. minetest.formspec_escape(title)
 					   end
 					end
 				end

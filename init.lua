@@ -18,6 +18,25 @@ end
 
 dofile(minetest.get_modpath("sys4_achievements").."/api.lua")
 
+-- Add translations for awards from Rubenwardy and Calinou
+for _,award in pairs(awards.def) do
+   award.title = S(award.title)
+   award.description = S(award.description)
+end
+
+-- Add 'award_req' property for some original awards from Rubenwardy and Calinou
+awards.def['award_on_the_way'].award_req = 'pick_crafter_lover'
+awards.def['award_youre_a_copper'].award_req = 'pick_crafter_lover'
+awards.def['award_mine2'].award_req = 'pick_crafter'
+awards.def['award_mine3'].award_req = 'pick_crafter'
+awards.def['award_mine4'].award_req = 'pick_crafter'
+awards.def['award_lightitup'].award_req = 'pick_crafter'
+awards.def['award_light_all_the_things'].award_req = 'pick_crafter'
+awards.def['award_obsessed_with_obsidian'].award_req = 'pick_crafter_pro'
+awards.def['award_nyanfind'].award_req = 'pick_crafter_lover'
+awards.def['award_mesefind'].award_req = 'pick_crafter_pro'
+awards.def['award_youre_winner'].award_req = 'pick_crafter'
+
 local lvl = 1 -- Level Of difficulty
 
 -- Achievements table définition
@@ -27,7 +46,7 @@ local a = {
    
    -- Trees
    { name = 'tree_digger',
-     title = S("Coupons du bois"),
+     title = S("Trouvons du bois"),
      node = 'default:tree',
      desc = S("Dig ")..(1*lvl) .." "..S("default:tree")..".",
      icon = "default_tree.png",
@@ -132,7 +151,7 @@ local a = {
    { name = 'pick_crafter_lover',
      title = S("Meilleure Pioche !"),
      node = 'default:pick_stone',
-     desc = S("Craft ")..(1 * lvl).." "..S("default:pickstone")..".",
+     desc = S("Craft ")..(1 * lvl).." "..S("default:pick_stone")..".",
      icon = "default_tool_stonepick.png",
      type = "craft",
      target = 1 * lvl,
@@ -146,7 +165,7 @@ local a = {
      title = S("Du solide !"),
      node = 'default:stonebrick',
      desc = S("Craft ")..(4 * lvl).." "..S("default:stonebrick")..".",
-     icon = "default_stonebrick.png",
+     icon = "default_stone_brick.png",
      type = "craft",
      target = 4 * lvl,
      titems = nil,
@@ -203,12 +222,12 @@ local a = {
      target = 1 * lvl,
      titems = nil,
      tprizes = nil,
-     tbook = S("Le bronze est un métal exceptionnel. Vos outils fabriqués avec ce métal s'useront beaucoup moins vite que ceux en acier."),
+     tbook = S("Le bronze est un alliage exceptionnel. Vos outils fabriqués avec ce métal s'useront beaucoup moins vite que ceux en acier."),
      award_req = 'copper_miner'
    },
    
    { name = 'wheat_digger',
-     title = S("La saison des récoltes"),
+     title = S("La récolte"),
      node = 'farming:wheat_8',
      desc = S("Dig ")..(3* lvl).." "..S("farming:wheat")..".",
      icon = "farming_wheat.png",
@@ -289,7 +308,7 @@ local a = {
      title = S("Souffleur de Verre"),
      node = 'vessels:drinking_glass',
      desc = S("Craft ")..(1* lvl).." "..S("group:vessels")..".",
-     icon = "vessels_bottle.png",
+     icon = "vessels_glass_bottle.png",
      type = "craft",
      target = 1 * lvl,
      titems = nil,
@@ -352,9 +371,9 @@ end
 
 for i=1, #sa do
    local tbook = nil
-   if a[i].tbook and a[i].tbook ~= nil then
-      tbook = {title = "SYS4 AWARDS : "..a[i].title,
-	       text = sys4_achievements.write_book(a[i].tbook, a[i].titems, a[i].tprizes)
+   if sa[i].tbook and sa[i].tbook ~= nil then
+      tbook = {title = "SYS4 AWARDS : "..sa[i].title,
+	       text = sys4_achievements.write_book(sa[i].tbook, sa[i].titems, sa[i].tprizes)
       }
    end
    awards.register_achievement(
@@ -367,19 +386,17 @@ for i=1, #sa do
 	 items = sa[i].titems,
 	 prizes = sa[i].tprizes,
 	 book = tbook,
-	 secret = 1
+	 secret = true
       })
 end
    
-
--- Register Specialized steps with some achievements
 awards.register_onDig(
    function(player, data)
       local playern = player:get_player_name()
 
       local achievements = {
-	 sys4_achievements.getAchievement("dig", "tree_digger_begins"),
-	 sys4_achievements.getAchievement("dig", "stone_miner_begins"),
+	 sys4_achievements.getAchievement("dig", "tree_digger"),
+	 sys4_achievements.getAchievement("dig", "stone_miner"),
       }
 
       for i=1, #achievements do
@@ -441,7 +458,7 @@ sys4_achievements.register_onCraft(
       local playern = player:get_player_name()
 
       local achievements = {
-	 sys4_achievements.getAchievement("dig", "wood_crafter_begins")
+	 sys4_achievements.getAchievement("craft", "wood_crafter")
       }
 
       for i=1, #achievements do

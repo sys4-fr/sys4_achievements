@@ -4,6 +4,56 @@
 Dig\ \ = Récolte\ \ 
 Craft\ \ = Fabrique\ \ 
 
+# Original awards from Rubenwardy and Calinou
+OMG, Nyan Cat! = Mon dieu, Nyan Cat !
+Find a nyan cat. = Trouve un nyan cat.
+The Stack = La Pile
+Die near bones. = Meurt près d'ossements.
+On The Way = Sur la voie
+Place 100 rails. = Pose 100 rails.
+Professional Lumberjack = Bucheron Professionnel
+Dig 10,000 tree blocks. = Récolte 10,000 troncs d'arbres.
+Lumberjack = Bucheron
+Dig 100 tree blocks. = Récolte 100 troncs d'arbres.
+You're a copper = Complètement cuivré
+Dig 1,000 copper ores. = Récolte 1,000 minerais de cuivre.
+Hardened Miner = Mineur endurcie
+Dig 1,000 stone blocks = Mine 1,000 blocs de Roche.
+Secret Award = Trophée Secret
+Unlock this award to find out what it is = Débloque ce trophée pour voir ce que c'est.
+Junglebaby = Enfant de la Jungle
+Dig 100 jungle tree blocks. = Récolte 100 troncs d'arbres de jungle.
+Dying Spree = Folie suicidère
+Die 5 times. = Meurt 5 fois.
+In the Flow = Dans le courant
+Die in flowing lava. = Meurt dans un écoulement de lave.
+Marchand De Sable = 
+Dig 1,000 sand. = Creuse 1,000 blocs de sable.
+Mini Miner = Mini Mineur
+Dig 100 stone blocks. = Mine 100 blocs de Roche.
+Obsessed with Obsidian = Obsédé de l'Obsidienne
+Mine 50 obsidian. = Mine 50 blocs d'obsidienne.
+Master Miner = Maitre Mineur
+Dig 10,000 stone blocks. = Mine 10,000 blocs de Roche.
+Bot-like = 
+Die 10 times. = Meurt 10 fois.
+Semi-pro Lumberjack = Bucheron semi-pro
+Dig 1,000 tree blocks. = Récolte 1,000 troncs d'arbres.
+Light ALL The Things! = Éclaire TOUTES choses !
+Place 1,000 torches. = Pose 1,000 torches.
+Light It Up = Allumé
+Place 100 torches. = Pose 100 torches.
+This is Sad = C'est Triste
+Die near diamond ore. = Meurt près de diamants.
+Jungleman = Homme de la Jungle
+Dig 1,000 jungle tree blocks. = Récolte 1,000 troncs d'arbres de jungle.
+L33T Lumberjack = Bucheron d'3L1T3
+Dig 100,000 tree blocks. = Récolte 100,000 troncs d'arbres.
+You're a witch! = Comme une sorcière !
+Burn to death in a fire. = Brule en plein feu jusqu'à la mort.
+First Mese Find = Découverte du Mese
+Find some Mese. = Trouve du Mese.
+
 #api.lua
 Waste = Déchet
 Amazing ! You win = Félicitations ! Vous gagnez
@@ -16,6 +66,7 @@ OR = OU
 empty = vide
 No craft for this item = Pas de craft pour cet objet
 Output = Sortie
+got = Obtenu
 
 ### Nodes names ###
 

@@ -4,7 +4,7 @@
 local S = sys4_achievements.intllib
 
 -- api
-local craftmode = false
+
 
 -- Give initial Stuff
 minetest.register_on_newplayer(
@@ -34,6 +34,41 @@ minetest.register_node("sys4_achievements:waste",
    is_ground_content = false,
    groups = {crumbly=2, flammable=2},
 })
+
+function sys4_achievements.getLevel()
+   local lvl = nil
+   lvl = tonumber(minetest.setting_get("sys4_level"))
+   if lvl == nil or lvl < 1 then return 1 end
+   
+   return lvl
+end
+
+function sys4_achievements.setLevel(level)
+   minetest.setting_set("sys4_level", level)
+   minetest.setting_save()
+end
+
+function sys4_achievements.getCraftMode()
+   local craftMode
+   craftMode = minetest.setting_getbool("sys4_craftmode")
+   if craftMode == nil then craftMode = false end
+
+   return craftMode
+end
+
+local craftmode = sys4_achievements.getCraftMode()
+
+function sys4_achievements.setCraftMode(craftMode)
+   local param = "false"
+   if craftMode then
+      param = "true"
+   end
+   minetest.setting_set("sys4_craftmode", param)
+   minetest.setting_save()
+   craftmode = craftMode
+end
+
+
 
 function sys4_achievements.write_book(book_content, items, prizes)
    local text = ""
@@ -458,15 +493,17 @@ awards.showto = function(name, to, sid, text)
 				   end
 				   formspec = formspec .. "label[9,3.75;- "..award_req.." -]"
 				end
-				formspec = formspec .. "label[9,3.25;"..title..status.."]".."label[9,0;"..item.name.."]"..
-									"image[9.75,0.5;3,3;"..icon.."]"
+
+				formspec = formspec .. "label[9,3.25;"..title..status.."]"--.."label[9,0;"..item.name.."]"
+				   .."image[9.75,0.5;3,3;"..icon.."]"
+
 				if def and def.description then
 					formspec = formspec	.. "label[8,4.25;"..def.description.."]"				
 				end
 
 				-- Sys4
 				-- Crafts to unlock
-				if def and def.items then
+				if def and def.items and craftmode then
 				   local items = def.items
 				   local y = 5 -- Position y de départ du label
 				   formspec = formspec	.. "label[8,"..y..";"..S("Unlock crafts").." :]"
@@ -631,17 +668,37 @@ minetest.register_chatcommand("gawd", {
 	end
 })
 
-minetest.register_chatcommand("craftmode",
+minetest.register_chatcommand("sys4_craftmode",
 {
    params = "on or off",
-   description = "craftmode : enable or not sys4_achievements locked crafts.",
+   description = "sys4_craftmode : enable or not sys4_achievements locked crafts.",
    func = function(name, param)
       if param == "on" then	 
-	 craftmode = true
+	 sys4_achievements.setCraftMode(true)
 	 minetest.chat_send_player(name, "Sys4 craft mode enabled")
       else
-	 craftmode = false
+	 sys4_achievements.setCraftMode(false)
 	 minetest.chat_send_player(name, "Sys4 craft mode disabled")
+      end
+   end
+})
+
+minetest.register_chatcommand("sys4_level",
+{
+   params = "Integer",
+   description = "sys4_level : enable or not sys4_achievements level of difficulty.",
+   func = function(name, param)
+      local number = nil
+      if param and param ~= "" then
+	 number = tonumber(param)
+	 if number ~= nil and number > 0 then
+	    sys4_achievements.setLevel(number)
+	    minetest.chat_send_player(name, "Sys4 level changed to "..number..". Please restart the game for changes take effects.")
+	 else
+	    minetest.chat_send_player(name, "Sys4 level : param error, please type a number !")
+	 end
+      else
+	 minetest.chat_send_player(name, "Sys4 level : no parameter !")
       end
    end
 })

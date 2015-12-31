@@ -37,7 +37,8 @@ awards.def['award_nyanfind'].award_req = 'pick_crafter_lover'
 awards.def['award_mesefind'].award_req = 'pick_crafter_pro'
 awards.def['award_youre_winner'].award_req = 'pick_crafter'
 
-local lvl = 1 -- Level Of difficulty
+-- Level of difficulty
+local lvl = sys4_achievements.getLevel()
 
 -- Achievements table définition
 local a = {
@@ -48,7 +49,7 @@ local a = {
    { name = 'tree_digger',
      title = S("Trouvons du bois"),
      node = 'default:tree',
-     desc = S("Dig ")..(1*lvl) .." "..S("default:tree")..".",
+     desc = S("Dig ")..(1 * lvl).." "..S("default:tree")..".",
      icon = "default_tree.png",
      type = "dig",
      target = 1 * lvl,
@@ -253,7 +254,7 @@ local a = {
    },   
 
    { name = 'cooker_begins',
-     title = S("À TABLE !"),
+     title = S("À table !"),
      node = 'farming:flour',
      desc = S("Craft ")..(1* lvl).." "..S("farming:flour")..".",
      icon = "farming_bread.png",

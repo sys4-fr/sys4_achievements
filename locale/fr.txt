@@ -4,6 +4,31 @@
 Dig\ \ = Récolte\ \ 
 Craft\ \ = Fabrique\ \ 
 
+#init.lua achievements
+Trouvons du bois =
+Faire des planches... = 
+...et des bâtons = 
+Bonne Pioche ! = 
+Agriculteur = 
+Le monde est stone = 
+Au charbon ! = 
+Au Four ! = 
+Meilleure Pioche ! = 
+Du solide ! = 
+Âge du Fer = 
+Mineur accomplie = 
+Âge du Cuivre = 
+Âge du Bronze = 
+La récolte = 
+Dans la paille = 
+À table ! =
+La route du coton = 
+De fil en aiguille = 
+Je vais me coucher = 
+Souffleur de Verre = 
+Dans quelle étagère ? = 
+Not only Waste = Pas que des Déchets
+
 # Original awards from Rubenwardy and Calinou
 OMG, Nyan Cat! = Mon dieu, Nyan Cat !
 Find a nyan cat. = Trouve un nyan cat.
@@ -242,7 +267,7 @@ stairs:stair_desert_stonebrick = Escalier en Briques de Roche du Desert
 stairs:slab_stone = Dalle en Roche
 stairs:stair_stone = Escalier en Roche
 stairs:slab_stonebrick = Dalle en Briques de Roche
-stairs:stair_stone = Escalier en Briques de Roche
+stairs:stair_stonebrick = Escalier en Briques de Roche
 
 # Obsidian
 default:obsidian = Obsidienne
@@ -315,6 +340,7 @@ doors:door_steel = Porte en Acier
 
 # Verre
 default:glass = Bloc de Verre
+group:vessels = Récipient
 doors:door_glass = Porte en Verre
 
 # Dye
@@ -342,8 +368,7 @@ tnt:tnt = T.N.T
 vessels:drinking_glass = Verre à Boire
 vessels:glass_bottle = Bouteille en Verre
 vessels:glass_fragments = Verre pillé
-vessels:glass_fragments = Brisure de Verre
-vessels:shelf = Étagère à Vaiselle
+vessels:shelf = Étagère à Vaisselle
 vessels:steel_bottle = Bouteille en Acier
 
 # Wool

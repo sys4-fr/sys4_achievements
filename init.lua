@@ -46,7 +46,7 @@ if not craftmode then
    a = {
       
       { name = 'tree_digger',
-	title = S("Trouvons du bois"),
+	title = S("Finding wood"),
 	node = 'default:tree',
 	desc = S("Dig ")..(1 * lvl).." "..S("default:tree")..".",
 	icon = "default_tree.png",
@@ -54,11 +54,11 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = {'default:wood', 'default:stick'},
 	tprizes = nil,
-	tbook = S("Frappe un arbre jusqu'à obtenir du bois. Matière première indispensable."),
+	tbook = S("Attack a tree and obtain wood. It's an essential raw material."),
       },   
 
       { name = 'wood_crafter',
-	title = S("Faire des planches et des bâtons"),
+	title = S("Make planks and sticks"),
 	node = 'default:stick',
 	desc = S("Craft ")..(4 * lvl).." "..S("default:stick")..".",
 	icon = "default_wood.png",
@@ -66,12 +66,12 @@ if not craftmode then
 	target = 4 * lvl,
 	titems = {'default:pick_wood', 'farming:hoe_wood'},
 	tprizes = nil,
-	tbook = S("Fabrique des planches et des bâtons à parir de bois."),
+	tbook = S("Make Planks and Sticks from wood."),
 	award_req = 'tree_digger'
       },   
 
       { name = 'pick_crafter',
-	title = S("Bonne Pioche !"),
+	title = S("Good Pick!"),
 	node = 'default:pick_wood',
 	desc = S("Craft ")..(1 * lvl).." "..S("default:pick_wood")..".",
 	icon = "default_tool_woodpick.png",
@@ -79,7 +79,7 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = {'default:pick_stone', 'default:furnace'},
 	tprizes = nil,
-	tbook = S("Fabrique une pioche en bois à l'aide de planches et de bâtons."),
+	tbook = S("Make a wooden Pick from planks and sticks."),
 	award_req = 'wood_crafter'
       },   
 
@@ -97,7 +97,7 @@ if not craftmode then
       },   
       
       { name = 'hoe_crafter',
-	title = S("Fermier"),
+	title = S("Farmer"),
 	node = 'farming:hoe_wood',
 	desc = S("Craft ")..(1 * lvl).." "..S("farming:hoe_wood")..".",
 	icon = "farming_tool_woodhoe.png",
@@ -105,7 +105,7 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = {'farming:flour', 'farming:straw', 'beds:bed_bottom', 'beds:fancy_bed_bottom'},
 	tprizes = nil,
-	tbook = S("Fabrique une houe en bois à l'aide de planches et de bâtons."),
+	tbook = S("Make a wooden Hoe from planks and sticks."),
 	award_req = 'wood_crafter'
       },
 

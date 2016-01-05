@@ -3,28 +3,46 @@
 
 local S = sys4_achievements.intllib
 
--- api
+-- api --
 
+-- Functions for get and set craftmode
+-- When craftmode is enabled, crafts are locked by defaults.
+-- Players have to unlock achievements for unlock locked crafts.
+function sys4_achievements.getCraftMode()
+   local craftmode
+   craftmode = minetest.setting_getbool("sys4_craftmode")
+   if craftmode == nil then
+      craftmode = false
+   end
 
--- Give initial Stuff
-minetest.register_on_newplayer(
-   function(player)
-      if craftmode then
-	 minetest.log("action", "Giving initial stuff to player "..player:get_player_name())
-	 local book = ItemStack("default:book_written")
-	 local data = {}
-	 data.title = "SYS4 AWARDS : Introduction"
-	 data.text = "Bonjour "..player:get_player_name().." et bienvenue dans Minetest.\n\n"
-	    .."Vous débarquez dans ce monde avec vos seules mains comme outils et la nuit arrive à grand pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.\n\n"
-	    .."Comme premier objectif, allez récolter 20 troncs d'arbres."
-	 data.owner = player:get_player_name()
-	 local data_str = minetest.serialize(data)
-	 book:set_metadata(data_str)
-	 
-	 local inv = minetest.get_inventory({type="player", name=player:get_player_name()})
-	 inv:add_item("main", book)
-      end
-   end)
+   return craftmode
+end
+
+function sys4_achievements.setCraftMode(craftmode)
+   local param = "false"
+   if craftmode then
+      param = "true"
+   end
+   minetest.setting_set("sys4_craftmode", param)
+   minetest.setting_save()
+end
+
+-- Functions for set and get Level of difficulty
+-- This functions take sense when craftmode is enabled
+function sys4_achievements.getLevel()
+   local lvl = nil
+   lvl = tonumber(minetest.setting_get("sys4_level"))
+   if lvl == nil or lvl < 1 then 
+      return 1
+   end
+   
+   return lvl
+end
+
+function sys4_achievements.setLevel(level)
+   minetest.setting_set("sys4_level", level)
+   minetest.setting_save()
+end
 
 -- New Waste Node
 minetest.register_node("sys4_achievements:waste",
@@ -35,41 +53,7 @@ minetest.register_node("sys4_achievements:waste",
    groups = {crumbly=2, flammable=2},
 })
 
-function sys4_achievements.getLevel()
-   local lvl = nil
-   lvl = tonumber(minetest.setting_get("sys4_level"))
-   if lvl == nil or lvl < 1 then return 1 end
-   
-   return lvl
-end
-
-function sys4_achievements.setLevel(level)
-   minetest.setting_set("sys4_level", level)
-   minetest.setting_save()
-end
-
-function sys4_achievements.getCraftMode()
-   local craftMode
-   craftMode = minetest.setting_getbool("sys4_craftmode")
-   if craftMode == nil then craftMode = false end
-
-   return craftMode
-end
-
-local craftmode = sys4_achievements.getCraftMode()
-
-function sys4_achievements.setCraftMode(craftMode)
-   local param = "false"
-   if craftMode then
-      param = "true"
-   end
-   minetest.setting_set("sys4_craftmode", param)
-   minetest.setting_save()
-   craftmode = craftMode
-end
-
-
-
+-- Function that format text written in given books
 function sys4_achievements.write_book(book_content, items, prizes)
    local text = ""
    
@@ -88,7 +72,7 @@ function sys4_achievements.write_book(book_content, items, prizes)
       text = text..tt.."\n"
    end
    
-   if items and items ~= nil then
+   if items and items ~= nil and sys4_achievements.getCraftMode() then
       text = text..S("You unlock these crafts").." :"
       
       local tt = "\n"
@@ -103,6 +87,7 @@ function sys4_achievements.write_book(book_content, items, prizes)
    return text
 end
 
+-- Function for display craft recipes in given books
 function sys4_achievements.getCraftRecipes(itemName)
    local str = ""
    if itemName ~= nil and itemName ~= "" then
@@ -154,6 +139,7 @@ function sys4_achievements.getCraftRecipes(itemName)
    return str
 end
 
+-- Function that return an achievement by type and name
 function sys4_achievements.getAchievement(onType, name)
    local registeredAchievements
 
@@ -177,6 +163,7 @@ function sys4_achievements.getAchievement(onType, name)
    end
 end
 
+-- Function that determine if player has or not unlocked achievement and return a boolean.
 function sys4_achievements.has_achievement(name, award)
    local data = awards.players[name]
    
@@ -202,7 +189,7 @@ function sys4_achievements.register_onCraft(func)
 	table.insert(awards.onCraft,func)
 end
 
-
+-- Function that return the number of crafted, placed or digged items by the player
 function sys4_achievements.getItemCount(action_type, mod, items, playern, data)
    local count = 0
    if action_type == "craft" then
@@ -232,6 +219,7 @@ function sys4_achievements.getItemCount(action_type, mod, items, playern, data)
    return count
 end
 
+-- Function that determine if achievement is got or not from an awards list
 function sys4_achievements.isAwardGot(awardName, listofawards)
    for _,award in pairs(listofawards) do
       if awardName == award.name and award.got then
@@ -241,7 +229,91 @@ function sys4_achievements.isAwardGot(awardName, listofawards)
    return false
 end
 
--- AWARDS redefinitions
+-- Fonction qui se déclenche quand le joueur place un objet dans son environnement.
+-- Cette fonction est normalement déjà définie dans 'awards' : minetest.register_on_place = func(...)
+-- Mais elle ne se déclenche pas pour certains objets comme les troncs d'arbres.
+-- Ces types d'objets possèdent une propriété on_place = minetest.rotate_node 
+-- qu'il faut redéfinir par cette fonction pour nos besoins.
+function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
+
+   if not placer or not pointed_thing or not itemstack or not placer:get_player_name() or placer:get_player_name()=="" then
+      return
+   end
+
+   
+   -- Code pour le systeme awards
+   local nodedug = string.split(itemstack:get_name(), ":")
+   if #nodedug ~= 2 then
+      --minetest.log("error","Awards mod: "..node.name.." is in wrong format!")
+      return
+   end
+   local mod=nodedug[1]
+   local item=nodedug[2]
+   local playern = placer:get_player_name()
+   
+   -- Run checks
+   if (not playern or not nodedug or not mod or not item) then
+      return
+   end
+   awards.assertPlayer(playern)
+   awards.tbv(awards.players[playern].place, mod)
+   awards.tbv(awards.players[playern].place[mod], item, 0)
+   
+   -- Increment counter
+   awards.players[playern].place[mod][item] = awards.players[playern].place[mod][item] + 1
+   
+   -- Run callbacks and triggers
+   local player = placer
+   local data = awards.players[playern]
+   for i=1,# awards.onPlace do
+      local res = nil
+      if type(awards.onPlace[i]) == "function" then
+	 -- Run trigger callback
+	 res = awards.onPlace[i](player,data)
+      elseif type(awards.onPlace[i]) == "table" then
+	 -- Handle table trigger
+	 if not awards.onPlace[i].node or not awards.onPlace[i].target or not awards.onPlace[i].award then
+	    print("[ERROR] awards - onPlace trigger "..i.." is invalid!")
+	 else
+	    -- run the table
+	    local tnodedug = string.split(awards.onPlace[i].node, ":")
+	    local tmod = tnodedug[1]
+	    local titem = tnodedug[2]
+	    if tmod==nil or titem==nil or not data.place[tmod] or not data.place[tmod][titem] then
+	       -- table running failed!
+	    elseif data.place[tmod][titem] > awards.onPlace[i].target-1 then
+	       res = awards.onPlace[i].award
+	    end
+	 end
+      end
+      
+      if res then
+	 awards.give_achievement(playern,res)
+      end
+   end
+  
+   -- Meme portion de code que dans la fonction core.rotate_node
+   core.rotate_and_place(itemstack, placer, pointed_thing,
+			 core.setting_getbool("creative_mode"),
+			 {invert_wall = placer:get_player_control().sneak})
+   return itemstack   
+end
+
+
+-- Redéfinition de la propriété on_place de ces nodes
+
+local nodes = {
+   minetest.registered_nodes["default:tree"],
+   minetest.registered_nodes["default:jungletree"],
+   minetest.registered_nodes["default:acacia_tree"],
+   minetest.registered_nodes["default:pine_tree"],
+}
+
+for i=1, #nodes do
+   nodes[i].on_place = sys4_achievements.register_onPlace
+end
+
+-- AWARDS redefinitions --
 
 -- add new trigger 'craft'
 awards.onCraft = {}
@@ -307,8 +379,8 @@ awards.give_achievement = function (name, award)
       end
       
       -- Sys4
-      -- Give book
-      if awards.def[award] and awards.def[award].book and craftmode then
+      -- Give book if craftmode enabled
+      if awards.def[award] and awards.def[award].book and sys4_achievements.getCraftMode() then
 	 
 	 local itemstack = ItemStack('default:book_written')
 	 local book_data = {}
@@ -321,7 +393,6 @@ awards.give_achievement = function (name, award)
 	 if receiverref == nil then return end
 	 receiverref:get_inventory():add_item("main", itemstack)
       end
-      
       
       -- Get data from definition tables
       local title = award
@@ -415,7 +486,36 @@ awards.give_achievement = function (name, award)
    end
 end
 
--- Redefenition of awards.showto for showing crafts to unlock and arrange display
+-- function that format a text displayed in formspec.
+function sys4_achievements.formatShowto(text)
+   if text ~= nil and text ~= "" then   
+      local maxw = 45 -- Max length for a displayed string in form.
+
+      local words = string.split(text, " ")
+      local tt = ""
+
+      -- Placer un retour à la ligne de chaque fin de ligne de longueur maxw
+      local len = 0
+      for i=1, #words do
+	 len = len + string.len(words[i]) + 1
+	 
+	 if len - 1 > maxw then
+	    tt = tt.."\n"..words[i].." "
+	    len = string.len(words[i]) + 1
+	 else
+	    tt = tt..words[i].." "
+	 end
+      end
+
+      return tt
+   end
+
+return ""
+end
+
+-- Redefenition of awards.showto
+-- This function display related infos of an achievement.
+-- When craftmode is enabled, this function will display crafts that achievement unlock.
 awards.showto = function(name, to, sid, text)
 	if name == "" or name == nil then
 		name = to
@@ -502,8 +602,8 @@ awards.showto = function(name, to, sid, text)
 				end
 
 				-- Sys4
-				-- Crafts to unlock
-				if def and def.items and craftmode then
+				-- Crafts to unlock when craftmode is on else display content of the book
+				if def and def.items and sys4_achievements.getCraftMode() then
 				   local items = def.items
 				   local y = 5 -- Position y de départ du label
 				   formspec = formspec	.. "label[8,"..y..";"..S("Unlock crafts").." :]"
@@ -519,6 +619,9 @@ awards.showto = function(name, to, sid, text)
 				      y = y + 0.35
 				      formspec = formspec .. "label[8,"..y..";- "..S(name).."]"
 				   end
+				elseif def and def.book and def.book.text and not sys4_achievements.getCraftMode() then
+				   formspec = formspec .. "label[8,5;"..sys4_achievements.formatShowto(def.book.text).."]"
+				   
 				end
 			end
 		end
@@ -575,9 +678,87 @@ awards.showto = function(name, to, sid, text)
 	end
 end
 
+-- Definitions of chat commands --
+
+-- Get achievement artificially
+minetest.register_chatcommand("gawd", {
+	params = "award name",
+	description = "gawd: give award to self",
+	func = function(name, param)
+		awards.give_achievement(name,param)
+	end
+})
+
+-- Enable or not craftmode
+minetest.register_chatcommand("sys4_craftmode",
+{
+   params = "on or off",
+   description = "sys4_craftmode : enable or not sys4_achievements locked crafts.",
+   func = function(name, param)
+      if param == "on" then	 
+	 sys4_achievements.setCraftMode(true)
+	 minetest.chat_send_player(name, "Sys4 craft mode enabled. Please restart the game for changes take effects.")
+      else
+	 sys4_achievements.setCraftMode(false)
+	 minetest.chat_send_player(name, "Sys4 craft mode disabled. Please restart the game for changes take effects.")
+      end
+   end
+})
+
+-- set level of difficulty
+minetest.register_chatcommand("sys4_level",
+{
+   params = "Integer",
+   description = "sys4_level : enable or not sys4_achievements level of difficulty.",
+   func = function(name, param)
+      local number = nil
+      if param and param ~= "" then
+	 number = tonumber(param)
+	 if number ~= nil and number > 0 then
+	    sys4_achievements.setLevel(number)
+	    minetest.chat_send_player(name, "Sys4 level changed to "..number..". Please restart the game for changes take effects.")
+	 else
+	    minetest.chat_send_player(name, "Sys4 level : param error, please type a number !")
+	 end
+      else
+	 minetest.chat_send_player(name, "Sys4 level : no parameter !")
+      end
+   end
+})
+
+-- Add translations for awards from Rubenwardy and Calinou
+for _,award in pairs(awards.def) do
+   award.title = S(award.title)
+   award.description = S(award.description)
+end
+
+local craftmode = sys4_achievements.getCraftMode()
+
+-- Give initial Stuff if craftmode enabled
+minetest.register_on_newplayer(
+   function(player)
+      if craftmode then
+	 minetest.log("action", "Giving initial stuff to player "..player:get_player_name())
+	 local book = ItemStack("default:book_written")
+	 local data = {}
+	 data.title = "SYS4 AWARDS : Introduction"
+	 data.text = "Bonjour "..player:get_player_name().." et bienvenue dans Minetest.\n\n"
+	    .."Vous débarquez dans ce monde avec vos seules mains comme outils et la nuit arrive à grand pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.\n\n"
+	    .."Comme premier objectif, trouvez du bois."
+	 data.owner = player:get_player_name()
+	 local data_str = minetest.serialize(data)
+	 book:set_metadata(data_str)
+	 
+	 local inv = minetest.get_inventory({type="player", name=player:get_player_name()})
+	 inv:add_item("main", book)
+      end
+   end)
+
 -- Register new trigger on "craft"
 minetest.register_on_craft(
    function(itemstack, player, old_craft_grid, craft_inv)
+      
+	 
       -- Par défaut tout craft qui doit donner quelque chose retournera des déchets inutilisables.
       local wasteItem = "sys4_achievements:waste"
       
@@ -598,7 +779,6 @@ minetest.register_on_craft(
       awards.assertPlayer(playern)
       awards.tbv(awards.players[playern].craft, mod)
       awards.tbv(awards.players[playern].craft[mod], item, 0)
-      
       
       -- Si des awards ont été débloqués, ont les parcours pour en extraire les items qu'ils débloquent
       if awards.player(playern) ~= nil then
@@ -658,133 +838,4 @@ minetest.register_on_craft(
       end
       
    end)
-
-
-minetest.register_chatcommand("gawd", {
-	params = "award name",
-	description = "gawd: give award to self",
-	func = function(name, param)
-		awards.give_achievement(name,param)
-	end
-})
-
-minetest.register_chatcommand("sys4_craftmode",
-{
-   params = "on or off",
-   description = "sys4_craftmode : enable or not sys4_achievements locked crafts.",
-   func = function(name, param)
-      if param == "on" then	 
-	 sys4_achievements.setCraftMode(true)
-	 minetest.chat_send_player(name, "Sys4 craft mode enabled")
-      else
-	 sys4_achievements.setCraftMode(false)
-	 minetest.chat_send_player(name, "Sys4 craft mode disabled")
-      end
-   end
-})
-
-minetest.register_chatcommand("sys4_level",
-{
-   params = "Integer",
-   description = "sys4_level : enable or not sys4_achievements level of difficulty.",
-   func = function(name, param)
-      local number = nil
-      if param and param ~= "" then
-	 number = tonumber(param)
-	 if number ~= nil and number > 0 then
-	    sys4_achievements.setLevel(number)
-	    minetest.chat_send_player(name, "Sys4 level changed to "..number..". Please restart the game for changes take effects.")
-	 else
-	    minetest.chat_send_player(name, "Sys4 level : param error, please type a number !")
-	 end
-      else
-	 minetest.chat_send_player(name, "Sys4 level : no parameter !")
-      end
-   end
-})
-
-
--- Fonction qui se déclenche quand le joueur place un objet dans son environnement.
--- Cette fonction est normalement déjà définie dans 'awards' : minetest.register_on_place = func(...)
--- Mais elle ne se déclenche pas pour certains objets comme les troncs d'arbres.
--- Ces types d'objets possèdent une propriété on_place = minetest.rotate_node 
--- qu'il faut redéfinir par cette fonction pour nos besoins.
-function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
-
-   if not placer or not pointed_thing or not itemstack or not placer:get_player_name() or placer:get_player_name()=="" then
-      return
-   end
-
-   
-   -- Code pour le systeme awards
-   local nodedug = string.split(itemstack:get_name(), ":")
-   if #nodedug ~= 2 then
-      --minetest.log("error","Awards mod: "..node.name.." is in wrong format!")
-      return
-   end
-   local mod=nodedug[1]
-   local item=nodedug[2]
-   local playern = placer:get_player_name()
-   
-   -- Run checks
-   if (not playern or not nodedug or not mod or not item) then
-      return
-   end
-   awards.assertPlayer(playern)
-   awards.tbv(awards.players[playern].place, mod)
-   awards.tbv(awards.players[playern].place[mod], item, 0)
-   
-   -- Increment counter
-   awards.players[playern].place[mod][item] = awards.players[playern].place[mod][item] + 1
-   
-   -- Run callbacks and triggers
-   local player = placer
-   local data = awards.players[playern]
-   for i=1,# awards.onPlace do
-      local res = nil
-      if type(awards.onPlace[i]) == "function" then
-	 -- Run trigger callback
-	 res = awards.onPlace[i](player,data)
-      elseif type(awards.onPlace[i]) == "table" then
-	 -- Handle table trigger
-	 if not awards.onPlace[i].node or not awards.onPlace[i].target or not awards.onPlace[i].award then
-	    print("[ERROR] awards - onPlace trigger "..i.." is invalid!")
-	 else
-	    -- run the table
-	    local tnodedug = string.split(awards.onPlace[i].node, ":")
-	    local tmod = tnodedug[1]
-	    local titem = tnodedug[2]
-	    if tmod==nil or titem==nil or not data.place[tmod] or not data.place[tmod][titem] then
-	       -- table running failed!
-	    elseif data.place[tmod][titem] > awards.onPlace[i].target-1 then
-	       res = awards.onPlace[i].award
-	    end
-	 end
-      end
-      
-      if res then
-	 awards.give_achievement(playern,res)
-      end
-   end
-  
-   -- Meme portion de code que dans la fonction core.rotate_node
-   core.rotate_and_place(itemstack, placer, pointed_thing,
-			 core.setting_getbool("creative_mode"),
-			 {invert_wall = placer:get_player_control().sneak})
-   return itemstack   
-end
-
-
--- Redéfinition de la propriété on_place de ces nodes
-
-local nodes = {
-   minetest.registered_nodes["default:tree"],
-   minetest.registered_nodes["default:jungletree"],
-   minetest.registered_nodes["default:acacia_tree"],
-   minetest.registered_nodes["default:pine_tree"],
-}
-
-for i=1, #nodes do
-   nodes[i].on_place = sys4_achievements.register_onPlace
-end
 

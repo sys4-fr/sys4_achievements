@@ -84,7 +84,7 @@ if not craftmode then
       },   
 
       { name = 'pick_crafter_lover',
-	title = S("Meilleure Pioche !"),
+	title = S("Better Pick!"),
 	node = 'default:pick_stone',
 	desc = S("Craft ")..(1 * lvl).." "..S("default:pick_stone")..".",
 	icon = "default_tool_stonepick.png",
@@ -92,7 +92,7 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique une pioche de meilleure qualité avec des bâtons et de la roche."),
+	tbook = S("Make a better quality Pick from sticks and stones."),
 	award_req = 'pick_crafter'
       },   
       
@@ -110,7 +110,7 @@ if not craftmode then
       },
 
       { name = 'cooker',
-	title = S("À table !"),
+	title = S("Lunch!"),
 	node = 'farming:flour',
 	desc = S("Craft ")..(1 * lvl).." "..S("farming:flour")..".",
 	icon = "farming_bread.png",
@@ -118,12 +118,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique de la farine à partir de blé. Fais cuire au four et bon appétit !"),
+	tbook = S("Make flour from wheat. Cook it into the furnace and good lunch!"),
 	award_req = 'hoe_crafter'
       },
 
       { name = 'bed_crafter',
-	title = S("Je vais me coucher"),
+	title = S("Going to sleep"),
 	node = 'beds:bed_bottom',
 	desc = S("Craft ")..(1* lvl).." "..S("beds:bed_bottom")..".",
 	icon = "beds_bed.png",
@@ -131,12 +131,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique un lit avec des planches et de la laine."),
+	tbook = S("Make a bed from planks and wool."),
 	award_req = 'hoe_crafter'
       },   
 
       { name = 'furnace_crafter',
-	title = S("Au Fourneaux !"),
+	title = S("To the Furnace!"),
 	node = 'default:furnace',
 	desc = S("Craft ")..(1 * lvl).." "..S("default:furnace")..".",
 	icon = "default_furnace_front.png",
@@ -144,12 +144,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = {'default:bronze_ingot', 'default:pick_steel', 'screwdriver:screwdriver', 'vessels:drinking_glass', 'vessels:glass_bottle', 'vessels:steel_bottle'},
 	tprizes = nil,
-	tbook = S("Fabrique un four avec 8 blocs de roche."),
+	tbook = S("Make a furnace with 8 Cobblestones."),
 	award_req = 'pick_crafter'
       },   
 
       { name = 'iron_miner',
-	title = S("Âge du Fer"),
+	title = S("Iron Age"),
 	node = 'default:stone_with_iron',
 	desc = S("Dig ")..(1 * lvl).." "..S("default:stone_with_iron")..".",
 	icon = "default_steel_ingot.png",
@@ -157,12 +157,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = {'default:iron_ingot'},
 	tprizes = nil,
-	tbook = S("Récolte du minerai de fer. Tu pourras le faire fondre dans le four pour obtenir des lingots d'acier."),
+	tbook = S("Dig iron ore. You will can smelt steel ingot with a furnace."),
 	award_req = 'pick_crafter_lover'
       },
 
       { name = 'pick_crafter_pro',
-	title = S("Mineur accomplie"),
+	title = S("Complet miner"),
 	node = 'default:pick_steel',
 	desc = S("Craft ")..(1 * lvl).." "..S("default:pick_steel")..".",
 	icon = "default_tool_steelpick.png",
@@ -170,12 +170,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique une pioche en acier avec des bâtons et des lingots d'acier."),
+	tbook = S("Make a steel Pick from sticks and steel ingots."),
 	award_req = 'furnace_crafter'
       },   
 
       { name = 'bronze_crafter',
-	title = S("Âge du Bronze"),
+	title = S("Bronze Age"),
 	node = 'default:bronze_ingot',
 	desc = S("Craft ")..(1 * lvl).." "..S("default:bronze_ingot")..".",
 	icon = "default_bronze_ingot.png",
@@ -183,12 +183,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique du bronze à partir d'acier et de cuivre."),
+	tbook = S("Make bronze ingots from steel and copper ingots."),
 	award_req = 'furnace_crafter'
       },
       
       { name = 'straw_crafter',
-	title = S("Dans la paille"),
+	title = S("Into the straw"),
 	node = 'farming:straw',
 	desc = S("Craft ")..(1* lvl).." "..S("farming:straw")..".",
 	icon = "farming_straw.png",
@@ -196,12 +196,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique une botte de paille avec 9 bottes de blé."),
+	tbook = S("Make a straw block with 9 wheats."),
 	award_req = 'hoe_crafter'
       },   
 
       { name = 'vessel_crafter',
-	title = S("Souffleur de Verre"),
+	title = S("Glass Blower"),
 	node = 'vessels:drinking_glass',
 	desc = S("Craft ")..(1* lvl).." "..S("group:vessels")..".",
 	icon = "vessels_glass_bottle.png",
@@ -209,12 +209,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = {'vessels:shelf'},
 	tprizes = nil,
-	tbook = S("Fabrique un récipient avec du verre ou des lingots d'acier. Attention à la casse !"),
+	tbook = S("Make a container from glass or steel ingots."),
 	award_req = 'furnace_crafter'
       },   
 
       { name = 'vessel_crafter_2',
-	title = S("Dans quelle étagère ?"),
+	title = S("Shelf ?"),
 	node = 'vessels:shelf',
 	desc = S("Craft ")..(1* lvl).." "..S("vessels:shelf")..".",
 	icon = "vessels_shelf.png",
@@ -222,7 +222,7 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique une étagère avec des planches et des récipients."),
+	tbook = S("Make a vessel shelf from planks and containers."),
 	award_req = 'vessel_crafter'
       },   
 
@@ -235,12 +235,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Mine des diamants à l'aide d'une pioche en métal."),
+	tbook = S("Dig diamonds whith help of a metal pick."),
 	award_req = 'pick_crafter_pro'
       },   
 
       { name = 'mese_crafter',
-	title = S("La lueur du Mese"),
+	title = S("The Mese Glow"),
 	node = 'default:meselamp',
 	desc = S("Craft ")..(1* lvl).." "..S("default:meselamp")..".",
 	icon = "default_meselamp.png",
@@ -248,12 +248,12 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique une lampe à base de Mese et de Verre."),
+	tbook = S("Make a lamp based on Mese and Glass."),
 	award_req = 'award_mesefind'
       },   
 
       { name = 'screwdriver_crafter',
-	title = S("On serre la Vis !"),
+	title = S("Tightening the Screw!"),
 	node = 'screwdriver:screwdriver',
 	desc = S("Craft ")..(1* lvl).." "..S("screwdriver:screwdriver")..".",
 	icon = "screwdriver.png",
@@ -261,7 +261,7 @@ if not craftmode then
 	target = 1 * lvl,
 	titems = nil,
 	tprizes = nil,
-	tbook = S("Fabrique un tournevis avec un bâton et un lingot d'acier."),
+	tbook = S("Make a screwdriver from one stick and a steel ingot."),
 	award_req = 'furnace_crafter'
       },   
    }

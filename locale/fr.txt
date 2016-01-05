@@ -45,6 +45,8 @@ Make a lamp based on Mese and Glass. = Fabrique une lampe à base de Mese et de 
 # Original awards from Rubenwardy and Calinou
 OMG, Nyan Cat! = Oh mon dieu, un Nyan Cat !
 Find a nyan cat. = Trouve un Nyan Cat.
+YOU'RE A WINNER! = TU ES UN WINNER !
+Dig 1 mossy cobblestone. = Mine 1 bloc de pierres mousseuse.
 The Stack = La Pile
 Die near bones. = Meurt près d'ossements.
 On The Way = Sur la voie

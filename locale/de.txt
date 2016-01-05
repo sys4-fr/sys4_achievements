@@ -48,6 +48,8 @@ Make a lamp based on Mese and Glass. =
 # Original awards from Rubenwardy and Calinou
 OMG, Nyan Cat! = 
 Find a nyan cat. = 
+YOU'RE A WINNER! = 
+Dig 1 mossy cobblestone. = 
 The Stack = 
 Die near bones. = 
 On The Way = 

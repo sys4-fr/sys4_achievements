@@ -4,6 +4,97 @@
 # Author: Xanthin
 
 #init.lua
+Dig\ \ = Sammeln\ \ 
+Craft\ \ = Fertigen\ \ 
+
+#init.lua achievements
+Trouvons du bois =
+Frappe un arbre jusqu'à obtenir du bois. Matière première indispensable. = 
+Faire des planches et des bâtons = 
+Fabrique des planches et des bâtons à parir de bois. = 
+Bonne Pioche ! = 
+Fabrique une pioche en bois à l'aide de planches et de bâtons. = 
+Fermier = 
+Fabrique une houe en bois à l'aide de planches et de bâtons. = 
+Au Fourneaux ! = 
+Fabrique un four avec 8 blocs de roche. = 
+Meilleure Pioche ! = 
+Fabrique une pioche de meilleure qualité avec des bâtons et de la roche. = 
+Âge du Fer = 
+Récolte du minerai de fer. Tu pourras le faire fondre dans le four pour obtenir des lingots d'acier. = 
+Mineur accomplie = 
+Fabrique une pioche en acier avec des bâtons et des lingots d'acier. = 
+Âge du Bronze = 
+Fabrique du bronze à partir d'acier et de cuivre. = 
+Dans la paille = 
+Fabrique une botte de paille avec 9 bottes de blé. = 
+À table ! =
+Fabrique de la farine à partir de blé. Fais cuire au four et bon appétit ! = 
+Je vais me coucher = 
+Fabrique un lit avec des planches et de la laine. = 
+Souffleur de Verre = 
+Fabrique un récipient avec du verre ou des lingots d'acier. Attention à la casse ! = 
+Dans quelle étagère ? = 
+Fabrique une étagère avec des planches et des récipients. = 
+Not only Waste = 
+Bling Bling ! = 
+Mine des diamants à l'aide d'une pioche en métal. = 
+On serre la Vis ! = 
+Fabrique un tournevis avec un bâton et un lingot d'acier. = 
+La lueur du Mese = 
+Fabrique une lampe à base de Mese et de Verre. = 
+
+# Original awards from Rubenwardy and Calinou
+OMG, Nyan Cat! = 
+Find a nyan cat. = 
+The Stack = 
+Die near bones. = 
+On The Way = 
+Place 100 rails. = 
+Professional Lumberjack = 
+Dig 10,000 tree blocks. = 
+Lumberjack = 
+Dig 100 tree blocks. = 
+You're a copper = 
+Dig 1,000 copper ores. = 
+Hardened Miner = 
+Dig 1,000 stone blocks = 
+Secret Award = 
+Unlock this award to find out what it is = 
+Junglebaby = 
+Dig 100 jungle tree blocks. = 
+Dying Spree = 
+Die 5 times. = 
+In the Flow = 
+Die in flowing lava. = 
+Marchand De Sable = 
+Dig 1,000 sand. = 
+Mini Miner = 
+Dig 100 stone blocks. = 
+Obsessed with Obsidian = 
+Mine 50 obsidian. = 
+Master Miner = 
+Dig 10,000 stone blocks. = 
+Bot-like = 
+Die 10 times. = 
+Semi-pro Lumberjack = 
+Dig 1,000 tree blocks. = 
+Light ALL The Things! = 
+Place 1,000 torches. = 
+Light It Up = 
+Place 100 torches. = 
+This is Sad = 
+Die near diamond ore. = 
+Jungleman = 
+Dig 1,000 jungle tree blocks. = 
+L33T Lumberjack = 
+Dig 100,000 tree blocks. = 
+You're a witch! = 
+Burn to death in a fire. = 
+First Mese Find = 
+Find some Mese. = 
+
+#craftmode
 My first hut = Meine erste Hütte
 Place 50 tree blocks. = Setzen Sie 50 Baumstämme.
 Specialized Wood builder = Spezialisierter Holzbauer
@@ -186,7 +277,337 @@ You unlock these crafts = Sie schalten die Herstellung dieser Objekte frei
 Achievement Unlocked:\ \ = Erfolg freigeschaltet:\ \
 Achievement Unlocked! = Erfolg freigeschaltet!
 Unlock crafts = Freigeschaltete Herstellung
-Craft table = Werkbank
+#Craft table = Werkbank
+Requiered = 
 OR = ODER
 empty = leer
 No craft for this item = Keine Herstellung für diesen Gegenstand
+Output = 
+got = 
+
+### Nodes names ###
+
+# Trees
+group:tree =
+default:tree =
+default:acacia_tree =
+default:jungletree =
+default:pine_tree =
+
+# Stick
+group:stick =
+default:stick =
+
+# Wood
+group:wood =
+default:wood =
+default:acacia_wood =
+default:junglewood =
+default:pine_wood =
+stairs:slab_acacia_wood =
+stairs:stair_acacia_wood =
+stairs:slab_junglewood =
+stairs:stair_junglewood =
+stairs:slab_pine_wood =
+stairs:stair_pine_wood =
+stairs:slab_wood =
+stairs:stair_wood =
+
+# Leaves
+default:acacia_leaves =
+default:jungleleaves =
+default:leaves =
+default:pine_needles =
+
+# Saplings
+default:acacia_sapling =
+default:junglesapling =
+default:pine_sapling =
+default:sapling =
+
+# Fruits
+default:apple =
+
+# Beds
+beds:bed_bottom =
+beds:fancy_bed_bottom =
+
+# Boats
+boats:boat =
+
+# Bones
+bones:bones =
+
+# Buckets
+bucket:bucket_empty =
+bucket:bucket_lava =
+bucket:bucket_river_water =
+bucket:bucket_water =
+
+# Haches
+default:axe_bronze =
+default:axe_diamond =
+default:axe_mese =
+default:axe_steel =
+default:axe_stone =
+default:axe_wood =
+
+# Picks
+default:pick_bronze =
+default:pick_diamond =
+default:pick_mese =
+default:pick_steel =
+default:pick_stone =
+default:pick_wood =
+
+# Shovels
+default:shovel_bronze =
+default:shovel_diamond =
+default:shovel_mese =
+default:shovel_steel =
+default:shovel_stone =
+default:shovel_wood =
+
+# Swords
+default:sword_bronze =
+default:sword_diamond =
+default:sword_mese =
+default:sword_steel =
+default:sword_stone =
+default:sword_wood =
+
+# Hoes
+farming:hoe_bronze =
+farming:hoe_diamond =
+farming:hoe_mese =
+farming:hoe_steel =
+farming:hoe_stone =
+farming:hoe_wood =
+
+# Books
+default:book =
+default:bookshelf =
+
+# Bricks
+default:brick =
+default:clay_brick =
+stairs:slab_brick =
+stairs:stair_brick =
+
+# Metal Lumps
+default:copper_lump =
+default:gold_lump =
+default:iron_lump =
+
+# Ingots
+default:bronze_ingot =
+default:copper_ingot =
+default:gold_ingot =
+default:steel_ingot =
+
+# Metal Blocks
+default:bronzeblock =
+default:copperblock =
+default:goldblock =
+default:steelblock =
+stairs:slab_bronzeblock =
+stairs:stair_bronzeblock =
+stairs:slab_copperblock =
+stairs:stair_copperblock =
+stairs:slab_goldblock =
+stairs:stair_goldblock =
+stairs:slab_steelblock =
+stairs:stair_steelblock =
+
+# Cactus
+default:cactus =
+
+# Chests
+default:chest =
+default:chest_locked =
+
+# Clays
+default:clay =
+default:clay_lump =
+
+# Coal
+default:coal_lump =
+default:coalblock =
+
+# Stones
+default:cobble =
+default:desert_cobble =
+default:desert_stone =
+default:desert_stonebrick =
+default:mossycobble =
+default:stone =
+default:stone_with_coal =
+default:stone_with_copper =
+default:stone_with_diamond =
+default:stone_with_gold =
+default:stone_with_iron =
+default:stone_with_mese =
+default:stonebrick =
+stairs:slab_cobble =
+stairs:stair_cobble =
+stairs:slab_desert_cobble =
+stairs:stair_desert_cobble =
+stairs:slab_desert_stone =
+stairs:stair_desert_stone =
+stairs:slab_desert_stonebrick =
+stairs:stair_desert_stonebrick =
+stairs:slab_stone =
+stairs:stair_stone =
+stairs:slab_stonebrick =
+stairs:stair_stonebrick =
+
+# Obsidian
+default:obsidian =
+default:obsidian_glass =
+default:obsidian_shard =
+default:obsidianbrick =
+doors:door_obsidian_glass =
+stairs:slab_obsidian =
+stairs:stair_obsidian =
+stairs:slab_obsidianbrick =
+stairs:stair_obsidianbrick =
+
+# Sands
+default:desert_sand =
+default:sand =
+default:sandstone =
+default:sandstonebrick =
+stairs:slab_sandstone =
+stairs:stair_sandstone =
+stairs:slab_sandstonebrick =
+stairs:stair_sandstonebrick =
+
+# Gravel
+default:gravel =
+
+# Precious Stones
+default:diamond =
+default:diamondblock =
+default:mese =
+default:mese_crystal =
+default:mese_crystal_fragment =
+
+# Dirts
+default:dirt =
+default:dirt_with_dry_grass =
+default:dirt_with_grass =
+default:dirt_with_snow =
+
+# Vegetation
+default:dry_grass_1 =
+default:dry_shrub =
+default:grass_1 =
+default:junglegrass =
+default:papyrus =
+
+# Flowers
+flowers:dandelion_white =
+flowers:dandelion_yellow =
+flowers:geranium =
+flowers:mushroom_brown =
+flowers:mushroom_red =
+flowers:mushroom_spores_brown =
+flowers:mushroom_spores_red =
+flowers:rose =
+flowers:tulip =
+flowers:viola =
+
+# Wooden Objects
+default:fence_wood =
+default:ladder =
+default:sign_wall =
+doors:door_wood =
+doors:trapdoor =
+
+# Stone Objects
+default:furnace =
+
+# Steel Objects
+doors:door_steel =
+
+# Verre
+default:glass =
+group:vessels = 
+doors:door_glass =
+
+# Dye
+group:dye = 
+dye:black =
+dye:blue =
+dye:brown =
+dye:cyan =
+dye:dark_green =
+dye:dark_grey =
+dye:green =
+dye:grey =
+dye:magenta =
+dye:orange =
+dye:pink =
+dye:red =
+dye:violet =
+dye:white =
+dye:yellow =
+
+# TNT
+tnt:gunpowder =
+tnt:tnt =
+
+# Vessels
+vessels:drinking_glass =
+vessels:glass_bottle =
+vessels:glass_fragments =
+vessels:shelf =
+vessels:steel_bottle =
+
+# Wool
+group:wool = 
+wool:black =
+wool:blue =
+wool:brown =
+wool:cyan =
+wool:dark_green =
+wool:dark_grey =
+wool:green =
+wool:grey =
+wool:magenta =
+wool:orange =
+wool:pink =
+wool:red =
+wool:violet =
+wool:white =
+wool:yellow =
+
+# Xpanes
+xpanes:bar =
+xpanes:pane =
+
+# Others
+default:ice =
+default:lava_source =
+default:meselamp =
+default:nyancat =
+default:nyancat_rainbow =
+default:paper =
+default:rail =
+default:river_water_source =
+default:snow =
+default:snowblock =
+default:torch =
+default:water_source =
+farming:bread =
+farming:cotton =
+farming:flour =
+farming:seed_cotton =
+farming:seed_wheat =
+farming:straw =
+farming:wheat =
+fire:basic_flame =
+screwdriver:screwdriver =
+stairs:slab_straw =
+stairs:stair_straw =
+sys4_achievements:waste =

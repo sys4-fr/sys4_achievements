@@ -1,180 +1,187 @@
 # Template for translations of SYS4 Achievements
 
 #init.lua
-My first hut = Ma Première Cabane
-Place 50 tree blocks. = Pose 50 Troncs d'Arbres.
-Specialized Wood builder = Spécialiste des Constructions Bois.
-Place 50 wooden planks. = Pose 50 Planches de bois.
-Your papers please = Vos Papiers svp
-Place 10 papyrus. = Plante 10 Papyrus.
-Get the knowledge = Obtient le Savoir
-Place 5 bookshelfs. = Pose 5 Bibliothèques.
-Sandstone builder lover = Amateur du Gré
-Place 50 sandstones. = Pose 50 Blocs de Gré.
-Specialized sandstone builder = Spécialiste du Gré
-Place 50 sandstone bricks. = Pose 50 Blocs de Gré Ciselé.
-Sticks into the trees = Des Feuilles et des Batons
-Dig 50 leaves. = Récolte 50 Feuilles d'Arbres.
-First steps of a Lumberjack = Premiers pas de Bucheron
-Dig 50 trees. = Coupe 50 Troncs d'Arbres.
-You know write ? = Savez-vous Écrire ?
-Dig 50 papyrus. = Récolte 50 Papyrus.
-Spinner's first steps = Premiers Pas du Fileur de Laine
-Dig 50 mature cottons. = Récolte 50 Plants de Cottons Matures.
-I like the Red color = J'aime le Rouge
-Dig 10 Roses. = Cueille 10 roses.
-The sand castle part. 1 = Le Chateau de Sable part. 1
-Dig 100 Sand blocks. = Ramasse 100 Blocs de sable.
-First steps of a Crafter = Premiers pas d'Artisan
-Craft 50 Wooden Planks. = Fabrique 50 Planches de bois.
-Stick specialist = Spécialiste des Batons
-Craft 50 sticks. = Fabrique 50 Batons.
-A bit of rest = Un peu de Repos
-Craft 20 Red wool. = Fabrique 20 Blocs de Laine Rouge.
-What a shovel ! = Belle Pelle !
-Craft 10 Wooden hoes. = Fabrique 10 Houes en bois.
-The sand castle part. 2 = Le Chateau de Sable part. 2
-Craft 100 sandstones. = Fabrique 100 Blocs de Gré.
-Unlock the Pick Wood = Débloque la Pioche en Bois
-Craft 10 Shovel wood. = Fabrique 10 Pelles en bois.
-Not only Waste = Pas que des Déchets
-Dig 10 Waste blocks. = Récolte 10 Blocs de Déchets.
-I like the Blue color = J'aime le Bleue
-Dig 10 Geraniums. = Cueille 10 Géraniums.
-I like the Yellow color = J'aime le Jaune
-Dig 10 Yellow Dandelions. = Cueille 10 Pissenlits.
-I like the White color = J'aime le Blanc
-Dig 10 White Dandelions. = Cueille 10 Paquerettes.
-I like the Violet color = J'aime le Violet
-Dig 10 Violas. = Cueille 10 Violettes.
-I like the Orange color = J'aime le Orange
-Dig 10 Tulips. = Cueille 10 Tulipes.
-The Straw House = La Maison en Paille
-Place 10 Straws. = Pose 10 Blocs de Paille.
-Stone builder First Steps = Premier Pas du Tailleur de Pierres
-Place 50 Cobblestones. = Pose 50 Blocs de Cailloux.
-Stone builder Lover = Tailleur de Pierres Amateur
-Place 50 Stones. = Pose 50 Blocs de Roche.
-Glazier = Vitrier
-Place 10 Glasses. = Pose 10 Blocs de Verre.
-Boom ! = Boum !
-Place 50 Gravel blocks. = Pose 50 Blocs de Graviers.
-Bricklayer First Steps = Premier Pas de Maçon
-Place 50 Clay blocks. = Pose 50 Blocs d'Argile.
-Stonemason First Steps = Tailleur de Pierres Expérimenté
-Place 50 Stone Bricks. = Pose 50 Briques de Roche.
-Bricklayer Lover = Maçon Amateur
-Place 50 Bricks. = Pose 50 Briques.
-Steel Builder = Constructions Métalliques
-Place 50 Steel Blocks. = Pose 50 Blocs d'Acier.
-Copper Builder = Constructions en Cuivre
-Place 50 Copper Blocks. = Pose 50 Blocs de Cuivre.
-Bronze Builder = Constructions en Bronze
-Place 50 Bronze Blocks. = Pose 50 Blocs de Bronze.
-I'm Illuminated = Je suis Illuminé
-Place 100 Torches. = Pose 100 Torches.
-Gold Builder = Constructions en Or
-Place 50 Gold Blocks. = Pose 50 Blocs d'Or.
-Obsidian Builder First Steps = Construction d'Obsidienne : Premiers Pas
-Place 50 Obsidian Blocks. = Pose 50 Blocs d'Obsidienne.
-Obsidian Builder Lover = Construction d'Obsidienne : Amateur
-Place 50 Obsidian Bricks. = Pose 50 Briques d'Obsidienne.
-The Snow Man = Le Bonhomme de Neige
-Dig 50 Snow Powder. = Ramasse 50 Blocs de Neige.
-Hands in the Flour = Les Mains dans le Farine.
-Dig 8 Mature Wheats. = Récolte 8 Plants de Blé Matures.
-Farmer First Steps = Premiers pas de Fermier
-Dig 50 Mature Wheats. = Récolte 50 Plants de Blé Matures.
-I like the Black color = J'aime le Noir
-Dig 10 Coal Stones. = Récolte 10 Minerais de Charbon.
-End of Darkness = Fin des Ténèbres
-Dig 50 Coal Stones. = Récolte 50 Minerais de Charbon.
-Coal Miner = Mineur de Charbon
-Dig 100 Coal Stones. = Récolte 100 Minerais de Charbon.
-Micro Miner = Balbutiements de Mineur
-Dig 50 Stone blocks. = Creuse 50 Blocs de Roche.
-Get the Stone Shovel = Obtient la Pelle en Pierre
-Dig 100 Gravel blocks. = Creuse 100 Blocs de Gravier.
-Clay Discover = Découverte de l'Argile
-Dig 50 Clay blocks. = Creuse 50 Blocs d'Argile.
-The Iron Age = L'Age du Fer
-Dig 50 Iron Stones. = Récolte 50 Minerais de Fer.
-The Iron Peak = L'Apogée du Fer
-Dig 100 Iron Stones. = Récolte 100 Minerais de Fer.
-Unlock the Screwdriver = Débloque le Tournevis
-Dig 10 Steel Blocks. = Récolte 10 Blocs d'Acier.
-The Copper Age = L'Age du Cuivre
-Dig 50 Copper Stones. = Récolte 50 Minerais de Cuivre.
-The Bronze Age = L'Age du Bronze
-Dig 100 Copper Stones. = Récolte 100 Minerais de Cuivre.
-The Mese Manipulator = Le Manipulateur de Mese
-Dig 50 Mese Stones. = Récolte 50 Minerais de Mese.
-The Gold Digger = Le Chercheur d'Or
-Dig 50 Gold Stones. = Récolte 50 Minerai d'Or.
-The Diamond Digger = Le Chercheur de Diamants
-Dig 50 Diamond Stones. = Récolte 50 Minerais de Diamants.
-The Obsidian Digger = Le Chercheur d'Obsidienne
-Dig 50 Obsidian Blocks. = Récolte 50 Blocs d'Obsidienne.
-Unlock the Stone hoe = Débloque la Houe en Pierre
-Craft 10 Straws. = Fabrique 10 Bottes de Pailles.
-More Color = Plus de Couleurs
-Craft 30 Coloured Dyes. = Fabrique 30 Colorants.
-The Rainbow Wools = La Laine Arc-en-Ciel
-Craft 30 Coloured Wools. = Fabrique 30 Blocs de Laine Teintée.
-Look at the Furnace = Au Four
-Craft 50 torches. = Fabrique 50 Torches.
+Dig\ \ = Récolte\ \ 
+Craft\ \ = Fabrique\ \ 
+Place\ \ = Pose\ \ 
+
+#init.lua achievements
+Finding wood = Trouvons du bois
+Attack a tree and obtain wood. It's an essential raw material. = Frappe un arbre jusqu'à obtenir du bois. Matière première indispensable.
+Make planks and sticks = Faire des planches et des bâtons
+Make Planks and Sticks from wood. = Fabrique des planches et des bâtons à parir de bois.
+Good Pick! = Bonne Pioche !
+Make a wooden Pick from planks and sticks. = Fabrique une pioche en bois à l'aide de planches et de bâtons.
+Farmer = Fermier
+Make a wooden Hoe from planks and sticks.  = Fabrique une houe en bois à l'aide de planches et de bâtons.
+To the Furnace! = Au Fourneaux !
+Make a furnace with 8 Cobblestones. = Fabrique un four avec 8 blocs de roche.
+Better Pick! = Meilleure Pioche !
+Make a better quality Pick from sticks and stones. = Fabrique une pioche de meilleure qualité avec des bâtons et de la roche.
+Iron Age = Âge du Fer
+Dig iron ore. You will can smelt steel ingot with a furnace. = Récolte du minerai de fer. Tu pourras le faire fondre dans le four pour obtenir des lingots d'acier.
+Complet miner = Mineur accomplie
+Make a steel Pick from sticks and steel ingots. = Fabrique une pioche en acier avec des bâtons et des lingots d'acier.
+Bronze Age = Âge du Bronze
+Make bronze ingots from steel and copper ingots. = Fabrique du bronze à partir d'acier et de cuivre.
+Into the straw = Dans la paille
+Make a straw block with 9 wheats. = Fabrique une botte de paille avec 9 bottes de blé.
+Lunch! = À table !
+Make flour from wheat. Cook it into the furnace and good lunch! = Fabrique de la farine à partir de blé. Fais cuire au four et bon appétit !
+Going to sleep = Je vais me coucher
+Make a bed from planks and wool. = Fabrique un lit avec des planches et de la laine.
 Glass Blower = Souffleur de Verre
-Craft 50 Glass Panes. = Fabrique 50 Panneaux de Verre.
+Make a container from glass or steel ingots. = Fabrique un récipient avec du verre ou des lingots d'acier. Attention à la casse !
+Shelf ? = Dans quelle étagère ?
+Make a vessel shelf from planks and containers. = Fabrique une étagère avec des planches et des récipients.
+Not only Waste = Pas que des déchets
+Bling Bling ! = 
+Dig diamonds whith help of a metal pick. = Mine des diamants à l'aide d'une pioche en métal.
+Tightening the Screw! = On serre la Vis !
+Make a screwdriver from one stick and a steel ingot. = Fabrique un tournevis avec un bâton et un lingot d'acier.
+The Mese Glow = La lueur du Mese
+Make a lamp based on Mese and Glass. = Fabrique une lampe à base de Mese et de Verre.
+
+# Original awards from Rubenwardy and Calinou
+OMG, Nyan Cat! = Oh mon dieu, un Nyan Cat !
+Find a nyan cat. = Trouve un Nyan Cat.
+YOU'RE A WINNER! = TU ES UN WINNER !
+Dig 1 mossy cobblestone. = Mine 1 bloc de pierres mousseuse.
+The Stack = La Pile
+Die near bones. = Meurt près d'ossements.
+On The Way = Sur la voie
+Place 100 rails. = Pose 100 rails.
+Professional Lumberjack = Bûcheron Professionnel
+Dig 10,000 tree blocks. = Récolte 10,000 troncs d'arbres.
+Lumberjack = Bûcheron
+Dig 100 tree blocks. = Récolte 100 troncs d'arbres.
+You're a copper = Complètement cuivré
+Dig 1,000 copper ores. = Récolte 1,000 minerais de cuivre.
+Hardened Miner = Mineur endurcie
+Dig 1,000 stone blocks = Mine 1,000 blocs de Roche.
+Secret Award = Trophée Secret
+Unlock this award to find out what it is = Débloque ce trophée pour voir ce que c'est.
+Junglebaby = Enfant de la Jungle
+Dig 100 jungle tree blocks. = Récolte 100 troncs d'arbres de jungle.
+Dying Spree = Folie meurtrière
+Die 5 times. = Meurt 5 fois.
+In the Flow = Dans le courant
+Die in flowing lava. = Meurt dans un écoulement de lave.
+Marchand De Sable = 
+Dig 1,000 sand. = Creuse 1,000 blocs de sable.
+Mini Miner = Mini Mineur
+Dig 100 stone blocks. = Mine 100 blocs de Roche.
+Obsessed with Obsidian = Obsédé de l'Obsidienne
+Mine 50 obsidian. = Mine 50 blocs d'obsidienne.
+Master Miner = Maitre Mineur
+Dig 10,000 stone blocks. = Mine 10,000 blocs de Roche.
+Bot-like = 
+Die 10 times. = Meurt 10 fois.
+Semi-pro Lumberjack = Bûcheron semi-pro
+Dig 1,000 tree blocks. = Récolte 1,000 troncs d'arbres.
+Light ALL The Things! = Éclaire TOUTES choses !
+Place 1,000 torches. = Pose 1,000 torches.
+Light It Up = Allumé
+Place 100 torches. = Pose 100 torches.
+This is Sad = C'est Triste
+Die near diamond ore. = Meurt près de diamants.
+Jungleman = Homme de la Jungle
+Dig 1,000 jungle tree blocks. = Récolte 1,000 troncs d'arbres de jungle.
+L33T Lumberjack = Bûcheron d'3L1T3
+Dig 100,000 tree blocks. = Récolte 100,000 troncs d'arbres.
+You're a witch! = Comme une sorcière !
+Burn to death in a fire. = Brule en plein feu jusqu'à la mort.
+First Mese Find = Découverte du Mese
+Find some Mese. = Trouve du Mese.
+
+#craftmode
+My first hut = Ma Première Cabane
+Specialized Wood builder = Spécialiste des Constructions Bois
+Your papers please = Vos Papiers svp
+Get the knowledge = Obtient le Savoir
+Sandstone builder lover = Amateur du Gré
+Specialized sandstone builder = Spécialiste du Gré
+Sticks into the trees = Des Feuilles et des Bâtons
+First steps of a Lumberjack = Premiers pas de Bûcheron
+You know write ? = Savez-vous Écrire ?
+Spinner's first steps = Premiers Pas du Fileur de Laine
+I like the Red color = J'aime le Rouge
+The sand castle part. 1 = Le Chateau de Sable part. 1
+First steps of a Crafter = Premiers pas d'Artisan
+Stick specialist = Spécialiste des Batons
+A bit of rest = Un peu de Repos
+What a shovel ! = Belle Pelle !
+The sand castle part. 2 = Le Chateau de Sable part. 2
+Unlock the Pick Wood = Débloque la Pioche en Bois
+Not only Waste = Pas que des Déchets
+I like the Blue color = J'aime le Bleue
+I like the Yellow color = J'aime le Jaune
+I like the White color = J'aime le Blanc
+I like the Violet color = J'aime le Violet
+I like the Orange color = J'aime le Orange
+The Straw House = La Maison en Paille
+Stone builder First Steps = Premier Pas du Tailleur de Pierres
+Stone builder Lover = Tailleur de Pierres Amateur
+Glazier = Vitrier
+Boom ! = Boum !
+Bricklayer First Steps = Premier Pas de Maçon
+Stonemason First Steps = Tailleur de Pierres Expérimenté
+Bricklayer Lover = Maçon Amateur
+Steel Builder = Constructions Métalliques
+Copper Builder = Constructions en Cuivre
+Bronze Builder = Constructions en Bronze
+I'm Illuminated = Je suis Illuminé
+Gold Builder = Constructions en Or
+Obsidian Builder First Steps = Construction d'Obsidienne : Premiers Pas
+Obsidian Builder Lover = Construction d'Obsidienne : Amateur
+The Snow Men = Le Bonhomme de Neige
+Hands in the Flour = Les Mains dans le Farine
+Farmer First Steps = Premiers pas de Fermier
+I like the Black color = J'aime le Noir
+End of Darkness = Fin des Ténèbres
+Coal Miner = Mineur de Charbon
+Micro Miner = Balbutiements de Mineur
+Get the Stone Shovel = Obtient la Pelle en Pierre
+Clay Discover = Découverte de l'Argile
+The Iron Age = L'Âge du Fer
+The Iron Peak = L'Apogée du Fer
+Unlock the Screwdriver = Débloque le Tournevis
+The Copper Age = L'Âge du Cuivre
+The Bronze Age = L'Âge du Bronze
+The Mese Manipulator = Le Manipulateur de Mese
+The Gold Digger = Le Chercheur d'Or
+The Diamond Digger = Le Chercheur de Diamants
+The Obsidian Digger = Le Chercheur d'Obsidienne
+Unlock the Stone hoe = Débloque la Houe en Pierre
+More Color = Plus de Couleurs
+The Rainbow Wools = La Laine Arc-en-Ciel
+Look at the Furnace = Au Four
+Glass Blower = Souffleur de Verre
 Glass Blower Lover = Souffleur de Verre Amateur
-Craft 50 Glass Recipients. = Fabrique 50 Récipients en Verre.
 Stone Bricks Crafter = Artisanat des Pierres Taillées
-Craft 50 Brick blocks. = Fabrique 50 Blocs en Briques.
 Get the Stone Pick = Obtient la Pioche en Pierre
-Craft 100 Stone Bricks. = Fabrique 100 Briques de Roche.
 Unlock Crafts with Steel = Plus de Fabrications Acier
-Craft 50 Steel Blocks. = Fabrique 50 Blocs d'Acier.
 Bronze Crafter First Steps = Premiers Pas d'Artisan du Bronze
-Craft 50 Bronze ingots. = Fabrique 50 Lingots de Bronze.
 Pick Crafter : Newbee = Artisanat des Pioches : Débutant
-Craft 10 Stone Picks. = Fabrique 10 Pioches en Pierre.
 Shovel Crafter : Newbee = Artisanat des Pelles : Débutant
-Craft 10 Stone Shovels. = Fabrique 10 Pelles en Pierre.
 Axe Crafter : Newbee = Artisanat des Haches : Débutant
-Craft 10 Stone Axes. = Fabrique 10 Haches en Pierre.
 Sword Crafter : Newbee = Artisanat des Épées : Débutant
-Craft 10 Stone Swords. = Fabrique 10 Épées en Pierre.
 Pick Crafter : Lover = Artisanat des Pioches : Amateur
-Craft 10 Steel Picks. = Fabrique 10 Pioches en Acier.
 Shovel Crafter : Lover = Artisanat des Pelles : Amateur
-Craft 10 Steel Shovels. = Fabrique 10 Pelles en Acier.
 Axe Crafter : Lover = Artisanat des Haches : Amateur
-Craft 10 Steel Axes. = Fabrique 10 Haches en Acier.
 Sword Crafter : Lover = Artisanat des Épées : Amateur
-Craft 10 Steel Swords. = Fabrique 10 Épées en Acier.
 Pick Crafter : Professional = Artisanat des Pioches : Professionnel
-Craft 10 Bronze Picks. = Fabrique 10 Pioches en Bronze.
 Shovel Crafter : Professional = Artisanat des Pelles : Professionnel
-Craft 10 Bronze Shovels. = Fabrique 10 Pelles en Bronze.
 Axe Crafter : Professional = Artisanat des Haches : Professionnel
-Craft 10 Bronze Axes. = Fabrique 10 Haches en Bronze.
 Sword Crafter : Professional = Artisanat des Épées : Professionnel
-Craft 10 Bronze Swords. = Fabrique 10 Épées en Bronze.
 Pick Crafter : Specialized = Artisanat des Pioches : Spécialiste
-Craft 10 Mese Picks. = Fabrique 10 Pioches en Mese.
 Shovel Crafter : Specialized = Artisanat des Pelles : Spécialiste
-Craft 10 Mese Shovels. = Fabrique 10 Pelles en Mese.
 Axe Crafter : Specialized = Artisanat des Haches : Spécialiste
-Craft 10 Mese Axes. = Fabrique 10 Haches en Mese.
 Sword Crafter : Specialized = Artisanat des Épées : Spécialiste
-Craft 10 Mese Swords. = Fabrique 10 Épées en Mese.
 Hoe Crafter : Newbee = Artisanat des Houes : Débutant
-Craft 10 Stone Hoes. = Fabrique 10 Houes en Pierre.
 Hoe Crafter : Lover = Artisanat des Houes : Amateur
-Craft 10 Steel Hoes. = Fabrique 10 Houes en Acier.
 Hoe Crafter : Professional = Artisanat des Houes : Professionnel
-Craft 10 Bronze Hoes. = Fabrique 10 Houes en Bronze.
 Hoe Crafter : Specialized = Artisanat des Houes : Spécialiste
-Craft 10 Mese Hoes. = Fabrique 10 Houes en Mese.
 
 #api.lua
 Waste = Déchet
@@ -183,7 +190,336 @@ You unlock these crafts = Vous débloquez les crafts de ces objets
 Achievement Unlocked:\ \ = Épreuve Débloquée :\ \
 Achievement Unlocked! = Épreuve Débloquée !
 Unlock crafts  = Crafts débloqués
-Craft table = Table de Craft
+Requiered = Requiert
 OR = OU
 empty = vide
 No craft for this item = Pas de craft pour cet objet
+Output = Sortie
+got = Obtenu
+
+### Nodes names ###
+
+# Trees
+group:tree = Tronc d'arbre
+default:tree = Tronc d'arbre
+default:acacia_tree = Bois d'Acacia
+default:jungletree = Bois de Jungle
+default:pine_tree = Bois de Pin
+
+# Stick
+group:stick = Bâton
+default:stick = Bâton
+
+# Wood
+group:wood = Planche de bois
+default:wood = Planche de bois
+default:acacia_wood = Planche d'Acacia
+default:junglewood = Planche de Jungle
+default:pine_wood = Planche de Pin
+stairs:slab_acacia_wood = Dalle en Planche d'Acacia
+stairs:stair_acacia_wood = Escalier en Planche d'Acacia
+stairs:slab_junglewood = Dalle en Planche de Jungle
+stairs:stair_junglewood = Escalier en Planche de Jungle
+stairs:slab_pine_wood = Dalle en Planche de Pin
+stairs:stair_pine_wood = Escalier en Planche de Pin
+stairs:slab_wood = Dalle en Planche de Bois
+stairs:stair_wood = Escalier en Planche de Bois
+
+# Leaves
+default:acacia_leaves = Feuilles d'Acacia
+default:jungleleaves = Feuilles de Jungle
+default:leaves = Feuilles d'Arbre
+default:pine_needles = Aiguilles de Pin
+
+# Saplings
+default:acacia_sapling = Jeune arbre d'Acacia
+default:junglesapling = Jeune arbre de Jungle
+default:pine_sapling = Jeune arbre de Pin
+default:sapling = Jeune arbre
+
+# Fruits
+default:apple = Pomme
+
+# Beds
+beds:bed_bottom = Lit
+beds:fancy_bed_bottom = Lit amélioré
+
+# Boats
+boats:boat = Bateau
+
+# Bones
+bones:bones = Ossements
+
+# Buckets
+bucket:bucket_empty = Seau vide
+bucket:bucket_lava = Seau de Lave
+bucket:bucket_river_water = Seau d'eau de source
+bucket:bucket_water = Seau d'eau
+
+# Haches
+default:axe_bronze = Hache en Bronze
+default:axe_diamond = Hache en Diamant
+default:axe_mese = Hache en Mese
+default:axe_steel = Hache en Acier
+default:axe_stone = Hache en Pierre
+default:axe_wood = Hache en Bois
+
+# Picks
+default:pick_bronze = Pioche en Bronze
+default:pick_diamond = Pioche en Diamant
+default:pick_mese = Pioche en Mese
+default:pick_steel = Pioche en Acier
+default:pick_stone = Pioche en Pierre
+default:pick_wood = Pioche en Bois
+
+# Shovels
+default:shovel_bronze = Pelle en Bronze
+default:shovel_diamond = Pelle en Diamant
+default:shovel_mese = Pelle en Mese
+default:shovel_steel = Pelle en Acier
+default:shovel_stone = Pelle en Pierre
+default:shovel_wood = Pelle en Bois
+
+# Swords
+default:sword_bronze = Épée en Bronze
+default:sword_diamond = Épée en Diamant
+default:sword_mese = Épée en Mese
+default:sword_steel = Épée en Acier
+default:sword_stone = Épée en Pierre
+default:sword_wood = Épée en Bois
+
+# Hoes
+farming:hoe_bronze = Houe en Bronze
+farming:hoe_diamond = Houe en Diamant
+farming:hoe_mese = Houe en Mese
+farming:hoe_steel = Houe en Acier
+farming:hoe_stone = Houe en Pierre
+farming:hoe_wood = Houe en Bois
+
+# Books
+default:book = Livre
+default:bookshelf = Étagère à Livres
+
+# Bricks
+default:brick = Bloc de Briques
+default:clay_brick = Brique d'Argile
+stairs:slab_brick = Dalle en Briques
+stairs:stair_brick = Escalier en Briques
+
+# Metal Lumps
+default:copper_lump = Morceau de Cuivre
+default:gold_lump = Morceau d'Or
+default:iron_lump = Morceau de Fer
+
+# Ingots
+default:bronze_ingot = Lingot de Bronze
+default:copper_ingot = Lingot de Cuivre
+default:gold_ingot = Lingot d'Or
+default:steel_ingot = Lingot d'Acier
+
+# Metal Blocks
+default:bronzeblock = Bloc en Bronze
+default:copperblock = Bloc en Cuivre
+default:goldblock = Bloc en Or
+default:steelblock = Bloc en Acier
+stairs:slab_bronzeblock = Dalle en Bronze
+stairs:stair_bronzeblock = Escalier en Bronze
+stairs:slab_copperblock = Dalle en Cuivre
+stairs:stair_copperblock = Escallier en Cuivre
+stairs:slab_goldblock = Dalle en Or
+stairs:stair_goldblock = Escalier en Or
+stairs:slab_steelblock = Dalle en Acier
+stairs:stair_steelblock = Escalier en Acier
+
+# Cactus
+default:cactus = Cactus
+
+# Chests
+default:chest = Coffre
+default:chest_locked = Coffre vérouillé
+
+# Clays
+default:clay = Bloc d'Argile
+default:clay_lump = Morceau d'Argile
+
+# Coal
+default:coal_lump = Morceau de Charbon
+default:coalblock = Bloc de Charbon
+
+# Stones
+default:cobble = Pavé de Pierres
+default:desert_cobble = Pavés de Pierre du Desert
+default:desert_stone = Bloc de Roche du Désert
+default:desert_stonebrick = Briques en Roche du Désert
+default:mossycobble = Pavé de Pierres Humides
+default:stone = Bloc de Roche
+default:stone_with_coal = Roche avec Charbon
+default:stone_with_copper = Roche avec Cuivre
+default:stone_with_diamond = Roche avec Diamants
+default:stone_with_gold = Roche avec Or
+default:stone_with_iron = Roche avec Fer
+default:stone_with_mese = Roche avec Mese
+default:stonebrick = Briques en Roche
+stairs:slab_cobble = Dalle en Pavés de Pierre
+stairs:stair_cobble = Escalier en Pavés de Pierre
+stairs:slab_desert_cobble = Dalle en Pavés de Pierre du Desert
+stairs:stair_desert_cobble = Escalier en Pavés de Pierre du Desert
+stairs:slab_desert_stone = Dalle en Roche du Desert
+stairs:stair_desert_stone = Escalier en Roche du Desert
+stairs:slab_desert_stonebrick = Dalle en Briques de Roche du Desert
+stairs:stair_desert_stonebrick = Escalier en Briques de Roche du Desert
+stairs:slab_stone = Dalle en Roche
+stairs:stair_stone = Escalier en Roche
+stairs:slab_stonebrick = Dalle en Briques de Roche
+stairs:stair_stonebrick = Escalier en Briques de Roche
+
+# Obsidian
+default:obsidian = Obsidienne
+default:obsidian_glass = Verre d'Obsidienne
+default:obsidian_shard = Écharde d'Obsidienne
+default:obsidianbrick = Brique d'Obsidienne
+doors:door_obsidian_glass = Porte en Verre d'Obsidienne
+stairs:slab_obsidian = Dalle en Obsidienne
+stairs:stair_obsidian = Escalier en Obsidienne
+stairs:slab_obsidianbrick = Dalle en Briques d'Obsidienne
+stairs:stair_obsidianbrick = Escalier en Briques d'Obsidienne
+
+# Sands
+default:desert_sand = Sable du Désert
+default:sand = Sable
+default:sandstone = Grès
+default:sandstonebrick = Brique de Grès
+stairs:slab_sandstone = Dalle en Grès
+stairs:stair_sandstone = Escalier en Grès
+stairs:slab_sandstonebrick = Dalle en Briques de Grès
+stairs:stair_sandstonebrick = Escalier en Briques de Grès
+
+# Gravel
+default:gravel = Gravier
+
+# Precious Stones
+default:diamond = Diamant
+default:diamondblock = Bloc en Diamant
+default:mese = Bloc de Mese
+default:mese_crystal = Crystal de Mese
+default:mese_crystal_fragment = Fragment de Crystal de Mese
+
+# Dirts
+default:dirt = Terre
+default:dirt_with_dry_grass = Terre avec Herbe Sèche
+default:dirt_with_grass = Terre avec Herbe
+default:dirt_with_snow = Terre avec Neige
+
+# Vegetation
+default:dry_grass_1 = Herbe Sèche
+default:dry_shrub = Arbuste Sec
+default:grass_1 = Herbe
+default:junglegrass = Herbe de Jungle
+default:papyrus = Papyrus
+
+# Flowers
+flowers:dandelion_white = Paquerettes
+flowers:dandelion_yellow = Pissenlit
+flowers:geranium = Géranium
+flowers:mushroom_brown = Champignon Marron
+flowers:mushroom_red = Champignon Rouge
+flowers:mushroom_spores_brown = Spores de Champignon Marron
+flowers:mushroom_spores_red = Spores de Champignon Rouge
+flowers:rose = Rose
+flowers:tulip = Tulipe
+flowers:viola = Violettes
+
+# Wooden Objects
+default:fence_wood = Barrière en Bois
+default:ladder = Échelle
+default:sign_wall = Pancarte
+doors:door_wood = Porte en Bois
+doors:trapdoor = Trappe
+
+# Stone Objects
+default:furnace = Four
+
+# Steel Objects
+doors:door_steel = Porte en Acier
+
+# Verre
+default:glass = Bloc de Verre
+group:vessels = Récipient
+doors:door_glass = Porte en Verre
+
+# Dye
+group:dye = Teintures
+dye:black = Teinture Noire
+dye:blue = Teinture Bleue
+dye:brown = Teinture Marron
+dye:cyan = Teinture Cyan
+dye:dark_green = Teinture Vert Foncée
+dye:dark_grey = Teinture Gris Foncée
+dye:green = Teinture Verte
+dye:grey = Teinture Grise
+dye:magenta = Teinture Magenta
+dye:orange = Teinture Orange
+dye:pink = Teinture Rose
+dye:red = Teinture Rouge
+dye:violet = Teinture Violette
+dye:white = Teinture Blanche
+dye:yellow = Teinture Jaune
+
+# TNT
+tnt:gunpowder = Poudre à Canon
+tnt:tnt = T.N.T
+
+# Vessels
+vessels:drinking_glass = Verre à Boire
+vessels:glass_bottle = Bouteille en Verre
+vessels:glass_fragments = Verre pillé
+vessels:shelf = Étagère à Vaisselle
+vessels:steel_bottle = Bouteille en Acier
+
+# Wool
+group:wool = Blocs de Laines
+wool:black = Laine Noire
+wool:blue = Laine Bleue
+wool:brown = Laine Marron
+wool:cyan = Laine Cyan
+wool:dark_green = Laine Vert Foncée
+wool:dark_grey = Laine Gris Foncée
+wool:green = Laine Verte
+wool:grey = Laine Grise
+wool:magenta = Laine Magenta
+wool:orange = Laine Orange
+wool:pink = Laine Rose
+wool:red = Laine Rouge
+wool:violet = Laine Violette
+wool:white = Laine Blanche
+wool:yellow = Laine Jaune
+
+# Xpanes
+xpanes:bar = Barres en Acier
+xpanes:pane = Vitre
+
+# Others
+default:ice = Glace
+default:lava_source = Source de Lave
+default:meselamp = Lampe en Mese
+default:nyancat = Nyancat
+default:nyancat_rainbow = Queue de Nyancat
+default:paper = Papier
+default:rail = Rail
+default:river_water_source = Source d'eau de Rivière
+default:snow = Neige
+default:snowblock = Bloc de Neige
+default:torch = Torche
+default:water_source = Source d'eau
+farming:bread = Pain
+farming:cotton = Coton
+farming:flour = Farine
+farming:seed_cotton = Graine de Coton
+farming:seed_wheat = Graine de Blé
+farming:straw = Bloc de Paille
+farming:wheat = Blé
+fire:basic_flame = Feu de Base
+screwdriver:screwdriver = Tournevis
+stairs:slab_straw = Dalle en Paille
+stairs:stair_straw = Escalier en Paille
+sys4_achievements:waste = Déchets

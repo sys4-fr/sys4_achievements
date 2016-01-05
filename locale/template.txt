@@ -1,189 +1,524 @@
 # Template for translations of SYS4 Achievements
 
 #init.lua
-My first hut = 
-Place 50 tree blocks. =
-Specialized Wood builder = 
-Place 50 wooden planks. =
-Your papers please = 
-Place 10 papyrus. = 
-Get the knowledge = 
-Place 5 bookshelfs. = 
-Sandstone builder lover = 
-Place 50 sandstones. = 
-Specialized sandstone builder = 
-Place 50 sandstone bricks. = 
-Sticks into the trees = 
-Dig 50 leaves. = 
-First steps of a Lumberjack = 
-Dig 50 trees. = 
-You know write ? = 
-Dig 50 papyrus. = 
-Spinner's first steps = 
-Dig 50 mature cottons. = 
-I like the Red color = 
-Dig 10 Roses. = 
-The sand castle part. 1 = 
-Dig 100 Sand blocks. = 
-First steps of a Crafter = 
-Craft 50 Wooden Planks. = 
-Stick specialist = 
-Craft 50 sticks. = 
-A bit of rest = 
-Craft 20 Red wool. = 
-What a shovel ! = 
-Craft 10 Wooden hoes. = 
-The sand castle part. 2 = 
-Craft 100 sandstones. = 
-Unlock the Pick Wood = 
-Craft 10 Shovel wood. = 
-Not only Waste = 
-Dig 10 Waste blocks. = 
-I like the Blue color =
-Dig 10 Geraniums. = 
-I like the Yellow color = 
-Dig 10 Yellow Dandelions. = 
-I like the White color = 
-Dig 10 White Dandelions. = 
-I like the Violet color = 
-Dig 10 Violas. = 
-I like the Orange color = 
-Dig 10 Tulips. = 
-The Straw House = 
-Place 10 Straws. = 
-Stone builder First Steps = 
-Place 50 Cobblestones. = 
-Stone builder Lover = 
-Place 50 Stones. = 
-Glazier = 
-Place 10 Glasses. = 
-Boom ! = 
-Place 50 Gravel blocks. = 
-Bricklayer First Steps = 
-Place 50 Clay blocks. = 
-Stonemason First Steps = 
-Place 50 Stone Bricks. = 
-Bricklayer Lover = 
-Place 50 Bricks. = 
-Steel Builder = 
-Place 50 Steel Blocks. = 
-Copper Builder = 
-Place 50 Copper Blocks. = 
-Bronze Builder = 
-Place 50 Bronze Blocks. = 
-I'm Illuminated = 
-Place 100 Torches. = 
-Gold Builder = 
-Place 50 Gold Blocks. = 
-Obsidian Builder First Steps = 
-Place 50 Obsidian Blocks. = 
-Obsidian Builder Lover = 
-Place 50 Obsidian Bricks. = 
-The Snow Man = 
-Dig 50 Snow Powder. = 
-Hands in the Flour = 
-Dig 8 Mature Wheats. = 
-Farmer First Steps = 
-Dig 50 Mature Wheats. = 
-I like the Black color = 
-Dig 10 Coal Stones. = 
-End of Darkness = 
-Dig 50 Coal Stones. = 
-Coal Miner = 
-Dig 100 Coal Stones. = 
-Micro Miner = 
-Dig 50 Stone blocks. = 
-Get the Stone Shovel = 
-Dig 100 Gravel blocks. = 
-Clay Discover = 
-Dig 50 Clay blocks. = 
-The Iron Age = 
-Dig 50 Iron Stones. = 
-The Iron Peak = 
-Dig 100 Iron Stones. = 
-Unlock the Screwdriver = 
-Dig 10 Steel Blocks. = 
-The Copper Age = 
-Dig 50 Copper Stones. = 
-The Bronze Age = 
-Dig 100 Copper Stones. = 
-The Mese Manipulator = 
-Dig 50 Mese Stones. = 
-The Gold Digger = 
-Dig 50 Gold Stones. = 
-The Diamond Digger = 
-Dig 50 Diamond Stones. = 
-The Obsidian Digger = 
-Dig 50 Obsidian Blocks. = 
-Unlock the Stone hoe = 
-Craft 10 Straws. = 
-More Color = 
-Craft 30 Coloured Dyes. = 
-The Rainbow Wools = 
-Craft 30 Coloured Wools. = 
-Look at the Furnace = 
-Craft 50 torches. = 
+Dig\ \ =
+Craft\ \ =
+Place\ \ = 
+
+#init.lua achievements
+Finding wood = 
+Attack a tree and obtain wood. It's an essential raw material. = 
+Make planks and sticks = 
+Make Planks and Sticks from wood. = 
+Good Pick! = 
+Make a wooden Pick from planks and sticks. = 
+Farmer = 
+Make a wooden Hoe from planks and sticks.  = 
+To the Furnace! = 
+Make a furnace with 8 Cobblestones. = 
+Better Pick! = 
+Make a better quality Pick from sticks and stones. = 
+Iron Age = 
+Dig iron ore. You will can smelt steel ingot with a furnace. = 
+Complet miner = 
+Make a steel Pick from sticks and steel ingots. = 
+Bronze Age = 
+Make bronze ingots from steel and copper ingots. = 
+Into the straw = 
+Make a straw block with 9 wheats. = 
+Lunch! = 
+Make flour from wheat. Cook it into the furnace and good lunch! = 
+Going to sleep = 
+Make a bed from planks and wool. = 
 Glass Blower = 
-Craft 50 Glass Panes. = 
+Make a container from glass or steel ingots. = 
+Shelf ? = 
+Make a vessel shelf from planks and containers. = 
+Not only Waste = 
+Bling Bling ! = 
+Dig diamonds whith help of a metal pick. = 
+Tightening the Screw! = 
+Make a screwdriver from one stick and a steel ingot. = 
+The Mese Glow = 
+Make a lamp based on Mese and Glass. = 
+
+# Original awards from Rubenwardy and Calinou
+OMG, Nyan Cat! = 
+Find a nyan cat. = 
+YOU'RE A WINNER! = 
+Dig 1 mossy cobblestone. = 
+Die near bones. = 
+On The Way = 
+Place 100 rails. = 
+Professional Lumberjack = 
+Dig 10,000 tree blocks. = 
+Lumberjack = 
+Dig 100 tree blocks. = 
+You're a copper = 
+Dig 1,000 copper ores. = 
+Hardened Miner = 
+Dig 1,000 stone blocks = 
+Secret Award = 
+Unlock this award to find out what it is = 
+Junglebaby = 
+Dig 100 jungle tree blocks. = 
+Dying Spree = 
+Die 5 times. = 
+In the Flow = 
+Die in flowing lava. = 
+Marchand De Sable = 
+Dig 1,000 sand. = 
+Mini Miner = 
+Dig 100 stone blocks. = 
+Obsessed with Obsidian = 
+Mine 50 obsidian. = 
+Master Miner = 
+Dig 10,000 stone blocks. = 
+Bot-like = 
+Die 10 times. = 
+Semi-pro Lumberjack = 
+Dig 1,000 tree blocks. = 
+Light ALL The Things! = 
+Place 1,000 torches. = 
+Light It Up = 
+Place 100 torches. = 
+This is Sad = 
+Die near diamond ore. = 
+Jungleman = 
+Dig 1,000 jungle tree blocks. = 
+L33T Lumberjack = 
+Dig 100,000 tree blocks. = 
+You're a witch! = 
+Burn to death in a fire. = 
+First Mese Find = 
+Find some Mese. = 
+
+#craftmode
+My first hut = 
+Specialized Wood builder = 
+Your papers please = 
+Get the knowledge = 
+Sandstone builder lover = 
+Specialized sandstone builder = 
+Sticks into the trees = 
+First steps of a Lumberjack = 
+You know write ? = 
+Spinner's first steps = 
+I like the Red color = 
+The sand castle part. 1 = 
+First steps of a Crafter = 
+Stick specialist = 
+A bit of rest = 
+What a shovel ! = 
+The sand castle part. 2 = 
+Unlock the Pick Wood = 
+Not only Waste = 
+I like the Blue color =
+I like the Yellow color = 
+I like the White color = 
+I like the Violet color = 
+I like the Orange color = 
+The Straw House = 
+Stone builder First Steps = 
+Stone builder Lover = 
+Glazier = 
+Boom ! = 
+Bricklayer First Steps = 
+Stonemason First Steps = 
+Bricklayer Lover = 
+Steel Builder = 
+Copper Builder = 
+Bronze Builder = 
+I'm Illuminated = 
+Gold Builder = 
+Obsidian Builder First Steps = 
+Obsidian Builder Lover = 
+The Snow Men = 
+Hands in the Flour = 
+Farmer First Steps = 
+I like the Black color = 
+End of Darkness = 
+Coal Miner = 
+Micro Miner = 
+Get the Stone Shovel = 
+Clay Discover = 
+The Iron Age = 
+The Iron Peak = 
+Unlock the Screwdriver = 
+The Copper Age = 
+The Bronze Age = 
+The Mese Manipulator = 
+The Gold Digger = 
+The Diamond Digger = 
+The Obsidian Digger = 
+Unlock the Stone hoe = 
+More Color = 
+The Rainbow Wools = 
+Look at the Furnace = 
+Glass Blower = 
 Glass Blower Lover = 
-Craft 50 Glass Recipients. = 
 Stone Bricks Crafter = 
-Craft 50 Brick blocks. = 
 Get the Stone Pick = 
-Craft 100 Stone Bricks. = 
 Unlock Crafts with Steel = 
-Craft 50 Steel Blocks. = 
 Bronze Crafter First Steps = 
-Craft 50 Bronze ingots. = 
 Pick Crafter : Newbee = 
-Craft 10 Stone Picks. = 
 Shovel Crafter : Newbee = 
-Craft 10 Stone Shovels. = 
 Axe Crafter : Newbee = 
-Craft 10 Stone Axes. = 
 Sword Crafter : Newbee = 
-Craft 10 Stone Swords. = 
 Pick Crafter : Lover = 
-Craft 10 Steel Picks. = 
 Shovel Crafter : Lover = 
-Craft 10 Steel Shovels. = 
 Axe Crafter : Lover = 
-Craft 10 Steel Axes. = 
 Sword Crafter : Lover = 
-Craft 10 Steel Swords. = 
 Pick Crafter : Professional = 
-Craft 10 Bronze Picks. = 
 Shovel Crafter : Professional = 
-Craft 10 Bronze Shovels. = 
 Axe Crafter : Professional = 
-Craft 10 Bronze Axes. = 
 Sword Crafter : Professional = 
-Craft 10 Bronze Swords. = 
 Pick Crafter : Specialized = 
-Craft 10 Mese Picks. = 
 Shovel Crafter : Specialized = 
-Craft 10 Mese Shovels. = 
 Axe Crafter : Specialized = 
-Craft 10 Mese Axes. = 
 Sword Crafter : Specialized = 
-Craft 10 Mese Swords. = 
 Hoe Crafter : Newbee = 
-Craft 10 Stone Hoes. = 
 Hoe Crafter : Lover = 
-Craft 10 Steel Hoes. = 
 Hoe Crafter : Professional = 
-Craft 10 Bronze Hoes. = 
 Hoe Crafter : Specialized = 
-Craft 10 Mese Hoes. = 
 
 #api.lua
-Waste = 
-Amazing ! You win = 
-You unlock these crafts = 
-Achievement Unlocked:\ \ = 
-Achievement Unlocked! = 
-Unlock crafts = 
-Craft table = 
-OR = 
-empty = 
-No craft for this item = 
+Waste =
+Amazing ! You win =
+You unlock these crafts =
+Achievement Unlocked:\ \ =
+Achievement Unlocked! =
+Unlock crafts  =
+Requiered =
+OR =
+empty =
+No craft for this item =
+Output =
+got =
+
+### Nodes names ###
+
+# Trees
+group:tree =
+default:tree =
+default:acacia_tree =
+default:jungletree =
+default:pine_tree =
+
+# Stick
+group:stick =
+default:stick =
+
+# Wood
+group:wood =
+default:wood =
+default:acacia_wood =
+default:junglewood =
+default:pine_wood =
+stairs:slab_acacia_wood =
+stairs:stair_acacia_wood =
+stairs:slab_junglewood =
+stairs:stair_junglewood =
+stairs:slab_pine_wood =
+stairs:stair_pine_wood =
+stairs:slab_wood =
+stairs:stair_wood =
+
+# Leaves
+default:acacia_leaves =
+default:jungleleaves =
+default:leaves =
+default:pine_needles =
+
+# Saplings
+default:acacia_sapling =
+default:junglesapling =
+default:pine_sapling =
+default:sapling =
+
+# Fruits
+default:apple =
+
+# Beds
+beds:bed_bottom =
+beds:fancy_bed_bottom =
+
+# Boats
+boats:boat =
+
+# Bones
+bones:bones =
+
+# Buckets
+bucket:bucket_empty =
+bucket:bucket_lava =
+bucket:bucket_river_water =
+bucket:bucket_water =
+
+# Haches
+default:axe_bronze =
+default:axe_diamond =
+default:axe_mese =
+default:axe_steel =
+default:axe_stone =
+default:axe_wood =
+
+# Picks
+default:pick_bronze =
+default:pick_diamond =
+default:pick_mese =
+default:pick_steel =
+default:pick_stone =
+default:pick_wood =
+
+# Shovels
+default:shovel_bronze =
+default:shovel_diamond =
+default:shovel_mese =
+default:shovel_steel =
+default:shovel_stone =
+default:shovel_wood =
+
+# Swords
+default:sword_bronze =
+default:sword_diamond =
+default:sword_mese =
+default:sword_steel =
+default:sword_stone =
+default:sword_wood =
+
+# Hoes
+farming:hoe_bronze =
+farming:hoe_diamond =
+farming:hoe_mese =
+farming:hoe_steel =
+farming:hoe_stone =
+farming:hoe_wood =
+
+# Books
+default:book =
+default:bookshelf =
+
+# Bricks
+default:brick =
+default:clay_brick =
+stairs:slab_brick =
+stairs:stair_brick =
+
+# Metal Lumps
+default:copper_lump =
+default:gold_lump =
+default:iron_lump =
+
+# Ingots
+default:bronze_ingot =
+default:copper_ingot =
+default:gold_ingot =
+default:steel_ingot =
+
+# Metal Blocks
+default:bronzeblock =
+default:copperblock =
+default:goldblock =
+default:steelblock =
+stairs:slab_bronzeblock =
+stairs:stair_bronzeblock =
+stairs:slab_copperblock =
+stairs:stair_copperblock =
+stairs:slab_goldblock =
+stairs:stair_goldblock =
+stairs:slab_steelblock =
+stairs:stair_steelblock =
+
+# Cactus
+default:cactus =
+
+# Chests
+default:chest =
+default:chest_locked =
+
+# Clays
+default:clay =
+default:clay_lump =
+
+# Coal
+default:coal_lump =
+default:coalblock =
+
+# Stones
+default:cobble =
+default:desert_cobble =
+default:desert_stone =
+default:desert_stonebrick =
+default:mossycobble =
+default:stone =
+default:stone_with_coal =
+default:stone_with_copper =
+default:stone_with_diamond =
+default:stone_with_gold =
+default:stone_with_iron =
+default:stone_with_mese =
+default:stonebrick =
+stairs:slab_cobble =
+stairs:stair_cobble =
+stairs:slab_desert_cobble =
+stairs:stair_desert_cobble =
+stairs:slab_desert_stone =
+stairs:stair_desert_stone =
+stairs:slab_desert_stonebrick =
+stairs:stair_desert_stonebrick =
+stairs:slab_stone =
+stairs:stair_stone =
+stairs:slab_stonebrick =
+stairs:stair_stonebrick =
+
+# Obsidian
+default:obsidian =
+default:obsidian_glass =
+default:obsidian_shard =
+default:obsidianbrick =
+doors:door_obsidian_glass =
+stairs:slab_obsidian =
+stairs:stair_obsidian =
+stairs:slab_obsidianbrick =
+stairs:stair_obsidianbrick =
+
+# Sands
+default:desert_sand =
+default:sand =
+default:sandstone =
+default:sandstonebrick =
+stairs:slab_sandstone =
+stairs:stair_sandstone =
+stairs:slab_sandstonebrick =
+stairs:stair_sandstonebrick =
+
+# Gravel
+default:gravel =
+
+# Precious Stones
+default:diamond =
+default:diamondblock =
+default:mese =
+default:mese_crystal =
+default:mese_crystal_fragment =
+
+# Dirts
+default:dirt =
+default:dirt_with_dry_grass =
+default:dirt_with_grass =
+default:dirt_with_snow =
+
+# Vegetation
+default:dry_grass_1 =
+default:dry_shrub =
+default:grass_1 =
+default:junglegrass =
+default:papyrus =
+
+# Flowers
+flowers:dandelion_white =
+flowers:dandelion_yellow =
+flowers:geranium =
+flowers:mushroom_brown =
+flowers:mushroom_red =
+flowers:mushroom_spores_brown =
+flowers:mushroom_spores_red =
+flowers:rose =
+flowers:tulip =
+flowers:viola =
+
+# Wooden Objects
+default:fence_wood =
+default:ladder =
+default:sign_wall =
+doors:door_wood =
+doors:trapdoor =
+
+# Stone Objects
+default:furnace =
+
+# Steel Objects
+doors:door_steel =
+
+# Verre
+default:glass =
+group:vessels = 
+doors:door_glass =
+
+# Dye
+group:dye = 
+dye:black =
+dye:blue =
+dye:brown =
+dye:cyan =
+dye:dark_green =
+dye:dark_grey =
+dye:green =
+dye:grey =
+dye:magenta =
+dye:orange =
+dye:pink =
+dye:red =
+dye:violet =
+dye:white =
+dye:yellow =
+
+# TNT
+tnt:gunpowder =
+tnt:tnt =
+
+# Vessels
+vessels:drinking_glass =
+vessels:glass_bottle =
+vessels:glass_fragments =
+vessels:shelf =
+vessels:steel_bottle =
+
+# Wool
+group:wool = 
+wool:black =
+wool:blue =
+wool:brown =
+wool:cyan =
+wool:dark_green =
+wool:dark_grey =
+wool:green =
+wool:grey =
+wool:magenta =
+wool:orange =
+wool:pink =
+wool:red =
+wool:violet =
+wool:white =
+wool:yellow =
+
+# Xpanes
+xpanes:bar =
+xpanes:pane =
+
+# Others
+default:ice =
+default:lava_source =
+default:meselamp =
+default:nyancat =
+default:nyancat_rainbow =
+default:paper =
+default:rail =
+default:river_water_source =
+default:snow =
+default:snowblock =
+default:torch =
+default:water_source =
+farming:bread =
+farming:cotton =
+farming:flour =
+farming:seed_cotton =
+farming:seed_wheat =
+farming:straw =
+farming:wheat =
+fire:basic_flame =
+screwdriver:screwdriver =
+stairs:slab_straw =
+stairs:stair_straw =
+sys4_achievements:waste =

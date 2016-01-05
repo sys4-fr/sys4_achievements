@@ -1594,6 +1594,7 @@ sys4_achievements.register_onCraft(
 	 sys4_achievements.getAchievement("craft", "dye_crafter_begins"),
 	 sys4_achievements.getAchievement("craft", "wool_crafter_begins"),
 	 sys4_achievements.getAchievement("craft", "vessel_crafter_begins"),
+	 sys4_achievements.getAchievement("craft", "bed_crafter"),
       }
 
       for i=1, #achievements do
@@ -1625,6 +1626,11 @@ sys4_achievements.register_onCraft(
 	       if node == 'vessels:glass_bottle' then
 		  mod = 'vessels'
 		  items = {'vessels:glass_bottle', 'vessels:drinking_glass', 'vessels:glass_fragments'}
+	       end
+
+	       if node == 'beds:bed_bottom' then
+		  mod = 'beds'
+		  items = {'beds:bed_bottom', 'beds:fancy_bed_bottom'}
 	       end
 	       
 	       local count = sys4_achievements.getItemCount("craft", mod, items, playern, data)

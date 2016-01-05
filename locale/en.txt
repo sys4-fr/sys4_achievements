@@ -6,28 +6,40 @@ Craft\ \ =
 
 #init.lua achievements
 Trouvons du bois = Finding wood
-Faire des planches... = Make planks...
-...et des bâtons =  ...and sticks
+Frappe un arbre jusqu'à obtenir du bois. Matière première indispensable. = Attack a tree and obtain wood. It's an essential raw material.
+Faire des planches et des bâtons =  Make planks and sticks
+Fabrique des planches et des bâtons à parir de bois. = Make Planks and Sticks from wood.
 Bonne Pioche ! = Good Pick!
-Agriculteur = Farmer
-Le monde est stone = The world is stone
-Au charbon ! = Finding charcoal!
-Au Four ! = To the Furnace!
+Fabrique une pioche en bois à l'aide de planches et de bâtons. = Make a wooden Pick from planks and sticks.
+Fermier = Farmer
+Fabrique une houe en bois à l'aide de planches et de bâtons. = Make a wooden Hoe from planks and sticks. 
+Au Fourneaux ! = To the Furnace!
+Fabrique un four avec 8 blocs de roche. = Make a furnace with 8 Cobblestones.
 Meilleure Pioche ! = Better Pick!
-Du solide ! = The strongest thing!
+Fabrique une pioche de meilleure qualité avec des bâtons et de la roche. = Make a better quality Pick from sticks and stones.
 Âge du Fer = Iron Age
+Récolte du minerai de fer. Tu pourras le faire fondre dans le four pour obtenir des lingots d'acier. = Dig iron ore. You will can smelt steel ingot with a furnace.
 Mineur accomplie = Complet miner
-Âge du Cuivre = Copper Age
+Fabrique une pioche en acier avec des bâtons et des lingots d'acier. = Make a steel Pick from sticks and steel ingots.
 Âge du Bronze = Bronze Age
-La récolte = Gathering
+Fabrique du bronze à partir d'acier et de cuivre. = Make bronze ingots from steel and copper ingots.
 Dans la paille = Into the straw
+Fabrique une botte de paille avec 9 bottes de blé. = Make a straw block with 9 wheats.
 À table ! = Lunch!
-La route du coton = The cotton road
-De fil en aiguille = knit
+Fabrique de la farine à partir de blé. Fais cuire au four et bon appétit ! = Make flour from wheat. Cook it into the furnace and good lunch!
 Je vais me coucher = Going to sleep
+Fabrique un lit avec des planches et de la laine. = Make a bed from planks and wool.
 Souffleur de Verre = Glass Blower
+Fabrique un récipient avec du verre ou des lingots d'acier. Attention à la casse ! = Make a container from glass or steel ingots.
 Dans quelle étagère ? = Shelf ?
+Fabrique une étagère avec des planches et des récipients. = Make a vessel shelf from planks and containers.
 Not only Waste = 
+Bling Bling ! = 
+Mine des diamants à l'aide d'une pioche en métal. = Dig diamonds whith help of a metal pick.
+On serre la Vis ! = Tightening the Screw!
+Fabrique un tournevis avec un bâton et un lingot d'acier. = Make a screwdriver from one stick and a steel ingot.
+La lueur du Mese = The Mese Glow
+Fabrique une lampe à base de Mese et de Verre. = Make a lamp based on Mese and Glass.
 
 # Original awards from Rubenwardy and Calinou
 OMG, Nyan Cat! =
@@ -119,7 +131,7 @@ I'm Illuminated =
 Gold Builder = 
 Obsidian Builder First Steps = 
 Obsidian Builder Lover = 
-The Snow Man = 
+The Snow Men = 
 Hands in the Flour = 
 Farmer First Steps = 
 I like the Black color = 
@@ -434,6 +446,7 @@ group:vessels = vessels recipient
 doors:door_glass = glass door
 
 # Dye
+group:dye = dyes
 dye:black = black dye
 dye:blue = blue dye
 dye:brown = brown dye
@@ -462,6 +475,7 @@ vessels:shelf = vessels shelf
 vessels:steel_bottle = steel bottle
 
 # Wool
+group:wool = Wools
 wool:black = black wool
 wool:blue = blue wool
 wool:brown = brown wool

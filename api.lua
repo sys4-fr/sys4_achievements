@@ -510,7 +510,7 @@ function sys4_achievements.formatShowto(text)
       return tt
    end
 
-return ""
+   return ""
 end
 
 -- Redefenition of awards.showto

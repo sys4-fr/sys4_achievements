@@ -1625,12 +1625,12 @@ sys4_achievements.register_onCraft(
 	       
 	       if node == 'vessels:glass_bottle' then
 		  mod = 'vessels'
-		  items = {'vessels:glass_bottle', 'vessels:drinking_glass', 'vessels:glass_fragments'}
+		  items = {'glass_bottle', 'steel_bottle', 'drinking_glass', 'glass_fragments'}
 	       end
 
 	       if node == 'beds:bed_bottom' then
 		  mod = 'beds'
-		  items = {'beds:bed_bottom', 'beds:fancy_bed_bottom'}
+		  items = {'bed_bottom', 'fancy_bed_bottom'}
 	       end
 	       
 	       local count = sys4_achievements.getItemCount("craft", mod, items, playern, data)

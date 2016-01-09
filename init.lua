@@ -1330,7 +1330,7 @@ else
 	target = 10*lvl,
 	titems = {'default:sword_diamond'},
 	tprizes = nil,
-	award_red = 'sword_crafter_lover'
+	award_req = 'sword_crafter_lover'
       },
 
       -- Hoes

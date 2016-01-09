@@ -1,9 +1,32 @@
 -- SYS4 Achievements
 -- by Sys4
 
-local S = sys4_achievements.intllib
+-- api.lua file
+-- this file contains my custom functions
 
--- api --
+if not awards then
+   return
+end
+
+sys4_achievements = {}
+
+-- Init
+local S
+if minetest.get_modpath("intllib") then
+  S = intllib.Getter()
+else
+  S = function(s) return s end
+end
+sys4_achievements.intllib = S
+
+-- New Waste Node
+minetest.register_node("sys4_achievements:waste",
+{
+   description = S("Waste"),
+   tiles = {"waste.png"},
+   is_ground_content = false,
+   groups = {crumbly=2, flammable=2},
+})
 
 -- Functions for get and set craftmode
 -- When craftmode is enabled, crafts are locked by defaults.
@@ -43,15 +66,6 @@ function sys4_achievements.setLevel(level)
    minetest.setting_set("sys4_level", level)
    minetest.setting_save()
 end
-
--- New Waste Node
-minetest.register_node("sys4_achievements:waste",
-{
-   description = S("Waste"),
-   tiles = {"waste.png"},
-   is_ground_content = false,
-   groups = {crumbly=2, flammable=2},
-})
 
 -- Function that format text written in given books
 function sys4_achievements.write_book(book_content, items, prizes)
@@ -184,11 +198,6 @@ function sys4_achievements.has_achievement(name, award)
    end
 end
 
--- run a function when a node is crafted
-function sys4_achievements.register_onCraft(func)
-	table.insert(awards.onCraft,func)
-end
-
 -- Function that return the number of crafted, placed or digged items by the player
 function sys4_achievements.getItemCount(action_type, mod, items, playern, data)
    local count = 0
@@ -198,22 +207,20 @@ function sys4_achievements.getItemCount(action_type, mod, items, playern, data)
 	 awards.tbv(awards.players[playern].craft[mod], items[i], 0)
 	 count = count + data.craft[mod][items[i]]
       end
-   else if action_type == "dig" then
-	 awards.tbv(awards.players[playern].count, mod)
-	 for i=1, #items do
-	    awards.tbv(awards.players[playern].count[mod], items[i], 0)
-	    count = count + data.count[mod][items[i]]
-	 end
-	else if action_type == "place" then
-	      awards.tbv(awards.players[playern].place, mod)
-	      for i=1, #items do
-		 awards.tbv(awards.players[playern].place[mod], items[i], 0)
-		 count = count + data.place[mod][items[i]]
-	      end
-	     else
-		return
-	     end
-	end
+   elseif action_type == "dig" then
+      awards.tbv(awards.players[playern].count, mod)
+      for i=1, #items do
+	 awards.tbv(awards.players[playern].count[mod], items[i], 0)
+	 count = count + data.count[mod][items[i]]
+      end
+   elseif action_type == "place" then
+      awards.tbv(awards.players[playern].place, mod)
+      for i=1, #items do
+	 awards.tbv(awards.players[playern].place[mod], items[i], 0)
+	 count = count + data.place[mod][items[i]]
+      end
+   else
+      return
    end
 
    return count
@@ -234,7 +241,7 @@ end
 -- Mais elle ne se déclenche pas pour certains objets comme les troncs d'arbres.
 -- Ces types d'objets possèdent une propriété on_place = minetest.rotate_node 
 -- qu'il faut redéfinir par cette fonction pour nos besoins.
-function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
+function sys4_achievements.register_on_place(itemstack, placer, pointed_thing)
 
    if not placer or not pointed_thing or not itemstack or not placer:get_player_name() or placer:get_player_name()=="" then
       return
@@ -300,192 +307,6 @@ function sys4_achievements.register_onPlace(itemstack, placer, pointed_thing)
 end
 
 
--- Redéfinition de la propriété on_place de ces nodes
-
-local nodes = {
-   minetest.registered_nodes["default:tree"],
-   minetest.registered_nodes["default:jungletree"],
-   minetest.registered_nodes["default:acacia_tree"],
-   minetest.registered_nodes["default:pine_tree"],
-}
-
-for i=1, #nodes do
-   nodes[i].on_place = sys4_achievements.register_onPlace
-end
-
--- AWARDS redefinitions --
-
--- add new trigger 'craft'
-awards.onCraft = {}
-
-local add_trig = awards._additional_triggers
-awards._additional_triggers = function(name, data_table)
-   if data_table.trigger.type == "craft" then
-      local tmp = {
-	 award = name,
-	 node = data_table.trigger.node,
-	 target = data_table.trigger.target,
-      }
-      table.insert(awards.onCraft, tmp)
-   else
-      add_trig(name, data_table)
-   end
-end
-
-awards.assertPlayer = function(playern)
-	awards.tbv(awards.players, playern)
-	awards.tbv(awards.players[playern], "name", playern)
-	awards.tbv(awards.players[playern], "unlocked")
-	awards.tbv(awards.players[playern], "place")
-	awards.tbv(awards.players[playern], "craft")
-	awards.tbv(awards.players[playern], "count")
-	awards.tbv(awards.players[playern], "deaths", 0)
-	awards.tbv(awards.players[playern], "joins", 0)
-	awards.tbv(awards.players[playern], "chats", 0)
-end
-
--- Redefinition of awards.give_achievement for add given book
-awards.give_achievement = function (name, award)
-   -- Access Player Data
-   local data = awards.players[name]
-   
-   -- Perform checks
-   if not data then
-      return
-   end
-   if not awards.def[award] then
-      return
-   end
-   awards.tbv(data,"unlocked")
-   
-   -- check to see if the player does not already have that achievement
-   if not data.unlocked[award] or data.unlocked[award]~=award then
-      -- Set award flag
-      data.unlocked[award]=award
-      
-      -- Give Prizes
-      if awards.def[award] and awards.def[award].prizes then
-	 for i = 1, #awards.def[award].prizes do
-	    local itemstack = ItemStack(awards.def[award].prizes[i])
-	    if itemstack:is_empty() or not itemstack:is_known() then
-	       return
-	    end
-	    local receiverref = core.get_player_by_name(name)
-	    if receiverref == nil then
-	       return
-	    end
-	    receiverref:get_inventory():add_item("main", itemstack)
-	 end
-      end
-      
-      -- Sys4
-      -- Give book if craftmode enabled
-      if awards.def[award] and awards.def[award].book and sys4_achievements.getCraftMode() then
-	 
-	 local itemstack = ItemStack('default:book_written')
-	 local book_data = {}
-	 book_data.title = awards.def[award].book.title
-	 book_data.text = awards.def[award].book.text
-	 book_data.owner = name
-	 local data_str = minetest.serialize(book_data)
-	 itemstack:set_metadata(data_str)
-	 local receiverref = core.get_player_by_name(name)
-	 if receiverref == nil then return end
-	 receiverref:get_inventory():add_item("main", itemstack)
-      end
-      
-      -- Get data from definition tables
-      local title = award
-      local desc = ""
-      local background = ""
-      local icon = ""
-      local custom_announce = ""
-      if awards.def[award].title then
-	 title = awards.def[award].title
-      end
-      if awards.def[award].custom_announce then
-	 custom_announce = awards.def[award].custom_announce
-      end
-      if awards.def[award].background then
-	 background = awards.def[award].background
-      end
-      if awards.def[award].icon then
-	 icon = awards.def[award].icon
-      end
-      if awards.def[award] and awards.def[award].description then
-	 desc = awards.def[award].description
-      end
-      
-      -- send the won award message to the player
-      if awards.show_mode == "formspec" then
-	 -- use a formspec to send it
-	 minetest.show_formspec(name, "achievements:unlocked", "size[4,2]"..
-				   "image_button_exit[0,0;4,2;"..background..";close1; ]"..
-				   "image_button_exit[0.2,0.8;1,1;"..icon..";close2; ]"..
-				   "label[1.1,1;"..title.."]"..
-				   "label[0.3,0.1;"..custom_announce.."]")
-      elseif awards.show_mode == "chat" then
-	 -- use the chat console to send it
-	 minetest.chat_send_player(name, S("Achievement Unlocked: ")..title)
-	 if desc~="" then
-	    minetest.chat_send_player(name, desc)
-	 end
-      else
-	 local player = minetest.get_player_by_name(name)
-	 local one = player:hud_add({
-				       hud_elem_type = "image",
-				       name = "award_bg",
-				       scale = {x = 1, y = 1},
-				       text = background,
-				       position = {x = 0.5, y = 0},
-				       offset = {x = 0, y = 138},
-				       alignment = {x = 0, y = -1}
-				    })
-	 local two = player:hud_add({
-				       hud_elem_type = "text",
-				       name = "award_au",
-				       number = 0xFFFFFF,
-				       scale = {x = 100, y = 20},
-				       text = S("Achievement Unlocked!"),
-				       position = {x = 0.5, y = 0},
-				       offset = {x = 0, y = 40},
-				       alignment = {x = 0, y = -1}
-				    })			
-	 local three = player:hud_add({
-					 hud_elem_type = "text",
-					 name = "award_title",
-					 number = 0xFFFFFF,
-					 scale = {x = 100, y = 20},
-					 text = title,
-					 position = {x = 0.5, y = 0},
-					 offset = {x = 30, y = 100},
-					 alignment = {x = 0, y = -1}
-				      })			
-	 local four = player:hud_add({
-					hud_elem_type = "image",
-					name = "award_icon",
-					scale = {x = 4, y = 4},
-					text = icon,
-					position = {x = 0.5, y = 0},
-					offset = {x = -81.5, y = 126},
-					alignment = {x = 0, y = -1}
-				     })
-	 minetest.after(3, function()
-			   player:hud_remove(one)
-			   player:hud_remove(two)
-			   player:hud_remove(three)
-			   player:hud_remove(four)
-			   end)
-      end
-      
-      -- record this in the log	
-      minetest.log("action", name.." has unlocked award "..title)
-      
-      -- save playertable
-      awards.save()
-   end
-end
-
 -- function that format a text displayed in formspec.
 function sys4_achievements.formatShowto(text)
    if text ~= nil and text ~= "" then   
@@ -513,329 +334,21 @@ function sys4_achievements.formatShowto(text)
    return ""
 end
 
--- Redefenition of awards.showto
--- This function display related infos of an achievement.
--- When craftmode is enabled, this function will display crafts that achievement unlock.
-awards.showto = function(name, to, sid, text)
-	if name == "" or name == nil then
-		name = to
-	end
-	if text then
-		if not awards.players[name] or not awards.players[name].unlocked  then
-			minetest.chat_send_player(to, "You have not unlocked any awards")
-			return
-		end
-		minetest.chat_send_player(to, name.."'s awards:")
+-- Awards func redefinition
+dofile(minetest.get_modpath("sys4_achievements").."/awards.lua")
+-- New triggers
+dofile(minetest.get_modpath("sys4_achievements").."/triggers.lua")
+-- Chat commands
+dofile(minetest.get_modpath("sys4_achievements").."/console.lua")
 
-		for _, str in pairs(awards.players[name].unlocked) do
-			local def = awards.def[str]
-			if def then
-				if def.title then
-					if def.description then				
-						minetest.chat_send_player(to, def.title..": "..def.description)
-					else
-						minetest.chat_send_player(to, def.title)
-					end
-				else
-					minetest.chat_send_player(to, str)
-				end
-			end
-		end
-	else
-		if sid == nil or sid < 1 then
-			sid = 1
-		end
-		local formspec = "size[15,8]"			
-		local listofawards = awards._order_awards(name)
-		
-		-- Sidebar
-		if sid then
-			local item = listofawards[sid+0]
-			local def = awards.def[item.name]
-			if def and def.secret and not item.got then
-			        local award_req = ""
-			        if def.award_req then
-				   award_req = def.award_req
-				   local reqTitle = awards.def[award_req].title
-				   if sys4_achievements.isAwardGot(award_req, listofawards) then
-				      award_req = S("Requiered").." : "..reqTitle.." ("..S("got")..")"
-				   else
-				      award_req = S("Requiered").." : "..reqTitle
-				   end
-				   formspec = formspec .. "label[9,3.75;- "..award_req.." -]"
-				end
-				formspec = formspec .. "label[9,2.75;"..S("Secret Award").."]"..
-									"image[9.75,0;3,3;unknown.png]"
-				if def and def.description then
-				   formspec = formspec	.. "label[9,3.25;"..S("Unlock this award to find out what it is").."]"				
-				end
-			else
-				local title = item.name
-				if def and def.title then
-					title = def.title
-				end
-				local status = ""
-				if item.got then
-				   status = " ("..S("got")..")"
-				end
-				local icon = ""
-				if def and def.icon then
-					icon = def.icon
-				end
-				local award_req = ""
-				if def and def.award_req then
-				   award_req = def.award_req
-				   local reqTitle = awards.def[award_req].title
-				   if sys4_achievements.isAwardGot(award_req, listofawards) then
-				      award_req = S("Requiered").." : "..reqTitle.." ("..S("got")..")"
-				   else
-				      award_req = S("Requiered").." : "..reqTitle
-				   end
-				   formspec = formspec .. "label[9,3.75;- "..award_req.." -]"
-				end
+-- Redéfinition de la propriété on_place de ces nodes
+local nodes = {
+   minetest.registered_nodes["default:tree"],
+   minetest.registered_nodes["default:jungletree"],
+   minetest.registered_nodes["default:acacia_tree"],
+   minetest.registered_nodes["default:pine_tree"],
+}
 
-				formspec = formspec .. "label[9,3.25;"..title..status.."]"--.."label[9,0;"..item.name.."]"
-				   .."image[9.75,0.5;3,3;"..icon.."]"
-
-				if def and def.description then
-					formspec = formspec	.. "label[8,4.25;"..def.description.."]"				
-				end
-
-				-- Sys4
-				-- Crafts to unlock when craftmode is on else display content of the book
-				if def and def.items and sys4_achievements.getCraftMode() then
-				   local items = def.items
-				   local y = 5 -- Position y de départ du label
-				   formspec = formspec	.. "label[8,"..y..";"..S("Unlock crafts").." :]"
-				   
-				   for i=1, #items do
-				      local name = ""				      
-				      local itemstack = ItemStack(items[i])
-				      if itemstack and itemstack ~= nil and itemstack:is_known() then
-					 name = itemstack:get_name()
-				      else
-					 name = "Unknown Item"
-				      end
-				      y = y + 0.35
-				      formspec = formspec .. "label[8,"..y..";- "..S(name).."]"
-				   end
-				elseif def and def.book and def.book.text and not sys4_achievements.getCraftMode() then
-				   formspec = formspec .. "label[8,5;"..sys4_achievements.formatShowto(def.book.text).."]"
-				   
-				end
-			end
-		end
-		
-		-- Create list box
-		formspec = formspec .. "textlist[0,0;6.75,8;awards;"		
-		local first = true
-		for _,award in pairs(listofawards) do
-			local def = awards.def[award.name]
-			if def then
-				if not first then
-					formspec = formspec .. ","
-				end
-				first = false
-				
-				if def.secret and not award.got then
-				   if def.award_req then
-				      local requieredAward = def.award_req
-				      if not sys4_achievements.isAwardGot(requieredAward, listofawards) then
-					 formspec = formspec .. "#AC0000"..S("Secret Award")
-				      else
-					 formspec = formspec .. "#ACAC00"..S("Secret Award")
-				      end
-				   else
-				      formspec = formspec .. "#ACAC00"..S("Secret Award")
-				   end
-				else
-					local title = award.name			
-					if def and def.title then
-						title = def.title
-					end			
-					if award.got then
-					   formspec = formspec .. "#00AC00".. minetest.formspec_escape(title)
-					else
-					   if def.award_req then
-					      local requieredAward = def.award_req
-					      
-					      if not sys4_achievements.isAwardGot(requieredAward, listofawards) then
-						 formspec = formspec .. "#AC0000".. minetest.formspec_escape(title)
-					      else
-						 formspec = formspec .. "#ACAC00".. minetest.formspec_escape(title)
-					      end
-					   else
-					      formspec = formspec .. "#ACAC00".. minetest.formspec_escape(title)
-					   end
-					end
-				end
-			end
-		end		
-		formspec = formspec .. ";"..sid.."]"
-
-		-- Show formspec to user
-		minetest.show_formspec(to,"awards:awards",formspec)
-	end
+for i=1, #nodes do
+   nodes[i].on_place = sys4_achievements.register_on_place
 end
-
--- Definitions of chat commands --
-
--- Get achievement artificially
-minetest.register_chatcommand("gawd", {
-	params = "award name",
-	description = "gawd: give award to self",
-	func = function(name, param)
-		awards.give_achievement(name,param)
-	end
-})
-
--- Enable or not craftmode
-minetest.register_chatcommand("sys4_craftmode",
-{
-   params = "on or off",
-   description = "sys4_craftmode : enable or not sys4_achievements locked crafts.",
-   func = function(name, param)
-      if param == "on" then	 
-	 sys4_achievements.setCraftMode(true)
-	 minetest.chat_send_player(name, "Sys4 craft mode enabled. Please restart the game for changes take effects.")
-      else
-	 sys4_achievements.setCraftMode(false)
-	 minetest.chat_send_player(name, "Sys4 craft mode disabled. Please restart the game for changes take effects.")
-      end
-   end
-})
-
--- set level of difficulty
-minetest.register_chatcommand("sys4_level",
-{
-   params = "Integer",
-   description = "sys4_level : enable or not sys4_achievements level of difficulty.",
-   func = function(name, param)
-      local number = nil
-      if param and param ~= "" then
-	 number = tonumber(param)
-	 if number ~= nil and number > 0 then
-	    sys4_achievements.setLevel(number)
-	    minetest.chat_send_player(name, "Sys4 level changed to "..number..". Please restart the game for changes take effects.")
-	 else
-	    minetest.chat_send_player(name, "Sys4 level : param error, please type a number !")
-	 end
-      else
-	 minetest.chat_send_player(name, "Sys4 level : no parameter !")
-      end
-   end
-})
-
--- Add translations for awards from Rubenwardy and Calinou
-for _,award in pairs(awards.def) do
-   award.title = S(award.title)
-   award.description = S(award.description)
-end
-
-local craftmode = sys4_achievements.getCraftMode()
-
--- Give initial Stuff if craftmode enabled
-minetest.register_on_newplayer(
-   function(player)
-      if craftmode then
-	 minetest.log("action", "Giving initial stuff to player "..player:get_player_name())
-	 local book = ItemStack("default:book_written")
-	 local data = {}
-	 data.title = "SYS4 AWARDS : Introduction"
-	 data.text = "Bonjour "..player:get_player_name().." et bienvenue dans Minetest.\n\n"
-	    .."Vous débarquez dans ce monde avec vos seules mains comme outils et la nuit arrive à grand pas. Vous vous sentez perdu mais une chose est sure. Il faut vous fabriquer des outils et des matériaux pour pouvoir construire votre premier abris afin d'y passer la nuit.\n\n"
-	    .."Comme premier objectif, trouvez du bois."
-	 data.owner = player:get_player_name()
-	 local data_str = minetest.serialize(data)
-	 book:set_metadata(data_str)
-	 
-	 local inv = minetest.get_inventory({type="player", name=player:get_player_name()})
-	 inv:add_item("main", book)
-      end
-   end)
-
--- Register new trigger on "craft"
-minetest.register_on_craft(
-   function(itemstack, player, old_craft_grid, craft_inv)
-      
-	 
-      -- Par défaut tout craft qui doit donner quelque chose retournera des déchets inutilisables.
-      local wasteItem = "sys4_achievements:waste"
-      
-      local nodeName = itemstack:get_name()
-      local nodeCrafted = string.split(nodeName, ":")
-      if #nodeCrafted ~= 2 then
-	 --minetest.log("error","Awards mod: "..oldnode.name.." is in wrong format!")
-	 return
-      end
-      
-      local mod = nodeCrafted[1]
-      local item = nodeCrafted[2]
-      local playern = player:get_player_name()
-      
-      if (not playern or not nodeCrafted or not mod or not item) then
-	 return
-      end
-      awards.assertPlayer(playern)
-      awards.tbv(awards.players[playern].craft, mod)
-      awards.tbv(awards.players[playern].craft[mod], item, 0)
-      
-      -- Si des awards ont été débloqués, ont les parcours pour en extraire les items qu'ils débloquent
-      if awards.player(playern) ~= nil then
-	 local data = awards.players[playern]
-	 for _, str in pairs(data.unlocked) do
-	    local def = awards.def[str]
-	    if def and def.items then
-	       local items = def.items
-	       for i=1, #items do
-		  -- Si un item débloqué correspond à l'item demandé par l'utilisateur alors on le prend en compte et on retournera l'item (en retournant nil)
-		  if items[i] == nodeName then
-		     -- Increment counter
-		     awards.players[playern].craft[mod][item] = awards.players[playern].craft[mod][item] + itemstack:get_count()
-		     
-		     -- Run callbacks and triggers
-		     local crafter = player
-		     
-		     for j=1, #awards.onCraft do
-			local res = nil
-			if type(awards.onCraft[j]) == "function" then
-			   -- Run trigger callback
-			   res = awards.onCraft[j](crafter, data)
-			elseif type(awards.onCraft[j]) == "table" then
-			   -- Handle table trigger
-			   if not awards.onCraft[j].node or not awards.onCraft[j].target or not awards.onCraft[j].award then
-			      -- table running failed !
-			      print("[ERROR] awards - onCraft trigger "..j.." is invalid !")
-			   else
-			      -- run the table
-			      local tnodeCrafted = string.split(awards.onCraft[j].node, ":")
-			      local tmod = tnodeCrafted[1]
-			      local titem = tnodeCrafted[2]
-			      if tmod == nil or titem == nil or not data.craft[tmod] or not data.craft[tmod][titem] then
-				 -- table running failed
-			      elseif data.craft[tmod][titem] > awards.onCraft[j].target - 1 then
-				 res = awards.onCraft[j].award
-			      end
-			   end
-			end
-			
-			if res then
-			   awards.give_achievement(playern,res)
-			end
-		     end
-		     
-		     return nil
-		  end
-	       end
-	    end
-	 end
-      end
-      
-      if craftmode then
-	 return wasteItem
-      else
-	 return nil
-      end
-      
-   end)
-

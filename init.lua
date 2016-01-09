@@ -1,22 +1,9 @@
 -- SYS4 Achievements
 -- by Sys4
 
-sys4_achievements = {}
-
--- Init
-local S
-if minetest.get_modpath("intllib") then
-  S = intllib.Getter()
-else
-  S = function(s) return s end
-end
-sys4_achievements.intllib = S
-
-if not awards then
-   return
-end
-
 dofile(minetest.get_modpath("sys4_achievements").."/api.lua")
+
+local S = sys4_achievements.intllib
 
 
 -- Level of difficulty
@@ -1585,7 +1572,7 @@ awards.register_onPlace(
       end
    end)
 
-sys4_achievements.register_onCraft(
+awards.register_onCraft(
    function(player, data)
       local playern = player:get_player_name()
 

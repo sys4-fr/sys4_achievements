@@ -1,101 +1,101 @@
 # German Translation for SYS4 Achievements Mod
 # Deutsche Übersetzung der SYS4 Achievements Mod
-# last update: 2016/Jan/04
+# last update: 2016/Jan/13
 # Author: Xanthin
 
 #init.lua
 Dig\ \ = Sammeln\ \ 
 Craft\ \ = Fertigen\ \ 
-Place\ \ = 
+Place\ \ = Setzen\ \
 
 #init.lua achievements
-Finding wood = 
-Attack a tree and obtain wood. It's an essential raw material. = 
-Make planks and sticks = 
-Make Planks and Sticks from wood. = 
-Good Pick! = 
-Make a wooden Pick from planks and sticks. = 
-Farmer = 
-Make a wooden Hoe from planks and sticks.  = 
-To the Furnace! = 
-Make a furnace with 8 Cobblestones. = 
-Better Pick! = 
-Make a better quality Pick from sticks and stones. = 
-Iron Age = 
-Dig iron ore. You will can smelt steel ingot with a furnace. = 
-Complet miner = 
-Make a steel Pick from sticks and steel ingots. = 
-Bronze Age = 
-Make bronze ingots from steel and copper ingots. = 
-Into the straw = 
-Make a straw block with 9 wheats. = 
-Lunch! = 
-Make flour from wheat. Cook it into the furnace and good lunch! = 
-Going to sleep = 
-Make a bed from planks and wool. = 
-Glass Blower = 
-Make a container from glass or steel ingots. = 
-Shelf ? = 
-Make a vessel shelf from planks and containers. = 
-Not only Waste = 
-Bling Bling ! = 
-Dig diamonds whith help of a metal pick. = 
-Tightening the Screw! = 
-Make a screwdriver from one stick and a steel ingot. = 
-The Mese Glow = 
-Make a lamp based on Mese and Glass. = 
+Finding wood = Finden Sie Holz
+Attack a tree and obtain wood. It's an essential raw material. = Schlagen Sie einen Baum, um Holz zu bekommen. Es ist ein unverzichtbarer Rohstoff.
+Make planks and sticks = Produzieren Sie Bretter und Stöcker
+Make Planks and Sticks from wood. = Produzieren Sie Bretter und Stöcker aus Holz.
+Good Pick! = Gute Spitzhacke!
+Make a wooden Pick from planks and sticks. = Produzieren Sie eine Holzspitzhacke aus Brettern und Stöckern.
+Farmer = Bauer
+Make a wooden Hoe from planks and sticks.  = Produzieren Sie eine Holzhacke aus Brettern und Stöckern.
+To the Furnace! = Zum Ofen!
+Make a furnace with 8 Cobblestones. = Produzieren Sie einen Ofen aus 8 Bruchsteinen.
+Better Pick! = Bessere Spitzhacke!
+Make a better quality Pick from sticks and stones. = Produzieren Sie eine Spitzhacke von besserer Qualität aus Stöckern und Steinen.
+Iron Age = Eisenzeit
+Dig iron ore. You will can smelt steel ingot with a furnace. = Sammeln Sie Eisenerz. Sie können es im Ofen schmelzen, um Stahlbarren zu erhalten.
+Complet miner = Vollendeter Bergarbeiter
+Make a steel Pick from sticks and steel ingots. = Produzieren Sie eine Stahlspitzhacke aus Stöckern und Stahlbarren.
+Bronze Age = Bronzezeit
+Make bronze ingots from steel and copper ingots. = Produzieren Sie Bronzebarren aus Stahl- und Kupferbarren.
+Into the straw = Ins Stroh
+Make a straw block with 9 wheats. = Produzieren Sie einen Strohblock aus 9 Weizenbündel.
+Lunch! = Zu Tisch!
+Make flour from wheat. Cook it into the furnace and good lunch! = Produzieren Sie Mehl aus Weizen. Backen Sie es im Ofen und guten Appetit!
+Going to sleep = Ich gehe schlafen
+Make a bed from planks and wool. = Produzieren Sie ein Bett aus Brettern und Wolle.
+Glass Blower = Glasbläser
+Make a container from glass or steel ingots. = Produzieren Sie ein Gefäß aus Glass oder Stahlbarren. Vorsicht, zerbrechlich!
+Shelf ? = Regal?
+Make a vessel shelf from planks and containers. = Produzieren Sie ein Gefäßregal aus Brettern und Gefäßen.
+Not only Waste = Nicht nur abfall
+Bling Bling ! = Bling-Bling!
+Dig diamonds whith help of a metal pick. = Bauen Sie Diamanten mit Hilfe einer Metallspitzhacke ab.
+Tightening the Screw! = Man zieht die Schraube fest!
+Make a screwdriver from one stick and a steel ingot. = Produzieren Sie einen Schrauberdreher aus einem Stock und einem Stahlbarren.
+The Mese Glow = Der Schein von Mese
+Make a lamp based on Mese and Glass. = Produzieren Sie eine Lampe auf Basis von Mese und Glas.
 
 # Original awards from Rubenwardy and Calinou
-OMG, Nyan Cat! = 
-Find a nyan cat. = 
-YOU'RE A WINNER! = 
-Dig 1 mossy cobblestone. = 
-The Stack = 
-Die near bones. = 
-On The Way = 
-Place 100 rails. = 
-Professional Lumberjack = 
-Dig 10,000 tree blocks. = 
-Lumberjack = 
-Dig 100 tree blocks. = 
-You're a copper = 
-Dig 1,000 copper ores. = 
-Hardened Miner = 
-Dig 1,000 stone blocks = 
-Secret Award = 
-Unlock this award to find out what it is = 
-Junglebaby = 
-Dig 100 jungle tree blocks. = 
-Dying Spree = 
-Die 5 times. = 
-In the Flow = 
-Die in flowing lava. = 
-Marchand De Sable = 
-Dig 1,000 sand. = 
-Mini Miner = 
-Dig 100 stone blocks. = 
-Obsessed with Obsidian = 
-Mine 50 obsidian. = 
-Master Miner = 
-Dig 10,000 stone blocks. = 
-Bot-like = 
-Die 10 times. = 
-Semi-pro Lumberjack = 
-Dig 1,000 tree blocks. = 
-Light ALL The Things! = 
-Place 1,000 torches. = 
-Light It Up = 
-Place 100 torches. = 
-This is Sad = 
-Die near diamond ore. = 
-Jungleman = 
-Dig 1,000 jungle tree blocks. = 
-L33T Lumberjack = 
-Dig 100,000 tree blocks. = 
-You're a witch! = 
-Burn to death in a fire. = 
-First Mese Find = 
-Find some Mese. = 
+OMG, Nyan Cat! = Oh mein Gott, Nyan Cat!
+Find a nyan cat. = Finden Sie eine Nyan Cat.
+YOU'RE A WINNER! = SIE SIND EIN GEWINNER!
+Dig 1 mossy cobblestone. = Bauen Sie 1 bemoosten Bruchstein ab.
+The Stack = Der Stapel
+Die near bones. = Sterben Sie in der Nähe von Gebeinen.
+On The Way = Auf dem Weg
+Place 100 rails. = Verlegen Sie 100 Schienen.
+Professional Lumberjack = Professioneller Holzfäller
+Dig 10,000 tree blocks. = Sammeln Sie 10.000 Baumblöcke.
+Lumberjack = Holzfäller
+Dig 100 tree blocks. = Sammeln Sie 100 Baumblöcke.
+You're a copper = Vollständig aus Kupfer
+Dig 1,000 copper ores. = Bauen Sie 1.000 Kupfererze ab.
+Hardened Miner = Abgehärteter Beragarbeiter
+Dig 1,000 stone blocks = Bauene Sie 1.000 Steinblöcke ab
+Secret Award = Geheimer Preis
+Unlock this award to find out what it is = Schalten Sie diesen Preis frei, um herauszufinden, was er ist.
+Junglebaby = Dschungelkind
+Dig 100 jungle tree blocks. = Sammeln Sie 100 Tropenbaumblöcke.
+Dying Spree = Todesrausch
+Die 5 times. = Sterben Sie 5 mal.
+In the Flow = Im Fluss
+Die in flowing lava. = Sterben Sie in fließender Lava. 
+Marchand De Sable = Sandmännchen
+Dig 1,000 sand. = Graben Sie 1.000 Sandblöcke.
+Mini Miner = Minibergmann
+Dig 100 stone blocks. = Bauen Sie 100 Steinblöcke ab.
+Obsessed with Obsidian = Besessen von Obsidian.
+Mine 50 obsidian. = Bauen Sie 50 Obsidianblöcke ab.
+Master Miner = Meisterbergarbeiter
+Dig 10,000 stone blocks. = Bauen Sie 10.000 Steinblöcke ab.
+Bot-like = Roboterartig
+Die 10 times. = Sterben Sie 10 mal.
+Semi-pro Lumberjack = Halbprofessioneller Holzfäller
+Dig 1,000 tree blocks. = Sammeln Sie 1.000 Baumblöcke.
+Light ALL The Things! = Beleuchten Sie ALLES!
+Place 1,000 torches. = Platzieren Sie 1.000 Fackeln.
+Light It Up = Ausgeleuchtet
+Place 100 torches. = Platzieren Sie 100 Fackeln.
+This is Sad = Das ist traurig.
+Die near diamond ore. = Sterben Sie in der Nähe von Diamanten.
+Jungleman = Dschungelmensch
+Dig 1,000 jungle tree blocks. = Sammeln Sie 1.000 Tropenbaumblöcke.
+L33T Lumberjack = 3L173-Holzfäller
+Dig 100,000 tree blocks. = Sammeln Sie 100.000 Baumblöcke.
+You're a witch! = Sie sind eine Hexe!
+Burn to death in a fire. = Verbrennen Sie in einem Feuer.
+First Mese Find = Erster Mesefund.
+Find some Mese. = Finden Sie etwas Mese.
 
 #craftmode
 My first hut = Meine erste Hütte
@@ -112,7 +112,7 @@ Specialized sandstone builder = Spezialisierter Sandsteinbauer
 Place 50 sandstone bricks. = Setzen Sie 50 Sandsteinziegelblöcke.
 Sticks into the trees = Von Laub und Stöcken
 Dig 50 leaves. = Sammeln Sie 50 Laubblöcke.
-First steps of a Lumberjack = Erste Schritte eines Holzarbeiters
+First steps of a Lumberjack = Erste Schritte eines Holzfällers
 Dig 50 trees. = Schneiden Sie 50 Baumstämme.
 You know write ? = Können Sie schreiben?
 Dig 50 papyrus. = Sammeln Sie 50 Papyrus.
@@ -169,7 +169,7 @@ Place 50 Copper Blocks. = Setzen Sie 50 Kupferblöcke.
 Bronze Builder = Bronzebauer
 Place 50 Bronze Blocks. = Setzen Sie 50 Bronzeblöcke.
 I'm Illuminated = Ich bin erleuchtet
-Place 100 Torches. = Setzen Sie 100 Fackeln.
+Place 100 Torches. = Platzieren Sie 100 Fackeln.
 Gold Builder = Goldbauer
 Place 50 Gold Blocks. = Setzen Sie 50 Goldblöcke.
 Obsidian Builder First Steps = Erste Schritte eines Obsidianbauers
@@ -281,336 +281,336 @@ Achievement Unlocked:\ \ = Erfolg freigeschaltet:\ \
 Achievement Unlocked! = Erfolg freigeschaltet!
 Unlock crafts = Freigeschaltete Herstellung
 #Craft table = Werkbank
-Requiered = 
+Requiered = Benötigt
 OR = ODER
 empty = leer
 No craft for this item = Keine Herstellung für diesen Gegenstand
-Output = 
-got = 
+Output = Ausgabe
+got = erhalten
 
 ### Nodes names ###
 
 # Trees
-group:tree =
-default:tree =
-default:acacia_tree =
-default:jungletree =
-default:pine_tree =
+group:tree = Baum
+default:tree = Baum
+default:acacia_tree = Akazie
+default:jungletree = Tropenbaum
+default:pine_tree = Kiefer
 
 # Stick
-group:stick =
-default:stick =
+group:stick = Stock
+default:stick = Stock
 
 # Wood
-group:wood =
-default:wood =
-default:acacia_wood =
-default:junglewood =
-default:pine_wood =
-stairs:slab_acacia_wood =
-stairs:stair_acacia_wood =
-stairs:slab_junglewood =
-stairs:stair_junglewood =
-stairs:slab_pine_wood =
-stairs:stair_pine_wood =
-stairs:slab_wood =
-stairs:stair_wood =
+group:wood = Holz
+default:wood = Holz
+default:acacia_wood = Akazienholz
+default:junglewood = Tropenholz
+default:pine_wood = Kiefernholz
+stairs:slab_acacia_wood = Akazienholzplatte
+stairs:stair_acacia_wood = Akazienholztreppe
+stairs:slab_junglewood = Tropenholzplatte
+stairs:stair_junglewood = Tropenholztreppe
+stairs:slab_pine_wood = Kiefernholzplatte
+stairs:stair_pine_wood = Kiefernholztreppe
+stairs:slab_wood = Holzplatte
+stairs:stair_wood = Holztreppe
 
 # Leaves
-default:acacia_leaves =
-default:jungleleaves =
-default:leaves =
-default:pine_needles =
+default:acacia_leaves = Akazienlaub
+default:jungleleaves = Tropenlaub
+default:leaves = Laub
+default:pine_needles = Kiefernnadeln
 
 # Saplings
-default:acacia_sapling =
-default:junglesapling =
-default:pine_sapling =
-default:sapling =
+default:acacia_sapling = Akaziensetzling
+default:junglesapling = Tropensetzling
+default:pine_sapling = Kiefernsetzling
+default:sapling = Setzling
 
 # Fruits
-default:apple =
+default:apple = Apfel
 
 # Beds
-beds:bed_bottom =
-beds:fancy_bed_bottom =
+beds:bed_bottom = Einfaches Bett
+beds:fancy_bed_bottom = Schickes Bett
 
 # Boats
-boats:boat =
+boats:boat = Boot
 
 # Bones
-bones:bones =
+bones:bones = Gebeine
 
 # Buckets
-bucket:bucket_empty =
-bucket:bucket_lava =
-bucket:bucket_river_water =
-bucket:bucket_water =
+bucket:bucket_empty = Leerer Eimer
+bucket:bucket_lava = Lavaeimer
+bucket:bucket_river_water = Flusswassereimer
+bucket:bucket_water = Wassereimer
 
 # Haches
-default:axe_bronze =
-default:axe_diamond =
-default:axe_mese =
-default:axe_steel =
-default:axe_stone =
-default:axe_wood =
+default:axe_bronze = Bronzeaxt
+default:axe_diamond = Diamantaxt
+default:axe_mese = Meseaxt
+default:axe_steel = Stahlaxt
+default:axe_stone = Steinaxt
+default:axe_wood = Holzaxt
 
 # Picks
-default:pick_bronze =
-default:pick_diamond =
-default:pick_mese =
-default:pick_steel =
-default:pick_stone =
-default:pick_wood =
+default:pick_bronze = Bronzespitzhacke
+default:pick_diamond = Diamantspitzhacke
+default:pick_mese = Mesespitzhacke
+default:pick_steel = Stahlspitzhacke
+default:pick_stone = Steinspitzhacke
+default:pick_wood = Holzspitzhacke
 
 # Shovels
-default:shovel_bronze =
-default:shovel_diamond =
-default:shovel_mese =
-default:shovel_steel =
-default:shovel_stone =
-default:shovel_wood =
+default:shovel_bronze = Bronzeschaufel
+default:shovel_diamond = Diamantschaufel
+default:shovel_mese = Meseschaufel
+default:shovel_steel = Stahlschaufel
+default:shovel_stone = Steinschaufel
+default:shovel_wood = Holzschaufel
 
 # Swords
-default:sword_bronze =
-default:sword_diamond =
-default:sword_mese =
-default:sword_steel =
-default:sword_stone =
-default:sword_wood =
+default:sword_bronze = Bronzeschwert
+default:sword_diamond = Diamantschwert
+default:sword_mese = Meseschwert
+default:sword_steel = Stahlschwert
+default:sword_stone = Steinschwert
+default:sword_wood = Holzschwert
 
 # Hoes
-farming:hoe_bronze =
-farming:hoe_diamond =
-farming:hoe_mese =
-farming:hoe_steel =
-farming:hoe_stone =
-farming:hoe_wood =
+farming:hoe_bronze = Bronzehacke
+farming:hoe_diamond = Diamanthacke
+farming:hoe_mese = Mesehacke
+farming:hoe_steel = Stahlhacke
+farming:hoe_stone = Steinhacke
+farming:hoe_wood = Holzhacke
 
 # Books
-default:book =
-default:bookshelf =
+default:book = Buch
+default:bookshelf = Bücherregal
 
 # Bricks
-default:brick =
-default:clay_brick =
-stairs:slab_brick =
-stairs:stair_brick =
+default:brick = Ziegelblock
+default:clay_brick = Tonziegel
+stairs:slab_brick = Ziegelplatte
+stairs:stair_brick = Ziegeltreppe
 
 # Metal Lumps
-default:copper_lump =
-default:gold_lump =
-default:iron_lump =
+default:copper_lump = Kupferklumpen
+default:gold_lump = Goldklumpen
+default:iron_lump = Eisenklumpen
 
 # Ingots
-default:bronze_ingot =
-default:copper_ingot =
-default:gold_ingot =
-default:steel_ingot =
+default:bronze_ingot = Bronzebarren
+default:copper_ingot = Kupferbarren
+default:gold_ingot = Goldbarren
+default:steel_ingot = Stahlbarren
 
 # Metal Blocks
-default:bronzeblock =
-default:copperblock =
-default:goldblock =
-default:steelblock =
-stairs:slab_bronzeblock =
-stairs:stair_bronzeblock =
-stairs:slab_copperblock =
-stairs:stair_copperblock =
-stairs:slab_goldblock =
-stairs:stair_goldblock =
-stairs:slab_steelblock =
-stairs:stair_steelblock =
+default:bronzeblock = Bronzeblock
+default:copperblock = Kupferblock
+default:goldblock = Goldblock
+default:steelblock = Stahlblock
+stairs:slab_bronzeblock = Bronzeblockplatte
+stairs:stair_bronzeblock = Bronzeblocktreppe
+stairs:slab_copperblock = Kupferblockplatte
+stairs:stair_copperblock = Kupferblocktreppe
+stairs:slab_goldblock = Goldblockplatte
+stairs:stair_goldblock = Goldblocktreppe
+stairs:slab_steelblock = Stahlblockplatte
+stairs:stair_steelblock = Stahlblocktreppe
 
 # Cactus
-default:cactus =
+default:cactus = Kaktus
 
 # Chests
-default:chest =
-default:chest_locked =
+default:chest = Truhe
+default:chest_locked = Verschlossene Truhe
 
 # Clays
-default:clay =
-default:clay_lump =
+default:clay = Ton
+default:clay_lump = Tonklumpen
 
 # Coal
-default:coal_lump =
-default:coalblock =
+default:coal_lump = Kohleklumpen
+default:coalblock = Kohleblock
 
 # Stones
-default:cobble =
-default:desert_cobble =
-default:desert_stone =
-default:desert_stonebrick =
-default:mossycobble =
-default:stone =
-default:stone_with_coal =
-default:stone_with_copper =
-default:stone_with_diamond =
-default:stone_with_gold =
-default:stone_with_iron =
-default:stone_with_mese =
-default:stonebrick =
-stairs:slab_cobble =
-stairs:stair_cobble =
-stairs:slab_desert_cobble =
-stairs:stair_desert_cobble =
-stairs:slab_desert_stone =
-stairs:stair_desert_stone =
-stairs:slab_desert_stonebrick =
-stairs:stair_desert_stonebrick =
-stairs:slab_stone =
-stairs:stair_stone =
-stairs:slab_stonebrick =
-stairs:stair_stonebrick =
+default:cobble = Bruchstein
+default:desert_cobble = Wüstenbruchstein
+default:desert_stone = Wüstenstein
+default:desert_stonebrick = Wüstensteinziegel
+default:mossycobble = Bemooster Bruchstein
+default:stone = Stein
+default:stone_with_coal = Kohleerz
+default:stone_with_copper = Kupfererz
+default:stone_with_diamond = Diamanterz
+default:stone_with_gold = Golderz
+default:stone_with_iron = Eisenerz
+default:stone_with_mese = Meseerz
+default:stonebrick = Steinziegel
+stairs:slab_cobble = Bruchsteinplatte
+stairs:stair_cobble = Bruchsteintreppe
+stairs:slab_desert_cobble = Wüstenbruchsteinplatte
+stairs:stair_desert_cobble = Wüstenbruchsteintreppe
+stairs:slab_desert_stone = Wüstensteinplatte
+stairs:stair_desert_stone = Wüstensteintreppe
+stairs:slab_desert_stonebrick = Wüstensteinziegelplatte
+stairs:stair_desert_stonebrick = Wüstensteinziegeltreppe
+stairs:slab_stone = Steinplatte
+stairs:stair_stone = Steintreppe
+stairs:slab_stonebrick = Steinziegelplatte
+stairs:stair_stonebrick = Steinziegeltreppe
 
 # Obsidian
-default:obsidian =
-default:obsidian_glass =
-default:obsidian_shard =
-default:obsidianbrick =
-doors:door_obsidian_glass =
-stairs:slab_obsidian =
-stairs:stair_obsidian =
-stairs:slab_obsidianbrick =
-stairs:stair_obsidianbrick =
+default:obsidian = Obsidian
+default:obsidian_glass = Obsidianglas
+default:obsidian_shard = Obsidianscherbe
+default:obsidianbrick = Obsidianziegel
+doors:door_obsidian_glass = Obsidianglastür
+stairs:slab_obsidian = Obsidianplatte
+stairs:stair_obsidian = Obsidiantreppe
+stairs:slab_obsidianbrick = Obsidianziegelplatte
+stairs:stair_obsidianbrick = Obsidianziegeltreppe
 
 # Sands
-default:desert_sand =
-default:sand =
-default:sandstone =
-default:sandstonebrick =
-stairs:slab_sandstone =
-stairs:stair_sandstone =
-stairs:slab_sandstonebrick =
-stairs:stair_sandstonebrick =
+default:desert_sand = Wüstensand
+default:sand = Sand
+default:sandstone = Sandstein
+default:sandstonebrick = Sandsteinziegel
+stairs:slab_sandstone = Sandsteinplatte
+stairs:stair_sandstone = Sandsteintreppe
+stairs:slab_sandstonebrick = Sandsteinziegelplatte
+stairs:stair_sandstonebrick = Sandsteinziegeltreppe
 
 # Gravel
-default:gravel =
+default:gravel = Kies
 
 # Precious Stones
-default:diamond =
-default:diamondblock =
-default:mese =
-default:mese_crystal =
-default:mese_crystal_fragment =
+default:diamond = Diamant
+default:diamondblock = Diamantblock
+default:mese = Mese
+default:mese_crystal = Mesekristall
+default:mese_crystal_fragment = Mesekristallsplitter
 
 # Dirts
-default:dirt =
-default:dirt_with_dry_grass =
-default:dirt_with_grass =
-default:dirt_with_snow =
+default:dirt = Erde
+default:dirt_with_dry_grass = Erde mit vertrocknetem Gras 
+default:dirt_with_grass = Erde mit Gras
+default:dirt_with_snow = Erde mit Schnee
 
 # Vegetation
-default:dry_grass_1 =
-default:dry_shrub =
-default:grass_1 =
-default:junglegrass =
-default:papyrus =
+default:dry_grass_1 = Vertrocknetes Gras
+default:dry_shrub = Vertrockneter Strauch
+default:grass_1 = Gras
+default:junglegrass = Tropengras
+default:papyrus = Papyrus
 
 # Flowers
-flowers:dandelion_white =
-flowers:dandelion_yellow =
-flowers:geranium =
-flowers:mushroom_brown =
-flowers:mushroom_red =
-flowers:mushroom_spores_brown =
-flowers:mushroom_spores_red =
-flowers:rose =
-flowers:tulip =
-flowers:viola =
+flowers:dandelion_white = Weisser Löwenzahn
+flowers:dandelion_yellow = Gelber Löwenzahn
+flowers:geranium = Geranie
+flowers:mushroom_brown = Brauner Pilz
+flowers:mushroom_red = Roter Pilz
+flowers:mushroom_spores_brown = Braune Pilzsporen
+flowers:mushroom_spores_red = Rote Pilzsporen
+flowers:rose = Rose
+flowers:tulip = Tulpe
+flowers:viola = Veilchen
 
 # Wooden Objects
-default:fence_wood =
-default:ladder =
-default:sign_wall =
-doors:door_wood =
-doors:trapdoor =
+default:fence_wood = Holzzaun
+default:ladder = Leiter
+default:sign_wall = Schild
+doors:door_wood = Holztür
+doors:trapdoor = Falltür
 
 # Stone Objects
-default:furnace =
+default:furnace = Ofen
 
 # Steel Objects
-doors:door_steel =
+doors:door_steel = Stahltür
 
 # Verre
-default:glass =
-group:vessels = 
-doors:door_glass =
+default:glass = Glas
+group:vessels = Gefäße
+doors:door_glass = Glastür
 
 # Dye
-group:dye = 
-dye:black =
-dye:blue =
-dye:brown =
-dye:cyan =
-dye:dark_green =
-dye:dark_grey =
-dye:green =
-dye:grey =
-dye:magenta =
-dye:orange =
-dye:pink =
-dye:red =
-dye:violet =
-dye:white =
-dye:yellow =
+group:dye = Farbstoffe
+dye:black = Schwarzer Farbstoff
+dye:blue = Blauer Farbstoff
+dye:brown = Brauner Farbstoff
+dye:cyan = Türkiser Farbstoff
+dye:dark_green = Dunkelgrüner Farbstoff
+dye:dark_grey = Dunkelgrauer Farbstoff
+dye:green = Grüner Farbstoff
+dye:grey = Grauer Farbstoff
+dye:magenta = Magenta Farbstoff
+dye:orange = Oranger Farbstoff
+dye:pink = Rosa Farbstoff
+dye:red = Roter Farbstoff
+dye:violet = Violetter Farbstoff
+dye:white = Weisser Farbstoff
+dye:yellow = Gelber Farbstoff
 
 # TNT
-tnt:gunpowder =
-tnt:tnt =
+tnt:gunpowder = Schießpulver
+tnt:tnt = TNT
 
 # Vessels
-vessels:drinking_glass =
-vessels:glass_bottle =
-vessels:glass_fragments =
-vessels:shelf =
-vessels:steel_bottle =
+vessels:drinking_glass = Trinkglas
+vessels:glass_bottle = Glasflasche
+vessels:glass_fragments = Glasscherbenhaufen
+vessels:shelf = Gefäßregal
+vessels:steel_bottle = Stahlflasche
 
 # Wool
-group:wool = 
-wool:black =
-wool:blue =
-wool:brown =
-wool:cyan =
-wool:dark_green =
-wool:dark_grey =
-wool:green =
-wool:grey =
-wool:magenta =
-wool:orange =
-wool:pink =
-wool:red =
-wool:violet =
-wool:white =
-wool:yellow =
+group:wool = Wolle
+wool:black = Schwarze Wolle
+wool:blue = Blaue Wolle
+wool:brown = Braune Wolle
+wool:cyan = Türkise Wolle
+wool:dark_green = Dunkelgrüne Wolle
+wool:dark_grey = Dunkelgraue Wolle
+wool:green = Grüne Wolle
+wool:grey = Graue Wolle
+wool:magenta = Magenta Wolle
+wool:orange = Orange Wolle
+wool:pink = Rosa Wolle
+wool:red = Rote Wolle
+wool:violet = Violette Wolle
+wool:white = Weisse Wolle
+wool:yellow = Gelbe Wolle
 
 # Xpanes
-xpanes:bar =
-xpanes:pane =
+xpanes:bar = Eisenstange
+xpanes:pane = Glasscheibe
 
 # Others
-default:ice =
-default:lava_source =
-default:meselamp =
-default:nyancat =
-default:nyancat_rainbow =
-default:paper =
-default:rail =
-default:river_water_source =
-default:snow =
-default:snowblock =
-default:torch =
-default:water_source =
-farming:bread =
-farming:cotton =
-farming:flour =
-farming:seed_cotton =
-farming:seed_wheat =
-farming:straw =
-farming:wheat =
-fire:basic_flame =
-screwdriver:screwdriver =
-stairs:slab_straw =
-stairs:stair_straw =
-sys4_achievements:waste =
+default:ice = Eis
+default:lava_source = Lavaquelle
+default:meselamp = Meselampe
+default:nyancat = Nyan Cat
+default:nyancat_rainbow = Nyan-Cat-Regenbogen
+default:paper = Papier
+default:rail = Schiene
+default:river_water_source = Flusswasserquelle
+default:snow = Schnee
+default:snowblock = Schneeblock
+default:torch = Fackel
+default:water_source = Wasserquelle
+farming:bread = Brot
+farming:cotton = Baumwolle
+farming:flour = Mehl
+farming:seed_cotton = Baumwollsamen
+farming:seed_wheat = Weizenkörner
+farming:straw = Stroh
+farming:wheat = Weizen
+fire:basic_flame = Basisflamme
+screwdriver:screwdriver = Schrauberdreher
+stairs:slab_straw = Strohplatte
+stairs:stair_straw = Strohtreppe
+sys4_achievements:waste = Abfall

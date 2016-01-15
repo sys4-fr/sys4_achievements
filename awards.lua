@@ -76,7 +76,7 @@ awards.give_achievement = function (name, award)
       
       -- Sys4
       -- Give book if craftmode enabled
-      if awards.def[award] and awards.def[award].book and sys4_achievements.getCraftMode() then
+      if sys4_achievements.books and awards.def[award] and awards.def[award].book then
 	 
 	 local itemstack = ItemStack('default:book_written')
 	 local book_data = {}
@@ -272,7 +272,7 @@ awards.showto = function(name, to, sid, text)
 
 				-- Sys4
 				-- Crafts to unlock when craftmode is on else display content of the book
-				if def and def.items and sys4_achievements.getCraftMode() then
+				if sys4_achievements.craftmode and def and def.items then
 				   local items = def.items
 				   local y = 5 -- Position y de départ du label
 				   formspec = formspec	.. "label[8,"..y..";"..S("Unlock crafts").." :]"
@@ -288,7 +288,7 @@ awards.showto = function(name, to, sid, text)
 				      y = y + 0.35
 				      formspec = formspec .. "label[8,"..y..";- "..S(name).."]"
 				   end
-				elseif def and def.book and def.book.text and not sys4_achievements.getCraftMode() then
+				elseif not sys4_achievements.craftmode and def and def.book and def.book.text then
 				   formspec = formspec .. "label[8,5;"..sys4_achievements.formatShowto(def.book.text).."]"
 				   
 				end

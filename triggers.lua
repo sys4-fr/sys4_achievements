@@ -1,7 +1,5 @@
-local craftmode = sys4_achievements.getCraftMode()
-
 -- Give initial Stuff if craftmode enabled
-minetest.register_on_newplayer(
+--[[minetest.register_on_newplayer(
    function(player)
       if craftmode then
 	 minetest.log("action", "Giving initial stuff to player "..player:get_player_name())
@@ -19,6 +17,7 @@ minetest.register_on_newplayer(
 	 inv:add_item("main", book)
       end
    end)
+--]]
 
 -- Register new trigger on "craft"
 minetest.register_on_craft(
@@ -97,8 +96,8 @@ minetest.register_on_craft(
 	 end
       end
       
-      if craftmode then
-	 return wasteItem
+      if sys4_achievements.craftmode then
+	 return ItemStack(wasteItem)
       else
 	 return nil
       end

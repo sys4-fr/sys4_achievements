@@ -8,9 +8,13 @@ if not awards then
    return
 end
 
+-- Init Global variables
 sys4_achievements = {}
+sys4_achievements.craftmode = true
+sys4_achievements.level = 1
+sys4_achievements.books = false
+sys4_achievements.awards = "sys4"
 
--- Init
 local S
 if minetest.get_modpath("intllib") then
   S = intllib.Getter()
@@ -27,45 +31,6 @@ minetest.register_node("sys4_achievements:waste",
    is_ground_content = false,
    groups = {crumbly=2, flammable=2},
 })
-
--- Functions for get and set craftmode
--- When craftmode is enabled, crafts are locked by defaults.
--- Players have to unlock achievements for unlock locked crafts.
-function sys4_achievements.getCraftMode()
-   local craftmode
-   craftmode = minetest.setting_getbool("sys4_craftmode")
-   if craftmode == nil then
-      craftmode = false
-   end
-
-   return craftmode
-end
-
-function sys4_achievements.setCraftMode(craftmode)
-   local param = "false"
-   if craftmode then
-      param = "true"
-   end
-   minetest.setting_set("sys4_craftmode", param)
-   minetest.setting_save()
-end
-
--- Functions for set and get Level of difficulty
--- This functions take sense when craftmode is enabled
-function sys4_achievements.getLevel()
-   local lvl = nil
-   lvl = tonumber(minetest.setting_get("sys4_level"))
-   if lvl == nil or lvl < 1 then 
-      return 1
-   end
-   
-   return lvl
-end
-
-function sys4_achievements.setLevel(level)
-   minetest.setting_set("sys4_level", level)
-   minetest.setting_save()
-end
 
 -- Function that format text written in given books
 function sys4_achievements.write_book(book_content, items, prizes)
@@ -86,14 +51,14 @@ function sys4_achievements.write_book(book_content, items, prizes)
       text = text..tt.."\n"
    end
    
-   if items and items ~= nil and sys4_achievements.getCraftMode() then
+   if sys4_achievements.craftmode and items and items ~= nil then
       text = text..S("You unlock these crafts").." :"
       
       local tt = "\n"
       for i=1, #items do
 	 tt = tt.."\n"..sys4_achievements.getCraftRecipes(items[i])
 	 tt = tt..S("Output").." --> "..S(items[i]).."\n\n"
-	 tt = tt.."------------]]][[[------------\n"
+	 tt = tt.."------------OOOOOO------------\n"
       end
       text = text..tt.."\n"
    end
@@ -112,7 +77,7 @@ function sys4_achievements.getCraftRecipes(itemName)
 	 for i=1, #craftRecipes do
 	    if craftRecipes[i].type == "normal" then
 	       if not first then
-		  str = str.."\n---]] "..S("OR").." [[---\n\n"
+		  str = str.."\n--- "..S("OR").." ---\n\n"
 	       end
 	       
 	       first = false
@@ -236,6 +201,44 @@ function sys4_achievements.isAwardGot(awardName, listofawards)
    return false
 end
 
+
+-- function that format a text displayed in formspec.
+function sys4_achievements.formatShowto(text)
+   if text ~= nil and text ~= "" then   
+      local maxw = 45 -- Max length for a displayed string in form.
+
+      local words = string.split(text, " ")
+      local tt = ""
+
+      -- Placer un retour à la ligne de chaque fin de ligne de longueur maxw
+      local len = 0
+      for i=1, #words do
+	 len = len + string.len(words[i]) + 1
+	 
+	 if len - 1 > maxw then
+	    tt = tt.."\n"..words[i].." "
+	    len = string.len(words[i]) + 1
+	 else
+	    tt = tt..words[i].." "
+	 end
+      end
+
+      return tt
+   end
+
+   return ""
+end
+
+-- Awards func redefinition
+dofile(minetest.get_modpath("sys4_achievements").."/awards.lua")
+-- New triggers
+dofile(minetest.get_modpath("sys4_achievements").."/triggers.lua")
+-- Chat commands
+dofile(minetest.get_modpath("sys4_achievements").."/console.lua")
+
+-- Redéfinition de la propriété on_place de ces nodes
+
+-- /!\ Internal function
 -- Fonction qui se déclenche quand le joueur place un objet dans son environnement.
 -- Cette fonction est normalement déjà définie dans 'awards' : minetest.register_on_place = func(...)
 -- Mais elle ne se déclenche pas pour certains objets comme les troncs d'arbres.
@@ -307,41 +310,6 @@ function sys4_achievements.register_on_place(itemstack, placer, pointed_thing)
 end
 
 
--- function that format a text displayed in formspec.
-function sys4_achievements.formatShowto(text)
-   if text ~= nil and text ~= "" then   
-      local maxw = 45 -- Max length for a displayed string in form.
-
-      local words = string.split(text, " ")
-      local tt = ""
-
-      -- Placer un retour à la ligne de chaque fin de ligne de longueur maxw
-      local len = 0
-      for i=1, #words do
-	 len = len + string.len(words[i]) + 1
-	 
-	 if len - 1 > maxw then
-	    tt = tt.."\n"..words[i].." "
-	    len = string.len(words[i]) + 1
-	 else
-	    tt = tt..words[i].." "
-	 end
-      end
-
-      return tt
-   end
-
-   return ""
-end
-
--- Awards func redefinition
-dofile(minetest.get_modpath("sys4_achievements").."/awards.lua")
--- New triggers
-dofile(minetest.get_modpath("sys4_achievements").."/triggers.lua")
--- Chat commands
-dofile(minetest.get_modpath("sys4_achievements").."/console.lua")
-
--- Redéfinition de la propriété on_place de ces nodes
 local nodes = {
    minetest.registered_nodes["default:tree"],
    minetest.registered_nodes["default:jungletree"],

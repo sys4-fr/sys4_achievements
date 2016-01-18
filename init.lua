@@ -124,7 +124,7 @@ for _,achievement in pairs(achievements) do
       items = {'tree', 'pine_tree', 'acacia_tree'}
    elseif node == 'default:tree' then
       mod = 'default'
-      items = {'tree', 'pine_tree', 'acacia_tree', 'jungle_tree'}
+      items = {'tree', 'pine_tree', 'acacia_tree', 'jungletree'}
 	       end
 	       
    if node == 'default:leaves' then
@@ -211,12 +211,12 @@ for _, achievement in pairs(achievements) do
 end
 
 achievements = {
+   sys4_achievements.getAchievement("craft", "planks_crafter"),
    sys4_achievements.getAchievement("craft", "wood_crafter_begins"),
    sys4_achievements.getAchievement("craft", "dye_crafter_begins"),
    sys4_achievements.getAchievement("craft", "wool_crafter_begins"),
    sys4_achievements.getAchievement("craft", "vessel_crafter_begins"),
    sys4_achievements.getAchievement("craft", "bed_crafter"),
-   sys4_achievements.getAchievement("craft", "planks_crafter"),
 }
 
 for _,achievement in pairs(achievements) do

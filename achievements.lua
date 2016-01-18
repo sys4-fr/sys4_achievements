@@ -24,17 +24,20 @@ function sys4_achievements.getAchievements(listName, lvl)
 
       local awardTmp = awards.def['award_lumberjack']
       local titem = {'default:pick_wood'}
-      awardTmp.award_req = 'axe_crafter'
+      awardTmp.award_req = 'tree_digger'
       awardTmp.items = titem
       awardTmp.book = {title = "SYS4 AWARDS : "..awardTmp.title,
 		       text = sys4_achievements.write_book( S("Discover how to make a wooden pickaxe."), titem, awardTmp.prizes)
       }
       
-      awards.def['award_junglebaby'].award_req = 'axe_crafter'
-      awards.def['award_lumberjack_semipro'].award_req = 'axe_crafter'
-      awards.def['award_lumberjack_professional'].award_req = 'axe_crafter'
-      awards.def['award_lumberjack_leet'].award_req = 'axe_crafter'
-      awards.def['award_jungleman'].award_req = 'axe_crafter'
+      awardTmp = awards.def['award_junglebaby']
+      titem = {'default:pick_wood'}
+      awardTmp.award_req = 'tree_digger'
+      awardTmp.items = titem
+      awardTmp.book = {title = "SYS4 AWARDS : "..awardTmp.title,
+		       text = sys4_achievements.write_book( S("Discover how to make a wooden pickaxe."), titem, awardTmp.prizes)
+      }
+
       awards.def['award_youre_winner'].award_req = 'pick_crafter'
 
       awardTmp = awards.def['award_mine2']
@@ -44,10 +47,7 @@ function sys4_achievements.getAchievements(listName, lvl)
       awardTmp.book = {title = "SYS4 AWARDS : "..awardTmp.title,
 		       text = sys4_achievements.write_book( S("Discover how to make a stone pickaxe."), titem, awardTmp.prizes)
       }
-      awards.def['award_mine3'].award_req = 'pick_crafter'
-      awards.def['award_mine4'].award_req = 'pick_crafter'
       awards.def['award_marchand_de_sable'].award_req = 'shovel_crafter'
-      awards.def['award_youre_a_copper'].award_req = 'pick_crafter_lover'
       
       a = {
 	 { name = 'tree_digger',
@@ -398,6 +398,44 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   titems = {'default:pick_bronze', 'default:bronze_block'},
 	   tprizes = nil,
 	   award_req = 'copper_digger_begins'
+	 },
+
+	 -- Papyrus
+	 { name = 'papyrus_digger',
+	   title = S("Your papers please"),
+	   node = 'default:papyrus',
+	   desc = S("Dig ")..(3*lvl).." "..S("default:papyrus")..".",
+	   icon = "default_paper.png",
+	   type = "dig",
+	   target = 3*lvl,
+	   titems = {'default:paper'},
+	   tprizes = nil,
+	 },
+
+	 -- Book
+	 { name = 'book_crafter',
+	   title = S("You know write ?"),
+	   node = 'default:paper',
+	   desc = S("Craft ")..(3*lvl).." "..S("default:paper")..".",
+	   icon = "default_book.png",
+	   type = "craft",
+	   target = 3*lvl,
+	   titems = {'default:book', 'default:bookshelf'},
+	   tprizes = nil,
+	   award_req = "papyrus_digger"
+	 },
+
+	 -- Bookshelf
+	 { name = 'bookshelf_crafter',
+	   title = S("Get the knowledge"),
+	   node = 'default:bookshelf',
+	   desc = S("Craft ")..(1*lvl).." "..S("default:bookshelf")..".",
+	   icon = "default_bookshelf.png",
+	   type = "craft",
+	   target = 1*lvl,
+	   titems = nil,
+	   tprizes = nil,
+	   award_req = 'tree_digger',
 	 },
       }
    end

@@ -348,7 +348,7 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   award_req = 'iron_digger_begins'
 	 },
 
-	 -- Dig 100 iron stones : unlock Steel block, iron ingot.
+	 -- Dig 100 iron stones : unlock steel pickaxe, steel block, steel ingot.
 	 { name = 'iron_digger_lover',
 	   title = S("The Iron Peak"),
 	   node = 'default:stone_with_iron',

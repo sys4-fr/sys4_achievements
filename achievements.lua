@@ -30,14 +30,8 @@ function sys4_achievements.getAchievements(listName, lvl)
 		       text = sys4_achievements.write_book( S("Discover how to make a wooden pickaxe."), titem, awardTmp.prizes)
       }
       
-      awardTmp = awards.def['award_junglebaby']
-      titem = {'default:pick_wood'}
-      awardTmp.award_req = 'tree_digger'
-      awardTmp.items = titem
-      awardTmp.book = {title = "SYS4 AWARDS : "..awardTmp.title,
-		       text = sys4_achievements.write_book( S("Discover how to make a wooden pickaxe."), titem, awardTmp.prizes)
-      }
-
+--      awardTmp = awards.def['award_junglebaby']
+  
       awards.def['award_youre_winner'].award_req = 'pick_crafter'
 
       awardTmp = awards.def['award_mine2']
@@ -153,7 +147,7 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   award_req = 'sticks_crafter',
 	 },
 
-	 -- Dig 8 wheat_8 : unlock flour
+	 -- Dig 13 wheats : unlock flour & straws
 	 { name = 'wheat_digger_begins',
 	   title = S("Hands in the Flour"),
 	   node = 'farming:wheat_8',
@@ -161,12 +155,12 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   icon = "farming_flour.png",
 	   type = "dig",
 	   target = 8*lvl,
-	   titems = {'farming:flour'},
+	   titems = {'farming:flour', 'farming:straw', 'farming:wheat'},
 	   tprizes = nil,
 	   award_req = 'hoe_crafter'
 	 },
 
-	 -- Dig 100 wheat_8 : unlock Straws
+	 --[[ Dig 100 wheat_8 : unlock Straws
 	 { name = 'wheat_digger_lover',
 	   title = S("Farmer First Steps"),
 	   node = 'farming:wheat_8',
@@ -178,6 +172,7 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   tprizes = nil,
 	   award_req = 'hoe_crafter'
 	 },
+	 ]]
 
 	 -- Cotton
 	 { name = 'cotton_digger_begins',
@@ -238,24 +233,11 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   icon = "wool_red.png",
 	   type = "craft",
 	   target = 100 * lvl,
-	   titems = {'wool:red', 'wool:blue', 'wool:yellow', 'wool:orange', 'wool:violet', 'wool:green'},
+	   titems = {'wool:red', 'beds:bed_bottom', 'beds:fancy_bed_bottom', 'wool:blue', 'wool:yellow', 'wool:orange', 'wool:violet', 'wool:green'},
 	   tprizes = nil,
 	   tbook = S("Discover how to make colored wools."),
 	   award_req = 'coal_digger',
 	 },
-
-	 { name = 'wool_crafter_red',
-	   title = S("Make red wools"),
-	   node = 'wool:red',
-	   desc = S("Craft ")..(2* lvl).." "..S("wool:red")..".",
-	   icon = "wool_red.png",
-	   type = "craft",
-	   target = 2 * lvl,
-	   titems = {'beds:bed_bottom', 'beds:fancy_bed_bottom'},
-	   tprizes = nil,
-	   tbook = S("Make red wools from wools and red dyes."),
-	   award_req = 'coal_digger'
-	 },   
 
 	 { name = 'bed_crafter',
 	   title = S("Going to sleep"),
@@ -267,7 +249,7 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   titems = nil,
 	   tprizes = nil,
 	   tbook = S("Make a bed from planks and wools."),
-	   award_req = 'wool_crafter_red'
+	   award_req = 'wool_crafter'
 	 },   
 
 	 -- Craft 100 dyes : Unlock All the others dyes.
@@ -326,10 +308,10 @@ function sys4_achievements.getAchievements(listName, lvl)
 	 { name = 'iron_digger_begins',
 	   title = S("The Iron Age"),
 	   node = 'default:stone_with_iron',
-	   desc = S("Dig ")..(1*lvl).." "..S("default:stone_with_iron")..".",
+	   desc = S("Dig ")..(10*lvl).." "..S("default:stone_with_iron")..".",
 	   icon = "default_steel_ingot.png",
 	   type = "dig",
-	   target = 1*lvl,
+	   target = 10*lvl,
 	   titems = {'bucket:bucket_empty', 'xpanes:bar', 'doors:door_steel', 'vessels:steel_bottle', 'screwdriver:screwdriver',
 	   'default:sword_steel', 'default:axe_steel', 'default:shovel_steel', 'farming:hoe_steel'},
 	   tprizes = nil,
@@ -343,7 +325,7 @@ function sys4_achievements.getAchievements(listName, lvl)
 	   icon = "bucket_empty.png",
 	   type = "craft",
 	   target = 1*lvl,
-	   titems = nil,
+	   titems = {'vessels:steel_bottle'},
 	   tprizes = nil,
 	   award_req = 'iron_digger_begins'
 	 },

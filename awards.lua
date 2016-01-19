@@ -52,23 +52,29 @@ awards.give_achievement = function (name, award)
    
    -- check to see if the player does not already have that achievement
    if not data.unlocked[award] or data.unlocked[award]~=award then
-      -- Sys4
-      -- Give book if craftmode enabled
+      -- Give book if bookmode enabled
       if sys4_achievements.books and awards.def[award] and awards.def[award].book then
 	 
+	 -- Create book
 	 local itemstack = ItemStack('default:book_written')
+
+	 -- Book metadata
 	 local book_data = {}
 	 book_data.title = awards.def[award].book.title
 	 book_data.text = awards.def[award].book.text
 	 book_data.owner = name
+
 	 local data_str = minetest.serialize(book_data)
 	 itemstack:set_metadata(data_str)
+	 
+	 -- Add book to player inventory
 	 local receiverref = core.get_player_by_name(name)
 	 if receiverref == nil then return end
 	 receiverref:get_inventory():add_item("main", itemstack)
       end
    end
 
+   -- exec defaut awards code
    give_achievement(name, award)
 end
 
@@ -160,7 +166,6 @@ awards.showto = function(name, to, sid, text)
 	       formspec = formspec	.. "label[8,4.25;"..def.description.."]"				
 	    end
 
-	    -- Sys4
 	    -- Crafts to unlock when craftmode is on else display content of the book
 	    if sys4_achievements.craftmode and def and def.items then
 	       local items = def.items
@@ -237,7 +242,7 @@ awards.showto = function(name, to, sid, text)
    end
 end
 
--- Add translations for awards from Rubenwardy and Calinou
+-- Add translations for original awards.
 for _,award in pairs(awards.def) do
    award.title = S(award.title)
    award.description = S(award.description)

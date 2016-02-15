@@ -23,6 +23,9 @@ awardTmp.book = {title = "SYS4 AWARDS : "..awardTmp.title,
 		 text = sys4_achievements.write_book( S("Discover how to make a wooden pickaxe."), titems, awardTmp.prizes)
 }
 
+-- sand_digger
+table.insert(a, mkach(t, "sand_digger", "The sand castle part. 1", "default_sandstone.png", "default:sand", 100, nil, {'default:sandstone', 'default:sand', 'default:sandstonebrick'}, nil, nil))
+
 -- Requires 'hoe_crafter' --
 
 -- wheat_digger
@@ -58,3 +61,20 @@ table.insert(a, mkach(t, "iron_digger", "The Iron Age", "default_steel_ingot.png
 
 -- copper_digger
 table.insert(a, mkach(t, "copper_digger", "The Copper Age", "default_copper_ingot.png", "default:stone_with_copper", 100, nil, {'default:copperblock', 'default:copper_ingot', 'default:bronze_ingot'}, nil, "pick_crafter_lover"))
+
+-- Require 'pick_crafter_pro' --
+
+-- award_mesefind
+awardTmp = awards.def['award_mesefind']
+awardTmp.award_req = "pick_crafter_pro"
+titems = {'default:mese', 'default:mese_crystal', 'default:mese_crystal_fragment'}
+awardTmp.items = titems
+
+-- mese_digger
+table.insert(a, mkach(t, "mese_digger", "Mese digger", "default_mese_block.png", "default:stone_with_mese", 100, nil, {'default:pick_mese', 'default:axe_mese', 'default:sword_mese', 'default:shovel_mese', 'farming:hoe_mese'}, nil, "pick_crafter_pro"))
+
+-- diamond_digger
+table.insert(a, mkach(t, "diamond_digger", "Bling Bling!", "default_diamond.png", "default:stone_with_diamond", 1, nil, {'default:diamond', 'default:diamondblock'}, "Dig diamonds whith help of a metal pick", "pick_crafter_pro"))
+
+-- diamond_digger_lover
+table.insert(a, mkach(t, "diamond_digger_lover", "Diamond digger", "default_diamond.png", "default:stone_with_diamond", 100, nil, {'default:pick_diamond', 'default:axe_diamond', 'default:sword_diamond', 'default:shovel_diamond', 'farming:hoe_diamond'}, nil, "pick_crafter_pro"))

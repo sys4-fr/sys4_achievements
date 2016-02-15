@@ -12,9 +12,9 @@ sys4_achievements.achievements['sys4'] = {}
 function sys4_achievements.mkach(ach_type, ach_name, ach_title, ach_icon, targetNode, countTarget, prizes, items, book, ach_req)
    local a = {
       name = ach_name,
-      title = ach_title,
+      title = S(ach_title),
       node = targetNode,
-      desc = S(ach_type).." "..countTarget.." "..S(targetNode),
+      desc = S(ach_type).." "..countTarget.." "..S(targetNode)..".",
       icon = ach_icon,
       type = ach_type,
       target = countTarget,
@@ -29,7 +29,7 @@ end
 
 dofile(minetest.get_modpath("sys4_achievements").."/achievements/digger.lua")
 dofile(minetest.get_modpath("sys4_achievements").."/achievements/crafter.lua")
---dofile(minetest.get_modpath("sys4_achievements").."/achievements/placer.lua")
+dofile(minetest.get_modpath("sys4_achievements").."/achievements/placer.lua")
 
 local achievementsList = {'default', 'sys4', 'experimental'}
 

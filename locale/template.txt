@@ -1,5 +1,7 @@
 # Template for translations of SYS4 Achievements
 
+Place wooden planks that give you the ability to make wooden stairs and slabs = 
+
 #init.lua
 Dig\ \ =
 Craft\ \ =

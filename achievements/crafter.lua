@@ -3,7 +3,12 @@ local mkach = sys4_achievements.mkach
 
 local t = 'craft' -- Type of achievement
 
--- Requieres 'papyrus_digger' --
+-- Require 'sand_digger' --
+
+-- sand_crafter
+table.insert(a, mkach(t, "sand_crafter", "The sand castle part. 2", "default_sandstone_brick.png", "default:sandstone", 100, nil, {'default:sandstone_brick'}, nil, "sand_digger"))
+
+-- Requiere 'papyrus_digger' --
 
 -- book_crafter
 table.insert(a, mkach(t, "book_crafter", "You know write ?", "default_book.png", "default:paper", 3, nil, {'default:book', 'default:bookshelf'}, nil, "papyrus_digger"))

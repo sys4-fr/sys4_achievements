@@ -78,3 +78,39 @@ table.insert(a, mkach(t, "diamond_digger", "Bling Bling!", "default_diamond.png"
 
 -- diamond_digger_lover
 table.insert(a, mkach(t, "diamond_digger_lover", "Diamond digger", "default_diamond.png", "default:stone_with_diamond", 100, nil, {'default:pick_diamond', 'default:axe_diamond', 'default:sword_diamond', 'default:shovel_diamond', 'farming:hoe_diamond'}, nil, "pick_crafter_pro"))
+
+-- Sys4_2 --
+
+a = sys4_achievements.achievements['sys4_2']
+
+-- award_lumberjack
+awardTmp = awards.def['award_lumberjack']
+titems = {'default:wood', 'default:junglewood', 'default:acacia_wood', 'default:pine_wood'}
+awardTmp.items = titems
+
+-- dirt_digger
+table.insert(a, mkach(t, "dirt_digger", "Dirt Digger", "default_shovel_wood.png", "default:dirt", 99, nil, {"default:shovel_wood", "default:clay", "default:clay_lump", "default:sand", "default:sandstone"}, nil, nil))
+
+-- grass_digger
+table.insert(a, mkach(t, "grass_digger", "Grass Digger", "farming_hoe_wood.png", "default:grass_8", 99, nil, {"farming:hoe_wood"}, nil, nil))
+
+-- wheat_digger
+table.insert(a, mkach(t, "wheat_digger", "Wheat Digger", "farming_wheat.png", "default:wheat_8", 99, nil, {"farming:flour"}, nil, "grass_digger"))
+
+-- Cotton_digger
+table.insert(a, mkach(t, "cotton_digger", "Cotton Digger", "farming_cotton.png", "default:cotton_8", 99, nil, {"wool:white"}, nil, "grass_digger"))
+
+-- flower_digger
+table.insert(a, mkach(t, "flower_digger", "Flower Digger", "flowers_rose.png", "flowers:rose", 99, nil, {'dye:red', 'dye:yellow', 'dye:blue', 'dye:black', 'dye:white', 'dye:violet', 'dye:orange', 'dye:brown','dye:cyan', 'dye:dark_green', 'dye:dark_grey', 'dye:green', 'dye:grey', 'dye:magenta', 'dye:pink'},nil, nil))
+
+-- papyrus_digger
+table.insert(a, mkach(t, "papyrus_digger", "Papyrus Digger", "default_paper.png", "default:papyrus", 99, nil, {"default:paper"}, nil, nil))
+
+-- award_mine2
+awardTmp = awards.def['award_mine2']
+titems = {'default:furnace', 'default:sword_stone', 'default:axe_stone', 'default:shovel_stone', 'farming:hoe_stone'}
+awardTmp.award_req = "???"
+awardTmp.items = titems
+
+-- Coal Digger
+table.insert(a, mkach(t, "coal_digger", "Coal Digger", "default_coal.png", "default:stone_with_coal", 99, nil, {"default:torch", "default:coalblock", "tnt:gunpowder", "tnt:tnt"}, nil, "???"))

@@ -10,7 +10,7 @@ local S = sys4_achievements.intllib
 local lvl = sys4_achievements.level
 
 -- Name of achievements list
-local ach_list = "sys4"
+local ach_list = "sys4_2"
 
 -- get achievements list
 local a = sys4_achievements.getAchievements(ach_list, lvl)

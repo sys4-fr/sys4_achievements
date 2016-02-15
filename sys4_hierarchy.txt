@@ -1,0 +1,43 @@
+Darkness Era
+
+Dig 99 trees --> Wooden planks
+    Craft 99 Wooden planks --> Sticks, Wooden sword, Wooden axe
+    	  Craft 20 Wooden Tools (Wooden sword, Wooden axe, Wooden shovel, Wooden hoe) --> Wooden Pickaxe (End of Darkness, begin Stone & Fire era)
+    Place 99 Wooden Planks --> Wooden slabs, Wooden doors, traps, boat, chest, Sign, Wooden Fence
+    	  Place 99 Wooden slabs --> Wooden Stairs
+
+Dig 99 ((desert_)sand, dirt, clay, gravel) --> Wooden Shovel, Clay, sandstone
+    Place 99 sandstone --> sandstone slab
+    	  Place 99 sandstone slab --> sandstone stairs
+    Craft 99 sandstone --> Sandstone brick
+    	  Place 99 sandstone bricks --> sandstone bricks slab
+	  	Place 99 sandstone bricks slabs --> sandstone bricks stairs
+
+Dig 99 (group:grass) --> Wooden hoe
+    Dig 99 Wheats --> Flour
+    	Craft 99 Flour --> Straws
+	      Place 99 Straws --> Straw slabs
+	      	    Place 99 Straw slabs --> Straws Stairs
+    Dig 99 Cotton --> Wool
+    	Place 99 Wool --> Colored Wools, Beds
+
+Dig 99 (group:flowers) --> dyes
+
+Dig 99 papyrus --> paper
+    Craft 99 paper --> book
+    	  Craft 99 books --> bookshelf
+
+Stone and Fire Era
+
+Dig 99 (desert_)stones --> Furnace, stone sword, stone axe, stone shovel, stone hoe
+    Craft 20 Stone tools --> Stone pickaxe (Begin Iron Age)
+    Place 99 glassblock --> glasspanes, glass doors, glass vessels
+    Place 99 (desert_)stones --> (desert_)stones slab
+    	  Place 99 (desert_)stones slab --> stones stairs
+    Place 99 BrickBlock --> BrickBlock Slab
+    	  Place 99 BrickBlock Slab --> BrickBlock Stairs
+
+Place 99 (desert_)cobble --> Cobble slab
+      Place 99 Cobble slab --> Cobble Stairs
+
+Dig 99 coal --> Torch, Coalblock, gunpowder, TNT

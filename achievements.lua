@@ -8,6 +8,7 @@ local S = sys4_achievements.intllib
 
 sys4_achievements.achievements = {}
 sys4_achievements.achievements['sys4'] = {}
+sys4_achievements.achievements['sys4_2'] = {}
 
 function sys4_achievements.mkach(ach_type, ach_name, ach_title, ach_icon, targetNode, countTarget, prizes, items, book, ach_req)
    local a = {
@@ -31,10 +32,10 @@ dofile(minetest.get_modpath("sys4_achievements").."/achievements/digger.lua")
 dofile(minetest.get_modpath("sys4_achievements").."/achievements/crafter.lua")
 dofile(minetest.get_modpath("sys4_achievements").."/achievements/placer.lua")
 
-local achievementsList = {'default', 'sys4', 'experimental'}
+local achievementsList = {'default', 'sys4', 'sys4_2', 'experimental'}
 
 function sys4_achievements.getAchievementsList()
-   return achievementsList[1]..", "..achievementsList[2]..", "..achievementsList[3]
+   return achievementsList[1]..", "..achievementsList[2]..", "..achievementsList[3]..", "..achievementsList[4]
 end
 
 function sys4_achievements.setAchievementsList(listName)
@@ -45,7 +46,7 @@ end
 function sys4_achievements.getAchievements(listName, lvl)
    local a = {}
 
-   if listName == "sys4" then
+   if listName == "sys4" or listName == "sys4_2" then
       return sys4_achievements.achievements[listName]
    end
 

@@ -48,8 +48,10 @@ minetest.register_on_craft(
       -- Si des awards ont été débloqués, ont les parcours pour en extraire les items qu'ils débloquent
       if awards.player(playern) ~= nil then
 	 local data = awards.players[playern]
+
 	 for _, str in pairs(data.unlocked) do
 	    local def = awards.def[str]
+
 	    if def and def.items then
 	       local items = def.items
 	       for i=1, #items do

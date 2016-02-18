@@ -10,10 +10,10 @@ local S = sys4_achievements.intllib
 local lvl = sys4_achievements.level
 
 -- Name of achievements list
-local ach_list = "sys4_2"
+local ach_list = "sys4"
 
 -- get achievements list
-local a = sys4_achievements.getAchievements(ach_list, lvl)
+local a = sys4_achievements.achievements[ach_list]
 
 -- Register achievements
 for i=1, #a do
@@ -32,9 +32,16 @@ for i=1, #a do
 	 items = a[i].titems,
 	 prizes = a[i].tprizes,
 	 book = tbook,
-	 award_req = a[i].award_req
+	 award_req = a[i].award_req,
+	 otherTargets = a[i].otherTargets
       })
+
+   sys4_achievements.post_register(sys4_achievements.getAchievement(a[i].type, a[i].name), a[i].otherTargets, a[i].type)   
 end
+
+-- Post register default achievements from awards original mod
+local awardTmp = awards.def['award_lumberjack']
+sys4_achievements.post_register(sys4_achievements.getAchievement(awardTmp.trigger.type, 'award_lumberjack'), awardTmp.otherTargets, awardTmp.trigger.type)
 
 -- Register secret achievements
 -- Secrets achievements table
@@ -87,178 +94,3 @@ if ach_list == "experimental" then
    end
 end
 
-
--- Routine pour compter les items du meme groupe et retourne l'item si son target est atteint.
-local achievements = {
-   sys4_achievements.getAchievement("dig", "tree_digger"),
-   sys4_achievements.getAchievement("dig", "tree_digger_begins"),
-   sys4_achievements.getAchievement("dig", "leave_digger_begins"),
-   sys4_achievements.getAchievement("dig", "sand_digger_begins"),
-   sys4_achievements.getAchievement("dig", "snow_digger_begins"),
-   sys4_achievements.getAchievement("dig", "stone_digger_begins"),
-   sys4_achievements.getAchievement("dig", "stone_digger"),
-   sys4_achievements.getAchievement("dig", "award_lumberjack"),
-   sys4_achievements.getAchievement("dig", "award_lumberjack_semipro"),
-   sys4_achievements.getAchievement("dig", "award_lumberjack_professional"),
-   sys4_achievements.getAchievement("dig", "award_lumberjack_leet"),
-   sys4_achievements.getAchievement("dig", "award_mine2"),
-   sys4_achievements.getAchievement("dig", "award_mine3"),
-   sys4_achievements.getAchievement("dig", "award_mine4"),
-   sys4_achievements.getAchievement("dig", "award_marchand_de_sable"),
-}
-
-for _,achievement in pairs(achievements) do
-
-   local name = achievement.award
-   local node = achievement.node
-   local target = achievement.target
-   local mod = ""
-   local items = {}
-   
-   if node == 'default:tree' and (name == "award_lumberjack" 
-				     or name == "award_lumberjack_semipro"
-				     or name == "award_lumberjack_professional"
-				     or name == "award_lumberjack_leet")
-   then
-      mod = 'default'
-      items = {'tree', 'pine_tree', 'acacia_tree'}
-   elseif node == 'default:tree' then
-      mod = 'default'
-      items = {'tree', 'pine_tree', 'acacia_tree', 'jungletree'}
-	       end
-	       
-   if node == 'default:leaves' then
-      mod = 'default'
-      items = {'leaves', 'jungleleaves', 'pine_needles', 'acacia_leaves'}
-   end
-   
-   if node == 'default:sand' then
-      mod = 'default'
-      items = {'sand', 'desert_sand'}
-   end
-   
-   if node == 'default:snow' then
-      mod = 'default'
-      items = {'snow', 'snowblock'}
-   end
-   
-   if node == 'default:stone' then
-      mod = 'default'
-      items = {'stone', 'desert_stone', 'cobble', 'desert_cobble', 'mossycobble'}
-   end
-   
-   awards.register_onDig(
-      function(player, data)
-	 local playern = player:get_player_name()
-	 
-	 if not sys4_achievements.has_achievement(playern, name) 
-	 and sys4_achievements.getItemCount("dig", mod, items, playern, data) > target - 1 then
-	    return name
-	 end
-      end)
-end
-
-achievements = {
-	 sys4_achievements.getAchievement("place", "tree_builder_begins"),
-	 sys4_achievements.getAchievement("place", "wood_builder_begins"),
-	 sys4_achievements.getAchievement("place", "stone_builder_begins"),
-	 sys4_achievements.getAchievement("place", "stonebrick_builder_begins"),
-}
-
-for _, achievement in pairs(achievements) do
-
-   local achievement = achievements[i]
-
-   local name = achievement.award
-   local node = achievement.node
-   local target = achievement.target
-   local mod = ""
-   local items = {}
-   
-   if node == 'default:tree' then
-      mod = 'default'
-      items = {'tree', 'jungletree', 'pine_tree', 'acacia_tree'}
-   end
-   
-   if node == 'default:wood' then
-      mod = 'default'
-      items = {'wood', 'junglewood', 'pine_wood', 'acacia_wood'}
-   end
-   
-   if node == 'default:cobble' then
-      mod = 'default'
-      items = {'cobble', 'desert_cobble'}
-   end
-   
-   if node == 'default:stone' then
-      mod = 'default'
-      items = {'stone', 'desert_stone'}
-   end
-   
-   if node == 'default:stonebrick' then
-      mod = 'default'
-      items = {'stonebrick', 'desert_stonebrick'}
-   end
-   
-   awards.register_onPlace(
-      function(player, data)
-	 local playern = player:get_player_name()
-	 if not sys4_achievements.has_achievement(playern, name)
-	 and sys4_achievements.getItemCount("place", mod, items, playern, data) > target - 1 then	    
-	    return name
-	 end
-      end)
-end
-
-achievements = {
-   sys4_achievements.getAchievement("craft", "planks_crafter"),
-   sys4_achievements.getAchievement("craft", "wood_crafter_begins"),
-   sys4_achievements.getAchievement("craft", "dye_crafter_begins"),
-   sys4_achievements.getAchievement("craft", "wool_crafter_begins"),
-   sys4_achievements.getAchievement("craft", "vessel_crafter_begins"),
-   sys4_achievements.getAchievement("craft", "bed_crafter"),
-}
-
-for _,achievement in pairs(achievements) do
-   local name = achievement.award
-   local node = achievement.node
-   local target = achievement.target
-   local mod = ""
-   local items = {}
-   
-   if node == 'default:wood' then
-      mod = 'default'
-      items = {'wood', 'junglewood', 'pine_wood', 'acacia_wood'}
-   end
-   
-   if node == 'dye:red' or node == 'dye:black'  then
-      mod = "dye"
-      items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'black'}
-   end
-   
-   if node == 'wool:red' or node == 'wool:black' then
-      mod = 'wool'
-      items = {'red', 'blue', 'yellow', 'white', 'orange', 'violet', 'black'}
-   end
-   
-   if node == 'vessels:glass_bottle' then
-      mod = 'vessels'
-      items = {'glass_bottle', 'steel_bottle', 'drinking_glass', 'glass_fragments'}
-   end
-
-   if node == 'beds:bed_bottom' then
-      mod = 'beds'
-      items = {'bed_bottom', 'fancy_bed_bottom'}
-   end
-   
-
-   awards.register_onCraft(
-      function(player, data)
-	 local playern = player:get_player_name()
-	 
-	 if not sys4_achievements.has_achievement(playern, name) and
-	 sys4_achievements.getItemCount("craft", mod, items, playern, data) > target - 1 then
-	    return name
-	 end
-      end)
-end

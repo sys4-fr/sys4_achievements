@@ -166,28 +166,38 @@ end
 -- Function that return the number of crafted, placed or digged items by the player
 function sys4_achievements.getItemCount(action_type, mod, items, playern, data)
    local count = 0
-   if action_type == "craft" then
-      awards.tbv(awards.players[playern].craft, mod)
-      for i=1, #items do
-	 awards.tbv(awards.players[playern].craft[mod], items[i], 0)
-	 count = count + data.craft[mod][items[i]]
-      end
-   elseif action_type == "dig" then
-      awards.tbv(awards.players[playern].count, mod)
-      for i=1, #items do
-	 awards.tbv(awards.players[playern].count[mod], items[i], 0)
-	 count = count + data.count[mod][items[i]]
-      end
-   elseif action_type == "place" then
-      awards.tbv(awards.players[playern].place, mod)
-      for i=1, #items do
-	 awards.tbv(awards.players[playern].place[mod], items[i], 0)
-	 count = count + data.place[mod][items[i]]
-      end
-   else
-      return
+   local isModGiven = true
+
+   if mod == nil then
+      isModGiven = false
    end
 
+   for i=1, #items do
+      local item = items[i]
+      if not isModGiven then
+	 local t = string.split(items[i], ":")
+	 mod = t[1]
+	 item = t[2]
+      end
+
+      if action_type == "craft" then
+	 awards.tbv(awards.players[playern].craft, mod)
+	 awards.tbv(awards.players[playern].craft[mod], item, 0)
+	 count = count + data.craft[mod][item]
+	 
+      elseif action_type == "dig" then
+	 awards.tbv(awards.players[playern].count, mod)
+	 awards.tbv(awards.players[playern].count[mod], item, 0)
+	 count = count + data.count[mod][item]
+
+      elseif action_type == "place" then
+	 awards.tbv(awards.players[playern].place, mod)
+	 awards.tbv(awards.players[playern].place[mod], item, 0)
+	 count = count + data.place[mod][item]
+      else
+	 return
+      end
+   end
    return count
 end
 

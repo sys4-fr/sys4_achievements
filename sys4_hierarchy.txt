@@ -3,7 +3,10 @@ Darkness Era
 Dig 99 trees --> Wooden planks
     Craft 99 Wooden planks --> Sticks, Wooden sword, Wooden axe
     	  Craft 20 Wooden Tools (Wooden sword, Wooden axe, Wooden shovel, Wooden hoe) --> Wooden Pickaxe (End of Darkness, begin Stone & Fire era)
-    Place 99 Wooden Planks --> Wooden slabs, Wooden doors, traps, boat, chest, Sign, Wooden Fence
+	  Dig 50 Cactus --> 3d_armor_cactus & shield_cactus
+	  Craft 100 Sticks --> ladder, fences, sign_wall
+	  Craft 2 sword --> 3d_armor_wood, shield_wood
+    Place 99 Wooden Planks --> Wooden slabs, Wooden doors, traps, boat, chest
     	  Place 99 Wooden slabs --> Wooden Stairs
 
 Dig 99 ((desert_)sand, dirt, clay, gravel) --> Wooden Shovel, Clay, sandstone
@@ -30,12 +33,14 @@ Dig 99 papyrus --> paper
 Stone and Fire Era
 
 Dig 99 (desert_)stones --> Furnace, stone sword, stone axe, stone shovel, stone hoe
-    Craft 20 Stone tools --> Stone pickaxe (Begin Iron Age)
+    Craft 15 Stone tools --> Stone pickaxe (Begin Iron Age)
     Place 99 glassblock --> glasspanes, glass doors, glass vessels
     Place 99 (desert_)stones --> (desert_)stones slab
     	  Place 99 (desert_)stones slab --> stones stairs
     Place 99 BrickBlock --> BrickBlock Slab
     	  Place 99 BrickBlock Slab --> BrickBlock Stairs
+    Place 100 stonebricks --> Stonebrick slab (TODO)
+    	  Place 100 StoneBricks slab --> Stonebrick stairs (TODO)
 
 Place 99 (desert_)cobble --> Cobble slab
       Place 99 Cobble slab --> Cobble Stairs

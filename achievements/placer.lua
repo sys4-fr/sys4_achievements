@@ -4,7 +4,7 @@ local mkach = sys4_achievements.mkach
 local t = 'place' -- Type of achievement
 
 -- wood_builder
-table.insert(a, mkach(t, "wood_builder", "Wood Builder", "default_wood.png", {'default:wood', 'default:junglewood', 'default:acacia_wood', 'default:pine_wood'}, 100, nil, {"stairs:slab_wood", "stairs:slab_junglewood", "stairs:slab_acacia_wood", "stairs:slab_pine_wood"}, nil, "award_lumberjack"))
+table.insert(a, mkach(t, "wood_builder", "Wood Builder", "default_wood.png", {'default:wood', 'default:junglewood', 'default:acacia_wood', 'default:pine_wood'}, 100, nil, {"doors:door_wood", "doors:trap_door", "default:chest", "boats:boat", "stairs:slab_wood", "stairs:slab_junglewood", "stairs:slab_acacia_wood", "stairs:slab_pine_wood"}, nil, "award_lumberjack"))
 
 -- wood_builder_lover
 table.insert(a, mkach(t, "wood_builder_lover", "Wood Builder Lover", "default_wood.png", {'stairs:slab_wood', 'stairs:slab_junglewood', 'stairs:slab_acacia_wood', 'stairs:slab_pine_wood'}, 100, nil, {"stairs:stair_wood", "stairs:stair_junglewood", "stairs:stair_acacia_wood", "stairs:stair_pine_wood"}, nil, "wood_builder"))

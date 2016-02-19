@@ -42,3 +42,15 @@ awardTmp.award_req = "tools_crafter"
 
 -- Coal Digger
 table.insert(a, mkach(t, "coal_digger", "Coal Digger", "default_coal_lump.png", "default:stone_with_coal", 100, nil, {"default:torch", "default:coal_lump", "default:coalblock", "tnt:gunpowder", "tnt:tnt"}, nil, "tools_crafter"))
+
+if minetest.get_modpath("3d_armor") then
+   local items = {'3d_armor:boots_cactus', '3d_armor:chestplate_cactus', '3d_armor:helmet_cactus', '3d_armor:leggings_cactus'}
+
+   if minetest.get_modpath("shields") then
+      table.insert(items, 'shields:shield_cactus')
+   end
+
+   -- cactus_digger
+   table.insert(a, mkach(t, "cactus_digger", "Cactus Digger", "3d_armor_inv_chestplate_cactus.png", "default:cactus", 50, nil, items, nil, "wood_crafter"))
+
+end

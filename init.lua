@@ -83,17 +83,4 @@ for i=1, #sa do
       })
 end
 
--- Modify achievements if other mods are detected
-if ach_list == "experimental" then
-   if minetest.get_modpath("3d_armor") then
-      local items = {'3d_armor:boots_wood', '3d_armor:chestplate_wood', '3d_armor:helmet_wood', '3d_armor:leggings_wood'}
-      for i=1, #items do
-	 table.insert(awards.def['wood_crafter_begins'].items, items[i])
-      end
-   end
-   
-   if minetest.get_modpath("shields") then
-      table.insert(awards.def['wood_crafter_begins'].items, 'shields:shield_wood')
-   end
-end
 

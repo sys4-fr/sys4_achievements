@@ -1,48 +1,91 @@
 Darkness Era
+------------
 
-Dig 99 trees --> Wooden planks
-    Craft 99 Wooden planks --> Sticks, Wooden sword, Wooden axe
+Dig 100 trees --> Wooden planks
+    Craft 100 Wooden planks --> Sticks, Wooden sword, Wooden axe
     	  Craft 20 Wooden Tools (Wooden sword, Wooden axe, Wooden shovel, Wooden hoe) --> Wooden Pickaxe (End of Darkness, begin Stone & Fire era)
 	  Dig 50 Cactus --> 3d_armor_cactus & shield_cactus
 	  Craft 100 Sticks --> ladder, fences, sign_wall
 	  Craft 2 sword --> 3d_armor_wood, shield_wood
-    Place 99 Wooden Planks --> Wooden slabs, Wooden doors, traps, boat, chest
-    	  Place 99 Wooden slabs --> Wooden Stairs
+    Place 100 Wooden Planks --> Wooden slabs, Wooden doors, traps, boat, chest
+    	  Place 100 Wooden slabs --> Wooden Stairs
 
-Dig 99 ((desert_)sand, dirt, clay, gravel) --> Wooden Shovel, Clay, sandstone
-    Place 99 sandstone --> sandstone slab
-    	  Place 99 sandstone slab --> sandstone stairs
-    Craft 99 sandstone --> Sandstone brick
-    	  Place 99 sandstone bricks --> sandstone bricks slab
-	  	Place 99 sandstone bricks slabs --> sandstone bricks stairs
+Dig 100 ((desert_)sand, dirt, clay, gravel) --> Wooden Shovel, Clay, sandstone
+    Place 100 sandstone --> sandstone slab
+    	  Place 100 sandstone slab --> sandstone stairs
+    Craft 100 sandstone --> Sandstone brick
+    	  Place 100 sandstone bricks --> sandstone bricks slab
+	  	Place 100 sandstone bricks slabs --> sandstone bricks stairs
 
-Dig 99 (group:grass) --> Wooden hoe
-    Dig 99 Wheats --> Flour
-    	Craft 99 Flour --> Straws
-	      Place 99 Straws --> Straw slabs
-	      	    Place 99 Straw slabs --> Straws Stairs
-    Dig 99 Cotton --> Wool
-    	Place 99 Wool --> Colored Wools, Beds
+Dig 100 (group:grass) --> Wooden hoe
+    Dig 100 Wheats --> Flour
+    	Craft 100 Flour --> Straws
+	      Place 100 Straws --> Straw slabs
+	      	    Place 100 Straw slabs --> Straws Stairs
+    Dig 100 Cotton --> Wool
+    	Place 100 Wool --> Colored Wools, Beds
 
-Dig 99 (group:flowers) --> dyes
+Dig 100 (group:flowers) --> dyes
 
-Dig 99 papyrus --> paper
-    Craft 99 paper --> book
-    	  Craft 99 books --> bookshelf
+Dig 100 papyrus --> paper
+    Craft 100 paper --> book
+    	  Craft 100 books --> bookshelf
 
-Stone and Fire Era
+Stone and Fire Age
+------------------
 
-Dig 99 (desert_)stones --> Furnace, stone sword, stone axe, stone shovel, stone hoe
+Dig 100 (desert_)stones --> Furnace, stone sword, stone axe, stone shovel, stone hoe
     Craft 15 Stone tools --> Stone pickaxe (Begin Iron Age)
-    Place 99 glassblock --> glasspanes, glass doors, glass vessels
-    Place 99 (desert_)stones --> (desert_)stones slab
-    	  Place 99 (desert_)stones slab --> stones stairs
-    Place 99 BrickBlock --> BrickBlock Slab
-    	  Place 99 BrickBlock Slab --> BrickBlock Stairs
-    Place 100 stonebricks --> Stonebrick slab (TODO)
-    	  Place 100 StoneBricks slab --> Stonebrick stairs (TODO)
+    Place 1 furnace --> (desert)stonebrick, brickblock
+    	  Place 100 glassblock --> glasspanes, glass doors, glass vessels
+	  	Craft 100 glass vessels --> vessel shelf
+    	  Place 100 (desert_)stones --> (desert_)stones slab
+    	  	Place 100 (desert_)stones slab --> stones stairs
+    	  Place 100 BrickBlock --> BrickBlock Slab
+    	  	Place 100 BrickBlock Slab --> BrickBlock Stairs
+   	  Place 100 stonebricks --> Stonebrick slab
+    	  	Place 100 StoneBricks slab --> Stonebrick stairs
 
-Place 99 (desert_)cobble --> Cobble slab
-      Place 99 Cobble slab --> Cobble Stairs
+Place 100 (desert_)cobble --> Cobble slab
+      Place 100 Cobble slab --> Cobble Stairs
 
-Dig 99 coal --> Torch, Coalblock, gunpowder, TNT
+Dig 100 coal --> Torch, Coalblock, gunpowder, TNT
+
+Iron Age
+--------
+
+Dig 50 iron stones --> bar, steel_bottle, bucket, locked chest, steel_door, shields_enhanced_wood, shields_enhanced_cactus
+
+Dig 100 iron stones --> steel (sword, axe, shovel, hoe, steelblock, rail, screwdriver)
+    Craft 2 steel swords --> 3d_armor_steel, shield_steel
+    Craft 10 Steel tools --> Steel pickaxe (Middle Age)
+    Place 50 steelblock --> slab_steelblock
+    	  Place 50 slab_steelblock --> stair_steelblock
+    
+Dig 100 copper stones --> bronze ingot
+    Craft 100 bronze ingot --> bronze (sword, axe, shovel, hoe, bronzeblock)
+    	  Craft 5 bronze tools --> Bronze pickaxe
+	  Craft 2 bronze sword --> 3d_armor_bronze, shield_bronze
+    	  Place 50 bronzeblock --> slab_bronzeblock
+	  	Place 50 slab_bronzeblock --> stair_bronzeblock
+
+Dig 100 gold stone --> goldblock
+    Place 50 goldblock --> slab_goldblock
+    	  Place 50 slab_goldblock --> stair_goldblock
+
+Middle Age
+----------
+
+Dig 50 obsidian --> obsidian door, obsidian shard
+Place 50 obsidian --> slab_obsidian, obsidian brick
+      Place 50 slab_obsidian --> stair_obsidian
+      Place 50 obsidianbrick --> slab_obsidianbrick
+      	    Place 50 slab_obsidianbrick --> stair_obsidianbrick
+
+Dig 50 mese stone --> Mese (sword, axe, shovel, hoe), mese_crystal, mese_crystal_fragments, mese)
+    Craft 5 mese tools --> mese pickaxe
+    Craft 2 mese sword --> 3d_armor_mese, shield_mese
+
+Dig 50 diamond stone --> Diamond (sword, axe, shovel, hoe), diamond_crystal, diamondblock)
+    Craft 5 diamond tools --> diamond pickaxe
+    Craft 2 diamond sword --> 3d_armor_diamond, shield_diamond

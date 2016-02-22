@@ -58,13 +58,14 @@ Dig 50 iron stones --> bar, steel_bottle, bucket, locked chest, steel_door, shie
 
 Dig 100 iron stones --> steel (sword, axe, shovel, hoe, steelblock, rail, screwdriver)
     Craft 2 steel swords --> 3d_armor_steel, shield_steel
-    Craft 10 Steel tools --> Steel pickaxe (Middle Age)
+    Craft 10 (Steel, bronze) tools --> Steel pickaxe, Bronze pickaxe (Middle Age)
     Place 50 steelblock --> slab_steelblock
     	  Place 50 slab_steelblock --> stair_steelblock
     
-Dig 100 copper stones --> bronze ingot
+Dig 100 copper stones --> copper ingot, copperblock, bronze ingot
+    Place 50 copperblock --> slab_copperblock
+    	  Place 50 slab_copperblock --> stair_copperblock
     Craft 100 bronze ingot --> bronze (sword, axe, shovel, hoe, bronzeblock)
-    	  Craft 5 bronze tools --> Bronze pickaxe
 	  Craft 2 bronze sword --> 3d_armor_bronze, shield_bronze
     	  Place 50 bronzeblock --> slab_bronzeblock
 	  	Place 50 slab_bronzeblock --> stair_bronzeblock
@@ -84,7 +85,7 @@ Place 50 obsidian --> slab_obsidian, obsidian brick
 
 Dig 50 mese stone --> Mese (sword, axe, shovel, hoe), mese_crystal, mese_crystal_fragments, mese)
     Craft 5 mese tools --> mese pickaxe
-    Craft 2 mese sword --> 3d_armor_mese, shield_mese
+    Craft 2 mese sword --> 3d_armor_gold, shield_gold
 
 Dig 50 diamond stone --> Diamond (sword, axe, shovel, hoe), diamond_crystal, diamondblock)
     Craft 5 diamond tools --> diamond pickaxe

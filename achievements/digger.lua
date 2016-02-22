@@ -16,6 +16,33 @@ awardTmp.otherTargets = {'default:tree', 'default:acacia_tree', 'default:pine_tr
 awardTmp = awards.def['award_marchand_de_sable']
 awardTmp.otherTargets = {'default:sand', 'default:desert_sand'}
 
+-- award_youre_a_copper
+awardTmp = awards.def['award_youre_a_copper']
+awardTmp.award_req = "tools_crafter_lover"
+
+-- award_mine3
+awardTmp = awards.def['award_mine3']
+awardTmp.award_req = "tools_crafter"
+awardTmp.otherTargets = {'default:stone', 'default:desert_stone', 'default:cobble', 'default:desert_cobble', 'default:mossycobble'}
+
+-- award_mine4
+awardTmp = awards.def['award_mine4']
+awardTmp.award_req = "tools_crafter"
+awardTmp.otherTargets = {'default:stone', 'default:desert_stone', 'default:cobble', 'default:desert_cobble', 'default:mossycobble'}
+
+-- award_mesefind
+awardTmp = awards.def['award_mesefind']
+awardTmp.award_req = "tools_crafter_pro"
+
+-- award_nyanfind
+awardTmp = awards.def['award_nyanfind']
+awardTmp.award_req = "tools_crafter_lover"
+
+-- award_obsessed_with_obsidian
+awardTmp = awards.def['award_obsessed_with_obsidian']
+awardTmp.award_req = "tools_crafter_pro"
+awardTmp.items = {'doors:door_obsidian_glass', 'default:obsidian_shard', 'default:obsidian'}
+
 -- dirt_digger
 table.insert(a, mkach(t, "dirt_digger", "Dirt Digger", "default_tool_woodshovel.png", {'default:dirt', 'default:dirt_with_grass', 'default:dirt_with_dry_grass', 'default:dirt_with_snow', 'default:clay', 'default:desert_sand', 'default:sand', 'default:sandstone', 'default:snowblock', 'default:snow'}, 100, nil, {"default:shovel_wood", "default:clay", "default:clay_lump", "default:sand", "default:sandstone", "default:snowblock", "default:snow"}, nil, nil))
 
@@ -43,7 +70,7 @@ awardTmp.award_req = "tools_crafter"
 -- Coal Digger
 table.insert(a, mkach(t, "coal_digger", "Coal Digger", "default_coal_lump.png", "default:stone_with_coal", 100, nil, {"default:torch", "default:coal_lump", "default:coalblock", "tnt:gunpowder", "tnt:tnt"}, nil, "tools_crafter"))
 
-local iron_digger_items = {'bucket:bucket_empty', 'xpanes:bar', 'vessels:steel_bottle', 'default:locked_chest', 'doors:steel_door'}
+local iron_digger_items = {'bucket:bucket_empty', 'xpanes:bar', 'vessels:steel_bottle', 'default:chest_locked', 'doors:door_steel'}
 
 if minetest.get_modpath("3d_armor") then
    local items = {'3d_armor:boots_cactus', '3d_armor:chestplate_cactus', '3d_armor:helmet_cactus', '3d_armor:leggings_cactus'}
@@ -52,8 +79,8 @@ if minetest.get_modpath("3d_armor") then
       table.insert(items, 'shields:shield_cactus')
 
       -- iron_digger
-      table.insert(iron_digger_items, 'shields:shield_cactus_enhanced')
-      table.insert(iron_digger_items, 'shields:shield_wood_enhanced')
+      table.insert(iron_digger_items, 'shields:shield_enhanced_cactus')
+      table.insert(iron_digger_items, 'shields:shield_enhanced_wood')
    end
 
    -- cactus_digger
@@ -62,22 +89,19 @@ if minetest.get_modpath("3d_armor") then
 end
 
 -- iron_digger
-table.insert(a, mkach(t, "iron_digger", "Iron Digger", "bucket_empty.png", "default:stone_with_iron", 50, nil, iron_digger_items, nil, "tools_crafter_lover"))
+table.insert(a, mkach(t, "iron_digger", "Iron Digger", "bucket.png", "default:stone_with_iron", 50, nil, iron_digger_items, nil, "tools_crafter_lover"))
 
 -- iron_digger_lover
 table.insert(a, mkach(t, "iron_digger_lover", "Iron Digger Lover", "default_tool_steelsword.png", "default:stone_with_iron", 100, nil, {'default:sword_steel', 'default:axe_steel', 'default:shovel_steel', 'farming:hoe_steel', 'default:steelblock', 'default:rail', 'screwdriver:screwdriver'}, nil, "tools_crafter_lover"))
 
 -- copper_digger
-table.insert(a, mkach(t, "copper_digger", "Copper Digger", "default_bronze_ingot.png", "default:stone_with_copper", 100, nil, {'default:bronze_ingot'}, nil, "tools_crafter_lover"))
+table.insert(a, mkach(t, "copper_digger", "Copper Digger", "default_bronze_ingot.png", "default:stone_with_copper", 100, nil, {'default:copperblock', 'default:copper_ingot', 'default:bronze_ingot'}, nil, "tools_crafter_lover"))
 
 -- gold_digger
 table.insert(a, mkach(t, "gold_digger", "Gold Digger", "default_gold_block.png", "default:stone_with_gold", 100, nil, {'default:goldblock', 'default:gold_ingot'}, nil, "tools_crafter_lover"))
 
--- obsidian_digger
-table.insert(a, mkach(t, "obsidian_digger", "Obsidian Digger", "doors_obsidian.png", "default:obsidian", 50, nil, {'doors:door_obsidian_glass', 'default:obsidian_shard', 'default:obsidian'}, nil, "tools_crafter_pro"))
-
 -- mese_digger
-table.insert(a, mkach(t, "mese_digger", "Mese Digger", "default_tool_mesesword.png", {'default:stone_with_mese', 'default:mese'}, 50, nil, {'default:sword_mese', 'default:axe_mese', 'default:shovel_mese', 'farming:hoe_mese', 'default:mese_crystal', 'default:mese_crystal_fragment', 'default:mese'}, nil, "tools_crafter_pro"))
+table.insert(a, mkach(t, "mese_digger", "Mese Digger", "default_tool_mesesword.png", {'default:stone_with_mese', 'default:mese'}, 50, nil, {'default:sword_mese', 'default:axe_mese', 'default:shovel_mese', 'farming:hoe_mese', 'default:meselamp', 'default:mese_crystal', 'default:mese_crystal_fragment', 'default:mese'}, nil, "tools_crafter_pro"))
 
 -- diamond_digger
 table.insert(a, mkach(t, "diamond_digger", "Diamond Digger", "default_tool_diamondsword.png", "default:stone_with_diamond", 50, nil, {'default:sword_diamond', 'default:axe_diamond', 'default:shovel_diamond', 'farming:hoe_diamond', 'default:diamond', 'default:diamondblock'}, nil, "tools_crafter_pro"))

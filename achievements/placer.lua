@@ -3,6 +3,18 @@ local mkach = sys4_achievements.mkach
 
 local t = 'place' -- Type of achievement
 
+-- award_on_the_way
+local awardTmp = awards.def['award_on_the_way']
+awardTmp.award_req = "iron_digger_lover"
+
+-- award_lightitup
+awardTmp = awards.def['award_lightitup']
+awardTmp.award_req = "coal_digger"
+
+-- award_light_all_the_things
+awardTmp = awards.def['award_light_all_the_things']
+awardTmp.award_req = "coal_digger"
+
 -- wood_builder
 table.insert(a, mkach(t, "wood_builder", "Wood Builder", "default_wood.png", {'default:wood', 'default:junglewood', 'default:acacia_wood', 'default:pine_wood'}, 100, nil, {"doors:door_wood", "doors:trapdoor", "default:chest", "boats:boat", "stairs:slab_wood", "stairs:slab_junglewood", "stairs:slab_acacia_wood", "stairs:slab_pine_wood"}, nil, "award_lumberjack"))
 
@@ -31,7 +43,7 @@ table.insert(a, mkach(t, "straw_builder_lover", "Straw Builder Lover", "farming_
 table.insert(a, mkach(t, "wool_builder", "Wool Builder", "wool_red.png", "wool:white", 100, nil, {'beds:bed_bottom', 'beds:fancy_bed_bottom', 'wool:black', 'wool:red', 'wool:green', 'wool:blue', 'wool:orange', 'wool:violet', 'wool:yellow', 'wool:brown','wool:cyan', 'wool:dark_green', 'wool:dark_grey', 'wool:green', 'wool:grey', 'wool:magenta', 'wool:pink'}, nil, "cotton_digger"))
 
 -- furnace_builder
-table.insert(a, mkach(t, "furnace_builder", "Furnace Builder", "default_furnace.png", "default:furnace", 1, nil, {'default:stonebrick', 'default:desert_stonebrick', 'default:brick', 'default:clay_brick'}, nil, "award_mine2"))
+table.insert(a, mkach(t, "furnace_builder", "Furnace Builder", "default_furnace_front.png", "default:furnace", 1, nil, {'default:stonebrick', 'default:desert_stonebrick', 'default:brick', 'default:clay_brick'}, nil, "award_mine2"))
 		      
 -- glass_builder
 table.insert(a, mkach(t, "glass_builder", "Glass Builder", "default_glass.png", "default:glass", 100, nil, {"xpanes:pane", "doors:door_glass", "vessels:drinking_glass", "vessels:glass_bottle", "vessels:glass_fragments"}, nil, "furnace_builder"))
@@ -49,10 +61,10 @@ table.insert(a, mkach(t, "brick_builder", "Brick Builder", "default_brick.png", 
 table.insert(a, mkach(t, "brick_builder_lover", "Brick Builder Lover", "default_brick.png", "stairs:slab_brick", 100, nil, {"stairs:stair_brick"}, nil, "brick_builder"))
 
 -- stonebrick_builder
-table.insert(a, mkach(t, "stonebrick_builder", "Stone Brick Builder", "default_stone_brick.png", "default:stonebrick", 100, nil, {"stairs:slab_stonebrick"}, nil, "furnace_builder"))
+table.insert(a, mkach(t, "stonebrick_builder", "Stone Brick Builder", "default_stone_brick.png", {'default:stonebrick', 'default:desert_stonebrick'}, 100, nil, {"stairs:slab_stonebrick", "stairs:slab_desert_stonebrick"}, nil, "furnace_builder"))
 
 -- stonebrick_builder_lover
-table.insert(a, mkach(t, "stonebrick_builder_lover", "Stone Brick Builder Lover", "default_stone_brick.png", "stairs:slab_stonebrick", 100, nil, {"stairs:stair_stonebrick"}, nil, "stonebrick_builder"))
+table.insert(a, mkach(t, "stonebrick_builder_lover", "Stone Brick Builder Lover", "default_stone_brick.png", {"stairs:slab_stonebrick", "stairs:slab_desert_stonebrick"}, 100, nil, {"stairs:stair_stonebrick", "stairs:stair_desert_stonebrick"}, nil, "stonebrick_builder"))
 
 -- cobble_builder
 table.insert(a, mkach(t, "cobble_builder", "Cobble Builder", "default_cobble.png", {'default:cobble', 'default:desert_cobble'}, 100, nil, {"stairs:slab_cobble", "stairs:slab_desert_cobble"}, nil, "tools_crafter"))
@@ -65,6 +77,12 @@ table.insert(a, mkach(t, "steelblock_builder", "Steel Block Builder", "default_s
 
 -- steelblock_builder_lover
 table.insert(a, mkach(t, "steelblock_builder_lover", "Steel Block Builder Lover", "default_steel_block.png", "stairs:slab_steelblock", 50, nil, {'stairs:stair_steelblock'}, nil, "steelblock_builder"))
+
+-- copperblock_builder
+table.insert(a, mkach(t, "copperblock_builder", "Copper Block Builder", "default_copper_block.png", "default:copperblock", 50, nil, {'stairs:slab_copperblock'}, nil, "copper_digger"))
+
+-- copperblock_builder_lover
+table.insert(a, mkach(t, "copperblock_builder_lover", "Copper Block Builder Lover", "default_copper_block.png", "stairs:slab_copperblock", 50, nil, {'stairs:stair_copperblock'}, nil, "copperblock_builder"))
 
 -- bronzeblock_builder
 table.insert(a, mkach(t, "bronzeblock_builder", "Bronze Block Builder", "default_bronze_block.png", "default:bronzeblock", 50, nil, {'stairs:slab_bronzeblock'}, nil, "bronze_crafter"))

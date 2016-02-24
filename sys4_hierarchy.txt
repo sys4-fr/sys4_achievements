@@ -27,9 +27,10 @@ Dig 100 (group:grass) --> Wooden hoe
 
 Dig 100 (group:flowers) --> dyes
 
-Dig 100 papyrus --> paper
+Dig 100 papyrus, (ethereal:bamboo) --> paper, ethereal:bamboo_flour
     Craft 100 paper --> book
     	  Craft 100 books --> bookshelf
+
 
 Stone and Fire Age
 ------------------
@@ -90,3 +91,11 @@ Dig 50 mese stone --> Mese (sword, axe, shovel, hoe), mese_crystal, mese_crystal
 Dig 50 diamond stone --> Diamond (sword, axe, shovel, hoe), diamond_crystal, diamondblock)
     Craft 5 diamond tools --> diamond pickaxe
     Craft 2 diamond sword --> 3d_armor_diamond, shield_diamond
+
+(ethereal)
+Dig 100 crystal_spike --> crystal_ingot
+    Craft 50 crystal_ingot --> crystal_block, (sword, axe, shovel)_crystal
+    	  Craft 5 crystal_tools --> pick_crystal, crystal_gilly_staff
+    	  (3d_armor)Craft 2 sword_crystal --> 3d_armor_crystal, shield_crystal
+	  Place 50 crystal_block --> slab_crystal_block
+	  	Place 50 slab_crystal_block --> stair_crystal_block

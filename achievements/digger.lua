@@ -65,7 +65,15 @@ table.insert(a, mkach(t, "cotton_digger", "Cotton Digger", "wool_white.png", {'f
 table.insert(a, mkach(t, "flower_digger", "Flower Digger", "flowers_rose.png", {'flowers:rose', 'flowers:tulip', 'flowers:viola', 'flowers:geranium', 'flowers:dandelion_white', 'flowers:dandelion_yellow'}, 100, nil, {'dye:red', 'dye:yellow', 'dye:blue', 'dye:black', 'dye:white', 'dye:violet', 'dye:orange', 'dye:brown','dye:cyan', 'dye:dark_green', 'dye:dark_grey', 'dye:green', 'dye:grey', 'dye:magenta', 'dye:pink'},nil, nil))
 
 -- papyrus_digger
-table.insert(a, mkach(t, "papyrus_digger", "Papyrus Digger", "default_paper.png", "default:papyrus", 100, nil, {"default:paper"}, nil, nil))
+local papyrus_nodes = {"default:papyrus"}
+local papyrus_items = {"default:paper"}
+
+if minetest.get_modpath("ethereal") then
+   table.insert(papyrus_nodes, "ethereal:bamboo")
+   table.insert(papyrus_items, "ethereal:bamboo_flour")
+end
+
+table.insert(a, mkach(t, "papyrus_digger", "Papyrus Digger", "default_paper.png", papyrus_nodes, 100, nil, papyrus_items, nil, nil))
 
 -- Coal Digger
 table.insert(a, mkach(t, "coal_digger", "Coal Digger", "default_coal_lump.png", "default:stone_with_coal", 100, nil, {"default:torch", "default:coal_lump", "default:coalblock", "tnt:gunpowder", "tnt:tnt"}, nil, "tools_crafter"))
@@ -85,7 +93,10 @@ if minetest.get_modpath("3d_armor") then
 
    -- cactus_digger
    table.insert(a, mkach(t, "cactus_digger", "Cactus Digger", "3d_armor_inv_chestplate_cactus.png", "default:cactus", 50, nil, items, nil, "wood_crafter"))
+end
 
+if minetest.get_modpath("ethereal") then
+   table.insert(iron_digger_items, "ethereal:bucket_cactus")
 end
 
 -- iron_digger
@@ -105,3 +116,37 @@ table.insert(a, mkach(t, "mese_digger", "Mese Digger", "default_tool_mesesword.p
 
 -- diamond_digger
 table.insert(a, mkach(t, "diamond_digger", "Diamond Digger", "default_tool_diamondsword.png", "default:stone_with_diamond", 50, nil, {'default:sword_diamond', 'default:axe_diamond', 'default:shovel_diamond', 'farming:hoe_diamond', 'default:diamond', 'default:diamondblock'}, nil, "tools_crafter_pro"))
+
+-- ethereal --
+
+if minetest.get_modpath("ethereal") then
+
+   -- leave_digger
+   table.insert(a, mkach(t, "leave_digger", "Leaves Digger", "vine.png", {'default:acacia_leaves', 'default:jungleleaves', 'default:leaves', 'default:pine_needles', 'ethereal:bamboo_leaves', 'ethereal:bananaleaves', 'ethereal:birch_leaves', 'ethereal:frost_leaves', 'ethereal:orange_leaves', 'ethereal:palmleaves', 'ethereal:redwood_leaves', 'ethereal:willow_twig', 'ethereal:yellowleaves', 'ethereal:dry_shrub'}, 100, nil, {'ethereal:vine', 'ethereal:bush', 'ethereal:green_moss', 'ethereal:crystal_moss', 'ethereal:gray_moss', 'ethereal:fiery_moss', 'ethereal:mushrool_moss'}, nil, nil))
+
+   -- banana_digger
+   table.insert(a, mkach(t, "banana_digger", "Banana Digger", "banana_dough.png",  "ethereal:banana", 100, nil, {'ethereal:banana_dough'}, nil, nil))
+
+   -- award_lumberjack
+   awardTmp = awards.def['award_lumberjack']
+   local targets = awardTmp.otherTargets
+   table.insert(targets, "ethereal:banana_trunk")
+   table.insert(targets, "ethereal:birch_trunk")
+   table.insert(targets, "ethereal:frost_tree")
+   table.insert(targets, "ethereal:palm_trunk")
+   table.insert(targets, "ethereal:redwood_trunk")
+   table.insert(targets, "ethereal:willow_trunk")
+   table.insert(targets, "ethereal:yellow_trunk")
+   local items = awardTmp.items
+   table.insert(items, "ethereal:banana_wood")
+   table.insert(items, "ethereal:birch_wood")
+   table.insert(items, "ethereal:frost_wood")
+   table.insert(items, "ethereal:palm_wood")
+   table.insert(items, "ethereal:redwood_wood")
+   table.insert(items, "ethereal:willow_wood")
+   table.insert(items, "ethereal:yellow_wood")
+
+   -- crystal_spike_digger
+   table.insert(a, mkach(t, "crystal_spike_digger", "Crystal Spike Digger", "crystal_ingot.png", "ethereal:crystal_spike", 100, nil, {'ethereal:crystal_ingot'}, nil, "tools_crafter_pro"))
+
+end

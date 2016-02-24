@@ -16,3 +16,4 @@ xpanes
 intllib?
 3d_armor?
 shields?
+ethereal?

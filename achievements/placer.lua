@@ -107,3 +107,15 @@ table.insert(a, mkach(t, "obsidianbrick_builder", "Obsidian Brick Builder", "def
 
 -- obsidianbrick_builder_lover
 table.insert(a, mkach(t, "obsidianbrick_builder_lover", "Obsidian Brick Builder Lover", "default_obsidian_brick.png", "stairs:slab_obsidianbrick", 50, nil, {'stairs:stair_obsidianbrick'}, nil, "obsidianbrick_builder"))
+
+
+-- ethereal --
+if minetest.get_modpath("ethereal") then
+
+   -- crystal_builder
+   table.insert(a, mkach(t, "crystal_builder", "Crystal Builder", "crystal_block.png", "ethereal:crystal_block", 50, nil, {'stairs:slab_crystal_block'}, nil, "crystal_crafter"))
+
+   -- crystal_builder_lover
+   table.insert(a, mkach(t, "crystal_builder_lover", "Crystal Builder Lover", "crystal_block.png", "stairs:slab_crystal_block", 50, nil, {'stairs:stair_crystal_block'}, nil, "crystal_builder"))
+
+end

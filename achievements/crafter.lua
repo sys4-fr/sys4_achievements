@@ -4,7 +4,22 @@ local mkach = sys4_achievements.mkach
 local t = 'craft' -- Type of achievement
 
 -- wood_crafter
-table.insert(a, mkach(t, "wood_crafter", "Wood Crafter", "default_tool_woodsword.png", {'default:wood', 'default:junglewood', 'default:acacia_wood', 'default:pine_wood'}, 100, nil, {"default:stick", "default:sword_wood", "default:axe_wood"}, nil, "award_lumberjack"))
+local wood_nodes = {'default:wood', 'default:junglewood', 'default:acacia_wood', 'default:pine_wood'}
+local wood_items = {"default:stick", "default:sword_wood", "default:axe_wood"}
+
+if minetest.get_modpath("ethereal") then
+   table.insert(wood_nodes, "ethereal:banana_wood")
+   table.insert(wood_nodes, "ethereal:birch_wood")
+   table.insert(wood_nodes, "ethereal:frost_wood")
+   table.insert(wood_nodes, "ethereal:palm_wood")
+   table.insert(wood_nodes, "ethereal:redwood_wood")
+   table.insert(wood_nodes, "ethereal:willow_wood")
+   table.insert(wood_nodes, "ethereal:yellow_wood")
+
+   table.insert(wood_items, "ethereal:bowl")
+end
+
+table.insert(a, mkach(t, "wood_crafter", "Wood Crafter", "default_tool_woodsword.png", wood_nodes, 100, nil, wood_items, nil, "award_lumberjack"))
 
 -- stick_crafter
 table.insert(a, mkach(t, "stick_crafter", "Stick Crafter", "default_ladder.png", "default:stick", 100, nil, {"default:ladder", "default:fence_wood", "default:sign_wall"}, nil, "wood_crafter"))
@@ -72,4 +87,27 @@ if minetest.get_modpath("3d_armor") then
    -- sword_crafter_master
    table.insert(a, mkach(t, "sword_crafter_master", "Sword Crafter Master", "3d_armor_inv_chestplate_diamond.png", "default:sword_diamond", 2, nil, items_diamond, nil, "diamond_digger"))
 
+end
+
+-- ethereal --
+if minetest.get_modpath("ethereal") then
+
+   -- crystal_crafter
+   table.insert(a, mkach(t, "crystal_crafter", "Crystal Crafter", "crystal_sword.png", "ethereal:crystal_ingot", 50, nil, {'ethereal:sword_crystal', 'ethereal:axe_crystal', 'ethereal:shovel_crystal', 'ethereal:crystal_block'}, nil, "crystal_spike_digger"))
+
+   -- crystal_tools_crafter
+   table.insert(a, mkach(t, "crystal_tools_crafter", "Crystal Tools Crafter", "crystal_gilly_staff.png", {'ethereal:sword_crystal', 'ethereal:axe_crystal', 'ethereal:shovel_crystal'}, 5, nil, {'ethereal:crystal_gilly_staff', 'ethereal:pick_crystal'}, nil, "crystal_crafter"))
+
+   -- bowl_crafter
+   table.insert(a, mkach(t, "bowl_crafter", "Bowl Crafter", "mushroom_soup.png", "ethereal:bowl", 2, nil, {'ethereal:mushroom_soup', 'ethereal:hearty_stew'}, nil, "wood_crafter"))
+
+   if minetest.get_modpath("3d_armor") then
+      -- ethereal_sword_crafter
+      local crystal_items = {'3d_armor:boots_crystal', '3d_armor:chestplate_crystal', '3d_armor:helmet_crystal', '3d_armor:leggings_crystal'}
+      if minetest.get_modpath("shields") then
+	 table.insert(crystal_items, "shields:shield_crystal")
+      end
+
+      table.insert(a, mkach(t, "ethereal_sword_crafter", "Ethereal Sword Crafter", "3d_armor_inv_chestplate_crystal.png", "ethereal:sword_crystal", 2, nil, crystal_items, nil, "crystal_crafter"))
+   end
 end

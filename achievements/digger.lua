@@ -10,7 +10,7 @@ local awardTmp
 -- award_lumberjack
 awardTmp = awards.def['award_lumberjack']
 awardTmp.items = {'default:wood', 'default:junglewood', 'default:acacia_wood', 'default:pine_wood'}
-awardTmp.otherTargets = {'default:tree', 'default:acacia_tree', 'default:pine_tree'}
+awardTmp.otherTargets = {'default:tree', 'default:jungletree', 'default:acacia_tree', 'default:pine_tree'}
 
 --award_marchand_de_sable
 awardTmp = awards.def['award_marchand_de_sable']
@@ -19,6 +19,12 @@ awardTmp.otherTargets = {'default:sand', 'default:desert_sand'}
 -- award_youre_a_copper
 awardTmp = awards.def['award_youre_a_copper']
 awardTmp.award_req = "tools_crafter_lover"
+
+-- award_mine2
+awardTmp = awards.def['award_mine2']
+awardTmp.items = {'default:furnace', 'default:sword_stone', 'default:axe_stone', 'default:shovel_stone', 'farming:hoe_stone'}
+awardTmp.otherTargets = {'default:stone', 'default:desert_stone', 'default:cobble', 'default:desert_cobble', 'default:mossycobble'}
+awardTmp.award_req = "tools_crafter"
 
 -- award_mine3
 awardTmp = awards.def['award_mine3']
@@ -60,12 +66,6 @@ table.insert(a, mkach(t, "flower_digger", "Flower Digger", "flowers_rose.png", {
 
 -- papyrus_digger
 table.insert(a, mkach(t, "papyrus_digger", "Papyrus Digger", "default_paper.png", "default:papyrus", 100, nil, {"default:paper"}, nil, nil))
-
--- award_mine2
-awardTmp = awards.def['award_mine2']
-awardTmp.items = {'default:furnace', 'default:sword_stone', 'default:axe_stone', 'default:shovel_stone', 'farming:hoe_stone'}
-awardTmp.otherTargets = {'default:stone', 'default:desert_stone', 'default:cobble', 'default:desert_cobble', 'default:mossycobble'}
-awardTmp.award_req = "tools_crafter"
 
 -- Coal Digger
 table.insert(a, mkach(t, "coal_digger", "Coal Digger", "default_coal_lump.png", "default:stone_with_coal", 100, nil, {"default:torch", "default:coal_lump", "default:coalblock", "tnt:gunpowder", "tnt:tnt"}, nil, "tools_crafter"))

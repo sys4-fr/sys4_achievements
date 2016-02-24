@@ -46,6 +46,12 @@ sys4_achievements.post_register(sys4_achievements.getAchievement(awardTmp.trigge
 awardTmp = awards.def['award_mine2']
 sys4_achievements.post_register(sys4_achievements.getAchievement(awardTmp.trigger.type, 'award_mine2'), awardTmp.otherTargets, awardTmp.trigger.type)
 
+awardTmp = awards.def['award_mine3']
+sys4_achievements.post_register(sys4_achievements.getAchievement(awardTmp.trigger.type, 'award_mine3'), awardTmp.otherTargets, awardTmp.trigger.type)
+
+awardTmp = awards.def['award_mine4']
+sys4_achievements.post_register(sys4_achievements.getAchievement(awardTmp.trigger.type, 'award_mine4'), awardTmp.otherTargets, awardTmp.trigger.type)
+
 -- Register secret achievements
 -- Secrets achievements table
 local sa = {
